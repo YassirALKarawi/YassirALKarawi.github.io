@@ -312,38 +312,16 @@ const publications = [
   }
 ];
 
-const projects = [
-  {
-    title: "Q-ROC",
-    kicker: "Certificate-bound Open 6G RAN auditing",
-    url: "https://github.com/YassirALKarawi/q-roc-open6g-ran",
-    description: "A reproducible architecture and evidence package for coherent-order auditing of xApp actions in Open 6G RAN.",
-    facts: ["9,216 finite states", "120 action pairs", "Reproducible evidence"]
-  },
-  {
-    title: "KPM-Bridge",
-    kicker: "Portable AI xApp telemetry",
-    url: "https://github.com/YassirALKarawi/kpm-bridge-open6g-ran",
-    description: "An uncertainty-aware telemetry fabric that maps heterogeneous E2SM-KPM reports to certified canonical contracts.",
-    facts: ["201,912 samples", "8 canonical features", "48-byte certificate"]
-  },
-  {
-    title: "Trust-Aware ISAC Simulator",
-    kicker: "Digital-twin control for 6G Open RAN",
-    url: "https://github.com/YassirALKarawi/trust-aware-isac-sim",
-    description: "A seeded reference simulator for trust-aware, quantum-assisted digital-twin control in secure and adaptive ISAC.",
-    facts: ["Python 3.10+", "Audited claims", "Publication figures"]
-  }
-];
-
 const profiles = [
-  ["Google Scholar", "Citation profile", "https://scholar.google.com/citations?user=Dg_tAlkAAAAJ&hl=en"],
+  ["Google Scholar", "Citation profile", "https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate"],
   ["ORCID", "0000-0003-2959-3893", "https://orcid.org/0000-0003-2959-3893"],
   ["Scopus", "Author ID 58954746100", "https://www.scopus.com/authid/detail.uri?authorId=58954746100"],
   ["Web of Science", "ResearcherID O-2498-2016", "https://www.webofscience.com/wos/author/record/O-2498-2016"],
   ["Semantic Scholar", "AI-powered research profile", "https://www.semanticscholar.org/author/Yassir-Al%E2%80%90Karawi/1414260996"],
+  ["Academia.edu", "17 uploaded papers", "https://uodiyala.academia.edu/YassirAAhmad"],
   ["GitHub", "@YassirALKarawi", "https://github.com/YassirALKarawi"],
   ["LinkedIn", "Professional profile", "https://www.linkedin.com/in/yassir-ameen-al-karawi-67501243/"],
+  ["Facebook", "Public profile", "https://web.facebook.com/yassir.ameen.al.karawi"],
   ["University of Diyala", "Institutional profile", "https://engineering.uodiyala.edu.iq/?page_id=34421&lang=en"]
 ];
 
@@ -435,7 +413,6 @@ function nav(active = "") {
     ["Home", "/"],
     ["Research", "/#research"],
     ["Publications", "/publications.html"],
-    ["Open science", "/#open-science"],
     ["Profiles", "/#profiles"]
   ];
   return `<a class="skip-link" href="#main">Skip to content</a>
@@ -461,12 +438,12 @@ function footer() {
       <a class="wordmark footer-mark" href="/"><span class="wordmark-mark">YA</span><span><strong>Yassir AL-Karawi</strong><small>Assistant Professor · University of Diyala</small></span></a>
       <p class="footer-note">Research in Open RAN, 5G/6G, quantum communications, AI-native networks, wireless systems, and optical communications.</p>
     </div>
-    <div><h2>Academic identity</h2><a href="https://orcid.org/0000-0003-2959-3893">ORCID</a><a href="https://scholar.google.com/citations?user=Dg_tAlkAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.scopus.com/authid/detail.uri?authorId=58954746100">Scopus</a></div>
-    <div><h2>Connect</h2><a href="https://github.com/YassirALKarawi">GitHub</a><a href="https://www.linkedin.com/in/yassir-ameen-al-karawi-67501243/">LinkedIn</a><a href="mailto:yassir_al-karawi_eng@uodiyala.edu.iq">Email</a></div>
+    <div><h2>Academic identity</h2><a href="https://orcid.org/0000-0003-2959-3893">ORCID</a><a href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a><a href="https://www.scopus.com/authid/detail.uri?authorId=58954746100">Scopus</a></div>
+    <div><h2>Connect</h2><a href="https://uodiyala.academia.edu/YassirAAhmad">Academia.edu</a><a href="https://www.linkedin.com/in/yassir-ameen-al-karawi-67501243/">LinkedIn</a><a href="https://web.facebook.com/yassir.ameen.al.karawi">Facebook</a><a href="https://github.com/YassirALKarawi">GitHub</a><a href="mailto:yassir_al-karawi_eng@uodiyala.edu.iq">Email</a></div>
   </div>
   <div class="container footer-bottom"><span>© <span data-year></span> Yassir AL-Karawi</span><span>Recommended citation name: <strong>Yassir AL-Karawi</strong></span></div>
 </footer>
-<script src="/assets/app.js?v=2" defer></script>`;
+<script src="/assets/app.js?v=3" defer></script>`;
 }
 
 function pageEnd() {
@@ -494,6 +471,8 @@ function publicationCard(pub, compact = false) {
 
 function homePage() {
   const featured = publications.filter(p => p.featured).slice(0, 6);
+  const journalCount = publications.filter(p => p.type === "Journal article").length;
+  const conferenceCount = publications.filter(p => p.type === "Conference paper").length;
   const personJson = safeJsonLd({
     "@context": "https://schema.org",
     "@type": "Person",
@@ -531,7 +510,7 @@ function homePage() {
         <p class="eyebrow"><span></span> Communications Engineering · Open 6G RAN</p>
         <h1>Engineering trustworthy communication systems for the <em>6G era.</em></h1>
         <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My work connects Open RAN, quantum communications, AI-native networks, digital twins, wireless systems, and optical transport.</p>
-        <div class="hero-actions"><a class="button primary" href="/publications.html">Explore publications ${icon("arrow")}</a><a class="button secondary" href="https://scholar.google.com/citations?user=Dg_tAlkAAAAJ&amp;hl=en">Google Scholar ${icon("external")}</a></div>
+        <div class="hero-actions"><a class="button primary" href="/publications.html">Explore publications ${icon("arrow")}</a><a class="button secondary" href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar ${icon("external")}</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
       <aside class="hero-profile" aria-label="Academic profile">
@@ -539,22 +518,22 @@ function homePage() {
         <div class="profile-caption"><p>Assistant Professor</p><strong>Department of Communications Engineering</strong><span>College of Engineering · University of Diyala · Iraq</span></div>
       </aside>
     </div>
-    <div class="container stat-rail"><div><strong>${publications.length}</strong><span>Works catalogued</span></div><div><strong>2012–2026</strong><span>Publication record</span></div><div><strong>${projects.length}</strong><span>Open research artifacts</span></div><div><strong>4</strong><span>Persistent author IDs</span></div></div>
+    <div class="container stat-rail"><div><strong>${publications.length}</strong><span>Published works</span></div><div><strong>${journalCount}</strong><span>Journal articles</span></div><div><strong>${conferenceCount}</strong><span>Conference papers</span></div><div><strong>4</strong><span>Persistent author IDs</span></div></div>
   </section>
 
   <section class="section intro-section">
     <div class="container split-intro">
       <div><p class="section-label">Research perspective</p><h2>From physical links to certified network intelligence.</h2></div>
-      <div><p>My research examines how future communication systems can become more energy-aware, secure, interoperable, and trustworthy. The work spans physical-layer and optical transport problems through to Open RAN control, quantum-enabled networking, and reproducible AI-native architectures.</p><a class="text-link" href="#research">View research themes ${icon("arrow")}</a></div>
+      <div><p>My research examines how future communication systems can become more energy-aware, secure, interoperable, and trustworthy. The work spans physical-layer and optical transport problems through to Open RAN control, quantum-enabled networking, and AI-enabled network architectures.</p><a class="text-link" href="#research">View research themes ${icon("arrow")}</a></div>
     </div>
   </section>
 
   <section class="section research-section" id="research">
     <div class="container"><div class="section-heading"><div><p class="section-label">Research themes</p><h2>A connected research programme</h2></div><p>Five technical directions linked by a common focus on measurable performance, security, interoperability, and reproducibility.</p></div>
       <div class="research-grid">
-        <article class="research-card featured-theme"><span class="theme-index">01</span>${icon("network")}<h3>Open RAN &amp; 6G control</h3><p>Energy-aware optimisation, xApp coordination, E2 telemetry portability, Near-RT RIC control, and certified network decision processes.</p><div class="signal-line"><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="research-card featured-theme"><span class="theme-index">01</span>${icon("network")}<h3>Open RAN &amp; 6G control</h3><p>Energy-aware optimisation, virtualised RAN architectures, near-real-time control, and efficient resource allocation.</p><div class="signal-line"><i></i><i></i><i></i><i></i><i></i></div></article>
         <article class="research-card"><span class="theme-index">02</span><h3>Quantum communications</h3><p>Entanglement quality, QKD-assisted security, quantum-aware networking, and thermal-loss channel modelling.</p></article>
-        <article class="research-card"><span class="theme-index">03</span><h3>AI-native digital twins</h3><p>Trust-aware digital twins, native-AI architectures, uncertainty certificates, and reproducible learning workflows.</p></article>
+        <article class="research-card"><span class="theme-index">03</span><h3>AI-native digital twins</h3><p>Digital-twin architectures, native-AI network management, secure learning, and evaluation frameworks.</p></article>
         <article class="research-card"><span class="theme-index">04</span><h3>Wireless &amp; spectrum systems</h3><p>5G/6G mobile networks, cognitive radio, propagation, OFDM, HAPS coexistence, and spectrum-sharing optimisation.</p></article>
         <article class="research-card"><span class="theme-index">05</span><h3>Optical networks &amp; signal processing</h3><p>DWDM transport, optical-network monitoring, digital-filter design, FPGA architectures, and communication backhaul.</p></article>
       </div>
@@ -564,12 +543,6 @@ function homePage() {
   <section class="section publication-section">
     <div class="container"><div class="section-heading"><div><p class="section-label">Selected publications</p><h2>Recent work</h2></div><a class="button secondary dark" href="/publications.html">All ${publications.length} works ${icon("arrow")}</a></div>
       <div class="featured-publications">${featured.map(pub => publicationCard(pub, true)).join("")}</div>
-    </div>
-  </section>
-
-  <section class="section open-science" id="open-science">
-    <div class="container"><div class="section-heading light"><div><p class="section-label">Open science</p><h2>Research artifacts built to be inspected and reused.</h2></div><p>Versioned code, pinned evidence, machine-readable results, automated checks, and publication-grade figures.</p></div>
-      <div class="project-grid">${projects.map((project, index) => `<article class="project-card"><span class="project-number">0${index + 1}</span><p>${escapeHtml(project.kicker)}</p><h3>${escapeHtml(project.title)}</h3><div>${escapeHtml(project.description)}</div>${tags(project.facts)}<a href="${project.url}">Open repository ${icon("external")}</a></article>`).join("")}</div>
     </div>
   </section>
 
@@ -712,7 +685,7 @@ Static, accessible, and search-friendly academic website for **Dr. Yassir AL-Kar
 - A dedicated, machine-readable HTML record for every publication
 - Highwire citation metadata and Schema.org JSON-LD
 - BibTeX copy controls
-- Open-science project cards
+- Verified scholarly and professional profile links
 - Sitemap, robots.txt, RSS, manifest, and social preview assets
 
 ## Local preview
