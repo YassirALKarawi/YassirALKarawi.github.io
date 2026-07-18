@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If this academic website or publication catalogue is useful, cite the relevant paper using its DOI."
+title: "Yassir AL-Karawi Academic Homepage and Publication Catalogue"
+type: dataset
+authors:
+  - family-names: "AL-Karawi"
+    given-names: "Yassir"
+    orcid: "https://orcid.org/0000-0003-2959-3893"
+repository-code: "https://github.com/YassirALKarawi/YassirALKarawi.github.io"
+url: "https://yassiralkarawi.github.io/"
+license: MIT
