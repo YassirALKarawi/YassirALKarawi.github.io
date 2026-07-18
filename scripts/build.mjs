@@ -466,7 +466,7 @@ function footer() {
   </div>
   <div class="container footer-bottom"><span>© <span data-year></span> Yassir AL-Karawi</span><span>Recommended citation name: <strong>Yassir AL-Karawi</strong></span></div>
 </footer>
-<script src="/assets/app.js" defer></script>`;
+<script src="/assets/app.js?v=2" defer></script>`;
 }
 
 function pageEnd() {
