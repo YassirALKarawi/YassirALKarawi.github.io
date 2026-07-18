@@ -9,7 +9,7 @@ Static, accessible, and search-friendly academic website for **Dr. Yassir AL-Kar
 - A dedicated, machine-readable HTML record for every publication
 - Highwire citation metadata and Schema.org JSON-LD
 - BibTeX copy controls
-- Open-science project cards
+- Verified scholarly and professional profile links
 - Sitemap, robots.txt, RSS, manifest, and social preview assets
 
 ## Local preview
