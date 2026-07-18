@@ -231,7 +231,7 @@
       },
       "subjectOf": {
         "@type": "WebPage",
-        "name": "Open-access repository record",
+        "name": "Verified open full text",
         "url": "https://bura.brunel.ac.uk/handle/2438/32660"
       }
     },
@@ -467,7 +467,7 @@
       },
       "subjectOf": {
         "@type": "WebPage",
-        "name": "Open-access repository record",
+        "name": "Verified open full text",
         "url": "https://bura.brunel.ac.uk/handle/2438/33048"
       }
     },
@@ -550,7 +550,7 @@
       },
       "subjectOf": {
         "@type": "WebPage",
-        "name": "Open-access repository record",
+        "name": "Verified open full text",
         "url": "https://bura.brunel.ac.uk/handle/2438/32659"
       }
     },
@@ -602,8 +602,11 @@
         "url": "https://doi.org/10.37391/IJEER.130318"
       },
       "sameAs": [
-        "https://doi.org/10.37391/IJEER.130318"
+        "https://doi.org/10.37391/IJEER.130318",
+        "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html"
       ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
         "Signal Processing",
         "Digital Filters"
@@ -622,6 +625,11 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.html"
+      },
+      "subjectOf": {
+        "@type": "WebPage",
+        "name": "Verified open full text",
+        "url": "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html"
       }
     },
     {
@@ -676,8 +684,11 @@
         "url": "https://doi.org/10.37391/IJEER.130426"
       },
       "sameAs": [
-        "https://doi.org/10.37391/IJEER.130426"
+        "https://doi.org/10.37391/IJEER.130426",
+        "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html"
       ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
         "Open RAN",
         "Optical Networks",
@@ -701,6 +712,11 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html"
+      },
+      "subjectOf": {
+        "@type": "WebPage",
+        "name": "Verified open full text",
+        "url": "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html"
       }
     },
     {
@@ -921,7 +937,7 @@
       },
       "subjectOf": {
         "@type": "WebPage",
-        "name": "Open-access repository record",
+        "name": "Verified open full text",
         "url": "https://bura.brunel.ac.uk/handle/2438/31653"
       }
     },
@@ -1006,7 +1022,7 @@
       },
       "subjectOf": {
         "@type": "WebPage",
-        "name": "Open-access repository record",
+        "name": "Verified open full text",
         "url": "https://bura.brunel.ac.uk/handle/2438/28659"
       }
     },
@@ -1125,8 +1141,11 @@
         "url": "https://doi.org/10.11591/ijece.v12i3.pp3276-3286"
       },
       "sameAs": [
-        "https://doi.org/10.11591/ijece.v12i3.pp3276-3286"
+        "https://doi.org/10.11591/ijece.v12i3.pp3276-3286",
+        "https://ijece.iaescore.com/index.php/IJECE/article/view/26363"
       ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "keywords": [
         "Cloud \u0026 Edge",
         "Network Optimisation"
@@ -1145,6 +1164,11 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html"
+      },
+      "subjectOf": {
+        "@type": "WebPage",
+        "name": "Verified open full text",
+        "url": "https://ijece.iaescore.com/index.php/IJECE/article/view/26363"
       }
     },
     {
@@ -1228,7 +1252,7 @@
       },
       "subjectOf": {
         "@type": "WebPage",
-        "name": "Open-access repository record",
+        "name": "Verified open full text",
         "url": "https://bura.brunel.ac.uk/handle/2438/23766"
       }
     },
@@ -1281,8 +1305,11 @@
         "url": "https://doi.org/10.1088/1757-899X/1076/1/012066"
       },
       "sameAs": [
-        "https://doi.org/10.1088/1757-899X/1076/1/012066"
+        "https://doi.org/10.1088/1757-899X/1076/1/012066",
+        "https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066"
       ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/3.0/",
       "keywords": [
         "Mobile Networks",
         "5G \u0026 6G"
@@ -1301,6 +1328,11 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.html"
+      },
+      "subjectOf": {
+        "@type": "WebPage",
+        "name": "Verified open full text",
+        "url": "https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066"
       }
     },
     {
@@ -1497,8 +1529,11 @@
         "url": "https://doi.org/10.17485/IJST/2017/V10I33/108085"
       },
       "sameAs": [
-        "https://doi.org/10.17485/IJST/2017/V10I33/108085"
+        "https://doi.org/10.17485/IJST/2017/V10I33/108085",
+        "https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm"
       ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
         "OFDM",
         "Signal Processing"
@@ -1517,6 +1552,11 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.html"
+      },
+      "subjectOf": {
+        "@type": "WebPage",
+        "name": "Verified open full text",
+        "url": "https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm"
       }
     },
     {

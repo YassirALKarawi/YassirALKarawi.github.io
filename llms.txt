@@ -33,7 +33,7 @@
 - Publication date: 2026
 - DOI: https://doi.org/10.1109/TAES.2025.3650733
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html
-- Open-access repository: https://bura.brunel.ac.uk/handle/2438/32660
+- Verified open full text: https://bura.brunel.ac.uk/handle/2438/32660
 - BibTeX: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.bib
 - RIS: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.ris
 
@@ -67,7 +67,7 @@
 - Publication date: 2026-01
 - DOI: https://doi.org/10.1049/qtc2.70032
 - Canonical record: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html
-- Open-access repository: https://bura.brunel.ac.uk/handle/2438/33048
+- Verified open full text: https://bura.brunel.ac.uk/handle/2438/33048
 - BibTeX: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.bib
 - RIS: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.ris
 
@@ -79,7 +79,7 @@
 - Publication date: 2026-02-18
 - DOI: https://doi.org/10.1049/qtc2.70027
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html
-- Open-access repository: https://bura.brunel.ac.uk/handle/2438/32659
+- Verified open full text: https://bura.brunel.ac.uk/handle/2438/32659
 - BibTeX: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.bib
 - RIS: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.ris
 
@@ -91,6 +91,7 @@
 - Publication date: 2025-09-30
 - DOI: https://doi.org/10.37391/IJEER.130318
 - Canonical record: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.html
+- Verified open full text: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html
 - BibTeX: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.bib
 - RIS: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.ris
 
@@ -102,6 +103,7 @@
 - Publication date: 2025-12-20
 - DOI: https://doi.org/10.37391/IJEER.130426
 - Canonical record: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html
+- Verified open full text: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html
 - BibTeX: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.bib
 - RIS: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.ris
 
@@ -135,7 +137,7 @@
 - Publication date: 2025-01
 - DOI: https://doi.org/10.1049/ntw2.70012
 - Canonical record: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html
-- Open-access repository: https://bura.brunel.ac.uk/handle/2438/31653
+- Verified open full text: https://bura.brunel.ac.uk/handle/2438/31653
 - BibTeX: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.bib
 - RIS: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.ris
 
@@ -147,7 +149,7 @@
 - Publication date: 2024
 - DOI: https://doi.org/10.1109/ACCESS.2024.3375530
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html
-- Open-access repository: https://bura.brunel.ac.uk/handle/2438/28659
+- Verified open full text: https://bura.brunel.ac.uk/handle/2438/28659
 - BibTeX: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.bib
 - RIS: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.ris
 
@@ -170,6 +172,7 @@
 - Publication date: 2022-06-01
 - DOI: https://doi.org/10.11591/ijece.v12i3.pp3276-3286
 - Canonical record: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html
+- Verified open full text: https://ijece.iaescore.com/index.php/IJECE/article/view/26363
 - BibTeX: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.bib
 - RIS: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.ris
 
@@ -181,7 +184,7 @@
 - Publication date: 2021
 - DOI: https://doi.org/10.1109/ACCESS.2021.3136782
 - Canonical record: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.html
-- Open-access repository: https://bura.brunel.ac.uk/handle/2438/23766
+- Verified open full text: https://bura.brunel.ac.uk/handle/2438/23766
 - BibTeX: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.bib
 - RIS: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.ris
 
@@ -193,6 +196,7 @@
 - Publication date: 2021-03-16
 - DOI: https://doi.org/10.1088/1757-899X/1076/1/012066
 - Canonical record: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.html
+- Verified open full text: https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066
 - BibTeX: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.bib
 - RIS: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.ris
 
@@ -226,6 +230,7 @@
 - Publication date: 2017
 - DOI: https://doi.org/10.17485/IJST/2017/V10I33/108085
 - Canonical record: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.html
+- Verified open full text: https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm
 - BibTeX: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.bib
 - RIS: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.ris
 

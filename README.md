@@ -11,7 +11,7 @@ Static, accessible, and search-friendly academic website for **Dr. Yassir AL-Kar
 - BibTeX copy controls
 - Downloadable BibTeX and RIS records
 - AI-readable llms.txt and a linked-data scholarly graph
-- Open-access repository links where verified
+- Verified open-full-text links from institutional repositories and publisher pages
 - Verified scholarly and professional profile links
 - Sitemap, robots.txt, RSS, manifest, and social preview assets
 

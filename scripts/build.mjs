@@ -106,6 +106,8 @@ const publications = [
     publisher: "FOREX Press",
     type: "Journal article",
     doi: "10.37391/IJEER.130318",
+    repositoryUrl: "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html",
+    license: "https://creativecommons.org/licenses/by/4.0/",
     themes: ["Signal Processing", "Digital Filters"],
     summary: "Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response."
   },
@@ -119,6 +121,8 @@ const publications = [
     publisher: "FOREX Press",
     type: "Journal article",
     doi: "10.37391/IJEER.130426",
+    repositoryUrl: "https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html",
+    license: "https://creativecommons.org/licenses/by/4.0/",
     themes: ["Open RAN", "Optical Networks", "6G"],
     summary: "An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN."
   },
@@ -210,6 +214,8 @@ const publications = [
     publisher: "IAES",
     type: "Journal article",
     doi: "10.11591/ijece.v12i3.pp3276-3286",
+    repositoryUrl: "https://ijece.iaescore.com/index.php/IJECE/article/view/26363",
+    license: "https://creativecommons.org/licenses/by-sa/4.0/",
     themes: ["Cloud & Edge", "Network Optimisation"],
     summary: "A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations."
   },
@@ -243,6 +249,8 @@ const publications = [
     publisher: "IOP Publishing",
     type: "Conference paper",
     doi: "10.1088/1757-899X/1076/1/012066",
+    repositoryUrl: "https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066",
+    license: "https://creativecommons.org/licenses/by/3.0/",
     themes: ["Mobile Networks", "5G & 6G"],
     summary: "An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G."
   },
@@ -282,6 +290,8 @@ const publications = [
     publisher: "Indian Society for Education and Environment",
     type: "Journal article",
     doi: "10.17485/IJST/2017/V10I33/108085",
+    repositoryUrl: "https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm",
+    license: "https://creativecommons.org/licenses/by/4.0/",
     themes: ["OFDM", "Signal Processing"],
     summary: "A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems."
   },
@@ -387,6 +397,13 @@ function doiUrl(pub) {
   return pub.doi ? `https://doi.org/${pub.doi}` : "";
 }
 
+function licenseName(url = "") {
+  if (url.includes("/by-sa/4.0")) return "CC BY-SA 4.0";
+  if (url.includes("/by/4.0")) return "CC BY 4.0";
+  if (url.includes("/by/3.0")) return "CC BY 3.0";
+  return url;
+}
+
 function bibtex(pub) {
   const firstAuthor = pub.authors[0].replace(/[^A-Za-z0-9]/g, "").slice(-18) || "AlKarawi";
   const key = `${firstAuthor}${pub.year}${pub.slug.split("-").slice(0, 2).join("")}`;
@@ -404,7 +421,7 @@ function bibtex(pub) {
   if (pub.articleNumber) lines.push(`  eid       = {${pub.articleNumber}},`);
   if (pub.issn) lines.push(`  issn      = {${pub.issn}},`);
   if (pub.doi) lines.push(`  doi       = {${pub.doi}},`);
-  if (pub.license) lines.push(`  license   = {CC BY 4.0},`);
+  if (pub.license) lines.push(`  license   = {${licenseName(pub.license)}},`);
   lines.push(`  url       = {${doiUrl(pub) || `${siteUrl}/research/${pub.slug}.html`}}`);
   lines.push("}");
   return lines.join("\n");
@@ -467,7 +484,7 @@ function scholarlyArticleNode(pub) {
     about: pub.themes.map(name => ({ "@type": "Thing", name })),
     url: canonical,
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
-    subjectOf: pub.repositoryUrl ? { "@type": "WebPage", name: "Open-access repository record", url: pub.repositoryUrl } : undefined
+    subjectOf: pub.repositoryUrl ? { "@type": "WebPage", name: "Verified open full text", url: pub.repositoryUrl } : undefined
   };
 }
 
@@ -571,7 +588,8 @@ function publicationCard(pub, compact = false) {
     ${compact ? "" : `<p class="pub-summary">${escapeHtml(pub.summary)}</p>${tags(pub.themes)}`}
     <div class="pub-actions">
       <a href="/research/${pub.slug}.html">Record ${icon("arrow")}</a>
-      ${pub.doi ? `<a href="${doiUrl(pub)}">DOI ${icon("external")}</a>` : ""}
+      ${pub.doi ? `<a href="${doiUrl(pub)}">DOI ${icon("external")}</a>` : ""}${pub.repositoryUrl ? `
+      <a href="${pub.repositoryUrl}">Full text ${icon("external")}</a>` : ""}
       <button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">BibTeX</button>
     </div>
   </article>`;
@@ -742,8 +760,8 @@ function publicationPage(pub) {
   return `${head({ title: `${pub.title} | ${author}`, description, canonical, extra: `${citationMeta}<script type="application/ld+json">${scholarlyJson}</script>` })}
 <body>${nav("Publications")}
 <main id="main">
-  <section class="record-hero"><div class="container record-grid"><div><a class="back-link" href="/publications.html">${icon("arrow")} All publications</a><div class="record-meta"><span>Published</span><span>${pub.year}</span><span>${escapeHtml(pub.type)}</span><span>${escapeHtml(pub.publisher)}</span></div><h1 class="citation_title">${escapeHtml(pub.title)}</h1><p class="record-authors citation_author">${escapeHtml(pub.authors.join(" · "))}</p><p class="record-venue">${escapeHtml(pub.venue)}</p>${tags(pub.themes)}<div class="record-actions">${pub.doi ? `<a class="button primary" href="${doiUrl(pub)}">Open publisher record ${icon("external")}</a>` : ""}${pub.repositoryUrl ? `<a class="button secondary" href="${pub.repositoryUrl}">Open-access repository ${icon("external")}</a>` : ""}<button class="button secondary copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></div><aside class="record-id" aria-label="Publication identifiers"><span>Persistent record</span>${pub.doi ? `<strong>DOI</strong><a href="${doiUrl(pub)}">${escapeHtml(pub.doi)}</a>` : `<strong>Indexed record</strong><p>No DOI is recorded for this conference item.</p>`}<i></i><strong>Author identity</strong><a href="${orcidUrl}">ORCID 0000-0003-2959-3893</a><a href="${openAlexUrl}">OpenAlex A5012826964</a></aside></div></section>
-  <section class="section record-body"><div class="container record-content"><article><p class="section-label">Research context</p><h2>Plain-language summary</h2><p class="record-summary">${escapeHtml(pub.summary)}</p><div class="citation-block"><div><h2>Citation</h2><p>Use the DOI whenever available to ensure that citations are attributed to the canonical publication record.</p></div><pre><code>${escapeHtml(bibtex(pub))}</code></pre><button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></article><aside class="record-aside" aria-label="Publication discovery links"><h2>Discoverability</h2>${pub.repositoryUrl ? `<a href="${pub.repositoryUrl}">Open-access repository copy ${icon("external")}</a>` : ""}<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}">Search in Google Scholar ${icon("external")}</a><a href="https://api.openalex.org/works/${pub.doi ? `https://doi.org/${pub.doi}` : ""}">OpenAlex lookup ${icon("external")}</a><a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(pub.title)}">Semantic Scholar search ${icon("external")}</a><a href="${orcidUrl}">Author ORCID ${icon("external")}</a><h2>Citation files</h2><a href="/research/${pub.slug}.bib">Download BibTeX ${icon("external")}</a><a href="/research/${pub.slug}.ris">Download RIS ${icon("external")}</a></aside></div></section>
+  <section class="record-hero"><div class="container record-grid"><div><a class="back-link" href="/publications.html">${icon("arrow")} All publications</a><div class="record-meta"><span>Published</span><span>${pub.year}</span><span>${escapeHtml(pub.type)}</span><span>${escapeHtml(pub.publisher)}</span></div><h1 class="citation_title">${escapeHtml(pub.title)}</h1><p class="record-authors citation_author">${escapeHtml(pub.authors.join(" · "))}</p><p class="record-venue">${escapeHtml(pub.venue)}</p>${tags(pub.themes)}<div class="record-actions">${pub.doi ? `<a class="button primary" href="${doiUrl(pub)}">Open publisher record ${icon("external")}</a>` : ""}${pub.repositoryUrl ? `<a class="button secondary" href="${pub.repositoryUrl}">Open full text ${icon("external")}</a>` : ""}<button class="button secondary copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></div><aside class="record-id" aria-label="Publication identifiers"><span>Persistent record</span>${pub.doi ? `<strong>DOI</strong><a href="${doiUrl(pub)}">${escapeHtml(pub.doi)}</a>` : `<strong>Indexed record</strong><p>No DOI is recorded for this conference item.</p>`}<i></i><strong>Author identity</strong><a href="${orcidUrl}">ORCID 0000-0003-2959-3893</a><a href="${openAlexUrl}">OpenAlex A5012826964</a></aside></div></section>
+  <section class="section record-body"><div class="container record-content"><article><p class="section-label">Research context</p><h2>Plain-language summary</h2><p class="record-summary">${escapeHtml(pub.summary)}</p><div class="citation-block"><div><h2>Citation</h2><p>Use the DOI whenever available to ensure that citations are attributed to the canonical publication record.</p></div><pre><code>${escapeHtml(bibtex(pub))}</code></pre><button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></article><aside class="record-aside" aria-label="Publication discovery links"><h2>Discoverability</h2>${pub.repositoryUrl ? `<a href="${pub.repositoryUrl}">Verified open full text ${icon("external")}</a>` : ""}<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}">Search in Google Scholar ${icon("external")}</a><a href="https://api.openalex.org/works/${pub.doi ? `https://doi.org/${pub.doi}` : ""}">OpenAlex lookup ${icon("external")}</a><a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(pub.title)}">Semantic Scholar search ${icon("external")}</a><a href="${orcidUrl}">Author ORCID ${icon("external")}</a><h2>Citation files</h2><a href="/research/${pub.slug}.bib">Download BibTeX ${icon("external")}</a><a href="/research/${pub.slug}.ris">Download RIS ${icon("external")}</a></aside></div></section>
   ${related.length ? `<section class="section related-section"><div class="container"><div class="section-heading"><div><p class="section-label">Related work</p><h2>Explore connected publications</h2></div></div><div class="featured-publications">${related.map(item => publicationCard(item, true)).join("")}</div></div></section>` : ""}
 </main>${pageEnd()}`;
 }
@@ -847,7 +865,7 @@ const llms = `# Yassir AL-Karawi — Published Research
 
 ## Published works (${publications.length})
 
-${publications.map(pub => `### ${pub.title}\n\n- Status: Published ${pub.type}\n- Authors: ${pub.authors.join("; ")}\n- Venue: ${pub.venue}\n- Publication date: ${pub.date}\n${pub.doi ? `- DOI: https://doi.org/${pub.doi}\n` : ""}- Canonical record: ${siteUrl}/research/${pub.slug}.html\n${pub.repositoryUrl ? `- Open-access repository: ${pub.repositoryUrl}\n` : ""}- BibTeX: ${siteUrl}/research/${pub.slug}.bib\n- RIS: ${siteUrl}/research/${pub.slug}.ris`).join("\n\n")}
+${publications.map(pub => `### ${pub.title}\n\n- Status: Published ${pub.type}\n- Authors: ${pub.authors.join("; ")}\n- Venue: ${pub.venue}\n- Publication date: ${pub.date}\n${pub.doi ? `- DOI: https://doi.org/${pub.doi}\n` : ""}- Canonical record: ${siteUrl}/research/${pub.slug}.html\n${pub.repositoryUrl ? `- Verified open full text: ${pub.repositoryUrl}\n` : ""}- BibTeX: ${siteUrl}/research/${pub.slug}.bib\n- RIS: ${siteUrl}/research/${pub.slug}.ris`).join("\n\n")}
 `;
 const robots = `User-agent: OAI-SearchBot
 Allow: /
@@ -888,7 +906,7 @@ Static, accessible, and search-friendly academic website for **Dr. Yassir AL-Kar
 - BibTeX copy controls
 - Downloadable BibTeX and RIS records
 - AI-readable llms.txt and a linked-data scholarly graph
-- Open-access repository links where verified
+- Verified open-full-text links from institutional repositories and publisher pages
 - Verified scholarly and professional profile links
 - Sitemap, robots.txt, RSS, manifest, and social preview assets
 
