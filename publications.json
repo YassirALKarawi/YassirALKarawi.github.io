@@ -1,0 +1,485 @@
+[
+  {
+    "slug": "quantum-cognitive-radar-thermal-loss",
+    "title": "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Raad S. Alhumaima",
+      "Hamed Al-Raweshidy"
+    ],
+    "year": 2026,
+    "date": "2026",
+    "venue": "IEEE Transactions on Aerospace and Electronic Systems",
+    "publisher": "IEEE",
+    "type": "Journal article",
+    "doi": "10.1109/TAES.2025.3650733",
+    "themes": [
+      "Quantum & Security",
+      "Radar & Sensing",
+      "6G"
+    ],
+    "featured": true,
+    "summary": "An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels."
+  },
+  {
+    "slug": "digital-twin-native-ai-6g-networks",
+    "title": "Digital Twin and Native-AI Empowered 6G Networks: Architectures, Applications, Evaluation, and Open Challenges",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Hussein Shakor Mogheer",
+      "Khamees Khalaf Hasan",
+      "Ahmed Hussein Dawwd"
+    ],
+    "year": 2026,
+    "date": "2026-03-23",
+    "venue": "2026 International Russian Smart Industry Conference (SmartIndustryCon)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/SmartIndustryCon68821.2026.11493034",
+    "themes": [
+      "AI-Native Networks",
+      "Digital Twins",
+      "6G"
+    ],
+    "summary": "A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks."
+  },
+  {
+    "slug": "lossless-canonical-coding-fpga",
+    "title": "Lossless Canonical Coding Design with FPGA Implementation Using High-Speed Architecture",
+    "authors": [
+      "Maan Hameed",
+      "Hussein Shakor Mogheer",
+      "Haveen Yaseen Hussein Al-Zahawi",
+      "Yassir AL-Karawi"
+    ],
+    "year": 2026,
+    "date": "2026-03-23",
+    "venue": "2026 International Russian Smart Industry Conference (SmartIndustryCon)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/SmartIndustryCon68821.2026.11493133",
+    "themes": [
+      "Signal Processing",
+      "FPGA"
+    ],
+    "summary": "A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation."
+  },
+  {
+    "slug": "cybersecure-entangled-qnn-ris-qkd",
+    "title": "Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications",
+    "authors": [
+      "Raad S. Alhumaima",
+      "Yassir AL-Karawi",
+      "Hamed Al-Raweshidy"
+    ],
+    "year": 2026,
+    "date": "2026-01",
+    "venue": "IET Quantum Communication",
+    "publisher": "Wiley / IET",
+    "type": "Journal article",
+    "doi": "10.1049/qtc2.70032",
+    "themes": [
+      "Quantum & Security",
+      "RIS & QKD",
+      "6G"
+    ],
+    "featured": true,
+    "summary": "A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications."
+  },
+  {
+    "slug": "quantum-digital-twin-threat-reversal-open-ran",
+    "title": "Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Raad S. Alhumaima",
+      "Hamed Al-Raweshidy"
+    ],
+    "year": 2026,
+    "date": "2026-02-18",
+    "venue": "IET Quantum Communication",
+    "publisher": "Wiley / IET",
+    "type": "Journal article",
+    "doi": "10.1049/qtc2.70027",
+    "themes": [
+      "Quantum & Security",
+      "Open RAN",
+      "Digital Twins"
+    ],
+    "featured": true,
+    "summary": "A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN."
+  },
+  {
+    "slug": "high-pass-filter-overshoot-bessel-gaussian",
+    "title": "Mitigating in Band Overshoot in Digital High-Pass Filters: Design and Analysis of Bessel and Gaussian Filters for Maximally Flat Step Response",
+    "authors": [
+      "Hussein Shakor Mogheer",
+      "A. T. Alrubei Mohammed",
+      "Yassir AL-Karawi"
+    ],
+    "year": 2025,
+    "date": "2025-09-30",
+    "venue": "International Journal of Electrical and Electronics Research",
+    "publisher": "FOREX Press",
+    "type": "Journal article",
+    "doi": "10.37391/IJEER.130318",
+    "themes": [
+      "Signal Processing",
+      "Digital Filters"
+    ],
+    "summary": "Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response."
+  },
+  {
+    "slug": "energy-efficient-dwdm-backhaul-open-ran",
+    "title": "Energy-Efficient Sub-Millisecond DWDM Backhaul for 6G Open RAN",
+    "authors": [
+      "Ali Abduljabbar Abdulsattar",
+      "Hussein Shakor Mogheer",
+      "Mohammad S. Al-Abadi",
+      "Yassir AL-Karawi"
+    ],
+    "year": 2025,
+    "date": "2025-12-20",
+    "venue": "International Journal of Electrical and Electronics Research",
+    "publisher": "FOREX Press",
+    "type": "Journal article",
+    "doi": "10.37391/IJEER.130426",
+    "themes": [
+      "Open RAN",
+      "Optical Networks",
+      "6G"
+    ],
+    "summary": "An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN."
+  },
+  {
+    "slug": "cybersecurity-observer-power-distribution",
+    "title": "Cybersecurity-Aware Observer-Based Control for Smart Power Distribution Under False Data Injection Attacks",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Hussein Shakor Mogheer"
+    ],
+    "year": 2025,
+    "date": "2025-09-25",
+    "venue": "2025 International Ural Conference on Electrical Power Engineering (UralCon)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/UralCon67204.2025.11206666",
+    "themes": [
+      "Quantum & Security",
+      "Smart Power",
+      "Control"
+    ],
+    "summary": "An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks."
+  },
+  {
+    "slug": "fir-filter-transient-compensation",
+    "title": "Reducing Transient Effects in FIR Digital Filters: An Efficient Compensation Technique for Enhanced Impulse Response Stability",
+    "authors": [
+      "Hussein Shakor Mogheer",
+      "Yassir AL-Karawi"
+    ],
+    "year": 2025,
+    "date": "2025-05-12",
+    "venue": "2025 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/ICIEAM65163.2025.11028159",
+    "themes": [
+      "Signal Processing",
+      "Digital Filters"
+    ],
+    "summary": "A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters."
+  },
+  {
+    "slug": "off-grid-oran-ris-edge-energy",
+    "title": "Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Raad S. Alhumaima",
+      "Hamed Al-Raweshidy"
+    ],
+    "year": 2025,
+    "date": "2025-01",
+    "venue": "IET Networks",
+    "publisher": "Wiley / IET",
+    "type": "Journal article",
+    "doi": "10.1049/ntw2.70012",
+    "themes": [
+      "Open RAN",
+      "RIS & QKD",
+      "Energy Efficiency"
+    ],
+    "featured": true,
+    "summary": "An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing."
+  },
+  {
+    "slug": "quantum-load-balancing-open-ran-energy",
+    "title": "Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Hamed Al-Raweshidy",
+      "Rajagopal Nilavalan"
+    ],
+    "year": 2024,
+    "date": "2024",
+    "venue": "IEEE Access",
+    "publisher": "IEEE",
+    "type": "Journal article",
+    "doi": "10.1109/ACCESS.2024.3375530",
+    "themes": [
+      "Open RAN",
+      "Quantum & Security",
+      "Energy Efficiency"
+    ],
+    "featured": true,
+    "summary": "A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks."
+  },
+  {
+    "slug": "power-consumption-next-generation-open-ran",
+    "title": "Power Consumption Evaluation of Next Generation Open Radio Access Network",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Hamed Al-Raweshidy",
+      "Rajagopal Nilavalan"
+    ],
+    "year": 2024,
+    "date": "2024-02-28",
+    "venue": "2024 IEEE International Conference on Consumer Electronics (ICCE)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/ICCE59016.2024.10444418",
+    "themes": [
+      "Open RAN",
+      "Energy Efficiency",
+      "6G"
+    ],
+    "featured": true,
+    "summary": "An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures."
+  },
+  {
+    "slug": "cloud-data-center-placement-virtualized",
+    "title": "Optimizing the Placement of Cloud Data Center in Virtualized Environment",
+    "authors": [
+      "Yassir AL-Karawi",
+      "et al."
+    ],
+    "year": 2022,
+    "date": "2022-06-01",
+    "venue": "International Journal of Electrical and Computer Engineering",
+    "publisher": "IAES",
+    "type": "Journal article",
+    "doi": "10.11591/ijece.v12i3.pp3276-3286",
+    "themes": [
+      "Cloud & Edge",
+      "Network Optimisation"
+    ],
+    "summary": "A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations."
+  },
+  {
+    "slug": "qos-quantum-entanglement-mobile-networks",
+    "title": "Quality of Service of Quantum Entanglement in Mobile Networks",
+    "authors": [
+      "Yassir AL-Karawi",
+      "Raad S. Alhumaima",
+      "Hamed Al-Raweshidy"
+    ],
+    "year": 2021,
+    "date": "2021",
+    "venue": "IEEE Access",
+    "publisher": "IEEE",
+    "type": "Journal article",
+    "doi": "10.1109/ACCESS.2021.3136782",
+    "themes": [
+      "Quantum & Security",
+      "Mobile Networks",
+      "QoS"
+    ],
+    "featured": true,
+    "summary": "A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments."
+  },
+  {
+    "slug": "trade-offs-5g-networks-beyond",
+    "title": "On the Trade-offs of 5G Networks and Beyond",
+    "authors": [
+      "Yassir Ameen Ahmed Al-Karawi",
+      "Montadar Abas Taher",
+      "Riyadh Khlf Ahmed"
+    ],
+    "year": 2021,
+    "date": "2021-03-16",
+    "venue": "IOP Conference Series: Materials Science and Engineering",
+    "publisher": "IOP Publishing",
+    "type": "Conference paper",
+    "doi": "10.1088/1757-899X/1076/1/012066",
+    "themes": [
+      "Mobile Networks",
+      "5G & 6G"
+    ],
+    "summary": "An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G."
+  },
+  {
+    "slug": "efficient-fir-filter-fpga",
+    "title": "Efficient FIR Filter Architecture Using FPGA",
+    "authors": [
+      "Yassir AL-Karawi",
+      "et al."
+    ],
+    "year": 2019,
+    "date": "2019-06-03",
+    "venue": "Recent Patents on Computer Science",
+    "publisher": "Bentham Science",
+    "type": "Journal article",
+    "doi": "10.2174/2213275912666190603115506",
+    "themes": [
+      "Signal Processing",
+      "FPGA"
+    ],
+    "summary": "An efficient field-programmable gate array architecture for implementing finite impulse response digital filters."
+  },
+  {
+    "slug": "welch-dct-energy-detection-cognitive-radio",
+    "title": "On the Energy Detection Performance Based Welch's DCT Algorithm in Cognitive Radio Systems",
+    "authors": [
+      "E. H. Salman",
+      "Yassir AL-Karawi",
+      "A. Ahmed",
+      "M. A. Taher",
+      "N. K. Nordin",
+      "S. Hashim",
+      "F. Hashim"
+    ],
+    "year": 2018,
+    "date": "2018",
+    "venue": "International Scientific Conference of Engineering Sciences (ISCES)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/ISCES.2018.8340542",
+    "themes": [
+      "Cognitive Radio",
+      "Signal Processing",
+      "Spectrum"
+    ],
+    "summary": "An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems."
+  },
+  {
+    "slug": "ofdm-papr-cyclic-prefix-shifting",
+    "title": "Reducing PAPR of OFDM Systems Using Cyclic Prefix Shifting Algorithm",
+    "authors": [
+      "Yassir A. Ahmad"
+    ],
+    "year": 2017,
+    "date": "2017",
+    "venue": "Indian Journal of Science and Technology",
+    "publisher": "Indian Society for Education and Environment",
+    "type": "Journal article",
+    "doi": "10.17485/IJST/2017/V10I33/108085",
+    "themes": [
+      "OFDM",
+      "Signal Processing"
+    ],
+    "summary": "A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems."
+  },
+  {
+    "slug": "dca-haps-terrestrial-5850-7075",
+    "title": "Applicability of DCA in HAPS-Based Systems in the 5850–7075 MHz Band",
+    "authors": [
+      "M. Mokayef",
+      "W. A. Hassan",
+      "Y. A. Ahmad",
+      "T. A. Rahman"
+    ],
+    "year": 2012,
+    "date": "2012",
+    "venue": "Progress in Electromagnetics Research Symposium",
+    "publisher": "PIERS",
+    "type": "Conference paper",
+    "themes": [
+      "HAPS",
+      "Spectrum Coexistence"
+    ],
+    "summary": "An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band."
+  },
+  {
+    "slug": "haps-terrestrial-coexistence-5-8ghz",
+    "title": "Enhancement of Coexistence Between HAPS and Terrestrial System in 5.8 GHz Band",
+    "authors": [
+      "M. Mokayef",
+      "W. A. Hassan",
+      "Y. A. Ahmad",
+      "T. A. Rahman"
+    ],
+    "year": 2012,
+    "date": "2012",
+    "venue": "Progress in Electromagnetics Research Symposium",
+    "publisher": "PIERS",
+    "type": "Conference paper",
+    "themes": [
+      "HAPS",
+      "Spectrum Coexistence"
+    ],
+    "summary": "Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band."
+  },
+  {
+    "slug": "optimizing-haps-terrestrial-coexistence-5-8ghz",
+    "title": "Optimizing the Coexistence Between HAPS Platform and Terrestrial System in 5.8 GHz Band",
+    "authors": [
+      "M. Mokayef",
+      "W. A. Hassan",
+      "T. A. Rahman",
+      "Y. A. Ahmad"
+    ],
+    "year": 2012,
+    "date": "2012",
+    "venue": "2012 International Conference on Computer and Communication Engineering (ICCCE)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/ICCCE.2012.6271337",
+    "themes": [
+      "HAPS",
+      "Spectrum Coexistence",
+      "Network Optimisation"
+    ],
+    "summary": "An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band."
+  },
+  {
+    "slug": "propagation-models-lte-advanced",
+    "title": "Studying Different Propagation Models for LTE-A System",
+    "authors": [
+      "Yassir Ameen Ahmed AL-Karawi",
+      "Walid A. Hassan",
+      "Tharek Abdul Rahman"
+    ],
+    "year": 2012,
+    "date": "2012",
+    "venue": "2012 International Conference on Computer and Communication Engineering (ICCCE)",
+    "publisher": "IEEE",
+    "type": "Conference paper",
+    "doi": "10.1109/ICCCE.2012.6271336",
+    "themes": [
+      "Mobile Networks",
+      "Propagation",
+      "LTE-A"
+    ],
+    "summary": "A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems."
+  },
+  {
+    "slug": "atpc-haps-terrestrial-5-7ghz",
+    "title": "Utilizing ATPC Scheme to Facilitate Sharing Between HAPS and Terrestrial in 5.7 GHz Band",
+    "authors": [
+      "M. Mokayef",
+      "W. A. Hassan",
+      "Y. A. Ahmad",
+      "T. A. Rahman"
+    ],
+    "year": 2012,
+    "date": "2012",
+    "venue": "Progress in Electromagnetics Research Symposium",
+    "publisher": "PIERS",
+    "type": "Conference paper",
+    "themes": [
+      "HAPS",
+      "Spectrum Coexistence",
+      "Power Control"
+    ],
+    "summary": "Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band."
+  }
+]
