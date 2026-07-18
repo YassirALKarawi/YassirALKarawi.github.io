@@ -1,0 +1,376 @@
+TY  - JOUR
+TI  - Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels
+AU  - Yassir AL-Karawi
+AU  - Raad S. Alhumaima
+AU  - Hamed Al-Raweshidy
+PY  - 2026
+JO  - IEEE Transactions on Aerospace and Electronic Systems
+PB  - IEEE
+SP  - 1
+EP  - 6
+SN  - 0018-9251
+DO  - 10.1109/TAES.2025.3650733
+UR  - https://doi.org/10.1109/TAES.2025.3650733
+L2  - https://bura.brunel.ac.uk/handle/2438/32660
+AB  - An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.
+KW  - Quantum & Security
+KW  - Radar & Sensing
+KW  - 6G
+ER  -
+
+TY  - CPAPER
+TI  - Digital Twin and Native-AI Empowered 6G Networks: Architectures, Applications, Evaluation, and Open Challenges
+AU  - Yassir AL-Karawi
+AU  - Hussein Shakor Mogheer
+AU  - Khamees Khalaf Hasan
+AU  - Ahmed Hussein Dawwd
+PY  - 2026
+T2  - 2026 International Russian Smart Industry Conference (SmartIndustryCon)
+PB  - IEEE
+DO  - 10.1109/SmartIndustryCon68821.2026.11493034
+UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
+AB  - A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.
+KW  - AI-Native Networks
+KW  - Digital Twins
+KW  - 6G
+ER  -
+
+TY  - CPAPER
+TI  - Lossless Canonical Coding Design with FPGA Implementation Using High-Speed Architecture
+AU  - Maan Hameed
+AU  - Hussein Shakor Mogheer
+AU  - Haveen Yaseen Hussein Al-Zahawi
+AU  - Yassir AL-Karawi
+PY  - 2026
+T2  - 2026 International Russian Smart Industry Conference (SmartIndustryCon)
+PB  - IEEE
+DO  - 10.1109/SmartIndustryCon68821.2026.11493133
+UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
+AB  - A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.
+KW  - Signal Processing
+KW  - FPGA
+ER  -
+
+TY  - JOUR
+TI  - Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications
+AU  - Raad S. Alhumaima
+AU  - Yassir AL-Karawi
+AU  - Hamed Al-Raweshidy
+PY  - 2026
+JO  - IET Quantum Communication
+PB  - Wiley / IET
+DO  - 10.1049/qtc2.70032
+UR  - https://doi.org/10.1049/qtc2.70032
+L2  - https://bura.brunel.ac.uk/handle/2438/33048
+AB  - A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.
+KW  - Quantum & Security
+KW  - RIS & QKD
+KW  - 6G
+ER  -
+
+TY  - JOUR
+TI  - Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN
+AU  - Yassir AL-Karawi
+AU  - Raad S. Alhumaima
+AU  - Hamed Al-Raweshidy
+PY  - 2026
+JO  - IET Quantum Communication
+PB  - Wiley / IET
+DO  - 10.1049/qtc2.70027
+UR  - https://doi.org/10.1049/qtc2.70027
+L2  - https://bura.brunel.ac.uk/handle/2438/32659
+AB  - A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.
+KW  - Quantum & Security
+KW  - Open RAN
+KW  - Digital Twins
+ER  -
+
+TY  - JOUR
+TI  - Mitigating in Band Overshoot in Digital High-Pass Filters: Design and Analysis of Bessel and Gaussian Filters for Maximally Flat Step Response
+AU  - Hussein Shakor Mogheer
+AU  - A. T. Alrubei Mohammed
+AU  - Yassir AL-Karawi
+PY  - 2025
+JO  - International Journal of Electrical and Electronics Research
+PB  - FOREX Press
+DO  - 10.37391/IJEER.130318
+UR  - https://doi.org/10.37391/IJEER.130318
+AB  - Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response.
+KW  - Signal Processing
+KW  - Digital Filters
+ER  -
+
+TY  - JOUR
+TI  - Energy-Efficient Sub-Millisecond DWDM Backhaul for 6G Open RAN
+AU  - Ali Abduljabbar Abdulsattar
+AU  - Hussein Shakor Mogheer
+AU  - Mohammad S. Al-Abadi
+AU  - Yassir AL-Karawi
+PY  - 2025
+JO  - International Journal of Electrical and Electronics Research
+PB  - FOREX Press
+DO  - 10.37391/IJEER.130426
+UR  - https://doi.org/10.37391/IJEER.130426
+AB  - An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN.
+KW  - Open RAN
+KW  - Optical Networks
+KW  - 6G
+ER  -
+
+TY  - CPAPER
+TI  - Cybersecurity-Aware Observer-Based Control for Smart Power Distribution Under False Data Injection Attacks
+AU  - Yassir AL-Karawi
+AU  - Hussein Shakor Mogheer
+PY  - 2025
+T2  - 2025 International Ural Conference on Electrical Power Engineering (UralCon)
+PB  - IEEE
+DO  - 10.1109/UralCon67204.2025.11206666
+UR  - https://doi.org/10.1109/UralCon67204.2025.11206666
+AB  - An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks.
+KW  - Quantum & Security
+KW  - Smart Power
+KW  - Control
+ER  -
+
+TY  - CPAPER
+TI  - Reducing Transient Effects in FIR Digital Filters: An Efficient Compensation Technique for Enhanced Impulse Response Stability
+AU  - Hussein Shakor Mogheer
+AU  - Yassir AL-Karawi
+PY  - 2025
+T2  - 2025 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)
+PB  - IEEE
+DO  - 10.1109/ICIEAM65163.2025.11028159
+UR  - https://doi.org/10.1109/ICIEAM65163.2025.11028159
+AB  - A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.
+KW  - Signal Processing
+KW  - Digital Filters
+ER  -
+
+TY  - JOUR
+TI  - Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing
+AU  - Yassir AL-Karawi
+AU  - Raad S. Alhumaima
+AU  - Hamed Al-Raweshidy
+PY  - 2025
+JO  - IET Networks
+PB  - Wiley / IET
+SN  - 2047-4954
+DO  - 10.1049/ntw2.70012
+UR  - https://doi.org/10.1049/ntw2.70012
+L2  - https://bura.brunel.ac.uk/handle/2438/31653
+AB  - An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.
+KW  - Open RAN
+KW  - RIS & QKD
+KW  - Energy Efficiency
+ER  -
+
+TY  - JOUR
+TI  - Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks
+AU  - Yassir AL-Karawi
+AU  - Hamed Al-Raweshidy
+AU  - Rajagopal Nilavalan
+PY  - 2024
+JO  - IEEE Access
+PB  - IEEE
+VL  - 12
+SP  - 37903
+EP  - 37918
+SN  - 2169-3536
+DO  - 10.1109/ACCESS.2024.3375530
+UR  - https://doi.org/10.1109/ACCESS.2024.3375530
+L2  - https://bura.brunel.ac.uk/handle/2438/28659
+AB  - A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.
+KW  - Open RAN
+KW  - Quantum & Security
+KW  - Energy Efficiency
+ER  -
+
+TY  - CPAPER
+TI  - Power Consumption Evaluation of Next Generation Open Radio Access Network
+AU  - Yassir AL-Karawi
+AU  - Hamed Al-Raweshidy
+AU  - Rajagopal Nilavalan
+PY  - 2024
+T2  - 2024 IEEE International Conference on Consumer Electronics (ICCE)
+PB  - IEEE
+DO  - 10.1109/ICCE59016.2024.10444418
+UR  - https://doi.org/10.1109/ICCE59016.2024.10444418
+AB  - An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures.
+KW  - Open RAN
+KW  - Energy Efficiency
+KW  - 6G
+ER  -
+
+TY  - JOUR
+TI  - Optimizing the Placement of Cloud Data Center in Virtualized Environment
+AU  - Yassir AL-Karawi
+PY  - 2022
+JO  - International Journal of Electrical and Computer Engineering
+PB  - IAES
+DO  - 10.11591/ijece.v12i3.pp3276-3286
+UR  - https://doi.org/10.11591/ijece.v12i3.pp3276-3286
+AB  - A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations.
+KW  - Cloud & Edge
+KW  - Network Optimisation
+ER  -
+
+TY  - JOUR
+TI  - Quality of Service of Quantum Entanglement in Mobile Networks
+AU  - Yassir AL-Karawi
+AU  - Raad S. Alhumaima
+AU  - Hamed Al-Raweshidy
+PY  - 2021
+JO  - IEEE Access
+PB  - IEEE
+VL  - 9
+SP  - 167242
+EP  - 167251
+SN  - 2169-3536
+DO  - 10.1109/ACCESS.2021.3136782
+UR  - https://doi.org/10.1109/ACCESS.2021.3136782
+L2  - https://bura.brunel.ac.uk/handle/2438/23766
+AB  - A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.
+KW  - Quantum & Security
+KW  - Mobile Networks
+KW  - QoS
+ER  -
+
+TY  - CPAPER
+TI  - On the Trade-offs of 5G Networks and Beyond
+AU  - Yassir Ameen Ahmed Al-Karawi
+AU  - Montadar Abas Taher
+AU  - Riyadh Khlf Ahmed
+PY  - 2021
+T2  - IOP Conference Series: Materials Science and Engineering
+PB  - IOP Publishing
+DO  - 10.1088/1757-899X/1076/1/012066
+UR  - https://doi.org/10.1088/1757-899X/1076/1/012066
+AB  - An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G.
+KW  - Mobile Networks
+KW  - 5G & 6G
+ER  -
+
+TY  - JOUR
+TI  - Efficient FIR Filter Architecture Using FPGA
+AU  - Yassir AL-Karawi
+PY  - 2019
+JO  - Recent Patents on Computer Science
+PB  - Bentham Science
+DO  - 10.2174/2213275912666190603115506
+UR  - https://doi.org/10.2174/2213275912666190603115506
+AB  - An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.
+KW  - Signal Processing
+KW  - FPGA
+ER  -
+
+TY  - CPAPER
+TI  - On the Energy Detection Performance Based Welch's DCT Algorithm in Cognitive Radio Systems
+AU  - E. H. Salman
+AU  - Yassir AL-Karawi
+AU  - A. Ahmed
+AU  - M. A. Taher
+AU  - N. K. Nordin
+AU  - S. Hashim
+AU  - F. Hashim
+PY  - 2018
+T2  - International Scientific Conference of Engineering Sciences (ISCES)
+PB  - IEEE
+DO  - 10.1109/ISCES.2018.8340542
+UR  - https://doi.org/10.1109/ISCES.2018.8340542
+AB  - An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.
+KW  - Cognitive Radio
+KW  - Signal Processing
+KW  - Spectrum
+ER  -
+
+TY  - JOUR
+TI  - Reducing PAPR of OFDM Systems Using Cyclic Prefix Shifting Algorithm
+AU  - Yassir A. Ahmad
+PY  - 2017
+JO  - Indian Journal of Science and Technology
+PB  - Indian Society for Education and Environment
+DO  - 10.17485/IJST/2017/V10I33/108085
+UR  - https://doi.org/10.17485/IJST/2017/V10I33/108085
+AB  - A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems.
+KW  - OFDM
+KW  - Signal Processing
+ER  -
+
+TY  - CPAPER
+TI  - Applicability of DCA in HAPS-Based Systems in the 5850–7075 MHz Band
+AU  - M. Mokayef
+AU  - W. A. Hassan
+AU  - Y. A. Ahmad
+AU  - T. A. Rahman
+PY  - 2012
+T2  - Progress in Electromagnetics Research Symposium
+PB  - PIERS
+UR  - https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html
+AB  - An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.
+KW  - HAPS
+KW  - Spectrum Coexistence
+ER  -
+
+TY  - CPAPER
+TI  - Enhancement of Coexistence Between HAPS and Terrestrial System in 5.8 GHz Band
+AU  - M. Mokayef
+AU  - W. A. Hassan
+AU  - Y. A. Ahmad
+AU  - T. A. Rahman
+PY  - 2012
+T2  - Progress in Electromagnetics Research Symposium
+PB  - PIERS
+UR  - https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.html
+AB  - Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band.
+KW  - HAPS
+KW  - Spectrum Coexistence
+ER  -
+
+TY  - CPAPER
+TI  - Optimizing the Coexistence Between HAPS Platform and Terrestrial System in 5.8 GHz Band
+AU  - M. Mokayef
+AU  - W. A. Hassan
+AU  - T. A. Rahman
+AU  - Y. A. Ahmad
+PY  - 2012
+T2  - 2012 International Conference on Computer and Communication Engineering (ICCCE)
+PB  - IEEE
+DO  - 10.1109/ICCCE.2012.6271337
+UR  - https://doi.org/10.1109/ICCCE.2012.6271337
+AB  - An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band.
+KW  - HAPS
+KW  - Spectrum Coexistence
+KW  - Network Optimisation
+ER  -
+
+TY  - CPAPER
+TI  - Studying Different Propagation Models for LTE-A System
+AU  - Yassir Ameen Ahmed AL-Karawi
+AU  - Walid A. Hassan
+AU  - Tharek Abdul Rahman
+PY  - 2012
+T2  - 2012 International Conference on Computer and Communication Engineering (ICCCE)
+PB  - IEEE
+DO  - 10.1109/ICCCE.2012.6271336
+UR  - https://doi.org/10.1109/ICCCE.2012.6271336
+AB  - A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems.
+KW  - Mobile Networks
+KW  - Propagation
+KW  - LTE-A
+ER  -
+
+TY  - CPAPER
+TI  - Utilizing ATPC Scheme to Facilitate Sharing Between HAPS and Terrestrial in 5.7 GHz Band
+AU  - M. Mokayef
+AU  - W. A. Hassan
+AU  - Y. A. Ahmad
+AU  - T. A. Rahman
+PY  - 2012
+T2  - Progress in Electromagnetics Research Symposium
+PB  - PIERS
+UR  - https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html
+AB  - Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band.
+KW  - HAPS
+KW  - Spectrum Coexistence
+KW  - Power Control
+ER  -

@@ -1,0 +1,282 @@
+# Yassir AL-Karawi — Published Research
+
+> Canonical, machine-readable index of the published scholarly work of Dr. Yassir AL-Karawi, Assistant Professor of Communications Engineering at the University of Diyala, Iraq. Unpublished manuscripts and software projects are intentionally excluded.
+
+## Author identity
+
+- Canonical name: Yassir AL-Karawi
+- Name variants: Yassir Al-Karawi; Yassir Ameen Ahmed Al-Karawi; Y. AL-Karawi; Y. Al-Karawi; Yassir A. Ahmad; YA Ahmed Al-Karawi; ALK Yassir
+- Affiliation: Department of Communications Engineering, College of Engineering, University of Diyala, Diyala, Iraq
+- ORCID: https://orcid.org/0000-0003-2959-3893
+- OpenAlex: https://openalex.org/A5012826964
+- Google Scholar: https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate
+- Scopus Author ID: https://www.scopus.com/authid/detail.uri?authorId=58954746100
+- Web of Science ResearcherID: https://www.webofscience.com/wos/author/record/O-2498-2016
+- Semantic Scholar: https://www.semanticscholar.org/author/Yassir-Al%E2%80%90Karawi/1414260996
+
+## Citation data
+
+- Publications catalogue: https://yassiralkarawi.github.io/publications.html
+- JSON: https://yassiralkarawi.github.io/publications.json
+- JSON-LD knowledge graph: https://yassiralkarawi.github.io/scholarly-graph.jsonld
+- BibTeX: https://yassiralkarawi.github.io/publications.bib
+- RIS: https://yassiralkarawi.github.io/publications.ris
+- Atom feed: https://yassiralkarawi.github.io/feed.xml
+
+## Published works (23)
+
+### Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
+- Venue: IEEE Transactions on Aerospace and Electronic Systems
+- Publication date: 2026
+- DOI: https://doi.org/10.1109/TAES.2025.3650733
+- Canonical record: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html
+- Open-access repository: https://bura.brunel.ac.uk/handle/2438/32660
+- BibTeX: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.bib
+- RIS: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.ris
+
+### Digital Twin and Native-AI Empowered 6G Networks: Architectures, Applications, Evaluation, and Open Challenges
+
+- Status: Published Conference paper
+- Authors: Yassir AL-Karawi; Hussein Shakor Mogheer; Khamees Khalaf Hasan; Ahmed Hussein Dawwd
+- Venue: 2026 International Russian Smart Industry Conference (SmartIndustryCon)
+- Publication date: 2026-03-23
+- DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
+- Canonical record: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html
+- BibTeX: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.bib
+- RIS: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.ris
+
+### Lossless Canonical Coding Design with FPGA Implementation Using High-Speed Architecture
+
+- Status: Published Conference paper
+- Authors: Maan Hameed; Hussein Shakor Mogheer; Haveen Yaseen Hussein Al-Zahawi; Yassir AL-Karawi
+- Venue: 2026 International Russian Smart Industry Conference (SmartIndustryCon)
+- Publication date: 2026-03-23
+- DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
+- Canonical record: https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.html
+- BibTeX: https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.bib
+- RIS: https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.ris
+
+### Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications
+
+- Status: Published Journal article
+- Authors: Raad S. Alhumaima; Yassir AL-Karawi; Hamed Al-Raweshidy
+- Venue: IET Quantum Communication
+- Publication date: 2026-01
+- DOI: https://doi.org/10.1049/qtc2.70032
+- Canonical record: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html
+- Open-access repository: https://bura.brunel.ac.uk/handle/2438/33048
+- BibTeX: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.bib
+- RIS: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.ris
+
+### Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
+- Venue: IET Quantum Communication
+- Publication date: 2026-02-18
+- DOI: https://doi.org/10.1049/qtc2.70027
+- Canonical record: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html
+- Open-access repository: https://bura.brunel.ac.uk/handle/2438/32659
+- BibTeX: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.bib
+- RIS: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.ris
+
+### Mitigating in Band Overshoot in Digital High-Pass Filters: Design and Analysis of Bessel and Gaussian Filters for Maximally Flat Step Response
+
+- Status: Published Journal article
+- Authors: Hussein Shakor Mogheer; A. T. Alrubei Mohammed; Yassir AL-Karawi
+- Venue: International Journal of Electrical and Electronics Research
+- Publication date: 2025-09-30
+- DOI: https://doi.org/10.37391/IJEER.130318
+- Canonical record: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.html
+- BibTeX: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.bib
+- RIS: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.ris
+
+### Energy-Efficient Sub-Millisecond DWDM Backhaul for 6G Open RAN
+
+- Status: Published Journal article
+- Authors: Ali Abduljabbar Abdulsattar; Hussein Shakor Mogheer; Mohammad S. Al-Abadi; Yassir AL-Karawi
+- Venue: International Journal of Electrical and Electronics Research
+- Publication date: 2025-12-20
+- DOI: https://doi.org/10.37391/IJEER.130426
+- Canonical record: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html
+- BibTeX: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.bib
+- RIS: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.ris
+
+### Cybersecurity-Aware Observer-Based Control for Smart Power Distribution Under False Data Injection Attacks
+
+- Status: Published Conference paper
+- Authors: Yassir AL-Karawi; Hussein Shakor Mogheer
+- Venue: 2025 International Ural Conference on Electrical Power Engineering (UralCon)
+- Publication date: 2025-09-25
+- DOI: https://doi.org/10.1109/UralCon67204.2025.11206666
+- Canonical record: https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.html
+- BibTeX: https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.bib
+- RIS: https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.ris
+
+### Reducing Transient Effects in FIR Digital Filters: An Efficient Compensation Technique for Enhanced Impulse Response Stability
+
+- Status: Published Conference paper
+- Authors: Hussein Shakor Mogheer; Yassir AL-Karawi
+- Venue: 2025 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)
+- Publication date: 2025-05-12
+- DOI: https://doi.org/10.1109/ICIEAM65163.2025.11028159
+- Canonical record: https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.html
+- BibTeX: https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.bib
+- RIS: https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.ris
+
+### Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
+- Venue: IET Networks
+- Publication date: 2025-01
+- DOI: https://doi.org/10.1049/ntw2.70012
+- Canonical record: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html
+- Open-access repository: https://bura.brunel.ac.uk/handle/2438/31653
+- BibTeX: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.bib
+- RIS: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.ris
+
+### Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; Hamed Al-Raweshidy; Rajagopal Nilavalan
+- Venue: IEEE Access
+- Publication date: 2024
+- DOI: https://doi.org/10.1109/ACCESS.2024.3375530
+- Canonical record: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html
+- Open-access repository: https://bura.brunel.ac.uk/handle/2438/28659
+- BibTeX: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.bib
+- RIS: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.ris
+
+### Power Consumption Evaluation of Next Generation Open Radio Access Network
+
+- Status: Published Conference paper
+- Authors: Yassir AL-Karawi; Hamed Al-Raweshidy; Rajagopal Nilavalan
+- Venue: 2024 IEEE International Conference on Consumer Electronics (ICCE)
+- Publication date: 2024-02-28
+- DOI: https://doi.org/10.1109/ICCE59016.2024.10444418
+- Canonical record: https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.html
+- BibTeX: https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.bib
+- RIS: https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.ris
+
+### Optimizing the Placement of Cloud Data Center in Virtualized Environment
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; et al.
+- Venue: International Journal of Electrical and Computer Engineering
+- Publication date: 2022-06-01
+- DOI: https://doi.org/10.11591/ijece.v12i3.pp3276-3286
+- Canonical record: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html
+- BibTeX: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.bib
+- RIS: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.ris
+
+### Quality of Service of Quantum Entanglement in Mobile Networks
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
+- Venue: IEEE Access
+- Publication date: 2021
+- DOI: https://doi.org/10.1109/ACCESS.2021.3136782
+- Canonical record: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.html
+- Open-access repository: https://bura.brunel.ac.uk/handle/2438/23766
+- BibTeX: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.bib
+- RIS: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.ris
+
+### On the Trade-offs of 5G Networks and Beyond
+
+- Status: Published Conference paper
+- Authors: Yassir Ameen Ahmed Al-Karawi; Montadar Abas Taher; Riyadh Khlf Ahmed
+- Venue: IOP Conference Series: Materials Science and Engineering
+- Publication date: 2021-03-16
+- DOI: https://doi.org/10.1088/1757-899X/1076/1/012066
+- Canonical record: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.html
+- BibTeX: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.bib
+- RIS: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.ris
+
+### Efficient FIR Filter Architecture Using FPGA
+
+- Status: Published Journal article
+- Authors: Yassir AL-Karawi; et al.
+- Venue: Recent Patents on Computer Science
+- Publication date: 2019-06-03
+- DOI: https://doi.org/10.2174/2213275912666190603115506
+- Canonical record: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.html
+- BibTeX: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.bib
+- RIS: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.ris
+
+### On the Energy Detection Performance Based Welch's DCT Algorithm in Cognitive Radio Systems
+
+- Status: Published Conference paper
+- Authors: E. H. Salman; Yassir AL-Karawi; A. Ahmed; M. A. Taher; N. K. Nordin; S. Hashim; F. Hashim
+- Venue: International Scientific Conference of Engineering Sciences (ISCES)
+- Publication date: 2018
+- DOI: https://doi.org/10.1109/ISCES.2018.8340542
+- Canonical record: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.html
+- BibTeX: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.bib
+- RIS: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.ris
+
+### Reducing PAPR of OFDM Systems Using Cyclic Prefix Shifting Algorithm
+
+- Status: Published Journal article
+- Authors: Yassir A. Ahmad
+- Venue: Indian Journal of Science and Technology
+- Publication date: 2017
+- DOI: https://doi.org/10.17485/IJST/2017/V10I33/108085
+- Canonical record: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.html
+- BibTeX: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.bib
+- RIS: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.ris
+
+### Applicability of DCA in HAPS-Based Systems in the 5850–7075 MHz Band
+
+- Status: Published Conference paper
+- Authors: M. Mokayef; W. A. Hassan; Y. A. Ahmad; T. A. Rahman
+- Venue: Progress in Electromagnetics Research Symposium
+- Publication date: 2012
+- Canonical record: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html
+- BibTeX: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.bib
+- RIS: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.ris
+
+### Enhancement of Coexistence Between HAPS and Terrestrial System in 5.8 GHz Band
+
+- Status: Published Conference paper
+- Authors: M. Mokayef; W. A. Hassan; Y. A. Ahmad; T. A. Rahman
+- Venue: Progress in Electromagnetics Research Symposium
+- Publication date: 2012
+- Canonical record: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.html
+- BibTeX: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.bib
+- RIS: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.ris
+
+### Optimizing the Coexistence Between HAPS Platform and Terrestrial System in 5.8 GHz Band
+
+- Status: Published Conference paper
+- Authors: M. Mokayef; W. A. Hassan; T. A. Rahman; Y. A. Ahmad
+- Venue: 2012 International Conference on Computer and Communication Engineering (ICCCE)
+- Publication date: 2012
+- DOI: https://doi.org/10.1109/ICCCE.2012.6271337
+- Canonical record: https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.html
+- BibTeX: https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.bib
+- RIS: https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.ris
+
+### Studying Different Propagation Models for LTE-A System
+
+- Status: Published Conference paper
+- Authors: Yassir Ameen Ahmed AL-Karawi; Walid A. Hassan; Tharek Abdul Rahman
+- Venue: 2012 International Conference on Computer and Communication Engineering (ICCCE)
+- Publication date: 2012
+- DOI: https://doi.org/10.1109/ICCCE.2012.6271336
+- Canonical record: https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.html
+- BibTeX: https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.bib
+- RIS: https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.ris
+
+### Utilizing ATPC Scheme to Facilitate Sharing Between HAPS and Terrestrial in 5.7 GHz Band
+
+- Status: Published Conference paper
+- Authors: M. Mokayef; W. A. Hassan; Y. A. Ahmad; T. A. Rahman
+- Venue: Progress in Electromagnetics Research Symposium
+- Publication date: 2012
+- Canonical record: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html
+- BibTeX: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.bib
+- RIS: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.ris

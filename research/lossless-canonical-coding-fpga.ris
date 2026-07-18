@@ -1,0 +1,15 @@
+TY  - CPAPER
+TI  - Lossless Canonical Coding Design with FPGA Implementation Using High-Speed Architecture
+AU  - Maan Hameed
+AU  - Hussein Shakor Mogheer
+AU  - Haveen Yaseen Hussein Al-Zahawi
+AU  - Yassir AL-Karawi
+PY  - 2026
+T2  - 2026 International Russian Smart Industry Conference (SmartIndustryCon)
+PB  - IEEE
+DO  - 10.1109/SmartIndustryCon68821.2026.11493133
+UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
+AB  - A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.
+KW  - Signal Processing
+KW  - FPGA
+ER  -

@@ -1,0 +1,13 @@
+TY  - CPAPER
+TI  - Reducing Transient Effects in FIR Digital Filters: An Efficient Compensation Technique for Enhanced Impulse Response Stability
+AU  - Hussein Shakor Mogheer
+AU  - Yassir AL-Karawi
+PY  - 2025
+T2  - 2025 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)
+PB  - IEEE
+DO  - 10.1109/ICIEAM65163.2025.11028159
+UR  - https://doi.org/10.1109/ICIEAM65163.2025.11028159
+AB  - A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.
+KW  - Signal Processing
+KW  - Digital Filters
+ER  -
