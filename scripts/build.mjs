@@ -669,7 +669,7 @@ const appJs = `(() => {
     const open = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
   });
-  document.querySelectorAll('[data-year]').forEach(node => node.textContent = new Date().getFullYear());
+  document.querySelectorAll('.footer-bottom [data-year]').forEach(node => node.textContent = new Date().getFullYear());
   let toast = document.querySelector('.toast');
   if (!toast) { toast = document.createElement('div'); toast.className = 'toast'; toast.setAttribute('role', 'status'); document.body.append(toast); }
   const notify = message => { toast.textContent = message; toast.classList.add('show'); clearTimeout(window.__toast); window.__toast = setTimeout(() => toast.classList.remove('show'), 1800); };
