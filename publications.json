@@ -24,7 +24,17 @@
       "6G"
     ],
     "featured": true,
-    "summary": "An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels."
+    "summary": "An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.",
+    "keywords": [
+      "Quantum Cognitive Radar",
+      "Quantum Radar",
+      "Entanglement-Assisted Detection",
+      "Thermal-Loss Channels",
+      "Quantum Sensing",
+      "Adaptive Detection",
+      "Two-Mode Squeezed Vacuum",
+      "Target Detection"
+    ]
   },
   {
     "slug": "digital-twin-native-ai-6g-networks",
@@ -46,7 +56,17 @@
       "Digital Twins",
       "6G"
     ],
-    "summary": "A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks."
+    "summary": "A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.",
+    "keywords": [
+      "Digital Twins",
+      "Native AI",
+      "AI-Native Networks",
+      "6G Networks",
+      "Network Architecture",
+      "Network Automation",
+      "Predictive Assurance",
+      "Intelligent Orchestration"
+    ]
   },
   {
     "slug": "lossless-canonical-coding-fpga",
@@ -67,7 +87,17 @@
       "Signal Processing",
       "FPGA"
     ],
-    "summary": "A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation."
+    "summary": "A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.",
+    "keywords": [
+      "Lossless Coding",
+      "Canonical Coding",
+      "FPGA Implementation",
+      "High-Speed Architecture",
+      "Hardware Acceleration",
+      "Digital Design",
+      "Data Compression",
+      "Real-Time Processing"
+    ]
   },
   {
     "slug": "cybersecure-entangled-qnn-ris-qkd",
@@ -91,7 +121,17 @@
       "6G"
     ],
     "featured": true,
-    "summary": "A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications."
+    "summary": "A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.",
+    "keywords": [
+      "Entangled Quantum Neural Networks",
+      "Quantum Neural Networks",
+      "Reconfigurable Intelligent Surfaces",
+      "Quantum Key Distribution",
+      "6G Holographic Communications",
+      "Secure Synchronisation",
+      "Quantum Communications",
+      "Communications Security"
+    ]
   },
   {
     "slug": "quantum-digital-twin-threat-reversal-open-ran",
@@ -115,7 +155,17 @@
       "Digital Twins"
     ],
     "featured": true,
-    "summary": "A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN."
+    "summary": "A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.",
+    "keywords": [
+      "Quantum Digital Twin",
+      "Open RAN Security",
+      "Proactive Threat Reversal",
+      "Cybersecurity",
+      "Digital Twins",
+      "Quantum Communications",
+      "6G Networks",
+      "Threat Detection"
+    ]
   },
   {
     "slug": "high-pass-filter-overshoot-bessel-gaussian",
@@ -137,7 +187,17 @@
       "Signal Processing",
       "Digital Filters"
     ],
-    "summary": "Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response."
+    "summary": "Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response.",
+    "keywords": [
+      "Digital High-Pass Filters",
+      "In-Band Overshoot",
+      "Bessel Filters",
+      "Gaussian Filters",
+      "Maximally Flat Step Response",
+      "Transient Response",
+      "Digital Filter Design",
+      "Signal Processing"
+    ]
   },
   {
     "slug": "energy-efficient-dwdm-backhaul-open-ran",
@@ -161,7 +221,17 @@
       "Optical Networks",
       "6G"
     ],
-    "summary": "An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN."
+    "summary": "An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN.",
+    "keywords": [
+      "DWDM Backhaul",
+      "6G Open RAN",
+      "Energy-Efficient Networks",
+      "Sub-Millisecond Latency",
+      "Optical Backhaul",
+      "Dense Wavelength-Division Multiplexing",
+      "Low-Latency Transport",
+      "Open RAN Transport"
+    ]
   },
   {
     "slug": "cybersecurity-observer-power-distribution",
@@ -181,7 +251,17 @@
       "Smart Power",
       "Control"
     ],
-    "summary": "An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks."
+    "summary": "An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks.",
+    "keywords": [
+      "False Data Injection Attacks",
+      "Smart Power Distribution",
+      "Observer-Based Control",
+      "Cybersecurity",
+      "Resilient Control",
+      "Cyber-Physical Systems",
+      "State Estimation",
+      "Power Distribution Networks"
+    ]
   },
   {
     "slug": "fir-filter-transient-compensation",
@@ -200,7 +280,17 @@
       "Signal Processing",
       "Digital Filters"
     ],
-    "summary": "A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters."
+    "summary": "A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.",
+    "keywords": [
+      "FIR Digital Filters",
+      "Transient Compensation",
+      "Impulse Response Stability",
+      "Digital Filter Design",
+      "Signal Processing",
+      "Transient Effects",
+      "Finite Impulse Response",
+      "Filter Stability"
+    ]
   },
   {
     "slug": "off-grid-oran-ris-edge-energy",
@@ -226,7 +316,17 @@
       "Energy Efficiency"
     ],
     "featured": true,
-    "summary": "An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing."
+    "summary": "An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.",
+    "keywords": [
+      "Off-Grid Open RAN",
+      "Reconfigurable Intelligent Surfaces",
+      "Edge Computing",
+      "Energy Efficiency",
+      "Open RAN",
+      "Renewable Energy",
+      "Resource Optimisation",
+      "6G Networks"
+    ]
   },
   {
     "slug": "quantum-load-balancing-open-ran-energy",
@@ -254,7 +354,17 @@
       "Energy Efficiency"
     ],
     "featured": true,
-    "summary": "A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks."
+    "summary": "A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.",
+    "keywords": [
+      "Quantum-Based Load Balancing",
+      "Open RAN",
+      "Energy Efficiency",
+      "Radio Access Networks",
+      "Resource Allocation",
+      "Network Optimisation",
+      "Power Consumption",
+      "6G Networks"
+    ]
   },
   {
     "slug": "power-consumption-next-generation-open-ran",
@@ -276,7 +386,17 @@
       "6G"
     ],
     "featured": true,
-    "summary": "An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures."
+    "summary": "An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures.",
+    "keywords": [
+      "Open RAN Power Consumption",
+      "Energy Efficiency",
+      "Next-Generation Networks",
+      "Open Radio Access Network",
+      "Network Energy Modelling",
+      "Green Communications",
+      "6G Networks",
+      "Power Evaluation"
+    ]
   },
   {
     "slug": "cloud-data-center-placement-virtualized",
@@ -297,7 +417,17 @@
       "Cloud & Edge",
       "Network Optimisation"
     ],
-    "summary": "A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations."
+    "summary": "A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations.",
+    "keywords": [
+      "Cloud Data Center Placement",
+      "Virtualised Environments",
+      "Cloud Computing",
+      "Data Centre Optimisation",
+      "Resource Allocation",
+      "Network Optimisation",
+      "Virtualisation",
+      "Cloud Infrastructure"
+    ]
   },
   {
     "slug": "qos-quantum-entanglement-mobile-networks",
@@ -325,7 +455,17 @@
       "QoS"
     ],
     "featured": true,
-    "summary": "A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments."
+    "summary": "A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.",
+    "keywords": [
+      "Quantum Entanglement",
+      "Quality of Service",
+      "Mobile Networks",
+      "Quantum Communications",
+      "Entanglement Distribution",
+      "Network Performance",
+      "Quantum Networking",
+      "Wireless Networks"
+    ]
   },
   {
     "slug": "trade-offs-5g-networks-beyond",
@@ -347,7 +487,17 @@
       "Mobile Networks",
       "5G & 6G"
     ],
-    "summary": "An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G."
+    "summary": "An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G.",
+    "keywords": [
+      "5G Networks",
+      "Beyond 5G",
+      "Network Trade-Offs",
+      "Quality of Service",
+      "Energy Efficiency",
+      "Spectral Efficiency",
+      "Wireless Networks",
+      "6G Evolution"
+    ]
   },
   {
     "slug": "efficient-fir-filter-fpga",
@@ -366,7 +516,17 @@
       "Signal Processing",
       "FPGA"
     ],
-    "summary": "An efficient field-programmable gate array architecture for implementing finite impulse response digital filters."
+    "summary": "An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.",
+    "keywords": [
+      "FIR Filter Architecture",
+      "FPGA Implementation",
+      "Finite Impulse Response",
+      "Digital Signal Processing",
+      "Hardware Acceleration",
+      "High-Speed Filtering",
+      "Resource-Efficient Design",
+      "Real-Time Signal Processing"
+    ]
   },
   {
     "slug": "welch-dct-energy-detection-cognitive-radio",
@@ -391,7 +551,17 @@
       "Signal Processing",
       "Spectrum"
     ],
-    "summary": "An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems."
+    "summary": "An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.",
+    "keywords": [
+      "Energy Detection",
+      "Welch's DCT Algorithm",
+      "Cognitive Radio",
+      "Spectrum Sensing",
+      "Discrete Cosine Transform",
+      "Signal Detection",
+      "Wireless Communications",
+      "Dynamic Spectrum Access"
+    ]
   },
   {
     "slug": "ofdm-papr-cyclic-prefix-shifting",
@@ -411,7 +581,17 @@
       "OFDM",
       "Signal Processing"
     ],
-    "summary": "A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems."
+    "summary": "A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems.",
+    "keywords": [
+      "OFDM",
+      "Peak-to-Average Power Ratio",
+      "PAPR Reduction",
+      "Cyclic Prefix Shifting",
+      "Multicarrier Communications",
+      "Power Amplifier Efficiency",
+      "Wireless Communications",
+      "Signal Processing"
+    ]
   },
   {
     "slug": "dca-haps-terrestrial-5850-7075",
@@ -431,7 +611,17 @@
       "HAPS",
       "Spectrum Coexistence"
     ],
-    "summary": "An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band."
+    "summary": "An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.",
+    "keywords": [
+      "High-Altitude Platform Systems",
+      "Dynamic Channel Allocation",
+      "HAPS",
+      "Spectrum Sharing",
+      "Terrestrial Systems",
+      "5850–7075 MHz Band",
+      "Interference Management",
+      "Wireless Networks"
+    ]
   },
   {
     "slug": "haps-terrestrial-coexistence-5-8ghz",
@@ -451,7 +641,17 @@
       "HAPS",
       "Spectrum Coexistence"
     ],
-    "summary": "Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band."
+    "summary": "Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band.",
+    "keywords": [
+      "High-Altitude Platform Systems",
+      "HAPS",
+      "Terrestrial Systems",
+      "Spectrum Coexistence",
+      "5.8 GHz Band",
+      "Interference Mitigation",
+      "Spectrum Sharing",
+      "Wireless Communications"
+    ]
   },
   {
     "slug": "optimizing-haps-terrestrial-coexistence-5-8ghz",
@@ -473,7 +673,17 @@
       "Spectrum Coexistence",
       "Network Optimisation"
     ],
-    "summary": "An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band."
+    "summary": "An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band.",
+    "keywords": [
+      "High-Altitude Platform Systems",
+      "HAPS",
+      "Terrestrial Systems",
+      "Spectrum Coexistence",
+      "5.8 GHz Band",
+      "Coexistence Optimisation",
+      "Interference Management",
+      "Spectrum Sharing"
+    ]
   },
   {
     "slug": "propagation-models-lte-advanced",
@@ -494,7 +704,17 @@
       "Propagation",
       "LTE-A"
     ],
-    "summary": "A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems."
+    "summary": "A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems.",
+    "keywords": [
+      "LTE-Advanced",
+      "Radio Propagation Models",
+      "Path Loss",
+      "Mobile Networks",
+      "Wireless Channel Modelling",
+      "Coverage Prediction",
+      "Cellular Networks",
+      "Propagation Analysis"
+    ]
   },
   {
     "slug": "atpc-haps-terrestrial-5-7ghz",
@@ -515,6 +735,16 @@
       "Spectrum Coexistence",
       "Power Control"
     ],
-    "summary": "Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band."
+    "summary": "Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band.",
+    "keywords": [
+      "Automatic Transmit Power Control",
+      "ATPC",
+      "High-Altitude Platform Systems",
+      "HAPS",
+      "Terrestrial Systems",
+      "5.7 GHz Band",
+      "Spectrum Sharing",
+      "Interference Mitigation"
+    ]
   }
 ]

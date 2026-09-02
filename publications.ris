@@ -13,9 +13,14 @@ DO  - 10.1109/TAES.2025.3650733
 UR  - https://doi.org/10.1109/TAES.2025.3650733
 L2  - https://bura.brunel.ac.uk/handle/2438/32660
 AB  - An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.
-KW  - Quantum & Security
-KW  - Radar & Sensing
-KW  - 6G
+KW  - Quantum Cognitive Radar
+KW  - Quantum Radar
+KW  - Entanglement-Assisted Detection
+KW  - Thermal-Loss Channels
+KW  - Quantum Sensing
+KW  - Adaptive Detection
+KW  - Two-Mode Squeezed Vacuum
+KW  - Target Detection
 ER  -
 
 TY  - CPAPER
@@ -30,9 +35,14 @@ PB  - IEEE
 DO  - 10.1109/SmartIndustryCon68821.2026.11493034
 UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
 AB  - A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.
-KW  - AI-Native Networks
 KW  - Digital Twins
-KW  - 6G
+KW  - Native AI
+KW  - AI-Native Networks
+KW  - 6G Networks
+KW  - Network Architecture
+KW  - Network Automation
+KW  - Predictive Assurance
+KW  - Intelligent Orchestration
 ER  -
 
 TY  - CPAPER
@@ -47,8 +57,14 @@ PB  - IEEE
 DO  - 10.1109/SmartIndustryCon68821.2026.11493133
 UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
 AB  - A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.
-KW  - Signal Processing
-KW  - FPGA
+KW  - Lossless Coding
+KW  - Canonical Coding
+KW  - FPGA Implementation
+KW  - High-Speed Architecture
+KW  - Hardware Acceleration
+KW  - Digital Design
+KW  - Data Compression
+KW  - Real-Time Processing
 ER  -
 
 TY  - JOUR
@@ -63,9 +79,14 @@ DO  - 10.1049/qtc2.70032
 UR  - https://doi.org/10.1049/qtc2.70032
 L2  - https://bura.brunel.ac.uk/handle/2438/33048
 AB  - A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.
-KW  - Quantum & Security
-KW  - RIS & QKD
-KW  - 6G
+KW  - Entangled Quantum Neural Networks
+KW  - Quantum Neural Networks
+KW  - Reconfigurable Intelligent Surfaces
+KW  - Quantum Key Distribution
+KW  - 6G Holographic Communications
+KW  - Secure Synchronisation
+KW  - Quantum Communications
+KW  - Communications Security
 ER  -
 
 TY  - JOUR
@@ -80,9 +101,14 @@ DO  - 10.1049/qtc2.70027
 UR  - https://doi.org/10.1049/qtc2.70027
 L2  - https://bura.brunel.ac.uk/handle/2438/32659
 AB  - A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.
-KW  - Quantum & Security
-KW  - Open RAN
+KW  - Quantum Digital Twin
+KW  - Open RAN Security
+KW  - Proactive Threat Reversal
+KW  - Cybersecurity
 KW  - Digital Twins
+KW  - Quantum Communications
+KW  - 6G Networks
+KW  - Threat Detection
 ER  -
 
 TY  - JOUR
@@ -97,8 +123,14 @@ DO  - 10.37391/IJEER.130318
 UR  - https://doi.org/10.37391/IJEER.130318
 L2  - https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html
 AB  - Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response.
+KW  - Digital High-Pass Filters
+KW  - In-Band Overshoot
+KW  - Bessel Filters
+KW  - Gaussian Filters
+KW  - Maximally Flat Step Response
+KW  - Transient Response
+KW  - Digital Filter Design
 KW  - Signal Processing
-KW  - Digital Filters
 ER  -
 
 TY  - JOUR
@@ -114,9 +146,14 @@ DO  - 10.37391/IJEER.130426
 UR  - https://doi.org/10.37391/IJEER.130426
 L2  - https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html
 AB  - An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN.
-KW  - Open RAN
-KW  - Optical Networks
-KW  - 6G
+KW  - DWDM Backhaul
+KW  - 6G Open RAN
+KW  - Energy-Efficient Networks
+KW  - Sub-Millisecond Latency
+KW  - Optical Backhaul
+KW  - Dense Wavelength-Division Multiplexing
+KW  - Low-Latency Transport
+KW  - Open RAN Transport
 ER  -
 
 TY  - CPAPER
@@ -129,9 +166,14 @@ PB  - IEEE
 DO  - 10.1109/UralCon67204.2025.11206666
 UR  - https://doi.org/10.1109/UralCon67204.2025.11206666
 AB  - An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks.
-KW  - Quantum & Security
-KW  - Smart Power
-KW  - Control
+KW  - False Data Injection Attacks
+KW  - Smart Power Distribution
+KW  - Observer-Based Control
+KW  - Cybersecurity
+KW  - Resilient Control
+KW  - Cyber-Physical Systems
+KW  - State Estimation
+KW  - Power Distribution Networks
 ER  -
 
 TY  - CPAPER
@@ -144,8 +186,14 @@ PB  - IEEE
 DO  - 10.1109/ICIEAM65163.2025.11028159
 UR  - https://doi.org/10.1109/ICIEAM65163.2025.11028159
 AB  - A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.
+KW  - FIR Digital Filters
+KW  - Transient Compensation
+KW  - Impulse Response Stability
+KW  - Digital Filter Design
 KW  - Signal Processing
-KW  - Digital Filters
+KW  - Transient Effects
+KW  - Finite Impulse Response
+KW  - Filter Stability
 ER  -
 
 TY  - JOUR
@@ -161,9 +209,14 @@ DO  - 10.1049/ntw2.70012
 UR  - https://doi.org/10.1049/ntw2.70012
 L2  - https://bura.brunel.ac.uk/handle/2438/31653
 AB  - An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.
-KW  - Open RAN
-KW  - RIS & QKD
+KW  - Off-Grid Open RAN
+KW  - Reconfigurable Intelligent Surfaces
+KW  - Edge Computing
 KW  - Energy Efficiency
+KW  - Open RAN
+KW  - Renewable Energy
+KW  - Resource Optimisation
+KW  - 6G Networks
 ER  -
 
 TY  - JOUR
@@ -182,9 +235,14 @@ DO  - 10.1109/ACCESS.2024.3375530
 UR  - https://doi.org/10.1109/ACCESS.2024.3375530
 L2  - https://bura.brunel.ac.uk/handle/2438/28659
 AB  - A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.
+KW  - Quantum-Based Load Balancing
 KW  - Open RAN
-KW  - Quantum & Security
 KW  - Energy Efficiency
+KW  - Radio Access Networks
+KW  - Resource Allocation
+KW  - Network Optimisation
+KW  - Power Consumption
+KW  - 6G Networks
 ER  -
 
 TY  - CPAPER
@@ -198,9 +256,14 @@ PB  - IEEE
 DO  - 10.1109/ICCE59016.2024.10444418
 UR  - https://doi.org/10.1109/ICCE59016.2024.10444418
 AB  - An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures.
-KW  - Open RAN
+KW  - Open RAN Power Consumption
 KW  - Energy Efficiency
-KW  - 6G
+KW  - Next-Generation Networks
+KW  - Open Radio Access Network
+KW  - Network Energy Modelling
+KW  - Green Communications
+KW  - 6G Networks
+KW  - Power Evaluation
 ER  -
 
 TY  - JOUR
@@ -213,8 +276,14 @@ DO  - 10.11591/ijece.v12i3.pp3276-3286
 UR  - https://doi.org/10.11591/ijece.v12i3.pp3276-3286
 L2  - https://ijece.iaescore.com/index.php/IJECE/article/view/26363
 AB  - A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations.
-KW  - Cloud & Edge
+KW  - Cloud Data Center Placement
+KW  - Virtualised Environments
+KW  - Cloud Computing
+KW  - Data Centre Optimisation
+KW  - Resource Allocation
 KW  - Network Optimisation
+KW  - Virtualisation
+KW  - Cloud Infrastructure
 ER  -
 
 TY  - JOUR
@@ -233,9 +302,14 @@ DO  - 10.1109/ACCESS.2021.3136782
 UR  - https://doi.org/10.1109/ACCESS.2021.3136782
 L2  - https://bura.brunel.ac.uk/handle/2438/23766
 AB  - A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.
-KW  - Quantum & Security
+KW  - Quantum Entanglement
+KW  - Quality of Service
 KW  - Mobile Networks
-KW  - QoS
+KW  - Quantum Communications
+KW  - Entanglement Distribution
+KW  - Network Performance
+KW  - Quantum Networking
+KW  - Wireless Networks
 ER  -
 
 TY  - CPAPER
@@ -250,8 +324,14 @@ DO  - 10.1088/1757-899X/1076/1/012066
 UR  - https://doi.org/10.1088/1757-899X/1076/1/012066
 L2  - https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066
 AB  - An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G.
-KW  - Mobile Networks
-KW  - 5G & 6G
+KW  - 5G Networks
+KW  - Beyond 5G
+KW  - Network Trade-Offs
+KW  - Quality of Service
+KW  - Energy Efficiency
+KW  - Spectral Efficiency
+KW  - Wireless Networks
+KW  - 6G Evolution
 ER  -
 
 TY  - JOUR
@@ -263,8 +343,14 @@ PB  - Bentham Science
 DO  - 10.2174/2213275912666190603115506
 UR  - https://doi.org/10.2174/2213275912666190603115506
 AB  - An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.
-KW  - Signal Processing
-KW  - FPGA
+KW  - FIR Filter Architecture
+KW  - FPGA Implementation
+KW  - Finite Impulse Response
+KW  - Digital Signal Processing
+KW  - Hardware Acceleration
+KW  - High-Speed Filtering
+KW  - Resource-Efficient Design
+KW  - Real-Time Signal Processing
 ER  -
 
 TY  - CPAPER
@@ -282,9 +368,14 @@ PB  - IEEE
 DO  - 10.1109/ISCES.2018.8340542
 UR  - https://doi.org/10.1109/ISCES.2018.8340542
 AB  - An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.
+KW  - Energy Detection
+KW  - Welch's DCT Algorithm
 KW  - Cognitive Radio
-KW  - Signal Processing
-KW  - Spectrum
+KW  - Spectrum Sensing
+KW  - Discrete Cosine Transform
+KW  - Signal Detection
+KW  - Wireless Communications
+KW  - Dynamic Spectrum Access
 ER  -
 
 TY  - JOUR
@@ -298,6 +389,12 @@ UR  - https://doi.org/10.17485/IJST/2017/V10I33/108085
 L2  - https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm
 AB  - A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems.
 KW  - OFDM
+KW  - Peak-to-Average Power Ratio
+KW  - PAPR Reduction
+KW  - Cyclic Prefix Shifting
+KW  - Multicarrier Communications
+KW  - Power Amplifier Efficiency
+KW  - Wireless Communications
 KW  - Signal Processing
 ER  -
 
@@ -312,8 +409,14 @@ T2  - Progress in Electromagnetics Research Symposium
 PB  - PIERS
 UR  - https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html
 AB  - An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.
+KW  - High-Altitude Platform Systems
+KW  - Dynamic Channel Allocation
 KW  - HAPS
-KW  - Spectrum Coexistence
+KW  - Spectrum Sharing
+KW  - Terrestrial Systems
+KW  - 5850–7075 MHz Band
+KW  - Interference Management
+KW  - Wireless Networks
 ER  -
 
 TY  - CPAPER
@@ -327,8 +430,14 @@ T2  - Progress in Electromagnetics Research Symposium
 PB  - PIERS
 UR  - https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.html
 AB  - Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band.
+KW  - High-Altitude Platform Systems
 KW  - HAPS
+KW  - Terrestrial Systems
 KW  - Spectrum Coexistence
+KW  - 5.8 GHz Band
+KW  - Interference Mitigation
+KW  - Spectrum Sharing
+KW  - Wireless Communications
 ER  -
 
 TY  - CPAPER
@@ -343,9 +452,14 @@ PB  - IEEE
 DO  - 10.1109/ICCCE.2012.6271337
 UR  - https://doi.org/10.1109/ICCCE.2012.6271337
 AB  - An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band.
+KW  - High-Altitude Platform Systems
 KW  - HAPS
+KW  - Terrestrial Systems
 KW  - Spectrum Coexistence
-KW  - Network Optimisation
+KW  - 5.8 GHz Band
+KW  - Coexistence Optimisation
+KW  - Interference Management
+KW  - Spectrum Sharing
 ER  -
 
 TY  - CPAPER
@@ -359,9 +473,14 @@ PB  - IEEE
 DO  - 10.1109/ICCCE.2012.6271336
 UR  - https://doi.org/10.1109/ICCCE.2012.6271336
 AB  - A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems.
+KW  - LTE-Advanced
+KW  - Radio Propagation Models
+KW  - Path Loss
 KW  - Mobile Networks
-KW  - Propagation
-KW  - LTE-A
+KW  - Wireless Channel Modelling
+KW  - Coverage Prediction
+KW  - Cellular Networks
+KW  - Propagation Analysis
 ER  -
 
 TY  - CPAPER
@@ -375,7 +494,12 @@ T2  - Progress in Electromagnetics Research Symposium
 PB  - PIERS
 UR  - https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html
 AB  - Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band.
+KW  - Automatic Transmit Power Control
+KW  - ATPC
+KW  - High-Altitude Platform Systems
 KW  - HAPS
-KW  - Spectrum Coexistence
-KW  - Power Control
+KW  - Terrestrial Systems
+KW  - 5.7 GHz Band
+KW  - Spectrum Sharing
+KW  - Interference Mitigation
 ER  -

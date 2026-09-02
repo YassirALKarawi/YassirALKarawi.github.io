@@ -10,6 +10,12 @@ PB  - IEEE
 DO  - 10.1109/SmartIndustryCon68821.2026.11493133
 UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
 AB  - A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.
-KW  - Signal Processing
-KW  - FPGA
+KW  - Lossless Coding
+KW  - Canonical Coding
+KW  - FPGA Implementation
+KW  - High-Speed Architecture
+KW  - Hardware Acceleration
+KW  - Digital Design
+KW  - Data Compression
+KW  - Real-Time Processing
 ER  -

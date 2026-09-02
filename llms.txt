@@ -31,6 +31,8 @@
 - Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
 - Venue: IEEE Transactions on Aerospace and Electronic Systems
 - Publication date: 2026
+- Summary: An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.
+- Research keywords: Quantum Cognitive Radar; Quantum Radar; Entanglement-Assisted Detection; Thermal-Loss Channels; Quantum Sensing; Adaptive Detection; Two-Mode Squeezed Vacuum; Target Detection
 - DOI: https://doi.org/10.1109/TAES.2025.3650733
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html
 - Verified open full text: https://bura.brunel.ac.uk/handle/2438/32660
@@ -43,6 +45,8 @@
 - Authors: Yassir AL-Karawi; Hussein Shakor Mogheer; Khamees Khalaf Hasan; Ahmed Hussein Dawwd
 - Venue: 2026 International Russian Smart Industry Conference (SmartIndustryCon)
 - Publication date: 2026-03-23
+- Summary: A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.
+- Research keywords: Digital Twins; Native AI; AI-Native Networks; 6G Networks; Network Architecture; Network Automation; Predictive Assurance; Intelligent Orchestration
 - DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
 - Canonical record: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html
 - BibTeX: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.bib
@@ -54,6 +58,8 @@
 - Authors: Maan Hameed; Hussein Shakor Mogheer; Haveen Yaseen Hussein Al-Zahawi; Yassir AL-Karawi
 - Venue: 2026 International Russian Smart Industry Conference (SmartIndustryCon)
 - Publication date: 2026-03-23
+- Summary: A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.
+- Research keywords: Lossless Coding; Canonical Coding; FPGA Implementation; High-Speed Architecture; Hardware Acceleration; Digital Design; Data Compression; Real-Time Processing
 - DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
 - Canonical record: https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.html
 - BibTeX: https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.bib
@@ -65,6 +71,8 @@
 - Authors: Raad S. Alhumaima; Yassir AL-Karawi; Hamed Al-Raweshidy
 - Venue: IET Quantum Communication
 - Publication date: 2026-01
+- Summary: A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.
+- Research keywords: Entangled Quantum Neural Networks; Quantum Neural Networks; Reconfigurable Intelligent Surfaces; Quantum Key Distribution; 6G Holographic Communications; Secure Synchronisation; Quantum Communications; Communications Security
 - DOI: https://doi.org/10.1049/qtc2.70032
 - Canonical record: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html
 - Verified open full text: https://bura.brunel.ac.uk/handle/2438/33048
@@ -77,6 +85,8 @@
 - Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
 - Venue: IET Quantum Communication
 - Publication date: 2026-02-18
+- Summary: A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.
+- Research keywords: Quantum Digital Twin; Open RAN Security; Proactive Threat Reversal; Cybersecurity; Digital Twins; Quantum Communications; 6G Networks; Threat Detection
 - DOI: https://doi.org/10.1049/qtc2.70027
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html
 - Verified open full text: https://bura.brunel.ac.uk/handle/2438/32659
@@ -89,6 +99,8 @@
 - Authors: Hussein Shakor Mogheer; A. T. Alrubei Mohammed; Yassir AL-Karawi
 - Venue: International Journal of Electrical and Electronics Research
 - Publication date: 2025-09-30
+- Summary: Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response.
+- Research keywords: Digital High-Pass Filters; In-Band Overshoot; Bessel Filters; Gaussian Filters; Maximally Flat Step Response; Transient Response; Digital Filter Design; Signal Processing
 - DOI: https://doi.org/10.37391/IJEER.130318
 - Canonical record: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.html
 - Verified open full text: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html
@@ -101,6 +113,8 @@
 - Authors: Ali Abduljabbar Abdulsattar; Hussein Shakor Mogheer; Mohammad S. Al-Abadi; Yassir AL-Karawi
 - Venue: International Journal of Electrical and Electronics Research
 - Publication date: 2025-12-20
+- Summary: An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN.
+- Research keywords: DWDM Backhaul; 6G Open RAN; Energy-Efficient Networks; Sub-Millisecond Latency; Optical Backhaul; Dense Wavelength-Division Multiplexing; Low-Latency Transport; Open RAN Transport
 - DOI: https://doi.org/10.37391/IJEER.130426
 - Canonical record: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html
 - Verified open full text: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html
@@ -113,6 +127,8 @@
 - Authors: Yassir AL-Karawi; Hussein Shakor Mogheer
 - Venue: 2025 International Ural Conference on Electrical Power Engineering (UralCon)
 - Publication date: 2025-09-25
+- Summary: An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks.
+- Research keywords: False Data Injection Attacks; Smart Power Distribution; Observer-Based Control; Cybersecurity; Resilient Control; Cyber-Physical Systems; State Estimation; Power Distribution Networks
 - DOI: https://doi.org/10.1109/UralCon67204.2025.11206666
 - Canonical record: https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.html
 - BibTeX: https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.bib
@@ -124,6 +140,8 @@
 - Authors: Hussein Shakor Mogheer; Yassir AL-Karawi
 - Venue: 2025 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)
 - Publication date: 2025-05-12
+- Summary: A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.
+- Research keywords: FIR Digital Filters; Transient Compensation; Impulse Response Stability; Digital Filter Design; Signal Processing; Transient Effects; Finite Impulse Response; Filter Stability
 - DOI: https://doi.org/10.1109/ICIEAM65163.2025.11028159
 - Canonical record: https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.html
 - BibTeX: https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.bib
@@ -135,6 +153,8 @@
 - Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
 - Venue: IET Networks
 - Publication date: 2025-01
+- Summary: An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.
+- Research keywords: Off-Grid Open RAN; Reconfigurable Intelligent Surfaces; Edge Computing; Energy Efficiency; Open RAN; Renewable Energy; Resource Optimisation; 6G Networks
 - DOI: https://doi.org/10.1049/ntw2.70012
 - Canonical record: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html
 - Verified open full text: https://bura.brunel.ac.uk/handle/2438/31653
@@ -147,6 +167,8 @@
 - Authors: Yassir AL-Karawi; Hamed Al-Raweshidy; Rajagopal Nilavalan
 - Venue: IEEE Access
 - Publication date: 2024
+- Summary: A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.
+- Research keywords: Quantum-Based Load Balancing; Open RAN; Energy Efficiency; Radio Access Networks; Resource Allocation; Network Optimisation; Power Consumption; 6G Networks
 - DOI: https://doi.org/10.1109/ACCESS.2024.3375530
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html
 - Verified open full text: https://bura.brunel.ac.uk/handle/2438/28659
@@ -159,6 +181,8 @@
 - Authors: Yassir AL-Karawi; Hamed Al-Raweshidy; Rajagopal Nilavalan
 - Venue: 2024 IEEE International Conference on Consumer Electronics (ICCE)
 - Publication date: 2024-02-28
+- Summary: An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures.
+- Research keywords: Open RAN Power Consumption; Energy Efficiency; Next-Generation Networks; Open Radio Access Network; Network Energy Modelling; Green Communications; 6G Networks; Power Evaluation
 - DOI: https://doi.org/10.1109/ICCE59016.2024.10444418
 - Canonical record: https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.html
 - BibTeX: https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.bib
@@ -170,6 +194,8 @@
 - Authors: Yassir AL-Karawi; et al.
 - Venue: International Journal of Electrical and Computer Engineering
 - Publication date: 2022-06-01
+- Summary: A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations.
+- Research keywords: Cloud Data Center Placement; Virtualised Environments; Cloud Computing; Data Centre Optimisation; Resource Allocation; Network Optimisation; Virtualisation; Cloud Infrastructure
 - DOI: https://doi.org/10.11591/ijece.v12i3.pp3276-3286
 - Canonical record: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html
 - Verified open full text: https://ijece.iaescore.com/index.php/IJECE/article/view/26363
@@ -182,6 +208,8 @@
 - Authors: Yassir AL-Karawi; Raad S. Alhumaima; Hamed Al-Raweshidy
 - Venue: IEEE Access
 - Publication date: 2021
+- Summary: A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.
+- Research keywords: Quantum Entanglement; Quality of Service; Mobile Networks; Quantum Communications; Entanglement Distribution; Network Performance; Quantum Networking; Wireless Networks
 - DOI: https://doi.org/10.1109/ACCESS.2021.3136782
 - Canonical record: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.html
 - Verified open full text: https://bura.brunel.ac.uk/handle/2438/23766
@@ -194,6 +222,8 @@
 - Authors: Yassir Ameen Ahmed Al-Karawi; Montadar Abas Taher; Riyadh Khlf Ahmed
 - Venue: IOP Conference Series: Materials Science and Engineering
 - Publication date: 2021-03-16
+- Summary: An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G.
+- Research keywords: 5G Networks; Beyond 5G; Network Trade-Offs; Quality of Service; Energy Efficiency; Spectral Efficiency; Wireless Networks; 6G Evolution
 - DOI: https://doi.org/10.1088/1757-899X/1076/1/012066
 - Canonical record: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.html
 - Verified open full text: https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066
@@ -206,6 +236,8 @@
 - Authors: Yassir AL-Karawi; et al.
 - Venue: Recent Patents on Computer Science
 - Publication date: 2019-06-03
+- Summary: An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.
+- Research keywords: FIR Filter Architecture; FPGA Implementation; Finite Impulse Response; Digital Signal Processing; Hardware Acceleration; High-Speed Filtering; Resource-Efficient Design; Real-Time Signal Processing
 - DOI: https://doi.org/10.2174/2213275912666190603115506
 - Canonical record: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.html
 - BibTeX: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.bib
@@ -217,6 +249,8 @@
 - Authors: E. H. Salman; Yassir AL-Karawi; A. Ahmed; M. A. Taher; N. K. Nordin; S. Hashim; F. Hashim
 - Venue: International Scientific Conference of Engineering Sciences (ISCES)
 - Publication date: 2018
+- Summary: An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.
+- Research keywords: Energy Detection; Welch's DCT Algorithm; Cognitive Radio; Spectrum Sensing; Discrete Cosine Transform; Signal Detection; Wireless Communications; Dynamic Spectrum Access
 - DOI: https://doi.org/10.1109/ISCES.2018.8340542
 - Canonical record: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.html
 - BibTeX: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.bib
@@ -228,6 +262,8 @@
 - Authors: Yassir A. Ahmad
 - Venue: Indian Journal of Science and Technology
 - Publication date: 2017
+- Summary: A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems.
+- Research keywords: OFDM; Peak-to-Average Power Ratio; PAPR Reduction; Cyclic Prefix Shifting; Multicarrier Communications; Power Amplifier Efficiency; Wireless Communications; Signal Processing
 - DOI: https://doi.org/10.17485/IJST/2017/V10I33/108085
 - Canonical record: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.html
 - Verified open full text: https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm
@@ -240,6 +276,8 @@
 - Authors: M. Mokayef; W. A. Hassan; Y. A. Ahmad; T. A. Rahman
 - Venue: Progress in Electromagnetics Research Symposium
 - Publication date: 2012
+- Summary: An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.
+- Research keywords: High-Altitude Platform Systems; Dynamic Channel Allocation; HAPS; Spectrum Sharing; Terrestrial Systems; 5850–7075 MHz Band; Interference Management; Wireless Networks
 - Canonical record: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html
 - BibTeX: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.bib
 - RIS: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.ris
@@ -250,6 +288,8 @@
 - Authors: M. Mokayef; W. A. Hassan; Y. A. Ahmad; T. A. Rahman
 - Venue: Progress in Electromagnetics Research Symposium
 - Publication date: 2012
+- Summary: Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band.
+- Research keywords: High-Altitude Platform Systems; HAPS; Terrestrial Systems; Spectrum Coexistence; 5.8 GHz Band; Interference Mitigation; Spectrum Sharing; Wireless Communications
 - Canonical record: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.html
 - BibTeX: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.bib
 - RIS: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.ris
@@ -260,6 +300,8 @@
 - Authors: M. Mokayef; W. A. Hassan; T. A. Rahman; Y. A. Ahmad
 - Venue: 2012 International Conference on Computer and Communication Engineering (ICCCE)
 - Publication date: 2012
+- Summary: An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band.
+- Research keywords: High-Altitude Platform Systems; HAPS; Terrestrial Systems; Spectrum Coexistence; 5.8 GHz Band; Coexistence Optimisation; Interference Management; Spectrum Sharing
 - DOI: https://doi.org/10.1109/ICCCE.2012.6271337
 - Canonical record: https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.html
 - BibTeX: https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.bib
@@ -271,6 +313,8 @@
 - Authors: Yassir Ameen Ahmed AL-Karawi; Walid A. Hassan; Tharek Abdul Rahman
 - Venue: 2012 International Conference on Computer and Communication Engineering (ICCCE)
 - Publication date: 2012
+- Summary: A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems.
+- Research keywords: LTE-Advanced; Radio Propagation Models; Path Loss; Mobile Networks; Wireless Channel Modelling; Coverage Prediction; Cellular Networks; Propagation Analysis
 - DOI: https://doi.org/10.1109/ICCCE.2012.6271336
 - Canonical record: https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.html
 - BibTeX: https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.bib
@@ -282,6 +326,8 @@
 - Authors: M. Mokayef; W. A. Hassan; Y. A. Ahmad; T. A. Rahman
 - Venue: Progress in Electromagnetics Research Symposium
 - Publication date: 2012
+- Summary: Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band.
+- Research keywords: Automatic Transmit Power Control; ATPC; High-Altitude Platform Systems; HAPS; Terrestrial Systems; 5.7 GHz Band; Spectrum Sharing; Interference Mitigation
 - Canonical record: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html
 - BibTeX: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.bib
 - RIS: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.ris

@@ -13,7 +13,12 @@ PB  - IEEE
 DO  - 10.1109/ISCES.2018.8340542
 UR  - https://doi.org/10.1109/ISCES.2018.8340542
 AB  - An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.
+KW  - Energy Detection
+KW  - Welch's DCT Algorithm
 KW  - Cognitive Radio
-KW  - Signal Processing
-KW  - Spectrum
+KW  - Spectrum Sensing
+KW  - Discrete Cosine Transform
+KW  - Signal Detection
+KW  - Wireless Communications
+KW  - Dynamic Spectrum Access
 ER  -

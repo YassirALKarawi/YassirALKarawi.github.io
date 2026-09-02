@@ -77,7 +77,7 @@
       "@id": "https://yassiralkarawi.github.io/publications.html#catalogue",
       "name": "Yassir AL-Karawi published research",
       "url": "https://yassiralkarawi.github.io/publications.html",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "mainEntity": [
         {
           "@id": "https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html#article"
@@ -157,7 +157,7 @@
       "name": "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels",
       "description": "An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.",
       "datePublished": "2026",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -206,22 +206,47 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "pagination": "1-6",
       "keywords": [
-        "Quantum \u0026 Security",
-        "Radar \u0026 Sensing",
-        "6G"
+        "Quantum Cognitive Radar",
+        "Quantum Radar",
+        "Entanglement-Assisted Detection",
+        "Thermal-Loss Channels",
+        "Quantum Sensing",
+        "Adaptive Detection",
+        "Two-Mode Squeezed Vacuum",
+        "Target Detection"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Quantum \u0026 Security"
+          "name": "Quantum Cognitive Radar"
         },
         {
           "@type": "Thing",
-          "name": "Radar \u0026 Sensing"
+          "name": "Quantum Radar"
         },
         {
           "@type": "Thing",
-          "name": "6G"
+          "name": "Entanglement-Assisted Detection"
+        },
+        {
+          "@type": "Thing",
+          "name": "Thermal-Loss Channels"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quantum Sensing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Adaptive Detection"
+        },
+        {
+          "@type": "Thing",
+          "name": "Two-Mode Squeezed Vacuum"
+        },
+        {
+          "@type": "Thing",
+          "name": "Target Detection"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html",
@@ -242,7 +267,7 @@
       "name": "Digital Twin and Native-AI Empowered 6G Networks: Architectures, Applications, Evaluation, and Open Challenges",
       "description": "A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.",
       "datePublished": "2026-03-23",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -290,22 +315,47 @@
         "https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034"
       ],
       "keywords": [
-        "AI-Native Networks",
         "Digital Twins",
-        "6G"
+        "Native AI",
+        "AI-Native Networks",
+        "6G Networks",
+        "Network Architecture",
+        "Network Automation",
+        "Predictive Assurance",
+        "Intelligent Orchestration"
       ],
       "about": [
-        {
-          "@type": "Thing",
-          "name": "AI-Native Networks"
-        },
         {
           "@type": "Thing",
           "name": "Digital Twins"
         },
         {
           "@type": "Thing",
-          "name": "6G"
+          "name": "Native AI"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI-Native Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Architecture"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Automation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Predictive Assurance"
+        },
+        {
+          "@type": "Thing",
+          "name": "Intelligent Orchestration"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html",
@@ -321,7 +371,7 @@
       "name": "Lossless Canonical Coding Design with FPGA Implementation Using High-Speed Architecture",
       "description": "A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.",
       "datePublished": "2026-03-23",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -369,17 +419,47 @@
         "https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133"
       ],
       "keywords": [
-        "Signal Processing",
-        "FPGA"
+        "Lossless Coding",
+        "Canonical Coding",
+        "FPGA Implementation",
+        "High-Speed Architecture",
+        "Hardware Acceleration",
+        "Digital Design",
+        "Data Compression",
+        "Real-Time Processing"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Signal Processing"
+          "name": "Lossless Coding"
         },
         {
           "@type": "Thing",
-          "name": "FPGA"
+          "name": "Canonical Coding"
+        },
+        {
+          "@type": "Thing",
+          "name": "FPGA Implementation"
+        },
+        {
+          "@type": "Thing",
+          "name": "High-Speed Architecture"
+        },
+        {
+          "@type": "Thing",
+          "name": "Hardware Acceleration"
+        },
+        {
+          "@type": "Thing",
+          "name": "Digital Design"
+        },
+        {
+          "@type": "Thing",
+          "name": "Data Compression"
+        },
+        {
+          "@type": "Thing",
+          "name": "Real-Time Processing"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.html",
@@ -395,7 +475,7 @@
       "name": "Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications",
       "description": "A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.",
       "datePublished": "2026-01",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -442,22 +522,47 @@
       "isAccessibleForFree": true,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
-        "Quantum \u0026 Security",
-        "RIS \u0026 QKD",
-        "6G"
+        "Entangled Quantum Neural Networks",
+        "Quantum Neural Networks",
+        "Reconfigurable Intelligent Surfaces",
+        "Quantum Key Distribution",
+        "6G Holographic Communications",
+        "Secure Synchronisation",
+        "Quantum Communications",
+        "Communications Security"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Quantum \u0026 Security"
+          "name": "Entangled Quantum Neural Networks"
         },
         {
           "@type": "Thing",
-          "name": "RIS \u0026 QKD"
+          "name": "Quantum Neural Networks"
         },
         {
           "@type": "Thing",
-          "name": "6G"
+          "name": "Reconfigurable Intelligent Surfaces"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quantum Key Distribution"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Holographic Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "Secure Synchronisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quantum Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "Communications Security"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html",
@@ -478,7 +583,7 @@
       "name": "Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN",
       "description": "A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.",
       "datePublished": "2026-02-18",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -525,22 +630,47 @@
       "isAccessibleForFree": true,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
-        "Quantum \u0026 Security",
-        "Open RAN",
-        "Digital Twins"
+        "Quantum Digital Twin",
+        "Open RAN Security",
+        "Proactive Threat Reversal",
+        "Cybersecurity",
+        "Digital Twins",
+        "Quantum Communications",
+        "6G Networks",
+        "Threat Detection"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Quantum \u0026 Security"
+          "name": "Quantum Digital Twin"
         },
         {
           "@type": "Thing",
-          "name": "Open RAN"
+          "name": "Open RAN Security"
+        },
+        {
+          "@type": "Thing",
+          "name": "Proactive Threat Reversal"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cybersecurity"
         },
         {
           "@type": "Thing",
           "name": "Digital Twins"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quantum Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Threat Detection"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html",
@@ -561,7 +691,7 @@
       "name": "Mitigating in Band Overshoot in Digital High-Pass Filters: Design and Analysis of Bessel and Gaussian Filters for Maximally Flat Step Response",
       "description": "Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response.",
       "datePublished": "2025-09-30",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -608,17 +738,47 @@
       "isAccessibleForFree": true,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
-        "Signal Processing",
-        "Digital Filters"
+        "Digital High-Pass Filters",
+        "In-Band Overshoot",
+        "Bessel Filters",
+        "Gaussian Filters",
+        "Maximally Flat Step Response",
+        "Transient Response",
+        "Digital Filter Design",
+        "Signal Processing"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Signal Processing"
+          "name": "Digital High-Pass Filters"
         },
         {
           "@type": "Thing",
-          "name": "Digital Filters"
+          "name": "In-Band Overshoot"
+        },
+        {
+          "@type": "Thing",
+          "name": "Bessel Filters"
+        },
+        {
+          "@type": "Thing",
+          "name": "Gaussian Filters"
+        },
+        {
+          "@type": "Thing",
+          "name": "Maximally Flat Step Response"
+        },
+        {
+          "@type": "Thing",
+          "name": "Transient Response"
+        },
+        {
+          "@type": "Thing",
+          "name": "Digital Filter Design"
+        },
+        {
+          "@type": "Thing",
+          "name": "Signal Processing"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.html",
@@ -639,7 +799,7 @@
       "name": "Energy-Efficient Sub-Millisecond DWDM Backhaul for 6G Open RAN",
       "description": "An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN.",
       "datePublished": "2025-12-20",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -690,22 +850,47 @@
       "isAccessibleForFree": true,
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
-        "Open RAN",
-        "Optical Networks",
-        "6G"
+        "DWDM Backhaul",
+        "6G Open RAN",
+        "Energy-Efficient Networks",
+        "Sub-Millisecond Latency",
+        "Optical Backhaul",
+        "Dense Wavelength-Division Multiplexing",
+        "Low-Latency Transport",
+        "Open RAN Transport"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Open RAN"
+          "name": "DWDM Backhaul"
         },
         {
           "@type": "Thing",
-          "name": "Optical Networks"
+          "name": "6G Open RAN"
         },
         {
           "@type": "Thing",
-          "name": "6G"
+          "name": "Energy-Efficient Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Sub-Millisecond Latency"
+        },
+        {
+          "@type": "Thing",
+          "name": "Optical Backhaul"
+        },
+        {
+          "@type": "Thing",
+          "name": "Dense Wavelength-Division Multiplexing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Low-Latency Transport"
+        },
+        {
+          "@type": "Thing",
+          "name": "Open RAN Transport"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html",
@@ -726,7 +911,7 @@
       "name": "Cybersecurity-Aware Observer-Based Control for Smart Power Distribution Under False Data Injection Attacks",
       "description": "An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks.",
       "datePublished": "2025-09-25",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -766,22 +951,47 @@
         "https://doi.org/10.1109/UralCon67204.2025.11206666"
       ],
       "keywords": [
-        "Quantum \u0026 Security",
-        "Smart Power",
-        "Control"
+        "False Data Injection Attacks",
+        "Smart Power Distribution",
+        "Observer-Based Control",
+        "Cybersecurity",
+        "Resilient Control",
+        "Cyber-Physical Systems",
+        "State Estimation",
+        "Power Distribution Networks"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Quantum \u0026 Security"
+          "name": "False Data Injection Attacks"
         },
         {
           "@type": "Thing",
-          "name": "Smart Power"
+          "name": "Smart Power Distribution"
         },
         {
           "@type": "Thing",
-          "name": "Control"
+          "name": "Observer-Based Control"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cybersecurity"
+        },
+        {
+          "@type": "Thing",
+          "name": "Resilient Control"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cyber-Physical Systems"
+        },
+        {
+          "@type": "Thing",
+          "name": "State Estimation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Power Distribution Networks"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.html",
@@ -797,7 +1007,7 @@
       "name": "Reducing Transient Effects in FIR Digital Filters: An Efficient Compensation Technique for Enhanced Impulse Response Stability",
       "description": "A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.",
       "datePublished": "2025-05-12",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -837,17 +1047,47 @@
         "https://doi.org/10.1109/ICIEAM65163.2025.11028159"
       ],
       "keywords": [
+        "FIR Digital Filters",
+        "Transient Compensation",
+        "Impulse Response Stability",
+        "Digital Filter Design",
         "Signal Processing",
-        "Digital Filters"
+        "Transient Effects",
+        "Finite Impulse Response",
+        "Filter Stability"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "FIR Digital Filters"
+        },
+        {
+          "@type": "Thing",
+          "name": "Transient Compensation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Impulse Response Stability"
+        },
+        {
+          "@type": "Thing",
+          "name": "Digital Filter Design"
+        },
         {
           "@type": "Thing",
           "name": "Signal Processing"
         },
         {
           "@type": "Thing",
-          "name": "Digital Filters"
+          "name": "Transient Effects"
+        },
+        {
+          "@type": "Thing",
+          "name": "Finite Impulse Response"
+        },
+        {
+          "@type": "Thing",
+          "name": "Filter Stability"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.html",
@@ -863,7 +1103,7 @@
       "name": "Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing",
       "description": "An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.",
       "datePublished": "2025-01",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -912,22 +1152,47 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "pagination": "e70012",
       "keywords": [
+        "Off-Grid Open RAN",
+        "Reconfigurable Intelligent Surfaces",
+        "Edge Computing",
+        "Energy Efficiency",
         "Open RAN",
-        "RIS \u0026 QKD",
-        "Energy Efficiency"
+        "Renewable Energy",
+        "Resource Optimisation",
+        "6G Networks"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "Off-Grid Open RAN"
+        },
+        {
+          "@type": "Thing",
+          "name": "Reconfigurable Intelligent Surfaces"
+        },
+        {
+          "@type": "Thing",
+          "name": "Edge Computing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Energy Efficiency"
+        },
         {
           "@type": "Thing",
           "name": "Open RAN"
         },
         {
           "@type": "Thing",
-          "name": "RIS \u0026 QKD"
+          "name": "Renewable Energy"
         },
         {
           "@type": "Thing",
-          "name": "Energy Efficiency"
+          "name": "Resource Optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Networks"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html",
@@ -948,7 +1213,7 @@
       "name": "Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks",
       "description": "A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.",
       "datePublished": "2024",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -997,22 +1262,47 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "pagination": "37903-37918",
       "keywords": [
+        "Quantum-Based Load Balancing",
         "Open RAN",
-        "Quantum \u0026 Security",
-        "Energy Efficiency"
+        "Energy Efficiency",
+        "Radio Access Networks",
+        "Resource Allocation",
+        "Network Optimisation",
+        "Power Consumption",
+        "6G Networks"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "Quantum-Based Load Balancing"
+        },
         {
           "@type": "Thing",
           "name": "Open RAN"
         },
         {
           "@type": "Thing",
-          "name": "Quantum \u0026 Security"
+          "name": "Energy Efficiency"
         },
         {
           "@type": "Thing",
-          "name": "Energy Efficiency"
+          "name": "Radio Access Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Resource Allocation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Power Consumption"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Networks"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html",
@@ -1033,7 +1323,7 @@
       "name": "Power Consumption Evaluation of Next Generation Open Radio Access Network",
       "description": "An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures.",
       "datePublished": "2024-02-28",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1077,14 +1367,19 @@
         "https://doi.org/10.1109/ICCE59016.2024.10444418"
       ],
       "keywords": [
-        "Open RAN",
+        "Open RAN Power Consumption",
         "Energy Efficiency",
-        "6G"
+        "Next-Generation Networks",
+        "Open Radio Access Network",
+        "Network Energy Modelling",
+        "Green Communications",
+        "6G Networks",
+        "Power Evaluation"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Open RAN"
+          "name": "Open RAN Power Consumption"
         },
         {
           "@type": "Thing",
@@ -1092,7 +1387,27 @@
         },
         {
           "@type": "Thing",
-          "name": "6G"
+          "name": "Next-Generation Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Open Radio Access Network"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Energy Modelling"
+        },
+        {
+          "@type": "Thing",
+          "name": "Green Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Power Evaluation"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.html",
@@ -1108,7 +1423,7 @@
       "name": "Optimizing the Placement of Cloud Data Center in Virtualized Environment",
       "description": "A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations.",
       "datePublished": "2022-06-01",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1147,17 +1462,47 @@
       "isAccessibleForFree": true,
       "license": "https://creativecommons.org/licenses/by-sa/4.0/",
       "keywords": [
-        "Cloud \u0026 Edge",
-        "Network Optimisation"
+        "Cloud Data Center Placement",
+        "Virtualised Environments",
+        "Cloud Computing",
+        "Data Centre Optimisation",
+        "Resource Allocation",
+        "Network Optimisation",
+        "Virtualisation",
+        "Cloud Infrastructure"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Cloud \u0026 Edge"
+          "name": "Cloud Data Center Placement"
+        },
+        {
+          "@type": "Thing",
+          "name": "Virtualised Environments"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cloud Computing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Data Centre Optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Resource Allocation"
         },
         {
           "@type": "Thing",
           "name": "Network Optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Virtualisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cloud Infrastructure"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html",
@@ -1178,7 +1523,7 @@
       "name": "Quality of Service of Quantum Entanglement in Mobile Networks",
       "description": "A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.",
       "datePublished": "2021",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1227,14 +1572,23 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "pagination": "167242-167251",
       "keywords": [
-        "Quantum \u0026 Security",
+        "Quantum Entanglement",
+        "Quality of Service",
         "Mobile Networks",
-        "QoS"
+        "Quantum Communications",
+        "Entanglement Distribution",
+        "Network Performance",
+        "Quantum Networking",
+        "Wireless Networks"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Quantum \u0026 Security"
+          "name": "Quantum Entanglement"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quality of Service"
         },
         {
           "@type": "Thing",
@@ -1242,7 +1596,23 @@
         },
         {
           "@type": "Thing",
-          "name": "QoS"
+          "name": "Quantum Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "Entanglement Distribution"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Performance"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quantum Networking"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wireless Networks"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.html",
@@ -1263,7 +1633,7 @@
       "name": "On the Trade-offs of 5G Networks and Beyond",
       "description": "An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G.",
       "datePublished": "2021-03-16",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1311,17 +1681,47 @@
       "isAccessibleForFree": true,
       "license": "https://creativecommons.org/licenses/by/3.0/",
       "keywords": [
-        "Mobile Networks",
-        "5G \u0026 6G"
+        "5G Networks",
+        "Beyond 5G",
+        "Network Trade-Offs",
+        "Quality of Service",
+        "Energy Efficiency",
+        "Spectral Efficiency",
+        "Wireless Networks",
+        "6G Evolution"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Mobile Networks"
+          "name": "5G Networks"
         },
         {
           "@type": "Thing",
-          "name": "5G \u0026 6G"
+          "name": "Beyond 5G"
+        },
+        {
+          "@type": "Thing",
+          "name": "Network Trade-Offs"
+        },
+        {
+          "@type": "Thing",
+          "name": "Quality of Service"
+        },
+        {
+          "@type": "Thing",
+          "name": "Energy Efficiency"
+        },
+        {
+          "@type": "Thing",
+          "name": "Spectral Efficiency"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wireless Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "6G Evolution"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.html",
@@ -1342,7 +1742,7 @@
       "name": "Efficient FIR Filter Architecture Using FPGA",
       "description": "An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.",
       "datePublished": "2019-06-03",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1378,17 +1778,47 @@
         "https://doi.org/10.2174/2213275912666190603115506"
       ],
       "keywords": [
-        "Signal Processing",
-        "FPGA"
+        "FIR Filter Architecture",
+        "FPGA Implementation",
+        "Finite Impulse Response",
+        "Digital Signal Processing",
+        "Hardware Acceleration",
+        "High-Speed Filtering",
+        "Resource-Efficient Design",
+        "Real-Time Signal Processing"
       ],
       "about": [
         {
           "@type": "Thing",
-          "name": "Signal Processing"
+          "name": "FIR Filter Architecture"
         },
         {
           "@type": "Thing",
-          "name": "FPGA"
+          "name": "FPGA Implementation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Finite Impulse Response"
+        },
+        {
+          "@type": "Thing",
+          "name": "Digital Signal Processing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Hardware Acceleration"
+        },
+        {
+          "@type": "Thing",
+          "name": "High-Speed Filtering"
+        },
+        {
+          "@type": "Thing",
+          "name": "Resource-Efficient Design"
+        },
+        {
+          "@type": "Thing",
+          "name": "Real-Time Signal Processing"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.html",
@@ -1404,7 +1834,7 @@
       "name": "On the Energy Detection Performance Based Welch's DCT Algorithm in Cognitive Radio Systems",
       "description": "An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.",
       "datePublished": "2018",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1464,22 +1894,47 @@
         "https://doi.org/10.1109/ISCES.2018.8340542"
       ],
       "keywords": [
+        "Energy Detection",
+        "Welch's DCT Algorithm",
         "Cognitive Radio",
-        "Signal Processing",
-        "Spectrum"
+        "Spectrum Sensing",
+        "Discrete Cosine Transform",
+        "Signal Detection",
+        "Wireless Communications",
+        "Dynamic Spectrum Access"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "Energy Detection"
+        },
+        {
+          "@type": "Thing",
+          "name": "Welch's DCT Algorithm"
+        },
         {
           "@type": "Thing",
           "name": "Cognitive Radio"
         },
         {
           "@type": "Thing",
-          "name": "Signal Processing"
+          "name": "Spectrum Sensing"
         },
         {
           "@type": "Thing",
-          "name": "Spectrum"
+          "name": "Discrete Cosine Transform"
+        },
+        {
+          "@type": "Thing",
+          "name": "Signal Detection"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wireless Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "Dynamic Spectrum Access"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.html",
@@ -1495,7 +1950,7 @@
       "name": "Reducing PAPR of OFDM Systems Using Cyclic Prefix Shifting Algorithm",
       "description": "A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems.",
       "datePublished": "2017",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1536,12 +1991,42 @@
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "keywords": [
         "OFDM",
+        "Peak-to-Average Power Ratio",
+        "PAPR Reduction",
+        "Cyclic Prefix Shifting",
+        "Multicarrier Communications",
+        "Power Amplifier Efficiency",
+        "Wireless Communications",
         "Signal Processing"
       ],
       "about": [
         {
           "@type": "Thing",
           "name": "OFDM"
+        },
+        {
+          "@type": "Thing",
+          "name": "Peak-to-Average Power Ratio"
+        },
+        {
+          "@type": "Thing",
+          "name": "PAPR Reduction"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cyclic Prefix Shifting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Multicarrier Communications"
+        },
+        {
+          "@type": "Thing",
+          "name": "Power Amplifier Efficiency"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wireless Communications"
         },
         {
           "@type": "Thing",
@@ -1566,7 +2051,7 @@
       "name": "Applicability of DCA in HAPS-Based Systems in the 5850–7075 MHz Band",
       "description": "An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.",
       "datePublished": "2012",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1606,17 +2091,47 @@
         "name": "Progress in Electromagnetics Research Symposium"
       },
       "keywords": [
+        "High-Altitude Platform Systems",
+        "Dynamic Channel Allocation",
         "HAPS",
-        "Spectrum Coexistence"
+        "Spectrum Sharing",
+        "Terrestrial Systems",
+        "5850–7075 MHz Band",
+        "Interference Management",
+        "Wireless Networks"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "High-Altitude Platform Systems"
+        },
+        {
+          "@type": "Thing",
+          "name": "Dynamic Channel Allocation"
+        },
         {
           "@type": "Thing",
           "name": "HAPS"
         },
         {
           "@type": "Thing",
-          "name": "Spectrum Coexistence"
+          "name": "Spectrum Sharing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Terrestrial Systems"
+        },
+        {
+          "@type": "Thing",
+          "name": "5850–7075 MHz Band"
+        },
+        {
+          "@type": "Thing",
+          "name": "Interference Management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wireless Networks"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html",
@@ -1632,7 +2147,7 @@
       "name": "Enhancement of Coexistence Between HAPS and Terrestrial System in 5.8 GHz Band",
       "description": "Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band.",
       "datePublished": "2012",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1672,17 +2187,47 @@
         "name": "Progress in Electromagnetics Research Symposium"
       },
       "keywords": [
+        "High-Altitude Platform Systems",
         "HAPS",
-        "Spectrum Coexistence"
+        "Terrestrial Systems",
+        "Spectrum Coexistence",
+        "5.8 GHz Band",
+        "Interference Mitigation",
+        "Spectrum Sharing",
+        "Wireless Communications"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "High-Altitude Platform Systems"
+        },
         {
           "@type": "Thing",
           "name": "HAPS"
         },
         {
           "@type": "Thing",
+          "name": "Terrestrial Systems"
+        },
+        {
+          "@type": "Thing",
           "name": "Spectrum Coexistence"
+        },
+        {
+          "@type": "Thing",
+          "name": "5.8 GHz Band"
+        },
+        {
+          "@type": "Thing",
+          "name": "Interference Mitigation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Spectrum Sharing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Wireless Communications"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.html",
@@ -1698,7 +2243,7 @@
       "name": "Optimizing the Coexistence Between HAPS Platform and Terrestrial System in 5.8 GHz Band",
       "description": "An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band.",
       "datePublished": "2012",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1747,14 +2292,27 @@
         "https://doi.org/10.1109/ICCCE.2012.6271337"
       ],
       "keywords": [
+        "High-Altitude Platform Systems",
         "HAPS",
+        "Terrestrial Systems",
         "Spectrum Coexistence",
-        "Network Optimisation"
+        "5.8 GHz Band",
+        "Coexistence Optimisation",
+        "Interference Management",
+        "Spectrum Sharing"
       ],
       "about": [
         {
           "@type": "Thing",
+          "name": "High-Altitude Platform Systems"
+        },
+        {
+          "@type": "Thing",
           "name": "HAPS"
+        },
+        {
+          "@type": "Thing",
+          "name": "Terrestrial Systems"
         },
         {
           "@type": "Thing",
@@ -1762,7 +2320,19 @@
         },
         {
           "@type": "Thing",
-          "name": "Network Optimisation"
+          "name": "5.8 GHz Band"
+        },
+        {
+          "@type": "Thing",
+          "name": "Coexistence Optimisation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Interference Management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Spectrum Sharing"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.html",
@@ -1778,7 +2348,7 @@
       "name": "Studying Different Propagation Models for LTE-A System",
       "description": "A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems.",
       "datePublished": "2012",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1823,22 +2393,47 @@
         "https://doi.org/10.1109/ICCCE.2012.6271336"
       ],
       "keywords": [
+        "LTE-Advanced",
+        "Radio Propagation Models",
+        "Path Loss",
         "Mobile Networks",
-        "Propagation",
-        "LTE-A"
+        "Wireless Channel Modelling",
+        "Coverage Prediction",
+        "Cellular Networks",
+        "Propagation Analysis"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "LTE-Advanced"
+        },
+        {
+          "@type": "Thing",
+          "name": "Radio Propagation Models"
+        },
+        {
+          "@type": "Thing",
+          "name": "Path Loss"
+        },
         {
           "@type": "Thing",
           "name": "Mobile Networks"
         },
         {
           "@type": "Thing",
-          "name": "Propagation"
+          "name": "Wireless Channel Modelling"
         },
         {
           "@type": "Thing",
-          "name": "LTE-A"
+          "name": "Coverage Prediction"
+        },
+        {
+          "@type": "Thing",
+          "name": "Cellular Networks"
+        },
+        {
+          "@type": "Thing",
+          "name": "Propagation Analysis"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.html",
@@ -1854,7 +2449,7 @@
       "name": "Utilizing ATPC Scheme to Facilitate Sharing Between HAPS and Terrestrial in 5.7 GHz Band",
       "description": "Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band.",
       "datePublished": "2012",
-      "dateModified": "2026-07-18",
+      "dateModified": "2026-09-02",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1894,22 +2489,47 @@
         "name": "Progress in Electromagnetics Research Symposium"
       },
       "keywords": [
+        "Automatic Transmit Power Control",
+        "ATPC",
+        "High-Altitude Platform Systems",
         "HAPS",
-        "Spectrum Coexistence",
-        "Power Control"
+        "Terrestrial Systems",
+        "5.7 GHz Band",
+        "Spectrum Sharing",
+        "Interference Mitigation"
       ],
       "about": [
+        {
+          "@type": "Thing",
+          "name": "Automatic Transmit Power Control"
+        },
+        {
+          "@type": "Thing",
+          "name": "ATPC"
+        },
+        {
+          "@type": "Thing",
+          "name": "High-Altitude Platform Systems"
+        },
         {
           "@type": "Thing",
           "name": "HAPS"
         },
         {
           "@type": "Thing",
-          "name": "Spectrum Coexistence"
+          "name": "Terrestrial Systems"
         },
         {
           "@type": "Thing",
-          "name": "Power Control"
+          "name": "5.7 GHz Band"
+        },
+        {
+          "@type": "Thing",
+          "name": "Spectrum Sharing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Interference Mitigation"
         }
       ],
       "url": "https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html",

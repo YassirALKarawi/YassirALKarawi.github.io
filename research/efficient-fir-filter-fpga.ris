@@ -7,6 +7,12 @@ PB  - Bentham Science
 DO  - 10.2174/2213275912666190603115506
 UR  - https://doi.org/10.2174/2213275912666190603115506
 AB  - An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.
-KW  - Signal Processing
-KW  - FPGA
+KW  - FIR Filter Architecture
+KW  - FPGA Implementation
+KW  - Finite Impulse Response
+KW  - Digital Signal Processing
+KW  - Hardware Acceleration
+KW  - High-Speed Filtering
+KW  - Resource-Efficient Design
+KW  - Real-Time Signal Processing
 ER  -
