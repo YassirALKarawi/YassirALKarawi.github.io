@@ -19,7 +19,7 @@
     "repositoryUrl": "https://bura.brunel.ac.uk/handle/2438/32660",
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "themes": [
-      "Quantum & Security",
+      "Quantum Sensing",
       "Radar & Sensing",
       "6G"
     ],
@@ -247,7 +247,7 @@
     "type": "Conference paper",
     "doi": "10.1109/UralCon67204.2025.11206666",
     "themes": [
-      "Quantum & Security",
+      "Cybersecurity",
       "Smart Power",
       "Control"
     ],
@@ -312,7 +312,7 @@
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "themes": [
       "Open RAN",
-      "RIS & QKD",
+      "RIS",
       "Energy Efficiency"
     ],
     "featured": true,
@@ -350,7 +350,7 @@
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "themes": [
       "Open RAN",
-      "Quantum & Security",
+      "Quantum Optimisation",
       "Energy Efficiency"
     ],
     "featured": true,

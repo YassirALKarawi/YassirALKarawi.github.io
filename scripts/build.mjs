@@ -34,7 +34,7 @@ const publications = [
     lastPage: "6",
     repositoryUrl: "https://bura.brunel.ac.uk/handle/2438/32660",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    themes: ["Quantum & Security", "Radar & Sensing", "6G"],
+    themes: ["Quantum Sensing", "Radar & Sensing", "6G"],
     featured: true,
     summary: "An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels."
   },
@@ -136,7 +136,7 @@ const publications = [
     publisher: "IEEE",
     type: "Conference paper",
     doi: "10.1109/UralCon67204.2025.11206666",
-    themes: ["Quantum & Security", "Smart Power", "Control"],
+    themes: ["Cybersecurity", "Smart Power", "Control"],
     summary: "An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks."
   },
   {
@@ -166,7 +166,7 @@ const publications = [
     articleNumber: "e70012",
     repositoryUrl: "https://bura.brunel.ac.uk/handle/2438/31653",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    themes: ["Open RAN", "RIS & QKD", "Energy Efficiency"],
+    themes: ["Open RAN", "RIS", "Energy Efficiency"],
     featured: true,
     summary: "An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing."
   },
@@ -186,7 +186,7 @@ const publications = [
     lastPage: "37918",
     repositoryUrl: "https://bura.brunel.ac.uk/handle/2438/28659",
     license: "https://creativecommons.org/licenses/by/4.0/",
-    themes: ["Open RAN", "Quantum & Security", "Energy Efficiency"],
+    themes: ["Open RAN", "Quantum Optimisation", "Energy Efficiency"],
     featured: true,
     summary: "A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks."
   },
