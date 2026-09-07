@@ -1,11 +1,12 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { researchContext, contextText, relatedPublications } from "./research-context.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const siteUrl = "https://yassiralkarawi.github.io";
 const author = "Yassir AL-Karawi";
 const profileImage = "https://avatars.githubusercontent.com/u/214294900?v=4";
-const siteUpdated = "2026-09-02";
+const siteUpdated = "2026-09-07";
 const orcidUrl = "https://orcid.org/0000-0003-2959-3893";
 const openAlexUrl = "https://openalex.org/A5012826964";
 const scholarUrl = "https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate";
@@ -207,7 +208,7 @@ const publications = [
   {
     slug: "cloud-data-center-placement-virtualized",
     title: "Optimizing the Placement of Cloud Data Center in Virtualized Environment",
-    authors: ["Yassir AL-Karawi", "et al."],
+    authors: ["Yassir AL-Karawi", "Raad S. Alhumaima", "Khalid Hussein Khudair", "Abdulmunem Ahmed"],
     year: 2022,
     date: "2022-06-01",
     venue: "International Journal of Electrical and Computer Engineering",
@@ -257,7 +258,7 @@ const publications = [
   {
     slug: "efficient-fir-filter-fpga",
     title: "Efficient FIR Filter Architecture Using FPGA",
-    authors: ["Yassir AL-Karawi", "et al."],
+    authors: ["Ahmed K. Jameil", "Yassir A. Ahmed", "Saad Albawi"],
     year: 2019,
     date: "2019-06-03",
     venue: "Recent Patents on Computer Science",
@@ -378,7 +379,7 @@ const publicationKeywords = {
   "efficient-fir-filter-fpga": ["FIR Filter Architecture", "FPGA Implementation", "Finite Impulse Response", "Digital Signal Processing", "Hardware Acceleration", "High-Speed Filtering", "Resource-Efficient Design", "Real-Time Signal Processing"],
   "welch-dct-energy-detection-cognitive-radio": ["Energy Detection", "Welch's DCT Algorithm", "Cognitive Radio", "Spectrum Sensing", "Discrete Cosine Transform", "Signal Detection", "Wireless Communications", "Dynamic Spectrum Access"],
   "ofdm-papr-cyclic-prefix-shifting": ["OFDM", "Peak-to-Average Power Ratio", "PAPR Reduction", "Cyclic Prefix Shifting", "Multicarrier Communications", "Power Amplifier Efficiency", "Wireless Communications", "Signal Processing"],
-  "dca-haps-terrestrial-5850-7075": ["High-Altitude Platform Systems", "Dynamic Channel Allocation", "HAPS", "Spectrum Sharing", "Terrestrial Systems", "5850–7075 MHz Band", "Interference Management", "Wireless Networks"],
+  "dca-haps-terrestrial-5850-7075": ["High-Altitude Platform Systems", "Dynamic Channel Assignment", "HAPS", "Spectrum Sharing", "Terrestrial Systems", "5850–7075 MHz Band", "Interference Management", "Wireless Networks"],
   "haps-terrestrial-coexistence-5-8ghz": ["High-Altitude Platform Systems", "HAPS", "Terrestrial Systems", "Spectrum Coexistence", "5.8 GHz Band", "Interference Mitigation", "Spectrum Sharing", "Wireless Communications"],
   "optimizing-haps-terrestrial-coexistence-5-8ghz": ["High-Altitude Platform Systems", "HAPS", "Terrestrial Systems", "Spectrum Coexistence", "5.8 GHz Band", "Coexistence Optimisation", "Interference Management", "Spectrum Sharing"],
   "propagation-models-lte-advanced": ["LTE-Advanced", "Radio Propagation Models", "Path Loss", "Mobile Networks", "Wireless Channel Modelling", "Coverage Prediction", "Cellular Networks", "Propagation Analysis"],
@@ -393,7 +394,12 @@ const seoOverrides = {
   "digital-twin-native-ai-6g-networks": { title: "Digital Twins and Native AI for 6G Networks | Yassir AL-Karawi", description: "IEEE conference research on digital-twin and native-AI architectures, applications, evaluation methods and open challenges for future 6G networks." }
 };
 
-for (const pub of publications) pub.keywords = publicationKeywords[pub.slug] || pub.themes;
+for (const pub of publications) {
+  const context = researchContext[pub.slug];
+  if (!context) throw new Error(`Missing research context: ${pub.slug}`);
+  pub.keywords = [...new Set([...(publicationKeywords[pub.slug] || pub.themes), ...(context.additionalKeywords || [])])];
+  pub.researchContext = { ...context, reviewedAt: siteUpdated };
+}
 
 const profiles = [
   ["Google Scholar", "Citation profile", "https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate"],
@@ -503,7 +509,7 @@ function scholarlyArticleNode(pub) {
     "@id": `${canonical}#article`,
     headline: pub.title,
     name: pub.title,
-    description: pub.summary,
+    description: `${pub.summary} ${contextText(pub.researchContext)}`,
     datePublished: pub.date,
     dateModified: siteUpdated,
     inLanguage: "en",
@@ -520,7 +526,7 @@ function scholarlyArticleNode(pub) {
     about: pub.keywords.map(name => ({ "@type": "Thing", name })),
     url: canonical,
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
-    subjectOf: pub.repositoryUrl ? { "@type": "WebPage", name: "Verified open full text", url: pub.repositoryUrl } : undefined
+    subjectOf: pub.repositoryUrl ? { "@type": "WebPage", name: "Publisher / repository record", url: pub.repositoryUrl } : undefined
   };
 }
 
@@ -744,7 +750,7 @@ function publicationsPage() {
   return `${head({ title: `Publications | ${author}`, description, canonical: "/publications.html", extra: `<script type="application/ld+json">${graph}</script>` })}
 <body>${nav("Publications")}
 <main id="main">
-  <section class="page-hero"><div class="container"><p class="eyebrow"><span></span> Scholarly record · Updated July 2026</p><h1>Publications</h1><p>A machine-readable catalogue of ${publications.length} works across communications engineering, Open RAN, quantum networks, wireless systems, optical transport, and signal processing.</p></div></section>
+  <section class="page-hero"><div class="container"><p class="eyebrow"><span></span> Scholarly record · Updated ${siteUpdated}</p><h1>Publications</h1><p>A machine-readable catalogue of ${publications.length} works across communications engineering, Open RAN, quantum networks, wireless systems, optical transport, and signal processing.</p></div></section>
   <section class="publication-browser"><div class="container">
     <div class="filter-panel">
       <label class="search-box"><span>Search title, author, venue, DOI, or topic</span><input type="search" id="publication-search" placeholder="e.g. Open RAN, quantum, IEEE Access"><b>${icon("book")}</b></label>
@@ -758,8 +764,23 @@ function publicationsPage() {
 </main>${pageEnd()}`;
 }
 
+function researchContextHtml(pub) {
+  const context = pub.researchContext;
+  return `<section class="research-detail" aria-labelledby="overview-${pub.slug}">
+    <h2 id="overview-${pub.slug}">${context.basis === "abstract" ? "Research overview" : "Research scope"}</h2>
+    <p>${escapeHtml(context.overview)}</p>
+    ${context.approach ? `<h3>Approach and contribution</h3><p>${escapeHtml(context.approach)}</p>` : ""}
+    ${context.findings ? `<h3>Reported findings</h3><p>${escapeHtml(context.findings)}</p>` : ""}
+    ${context.note ? `<aside class="evidence-note" aria-label="Evidence and limitations"><strong>Evidence and limitations</strong><p>${escapeHtml(context.note)}</p></aside>` : ""}
+    <div class="context-sources"><h3>Sources and interpretation</h3>
+    <p>${context.basis === "abstract" ? "Editorial summary based on the linked abstract; not the publisher's verbatim abstract. Consult the original paper for full methods, assumptions and results." : "Scope note based on the publication title and record. A complete original abstract was not available for this review, so detailed methods and numerical findings are not stated here."}</p>
+    <ul>${context.sources.map(source => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join("")}</ul>
+    <p class="context-reviewed">Summary reviewed <time datetime="${context.reviewedAt}">${context.reviewedAt}</time></p></div>
+  </section>`;
+}
+
 function publicationPage(pub) {
-  const related = publications.filter(candidate => candidate.slug !== pub.slug && candidate.themes.some(theme => pub.themes.includes(theme))).slice(0, 3);
+  const related = relatedPublications(pub, publications);
   const canonical = `/research/${pub.slug}.html`;
   const citationMeta = [
     `<meta name="citation_title" content="${escapeHtml(pub.title)}">`,
@@ -792,13 +813,13 @@ function publicationPage(pub) {
     pub.license ? `<link rel="license" href="${pub.license}">` : ""
   ].join("\n  ");
   const scholarlyJson = safeJsonLd({ "@context": "https://schema.org", ...scholarlyArticleNode(pub) });
-  const description = seoOverrides[pub.slug]?.description || `${pub.title}. ${pub.type} by ${pub.authors.join(", ")}, published in ${pub.venue} (${pub.year})${pub.doi ? `, DOI ${pub.doi}` : ""}.`;
+  const description = seoOverrides[pub.slug]?.description || pub.summary;
   const pageTitle = seoOverrides[pub.slug]?.title || `${pub.title} | ${author}`;
   return `${head({ title: pageTitle, description, canonical, extra: `${citationMeta}<script type="application/ld+json">${scholarlyJson}</script>` })}
 <body>${nav("Publications")}
 <main id="main">
   <section class="record-hero"><div class="container record-grid"><div><a class="back-link" href="/publications.html">${icon("arrow")} All publications</a><div class="record-meta"><span>Published</span><span>${pub.year}</span><span>${escapeHtml(pub.type)}</span><span>${escapeHtml(pub.publisher)}</span></div><h1 class="citation_title">${escapeHtml(pub.title)}</h1><p class="record-authors citation_author">${escapeHtml(pub.authors.join(" · "))}</p><p class="record-venue">${escapeHtml(pub.venue)}</p>${tags(pub.themes)}<div class="record-actions">${pub.doi ? `<a class="button primary" href="${doiUrl(pub)}">Open publisher record ${icon("external")}</a>` : ""}${pub.repositoryUrl ? `<a class="button secondary" href="${pub.repositoryUrl}">Open full text ${icon("external")}</a>` : ""}<button class="button secondary copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></div><aside class="record-id" aria-label="Publication identifiers"><span>Persistent record</span>${pub.doi ? `<strong>DOI</strong><a href="${doiUrl(pub)}">${escapeHtml(pub.doi)}</a>` : `<strong>Indexed record</strong><p>No DOI is recorded for this conference item.</p>`}<i></i><strong>Author identity</strong><a href="${orcidUrl}">ORCID 0000-0003-2959-3893</a><a href="${openAlexUrl}">OpenAlex A5012826964</a></aside></div></section>
-  <section class="section record-body"><div class="container record-content"><article><p class="section-label">Research context</p><h2>Plain-language summary</h2><p class="record-summary">${escapeHtml(pub.summary)}</p><section class="record-keywords" aria-labelledby="keywords-${pub.slug}"><h2 id="keywords-${pub.slug}">Research keywords</h2>${tags(pub.keywords)}</section><div class="citation-block"><div><h2>Citation</h2><p>Use the DOI whenever available to ensure that citations are attributed to the canonical publication record.</p></div><pre><code>${escapeHtml(bibtex(pub))}</code></pre><button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></article><aside class="record-aside" aria-label="Publication discovery links"><h2>Discoverability</h2>${pub.repositoryUrl ? `<a href="${pub.repositoryUrl}">Verified open full text ${icon("external")}</a>` : ""}<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}">Search in Google Scholar ${icon("external")}</a><a href="https://api.openalex.org/works/${pub.doi ? `https://doi.org/${pub.doi}` : ""}">OpenAlex lookup ${icon("external")}</a><a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(pub.title)}">Semantic Scholar search ${icon("external")}</a><a href="${orcidUrl}">Author ORCID ${icon("external")}</a><h2>Citation files</h2><a href="/research/${pub.slug}.bib">Download BibTeX ${icon("external")}</a><a href="/research/${pub.slug}.ris">Download RIS ${icon("external")}</a></aside></div></section>
+  <section class="section record-body"><div class="container record-content"><article><p class="section-label">Research context</p><h2>Plain-language summary</h2><p class="record-summary">${escapeHtml(pub.summary)}</p>${researchContextHtml(pub)}<section class="record-keywords" aria-labelledby="keywords-${pub.slug}"><h2 id="keywords-${pub.slug}">Research keywords</h2>${tags(pub.keywords)}</section><div class="citation-block"><div><h2>Citation</h2><p>Use the DOI whenever available to ensure that citations are attributed to the canonical publication record.</p></div><pre><code>${escapeHtml(bibtex(pub))}</code></pre><button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></article><aside class="record-aside" aria-label="Publication discovery links"><h2>Discoverability</h2>${pub.repositoryUrl ? `<a href="${pub.repositoryUrl}">Publisher / repository record ${icon("external")}</a>` : ""}<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}">Search in Google Scholar ${icon("external")}</a><a href="${pub.doi ? `https://api.openalex.org/works/https://doi.org/${pub.doi}` : `https://openalex.org/works?search=${encodeURIComponent(pub.title)}`}">OpenAlex lookup ${icon("external")}</a><a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(pub.title)}">Semantic Scholar search ${icon("external")}</a><a href="${orcidUrl}">Author ORCID ${icon("external")}</a><h2>Citation files</h2><a href="/research/${pub.slug}.bib">Download BibTeX ${icon("external")}</a><a href="/research/${pub.slug}.ris">Download RIS ${icon("external")}</a></aside></div></section>
   ${related.length ? `<section class="section related-section"><div class="container"><div class="section-heading"><div><p class="section-label">Related work</p><h2>Explore connected publications</h2></div></div><div class="featured-publications">${related.map(item => publicationCard(item, true)).join("")}</div></div></section>` : ""}
 </main>${pageEnd()}`;
 }
@@ -902,7 +923,7 @@ const llms = `# Yassir AL-Karawi — Published Research
 
 ## Published works (${publications.length})
 
-${publications.map(pub => `### ${pub.title}\n\n- Status: Published ${pub.type}\n- Authors: ${pub.authors.join("; ")}\n- Venue: ${pub.venue}\n- Publication date: ${pub.date}\n- Summary: ${pub.summary}\n- Research keywords: ${pub.keywords.join("; ")}\n${pub.doi ? `- DOI: https://doi.org/${pub.doi}\n` : ""}- Canonical record: ${siteUrl}/research/${pub.slug}.html\n${pub.repositoryUrl ? `- Verified open full text: ${pub.repositoryUrl}\n` : ""}- BibTeX: ${siteUrl}/research/${pub.slug}.bib\n- RIS: ${siteUrl}/research/${pub.slug}.ris`).join("\n\n")}
+${publications.map(pub => `### ${pub.title}\n\n- Status: Published ${pub.type}\n- Authors: ${pub.authors.join("; ")}\n- Venue: ${pub.venue}\n- Publication date: ${pub.date}\n- Summary: ${pub.summary}\n- Editorial research context: ${contextText(pub.researchContext)}\n- Summary basis: ${pub.researchContext.basis === "abstract" ? "Paraphrase of linked abstract; not verbatim" : "Title and record only; no detailed results asserted"}\n- Sources: ${pub.researchContext.sources.map(source => source.url).join("; ")}\n- Research keywords: ${pub.keywords.join("; ")}\n${pub.doi ? `- DOI: https://doi.org/${pub.doi}\n` : ""}- Canonical record: ${siteUrl}/research/${pub.slug}.html\n${pub.repositoryUrl ? `- Publisher / repository record: ${pub.repositoryUrl}\n` : ""}- BibTeX: ${siteUrl}/research/${pub.slug}.bib\n- RIS: ${siteUrl}/research/${pub.slug}.ris`).join("\n\n")}
 `;
 const robots = `User-agent: OAI-SearchBot
 Allow: /
@@ -998,7 +1019,19 @@ for (const pub of publications) {
   await output(`research/${pub.slug}.bib`, bibtex(pub));
   await output(`research/${pub.slug}.ris`, ris(pub));
 }
-await output("assets/styles.css", styles + discoveryStyles);
+await output("assets/styles.css", styles + discoveryStyles + `
+.record-content>article{min-width:0}
+.research-detail{margin-top:38px;padding-top:30px;border-top:1px solid var(--line);max-width:780px}
+.research-detail h2{font-size:1.8rem;margin-bottom:18px}
+.research-detail h3{font-size:1.08rem;line-height:1.4;margin:28px 0 12px;color:var(--ink)}
+.research-detail>p{color:var(--ink-2);line-height:1.8}
+.evidence-note{border-left:3px solid var(--teal);background:var(--mint);padding:18px 20px;margin:25px 0}
+.evidence-note strong{font-size:.8rem}.evidence-note p{margin:7px 0 0;font-size:.9rem}
+.context-sources{border-top:1px solid var(--line);margin-top:26px;padding-top:4px;color:var(--muted);font-size:.85rem}
+.context-sources ul{padding-left:22px}.context-sources li{margin:8px 0}
+.context-sources a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.context-reviewed{font-size:.75rem;margin-top:20px}
+`);
 await output("assets/app.js", appJs);
 await output("assets/og-card.svg", ogCard);
 await output("assets/favicon.svg", favicon);

@@ -1,6 +1,9 @@
 TY  - JOUR
 TI  - Optimizing the Placement of Cloud Data Center in Virtualized Environment
 AU  - Yassir AL-Karawi
+AU  - Raad S. Alhumaima
+AU  - Khalid Hussein Khudair
+AU  - Abdulmunem Ahmed
 PY  - 2022
 JO  - International Journal of Electrical and Computer Engineering
 PB  - IAES
@@ -16,4 +19,7 @@ KW  - Resource Allocation
 KW  - Network Optimisation
 KW  - Virtualisation
 KW  - Cloud Infrastructure
+KW  - Particle Swarm Optimisation
+KW  - Genetic Algorithm
+KW  - Virtual Machine Allocation
 ER  -

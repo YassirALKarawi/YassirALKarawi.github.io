@@ -1,6 +1,8 @@
 TY  - JOUR
 TI  - Efficient FIR Filter Architecture Using FPGA
-AU  - Yassir AL-Karawi
+AU  - Ahmed K. Jameil
+AU  - Yassir A. Ahmed
+AU  - Saad Albawi
 PY  - 2019
 JO  - Recent Patents on Computer Science
 PB  - Bentham Science
@@ -15,4 +17,7 @@ KW  - Hardware Acceleration
 KW  - High-Speed Filtering
 KW  - Resource-Efficient Design
 KW  - Real-Time Signal Processing
+KW  - Shift-and-Add Architecture
+KW  - Verilog HDL
+KW  - FPGA Synthesis
 ER  -

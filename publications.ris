@@ -21,6 +21,9 @@ KW  - Quantum Sensing
 KW  - Adaptive Detection
 KW  - Two-Mode Squeezed Vacuum
 KW  - Target Detection
+KW  - Quantum Illumination
+KW  - Quantum Neural Network Controller
+KW  - Quantum Chernoff Bound
 ER  -
 
 TY  - CPAPER
@@ -87,6 +90,9 @@ KW  - 6G Holographic Communications
 KW  - Secure Synchronisation
 KW  - Quantum Communications
 KW  - Communications Security
+KW  - GHZ-State Synchronisation
+KW  - Qiskit Simulation
+KW  - Quantum State Fidelity
 ER  -
 
 TY  - JOUR
@@ -109,6 +115,9 @@ KW  - Digital Twins
 KW  - Quantum Communications
 KW  - 6G Networks
 KW  - Threat Detection
+KW  - Amplitude Encoding
+KW  - REINFORCE Policy
+KW  - Quantum State Fidelity
 ER  -
 
 TY  - JOUR
@@ -131,6 +140,9 @@ KW  - Maximally Flat Step Response
 KW  - Transient Response
 KW  - Digital Filter Design
 KW  - Signal Processing
+KW  - IIR High-Pass Filters
+KW  - Bilinear Transformation
+KW  - Parallel Filter Structure
 ER  -
 
 TY  - JOUR
@@ -154,6 +166,9 @@ KW  - Optical Backhaul
 KW  - Dense Wavelength-Division Multiplexing
 KW  - Low-Latency Transport
 KW  - Open RAN Transport
+KW  - Wavelength Allocation
+KW  - Primal–Dual Optimisation
+KW  - Wavelength Pruning
 ER  -
 
 TY  - CPAPER
@@ -217,6 +232,9 @@ KW  - Open RAN
 KW  - Renewable Energy
 KW  - Resource Optimisation
 KW  - 6G Networks
+KW  - Solar-Powered Networks
+KW  - Primal–Dual Optimisation
+KW  - Mobile Edge Computing
 ER  -
 
 TY  - JOUR
@@ -243,6 +261,9 @@ KW  - Resource Allocation
 KW  - Network Optimisation
 KW  - Power Consumption
 KW  - 6G Networks
+KW  - Sequential Quadratic Programming
+KW  - Active-Set Method
+KW  - Virtual Machine Allocation
 ER  -
 
 TY  - CPAPER
@@ -269,6 +290,9 @@ ER  -
 TY  - JOUR
 TI  - Optimizing the Placement of Cloud Data Center in Virtualized Environment
 AU  - Yassir AL-Karawi
+AU  - Raad S. Alhumaima
+AU  - Khalid Hussein Khudair
+AU  - Abdulmunem Ahmed
 PY  - 2022
 JO  - International Journal of Electrical and Computer Engineering
 PB  - IAES
@@ -284,6 +308,9 @@ KW  - Resource Allocation
 KW  - Network Optimisation
 KW  - Virtualisation
 KW  - Cloud Infrastructure
+KW  - Particle Swarm Optimisation
+KW  - Genetic Algorithm
+KW  - Virtual Machine Allocation
 ER  -
 
 TY  - JOUR
@@ -310,6 +337,9 @@ KW  - Entanglement Distribution
 KW  - Network Performance
 KW  - Quantum Networking
 KW  - Wireless Networks
+KW  - X2-AP Signalling
+KW  - Handover
+KW  - Quantum Teleportation
 ER  -
 
 TY  - CPAPER
@@ -332,11 +362,16 @@ KW  - Energy Efficiency
 KW  - Spectral Efficiency
 KW  - Wireless Networks
 KW  - 6G Evolution
+KW  - Green Communications
+KW  - Deployment Cost
+KW  - Carbon Emissions
 ER  -
 
 TY  - JOUR
 TI  - Efficient FIR Filter Architecture Using FPGA
-AU  - Yassir AL-Karawi
+AU  - Ahmed K. Jameil
+AU  - Yassir A. Ahmed
+AU  - Saad Albawi
 PY  - 2019
 JO  - Recent Patents on Computer Science
 PB  - Bentham Science
@@ -351,6 +386,9 @@ KW  - Hardware Acceleration
 KW  - High-Speed Filtering
 KW  - Resource-Efficient Design
 KW  - Real-Time Signal Processing
+KW  - Shift-and-Add Architecture
+KW  - Verilog HDL
+KW  - FPGA Synthesis
 ER  -
 
 TY  - CPAPER
@@ -376,6 +414,9 @@ KW  - Discrete Cosine Transform
 KW  - Signal Detection
 KW  - Wireless Communications
 KW  - Dynamic Spectrum Access
+KW  - Power Spectral Density
+KW  - Welch Periodogram
+KW  - Additive White Gaussian Noise
 ER  -
 
 TY  - JOUR
@@ -396,6 +437,9 @@ KW  - Multicarrier Communications
 KW  - Power Amplifier Efficiency
 KW  - Wireless Communications
 KW  - Signal Processing
+KW  - Selected Mapping
+KW  - Bit Error Rate
+KW  - Computational Complexity
 ER  -
 
 TY  - CPAPER
@@ -410,7 +454,7 @@ PB  - PIERS
 UR  - https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html
 AB  - An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.
 KW  - High-Altitude Platform Systems
-KW  - Dynamic Channel Allocation
+KW  - Dynamic Channel Assignment
 KW  - HAPS
 KW  - Spectrum Sharing
 KW  - Terrestrial Systems

@@ -32,10 +32,13 @@
 - Venue: IEEE Transactions on Aerospace and Electronic Systems
 - Publication date: 2026
 - Summary: An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.
-- Research keywords: Quantum Cognitive Radar; Quantum Radar; Entanglement-Assisted Detection; Thermal-Loss Channels; Quantum Sensing; Adaptive Detection; Two-Mode Squeezed Vacuum; Target Detection
+- Editorial research context: The study asks how a radar can adapt its detection strategy when attenuation and thermal background noise change. It combines entangled signal and idler modes with feedback control, connecting quantum illumination to an adaptive sensing problem rather than treating the transmitter settings as fixed. A two-mode squeezed-vacuum transmitter, joint idler–signal receiver and quantum neural-network controller form the proposed system. A Gaussian correlation detector is compared with the quantum Chernoff bound, while the controller adjusts operating parameters under an energy constraint. Hardware-aware simulations report approximately 3 dB advantage and up to 40% shorter integration time at a false-alarm probability of 0.05. At a false-alarm probability of 0.001, reported detection probability is 0.47, versus 0.20 for the classical comparator. These are simulation results for the paper's channel and receiver assumptions, not measurements from a deployed radar.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://bura.brunel.ac.uk/handle/2438/32660
+- Research keywords: Quantum Cognitive Radar; Quantum Radar; Entanglement-Assisted Detection; Thermal-Loss Channels; Quantum Sensing; Adaptive Detection; Two-Mode Squeezed Vacuum; Target Detection; Quantum Illumination; Quantum Neural Network Controller; Quantum Chernoff Bound
 - DOI: https://doi.org/10.1109/TAES.2025.3650733
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html
-- Verified open full text: https://bura.brunel.ac.uk/handle/2438/32660
+- Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/32660
 - BibTeX: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.bib
 - RIS: https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.ris
 
@@ -46,6 +49,9 @@
 - Venue: 2026 International Russian Smart Industry Conference (SmartIndustryCon)
 - Publication date: 2026-03-23
 - Summary: A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.
+- Editorial research context: This paper addresses the relationship between digital twins and native artificial intelligence in 6G networks. Its stated scope spans architecture, applications, evaluation and open challenges. It is a starting point for readers investigating how digital representations and AI-enabled network functions fit into future communications systems.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/11493034/
 - Research keywords: Digital Twins; Native AI; AI-Native Networks; 6G Networks; Network Architecture; Network Automation; Predictive Assurance; Intelligent Orchestration
 - DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
 - Canonical record: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html
@@ -59,6 +65,9 @@
 - Venue: 2026 International Russian Smart Industry Conference (SmartIndustryCon)
 - Publication date: 2026-03-23
 - Summary: A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation.
+- Editorial research context: The paper connects lossless canonical coding with a high-speed FPGA implementation. Its scope concerns both the coding design and its realisation as digital hardware. Readers interested in hardware-oriented data compression can use the publication record to examine the architecture and the implementation evidence reported by the authors.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/11493133/
 - Research keywords: Lossless Coding; Canonical Coding; FPGA Implementation; High-Speed Architecture; Hardware Acceleration; Digital Design; Data Compression; Real-Time Processing
 - DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493133
 - Canonical record: https://yassiralkarawi.github.io/research/lossless-canonical-coding-fpga.html
@@ -72,10 +81,13 @@
 - Venue: IET Quantum Communication
 - Publication date: 2026-01
 - Summary: A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.
-- Research keywords: Entangled Quantum Neural Networks; Quantum Neural Networks; Reconfigurable Intelligent Surfaces; Quantum Key Distribution; 6G Holographic Communications; Secure Synchronisation; Quantum Communications; Communications Security
+- Editorial research context: The proposed hybrid quantum–classical framework coordinates distributed quantum neural networks for 6G holographic communications. It combines entanglement-assisted synchronisation, reconfigurable intelligent surfaces and quantum key distribution within a single communication and learning model. GHZ-state gradient consensus and entropy- and trace-distance regularisation support synchronisation. QNN parameters and RIS phases are jointly adjusted to preserve fidelity under noise, with QKD protecting the modelled midhaul. Qiskit simulations compare the full framework with reduced versions that omit GHZ synchronisation or RIS assistance. Across 100 simulation trials, the abstract reports mean fidelity of 0.961 and latency of 22.5 ms. Fidelity improvements of 20–28% are reported relative to the reduced baselines. The reported evidence is simulation-based; these figures do not establish an operational 6G holographic network or experimentally demonstrated security.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://bura.brunel.ac.uk/handle/2438/33048
+- Research keywords: Entangled Quantum Neural Networks; Quantum Neural Networks; Reconfigurable Intelligent Surfaces; Quantum Key Distribution; 6G Holographic Communications; Secure Synchronisation; Quantum Communications; Communications Security; GHZ-State Synchronisation; Qiskit Simulation; Quantum State Fidelity
 - DOI: https://doi.org/10.1049/qtc2.70032
 - Canonical record: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html
-- Verified open full text: https://bura.brunel.ac.uk/handle/2438/33048
+- Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/33048
 - BibTeX: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.bib
 - RIS: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.ris
 
@@ -86,10 +98,13 @@
 - Venue: IET Quantum Communication
 - Publication date: 2026-02-18
 - Summary: A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.
-- Research keywords: Quantum Digital Twin; Open RAN Security; Proactive Threat Reversal; Cybersecurity; Digital Twins; Quantum Communications; 6G Networks; Threat Detection
+- Editorial research context: This work models an Open RAN security digital twin using quantum-state representations of network telemetry. Its focus is proactive response to modelled attacks, with state fidelity and divergence used to track disruption and recovery. Amplitude encoding, GHZ and cluster-state entanglement represent telemetry. Bit-flip, phase-flip and amplitude-damping channels model adversarial effects. A lightweight REINFORCE policy selects responses, evaluated through Qiskit simulations and software-loop timing. The abstract reports mean fidelity above 0.91, attack classification above 87% and approximately 19.1 ms software-loop latency under the studied conditions. Comparisons include classical intrusion detection and quantum-thresholding baselines. Software-loop timing and simulated quantum states are not evidence of a deployed quantum security system. The paper's noise models and baselines define the scope of the results.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://bura.brunel.ac.uk/handle/2438/32659
+- Research keywords: Quantum Digital Twin; Open RAN Security; Proactive Threat Reversal; Cybersecurity; Digital Twins; Quantum Communications; 6G Networks; Threat Detection; Amplitude Encoding; REINFORCE Policy; Quantum State Fidelity
 - DOI: https://doi.org/10.1049/qtc2.70027
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html
-- Verified open full text: https://bura.brunel.ac.uk/handle/2438/32659
+- Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/32659
 - BibTeX: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.bib
 - RIS: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.ris
 
@@ -100,10 +115,13 @@
 - Venue: International Journal of Electrical and Electronics Research
 - Publication date: 2025-09-30
 - Summary: Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response.
-- Research keywords: Digital High-Pass Filters; In-Band Overshoot; Bessel Filters; Gaussian Filters; Maximally Flat Step Response; Transient Response; Digital Filter Design; Signal Processing
+- Editorial research context: The paper examines a filter-design trade-off: a flat time-domain step response does not automatically imply a flat amplitude–frequency response. It compares high-pass designs derived from Bessel and Gaussian low-pass prototypes. Bilinear transformations generate the IIR high-pass designs. A parallel structure combines a direct path with a low-pass branch. Mathcad numerical evaluations compare filter orders and parallel versus stage-by-stage connections, considering both transient behaviour and frequency-response overshoot. Gaussian-based designs show smaller negative step overshoot in the evaluated examples, while frequency-response overshoot increases with order. The proposed parallel scheme reports up to 30% lower amplitude–frequency overshoot than the conventional schemes without degrading transient response. The comparisons are numerical filter-design results, not measured performance of every hardware implementation.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://api.crossref.org/works/10.37391/IJEER.130318
+- Research keywords: Digital High-Pass Filters; In-Band Overshoot; Bessel Filters; Gaussian Filters; Maximally Flat Step Response; Transient Response; Digital Filter Design; Signal Processing; IIR High-Pass Filters; Bilinear Transformation; Parallel Filter Structure
 - DOI: https://doi.org/10.37391/IJEER.130318
 - Canonical record: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.html
-- Verified open full text: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html
+- Publisher / repository record: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130318.html
 - BibTeX: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.bib
 - RIS: https://yassiralkarawi.github.io/research/high-pass-filter-overshoot-bessel-gaussian.ris
 
@@ -114,10 +132,13 @@
 - Venue: International Journal of Electrical and Electronics Research
 - Publication date: 2025-12-20
 - Summary: An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN.
-- Research keywords: DWDM Backhaul; 6G Open RAN; Energy-Efficient Networks; Sub-Millisecond Latency; Optical Backhaul; Dense Wavelength-Division Multiplexing; Low-Latency Transport; Open RAN Transport
+- Editorial research context: This study targets the joint energy and latency demands of optical backhaul for 6G Open RAN. Rather than keeping all wavelength resources active, the proposed controller adapts optical capacity to changing traffic while observing transport-delay constraints. Three stages combine projected primal–dual wavelength allocation, energy-aware wavelength pruning and latency-responsive reconfiguration. The evaluation considers multiple topologies and bursty or diurnal traffic, with static provisioning, greedy control and a lightweight actor–critic among the comparators. The reported evaluations show up to 32% lower optical power than static provisioning, with delays around 0.7–0.8 ms. The paper also examines violations of the 1 ms latency threshold. Savings and delay figures depend on the evaluated topology, load and baseline; they are not a guarantee for a deployed backhaul.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html
+- Research keywords: DWDM Backhaul; 6G Open RAN; Energy-Efficient Networks; Sub-Millisecond Latency; Optical Backhaul; Dense Wavelength-Division Multiplexing; Low-Latency Transport; Open RAN Transport; Wavelength Allocation; Primal–Dual Optimisation; Wavelength Pruning
 - DOI: https://doi.org/10.37391/IJEER.130426
 - Canonical record: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html
-- Verified open full text: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html
+- Publisher / repository record: https://ijeer.forexjournal.co.in/archive/volume-13/ijeer-130426.html
 - BibTeX: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.bib
 - RIS: https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.ris
 
@@ -128,6 +149,9 @@
 - Venue: 2025 International Ural Conference on Electrical Power Engineering (UralCon)
 - Publication date: 2025-09-25
 - Summary: An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks.
+- Editorial research context: This paper studies observer-based control for smart power distribution when measurement data can be corrupted by false-data injection. Its scope links control-system state estimation with cybersecurity. It is relevant to research on maintaining reliable control in power-distribution systems exposed to malicious data.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/11206666/
 - Research keywords: False Data Injection Attacks; Smart Power Distribution; Observer-Based Control; Cybersecurity; Resilient Control; Cyber-Physical Systems; State Estimation; Power Distribution Networks
 - DOI: https://doi.org/10.1109/UralCon67204.2025.11206666
 - Canonical record: https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.html
@@ -141,6 +165,9 @@
 - Venue: 2025 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)
 - Publication date: 2025-05-12
 - Summary: A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters.
+- Editorial research context: This work focuses on transient effects in finite impulse response digital filters and a compensation technique intended to improve impulse-response behaviour. The topic is distinct from FPGA resource optimisation: the central concern here is the filter's response over time. Consult the original paper for the compensation procedure and its evaluation conditions.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/11028159/
 - Research keywords: FIR Digital Filters; Transient Compensation; Impulse Response Stability; Digital Filter Design; Signal Processing; Transient Effects; Finite Impulse Response; Filter Stability
 - DOI: https://doi.org/10.1109/ICIEAM65163.2025.11028159
 - Canonical record: https://yassiralkarawi.github.io/research/fir-filter-transient-compensation.html
@@ -154,10 +181,13 @@
 - Venue: IET Networks
 - Publication date: 2025-01
 - Summary: An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.
-- Research keywords: Off-Grid Open RAN; Reconfigurable Intelligent Surfaces; Edge Computing; Energy Efficiency; Open RAN; Renewable Energy; Resource Optimisation; 6G Networks
+- Editorial research context: The paper studies solar-powered Open RAN in isolated environments, combining reconfigurable intelligent surfaces and mobile edge computing. The resource-management problem must accommodate changing harvested energy and traffic while respecting delay, power and temperature limits. A primal–dual controller updates transmit power, CPU speed and RIS phases from queue and energy conditions. The objective balances energy use, delay, SINR-related reliability and fairness. MATLAB simulations, sensitivity analysis and ablation tests examine the individual design choices. The abstract reports 25% lower energy consumption and 18% lower average delay than the baseline under the simulated solar and traffic conditions. The source identifies the evidence as MATLAB simulation, not field measurements from an off-grid network. Reported gains apply to the evaluated baseline and constraints.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://bura.brunel.ac.uk/handle/2438/31653
+- Research keywords: Off-Grid Open RAN; Reconfigurable Intelligent Surfaces; Edge Computing; Energy Efficiency; Open RAN; Renewable Energy; Resource Optimisation; 6G Networks; Solar-Powered Networks; Primal–Dual Optimisation; Mobile Edge Computing
 - DOI: https://doi.org/10.1049/ntw2.70012
 - Canonical record: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html
-- Verified open full text: https://bura.brunel.ac.uk/handle/2438/31653
+- Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/31653
 - BibTeX: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.bib
 - RIS: https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.ris
 
@@ -168,10 +198,13 @@
 - Venue: IEEE Access
 - Publication date: 2024
 - Summary: A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.
-- Research keywords: Quantum-Based Load Balancing; Open RAN; Energy Efficiency; Radio Access Networks; Resource Allocation; Network Optimisation; Power Consumption; 6G Networks
+- Editorial research context: This work studies energy efficiency in virtualised Open RAN, where traffic variation and competition for virtual-machine resources affect power use. A quantum-based load-balancing model is used to formulate the allocation problem. The paper develops a power-consumption model and a nonlinear optimisation problem using Lagrange multipliers. Numerical solutions obtained with sequential quadratic programming are compared with an active-set method. The reported numerical comparison gives approximately 45% higher energy efficiency for sequential quadratic programming than for the active-set method. This figure compares the two evaluated optimisation methods; it is not a measured quantum-hardware speedup or a 45% saving against all conventional networks.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://bura.brunel.ac.uk/handle/2438/28659
+- Research keywords: Quantum-Based Load Balancing; Open RAN; Energy Efficiency; Radio Access Networks; Resource Allocation; Network Optimisation; Power Consumption; 6G Networks; Sequential Quadratic Programming; Active-Set Method; Virtual Machine Allocation
 - DOI: https://doi.org/10.1109/ACCESS.2024.3375530
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html
-- Verified open full text: https://bura.brunel.ac.uk/handle/2438/28659
+- Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/28659
 - BibTeX: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.bib
 - RIS: https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.ris
 
@@ -182,6 +215,9 @@
 - Venue: 2024 IEEE International Conference on Consumer Electronics (ICCE)
 - Publication date: 2024-02-28
 - Summary: An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures.
+- Editorial research context: The paper evaluates power consumption in next-generation Open Radio Access Networks. It provides an energy-focused perspective on an architecture characterised by network openness and vendor diversity. It complements the author's load-balancing and off-grid optimisation papers by addressing the evaluation of power demand itself.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/10444418/
 - Research keywords: Open RAN Power Consumption; Energy Efficiency; Next-Generation Networks; Open Radio Access Network; Network Energy Modelling; Green Communications; 6G Networks; Power Evaluation
 - DOI: https://doi.org/10.1109/ICCE59016.2024.10444418
 - Canonical record: https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.html
@@ -191,14 +227,17 @@
 ### Optimizing the Placement of Cloud Data Center in Virtualized Environment
 
 - Status: Published Journal article
-- Authors: Yassir AL-Karawi; et al.
+- Authors: Yassir AL-Karawi; Raad S. Alhumaima; Khalid Hussein Khudair; Abdulmunem Ahmed
 - Venue: International Journal of Electrical and Computer Engineering
 - Publication date: 2022-06-01
 - Summary: A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations.
-- Research keywords: Cloud Data Center Placement; Virtualised Environments; Cloud Computing; Data Centre Optimisation; Resource Allocation; Network Optimisation; Virtualisation; Cloud Infrastructure
+- Editorial research context: The study jointly considers where to place a mobile cloud data centre and how many virtual machines it should host. The objective is energy efficiency subject to network quality-of-service requirements, rather than placement based only on geographical proximity. Monte Carlo-oriented particle swarm optimisation and a genetic algorithm are used to explore virtual-machine counts and data-centre position. The power model includes both the virtualised server and radio units, with resource blocks, transmit and receive power, and overhead consumption among its inputs. The abstract describes an optimisation framework constrained by latency, resource-block availability and a minimum user data rate. It does not state a single numerical improvement percentage. The appropriate placement and virtual-machine count are model-dependent; the abstract does not support a universal best location.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://api.crossref.org/works/10.11591/ijece.v12i3.pp3276-3286
+- Research keywords: Cloud Data Center Placement; Virtualised Environments; Cloud Computing; Data Centre Optimisation; Resource Allocation; Network Optimisation; Virtualisation; Cloud Infrastructure; Particle Swarm Optimisation; Genetic Algorithm; Virtual Machine Allocation
 - DOI: https://doi.org/10.11591/ijece.v12i3.pp3276-3286
 - Canonical record: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html
-- Verified open full text: https://ijece.iaescore.com/index.php/IJECE/article/view/26363
+- Publisher / repository record: https://ijece.iaescore.com/index.php/IJECE/article/view/26363
 - BibTeX: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.bib
 - RIS: https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.ris
 
@@ -209,10 +248,13 @@
 - Venue: IEEE Access
 - Publication date: 2021
 - Summary: A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.
-- Research keywords: Quantum Entanglement; Quality of Service; Mobile Networks; Quantum Communications; Entanglement Distribution; Network Performance; Quantum Networking; Wireless Networks
+- Editorial research context: This paper investigates a model for integrating quantum entanglement into mobile-cloud communications. It examines quality of service through signalling overhead, delay and energy use, linking quantum-network concepts with mobile-network operation. The analysis compares classical and quantum communication paradigms and considers entanglement-assisted reduction of X2-AP signalling overhead. Delay and power models are used to assess the proposed integration and its dependence on photon resources. The abstract reports lower modelled delay and power consumption for the proposed scenario. The comparisons should be interpreted within the paper's assumptions about quantum resources and mobile-network signalling. This is a modelling study, not evidence that an operational mobile network can exchange classical information instantaneously using entanglement.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://bura.brunel.ac.uk/handle/2438/23766
+- Research keywords: Quantum Entanglement; Quality of Service; Mobile Networks; Quantum Communications; Entanglement Distribution; Network Performance; Quantum Networking; Wireless Networks; X2-AP Signalling; Handover; Quantum Teleportation
 - DOI: https://doi.org/10.1109/ACCESS.2021.3136782
 - Canonical record: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.html
-- Verified open full text: https://bura.brunel.ac.uk/handle/2438/23766
+- Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/23766
 - BibTeX: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.bib
 - RIS: https://yassiralkarawi.github.io/research/qos-quantum-entanglement-mobile-networks.ris
 
@@ -223,21 +265,27 @@
 - Venue: IOP Conference Series: Materials Science and Engineering
 - Publication date: 2021-03-16
 - Summary: An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G.
-- Research keywords: 5G Networks; Beyond 5G; Network Trade-Offs; Quality of Service; Energy Efficiency; Spectral Efficiency; Wireless Networks; 6G Evolution
+- Editorial research context: The paper examines green mobile-network design as a set of competing engineering and economic objectives. Energy efficiency is considered alongside deployment cost and service performance, rather than as an isolated target. Numerical analysis examines relationships involving power, bandwidth, spectral efficiency, delay, carbon emissions, deployment cost and revenue. The scope connects technical network choices with the cost considerations faced by operators and investors. The work highlights trade-offs between greener operation and cost efficiency. Its abstract does not establish a single configuration that is optimal for every network, or give a universal percentage improvement.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://api.crossref.org/works/10.1088/1757-899X/1076/1/012066
+- Research keywords: 5G Networks; Beyond 5G; Network Trade-Offs; Quality of Service; Energy Efficiency; Spectral Efficiency; Wireless Networks; 6G Evolution; Green Communications; Deployment Cost; Carbon Emissions
 - DOI: https://doi.org/10.1088/1757-899X/1076/1/012066
 - Canonical record: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.html
-- Verified open full text: https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066
+- Publisher / repository record: https://iopscience.iop.org/article/10.1088/1757-899X/1076/1/012066
 - BibTeX: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.bib
 - RIS: https://yassiralkarawi.github.io/research/trade-offs-5g-networks-beyond.ris
 
 ### Efficient FIR Filter Architecture Using FPGA
 
 - Status: Published Journal article
-- Authors: Yassir AL-Karawi; et al.
+- Authors: Ahmed K. Jameil; Yassir A. Ahmed; Saad Albawi
 - Venue: Recent Patents on Computer Science
 - Publication date: 2019-06-03
 - Summary: An efficient field-programmable gate array architecture for implementing finite impulse response digital filters.
-- Research keywords: FIR Filter Architecture; FPGA Implementation; Finite Impulse Response; Digital Signal Processing; Hardware Acceleration; High-Speed Filtering; Resource-Efficient Design; Real-Time Signal Processing
+- Editorial research context: The paper targets the hardware cost of finite impulse response filtering. Its architecture reduces multiplier requirements using shift-and-add operations, addressing the resource and performance demands of digital filtering in communications systems. A 10-tap FIR design is expressed in Verilog HDL, simulated in Modelsim and implemented using Altera's Quartus II tools. FPGA synthesis provides the basis for comparison with existing reconfigurable architectures. The design example reports 25% lower resource usage and 37% higher speed than the compared existing methods. These are results for the paper's architecture and synthesis example, not measured advantages for every FPGA device or filter order.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://www.benthamscience.com/article/98713; https://api.crossref.org/works/10.2174/2213275912666190603115506
+- Research keywords: FIR Filter Architecture; FPGA Implementation; Finite Impulse Response; Digital Signal Processing; Hardware Acceleration; High-Speed Filtering; Resource-Efficient Design; Real-Time Signal Processing; Shift-and-Add Architecture; Verilog HDL; FPGA Synthesis
 - DOI: https://doi.org/10.2174/2213275912666190603115506
 - Canonical record: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.html
 - BibTeX: https://yassiralkarawi.github.io/research/efficient-fir-filter-fpga.bib
@@ -250,7 +298,10 @@
 - Venue: International Scientific Conference of Engineering Sciences (ISCES)
 - Publication date: 2018
 - Summary: An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems.
-- Research keywords: Energy Detection; Welch's DCT Algorithm; Cognitive Radio; Spectrum Sensing; Discrete Cosine Transform; Signal Detection; Wireless Communications; Dynamic Spectrum Access
+- Editorial research context: This paper addresses spectrum sensing for cognitive radio, where detecting an occupied channel is important before using otherwise idle spectrum. It considers energy detection for low signal-to-noise-ratio signals. The proposed detector uses the discrete cosine transform with Welch's periodogram to estimate power spectral density. Its evaluation considers digital video broadcasting signals over an additive white Gaussian noise channel, with different signal-to-noise ratios and user-terminal conditions. This overview describes the method stated in the paper's abstract. No numerical detection advantage is asserted here.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://www.academia.edu/130336342/On_the_energy_detection_performance_based_Welchs_DCT_algorithm_in_cognitive_radio_systems; https://ieeexplore.ieee.org/document/8340542/
+- Research keywords: Energy Detection; Welch's DCT Algorithm; Cognitive Radio; Spectrum Sensing; Discrete Cosine Transform; Signal Detection; Wireless Communications; Dynamic Spectrum Access; Power Spectral Density; Welch Periodogram; Additive White Gaussian Noise
 - DOI: https://doi.org/10.1109/ISCES.2018.8340542
 - Canonical record: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.html
 - BibTeX: https://yassiralkarawi.github.io/research/welch-dct-energy-detection-cognitive-radio.bib
@@ -263,10 +314,13 @@
 - Venue: Indian Journal of Science and Technology
 - Publication date: 2017
 - Summary: A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems.
-- Research keywords: OFDM; Peak-to-Average Power Ratio; PAPR Reduction; Cyclic Prefix Shifting; Multicarrier Communications; Power Amplifier Efficiency; Wireless Communications; Signal Processing
+- Editorial research context: The paper addresses peak-to-average power ratio in OFDM while also considering computational complexity and bit-error performance. It positions the proposed shifting method against amplitude clipping and selected mapping, which have different implementation trade-offs. The abstract describes cyclic shifting of frequency-domain OFDM samples to form alternative arrangements with reduced peak-to-average power ratio. Simulation is used to examine PAPR and bit-error behaviour, with selected mapping as a complexity comparator. The paper reports PAPR reduction without bit-error-rate degradation in its simulations, and approximately 68% lower computational complexity than the compared selected-mapping scheme. The 68% figure concerns the stated computational-complexity comparison, not a measured 68% reduction in device energy or battery use.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm
+- Research keywords: OFDM; Peak-to-Average Power Ratio; PAPR Reduction; Cyclic Prefix Shifting; Multicarrier Communications; Power Amplifier Efficiency; Wireless Communications; Signal Processing; Selected Mapping; Bit Error Rate; Computational Complexity
 - DOI: https://doi.org/10.17485/IJST/2017/V10I33/108085
 - Canonical record: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.html
-- Verified open full text: https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm
+- Publisher / repository record: https://indjst.org/articles/reducing-papr-of-ofdm-systems-using-cyclic-prefix-shifting-algorithm
 - BibTeX: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.bib
 - RIS: https://yassiralkarawi.github.io/research/ofdm-papr-cyclic-prefix-shifting.ris
 
@@ -277,7 +331,10 @@
 - Venue: Progress in Electromagnetics Research Symposium
 - Publication date: 2012
 - Summary: An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band.
-- Research keywords: High-Altitude Platform Systems; Dynamic Channel Allocation; HAPS; Spectrum Sharing; Terrestrial Systems; 5850–7075 MHz Band; Interference Management; Wireless Networks
+- Editorial research context: This conference paper concerns the applicability of dynamic channel assignment to high-altitude platform systems in the 5850–7075 MHz band. It belongs to the author's spectrum-sharing work on HAPS and terrestrial communications. Its focus is channel assignment, distinct from the related paper on automatic transmit-power control.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://piers.org/pierspublications/PIERS2012MoscowFinalProgram.pdf
+- Research keywords: High-Altitude Platform Systems; Dynamic Channel Assignment; HAPS; Spectrum Sharing; Terrestrial Systems; 5850–7075 MHz Band; Interference Management; Wireless Networks
 - Canonical record: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.html
 - BibTeX: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.bib
 - RIS: https://yassiralkarawi.github.io/research/dca-haps-terrestrial-5850-7075.ris
@@ -289,6 +346,9 @@
 - Venue: Progress in Electromagnetics Research Symposium
 - Publication date: 2012
 - Summary: Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band.
+- Editorial research context: This conference contribution concerns improving coexistence between high-altitude platforms and terrestrial systems in the 5.8 GHz band. It is part of the author's HAPS spectrum-sharing research. The separate ICCCE optimisation paper has a similar topic but a different title and publication record; the two should not be treated as interchangeable citations.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://piers.org/pierspublications/PIERS2012MoscowFinalProgram.pdf
 - Research keywords: High-Altitude Platform Systems; HAPS; Terrestrial Systems; Spectrum Coexistence; 5.8 GHz Band; Interference Mitigation; Spectrum Sharing; Wireless Communications
 - Canonical record: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.html
 - BibTeX: https://yassiralkarawi.github.io/research/haps-terrestrial-coexistence-5-8ghz.bib
@@ -301,6 +361,9 @@
 - Venue: 2012 International Conference on Computer and Communication Engineering (ICCCE)
 - Publication date: 2012
 - Summary: An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band.
+- Editorial research context: This ICCCE paper examines coexistence optimisation for a high-altitude platform and terrestrial systems in the 5.8 GHz band. Its subject is shared-spectrum operation across aerial and terrestrial links. Use its DOI for precise citation, since the catalogue also contains a separate PIERS paper on coexistence enhancement in the same band.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/6271337/
 - Research keywords: High-Altitude Platform Systems; HAPS; Terrestrial Systems; Spectrum Coexistence; 5.8 GHz Band; Coexistence Optimisation; Interference Management; Spectrum Sharing
 - DOI: https://doi.org/10.1109/ICCCE.2012.6271337
 - Canonical record: https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.html
@@ -314,6 +377,9 @@
 - Venue: 2012 International Conference on Computer and Communication Engineering (ICCCE)
 - Publication date: 2012
 - Summary: A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems.
+- Editorial research context: This paper compares propagation models for LTE-Advanced systems. The topic concerns how radio-channel modelling informs estimates of path loss, coverage and network performance. It provides a propagation-focused counterpart to the author's work on spectrum coexistence and later mobile-network resource optimisation.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://ieeexplore.ieee.org/document/6271336/
 - Research keywords: LTE-Advanced; Radio Propagation Models; Path Loss; Mobile Networks; Wireless Channel Modelling; Coverage Prediction; Cellular Networks; Propagation Analysis
 - DOI: https://doi.org/10.1109/ICCCE.2012.6271336
 - Canonical record: https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.html
@@ -327,6 +393,9 @@
 - Venue: Progress in Electromagnetics Research Symposium
 - Publication date: 2012
 - Summary: Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band.
+- Editorial research context: This conference paper considers automatic transmit-power control as a means of facilitating spectrum sharing between HAPS and terrestrial systems. The publication title specifies the 5.7 GHz band. Its power-control focus distinguishes it from the related HAPS paper on dynamic channel assignment.
+- Summary basis: Title and record only; no detailed results asserted
+- Sources: https://piers.org/pierspublications/PIERS2012MoscowFinalProgram.pdf
 - Research keywords: Automatic Transmit Power Control; ATPC; High-Altitude Platform Systems; HAPS; Terrestrial Systems; 5.7 GHz Band; Spectrum Sharing; Interference Mitigation
 - Canonical record: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html
 - BibTeX: https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.bib
