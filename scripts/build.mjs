@@ -586,6 +586,7 @@ function nav(active = "") {
     ["Research", "/#research"],
     ["Publications", "/publications.html"],
     ["Topics", "/topics.html"],
+    ["Learning", "/learning/"],
     ["Profiles", "/#profiles"]
   ];
   return `<a class="skip-link" href="#main">Skip to content</a>
@@ -1091,7 +1092,7 @@ await output("publications.ris", publicationsRis);
 await output("scholarly-graph.jsonld", scholarlyGraph);
 await output("llms.txt", llms);
 await output("robots.txt", robots);
-const crawlPaths = ["/", "/publications.html", "/topics.html", ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
+const crawlPaths = ["/", "/publications.html", "/topics.html", "/learning/", "/learning/digital-communications/ask-modulation.html", ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
 await output("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${crawlPaths.map(path => `  <url><loc>${siteUrl}${path}</loc><lastmod>${siteUpdated}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 await output("sitemap.txt", crawlPaths.map(path => `${siteUrl}${path}`).join("\n"));
 await output("feed.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><title>Yassir AL-Karawi — Publications</title><id>${siteUrl}/</id><updated>${siteUpdated}T00:00:00Z</updated><link href="${siteUrl}/feed.xml" rel="self"/>${publications.slice(0, 10).map(pub => `<entry><title>${escapeHtml(pub.title)}</title><id>${doiUrl(pub) || `${siteUrl}/research/${pub.slug}.html`}</id><link href="${siteUrl}/research/${pub.slug}.html"/><updated>${pub.date.length >= 10 ? pub.date : `${pub.year}-01-01`}T00:00:00Z</updated><summary>${escapeHtml(pub.summary)}</summary></entry>`).join("")}</feed>`);

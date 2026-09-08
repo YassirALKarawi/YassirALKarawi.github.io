@@ -5,7 +5,7 @@ import { originalAbstracts } from "./original-abstracts.mjs";
 import { topics, topicPath, topicSlugs } from "./topics.mjs";
 
 const root = resolve(import.meta.dirname, "..");
-const required = ["index.html", "publications.html", "404.html", "assets/styles.css", "assets/app.js", "robots.txt", "sitemap.xml", "publications.json", "site.webmanifest"];
+const required = ["index.html", "publications.html", "404.html", "assets/styles.css", "assets/app.js", "robots.txt", "sitemap.xml", "publications.json", "site.webmanifest", "learning/index.html", "learning/learning.css", "learning/lesson.js", "learning/digital-communications/ask-modulation.html"];
 const failures = [];
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
 
@@ -23,7 +23,8 @@ const researchFiles = (await readdir(resolve(root, "research"))).filter(file => 
 if (researchFiles.length !== publications.length) failures.push(`Expected ${publications.length} research pages, found ${researchFiles.length}`);
 
 const topicFiles = ["topics.html", ...topics.map(topic => topicPath(topic).slice(1))];
-const htmlFiles = ["index.html", "publications.html", "404.html", ...topicFiles, ...researchFiles.map(file => `research/${file}`)];
+const learningFiles = ["learning/index.html", "learning/digital-communications/ask-modulation.html"];
+const htmlFiles = ["index.html", "publications.html", "404.html", ...topicFiles, ...learningFiles, ...researchFiles.map(file => `research/${file}`)];
 for (const file of htmlFiles) {
   const html = await readFile(resolve(root, file), "utf8");
   if (!/^<!doctype html>/i.test(html)) failures.push(`${file}: missing doctype`);
@@ -107,7 +108,7 @@ for (const topic of topics) {
 const textSitemap = (await readFile(resolve(root, "sitemap.txt"), "utf8")).trim().split("\n");
 const xmlUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 if (JSON.stringify(textSitemap) !== JSON.stringify(xmlUrls)) failures.push("XML and text sitemaps differ");
-if (new Set(xmlUrls).size !== xmlUrls.length || xmlUrls.length !== publications.length + topics.length + 3) failures.push("Unexpected sitemap count or duplicates");
+if (new Set(xmlUrls).size !== xmlUrls.length || xmlUrls.length !== publications.length + topics.length + 5) failures.push("Unexpected sitemap count or duplicates");
 for (const pub of publications) if (!sitemap.includes(`/research/${pub.slug}.html`)) failures.push(`Sitemap missing ${pub.slug}`);
 
 if (new Set(publications.map(pub => pub.slug)).size !== publications.length) failures.push("Duplicate publication slug");
