@@ -562,7 +562,7 @@ function head({ title, description, canonical = "/", extra = "", image = "/asset
   <link rel="canonical" href="${url}">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/styles.css?v=2">
+  <link rel="stylesheet" href="/assets/styles.css?v=${siteUpdated}-topics">
   <link rel="alternate" type="application/atom+xml" title="Yassir AL-Karawi publications feed" href="/feed.xml">
   <link rel="alternate" type="application/json" title="Machine-readable publication catalogue" href="/publications.json">
   <link rel="alternate" type="application/ld+json" title="Scholarly knowledge graph" href="/scholarly-graph.jsonld">
