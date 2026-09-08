@@ -10,7 +10,8 @@ SN  - 2047-4954
 DO  - 10.1049/ntw2.70012
 UR  - https://doi.org/10.1049/ntw2.70012
 L2  - https://bura.brunel.ac.uk/handle/2438/31653
-AB  - An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.
+AB  - This paper proposes a strategy for designing Open Radio Access Networks (ORAN) to maximise their energy efficiency using solar power, supplemented by Reconfigurable Intelligent Surfaces (RIS) and Mobile Edge Computing (MEC). Because grid power is not always available where these ORAN systems are built, our approach manages the difficulties created by dynamic energy and timing issues found in isolated environments. The approach concentrates on allocating energy to all transmitters, CPU speed and RIS phases in real time, subject to strict rules on power use, latency issues and heat. The primal-dual algorithm we propose reacts to queue and energy changes to update the dual variables and control policies without access to every channel parameter. Our combined (composite) cost function measures energy use, delays encountered by users, reliability of the SINR and fairness. Results from the simulation indicate that using the proposed method lowers energy usage by 25% and average delay by 18%, outperforming baseline models under varying solar and traffic patterns. Robustness is further validated through sensitivity and ablation analyses. This work demonstrates the feasibility of deploying sustainable, intelligent ORAN infrastructures in remote 6G scenarios where conventional power and connectivity are unavailable.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/31653; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Off-Grid Open RAN
 KW  - Reconfigurable Intelligent Surfaces
 KW  - Edge Computing

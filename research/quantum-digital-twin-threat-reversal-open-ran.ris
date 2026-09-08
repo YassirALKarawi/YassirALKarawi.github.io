@@ -9,7 +9,8 @@ PB  - Wiley / IET
 DO  - 10.1049/qtc2.70027
 UR  - https://doi.org/10.1049/qtc2.70027
 L2  - https://bura.brunel.ac.uk/handle/2438/32659
-AB  - A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.
+AB  - A cybersecurity-driven quantum digital twin (CQDT) is introduced to protect networked control chains against adversarial completely positive trace preserving perturbations. The design maps O-RAN telemetry to amplitude-encoded registers, forms multipartite entanglement through GHZ and one-dimensional cluster states and injects bit flip, phase flip and amplitude damping channels tied to measurable indicators. System integrity is tracked using fidelity F_t, von Neumann entropy S_t and trace distance D_t. A lightweight REINFORCE policy acts on these observables to preserve entanglement and limit decoherence within tight cycle-time budgets. Qiskit simulations maintain average fidelity above 0.91, entropy near 0.35 and trace distance below 0.18 under composite noise. Attack classification exceeds 87% with a software-loop latency of about 19.1 ms covering state preparation, entanglement, CPTP injection, measurement and policy inference. Compared with classical intrusion detection and thresholding over quantum observables, the framework improves detection while reducing false alarms and exposes quantum-state degradation in real time. The result is a reproducible and scalable basis for learning-based quantum-aware protection in disaggregated radio access networks and related systems.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/32659; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Quantum Digital Twin
 KW  - Open RAN Security
 KW  - Proactive Threat Reversal

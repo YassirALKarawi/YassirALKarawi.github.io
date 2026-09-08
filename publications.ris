@@ -12,7 +12,8 @@ SN  - 0018-9251
 DO  - 10.1109/TAES.2025.3650733
 UR  - https://doi.org/10.1109/TAES.2025.3650733
 L2  - https://bura.brunel.ac.uk/handle/2438/32660
-AB  - An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels.
+AB  - An adaptive Quantum-Cognitive Radar (QCR), which incorporates a two-mode squeezed-vacuum (TMSV) transmitter, a joint idler-signal receiver, and a Quantum Neural Network (QNN) controller to optimize parameters in real time, is introduced through this exchange of correspondence. An expression for a Gaussian correlation detector has been found for thermal-loss channels and compared with the quantum Chernoff bound (QCB). Hardware-aware simulations show that QCR achieves higher detection probability P_D at a fixed false-alarm probability P_FA (i.e., the probability of declaring a target when it is absent) than both coherent-state radar and nonadaptive quantum baselines. At P_FA = 0.05, QCR provides an approximately 3 dB advantage with up to 40% reduction in integration time while maintaining robustness as background noise increases. At the operationally stringent P_FA = 10^−3, QCR achieves P_D = 0.47 versus 0.20 for classical radar, corresponding to a 135% relative improvement. The receiver requires only homodyne/heterodyne sampling and digital correlation, making it compatible with noisy intermediate-scale quantum (NISQ) hardware. The adaptive policy optimizes the parameter vector (M, N_S, B, T_int, G) under fixed energy constraints, demonstrating that online adaptation preserves and extends quantum-illumination advantages in nonstationary sensing environments.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/32660; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Quantum Cognitive Radar
 KW  - Quantum Radar
 KW  - Entanglement-Assisted Detection
@@ -81,7 +82,8 @@ PB  - Wiley / IET
 DO  - 10.1049/qtc2.70032
 UR  - https://doi.org/10.1049/qtc2.70032
 L2  - https://bura.brunel.ac.uk/handle/2438/33048
-AB  - A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications.
+AB  - This paper presents a cybersecure hybrid quantum–classical architecture for synchronising distributed quantum neural networks (QNNs) in 6G holographic communications. The proposed framework targets secure, low-latency and high-fidelity end-to-end operation under realistic noise and adversarial conditions. Multipartite Greenberger–Horne–Zeilinger (GHZ) entanglement supports gradient-consensus synchronisation, regularised by von Neumann entropy and trace distance. Holographic tensor teleportation is executed over reconfigurable intelligent surface (RIS)-assisted midhaul links protected by quantum key distribution (QKD). Joint optimisation of QNN parameters and RIS phases targets high end-to-end fidelity under noise. Qiskit simulations averaged over 100 trials achieve F_avg = 0.961, E_sync = 0.010 and S(ρ) = 0.12, with 22.5 ms end-to-end latency. Compared with reduced baselines without GHZ synchronisation or without RIS control, fidelity improves by 20%–28% and synchronisation divergence decreases by about 90%. Scalability, security stress scenarios, classical-feedback impairments, hyperparameter sensitivity and noisy intermediate-scale quantum (NISQ)-oriented error mitigation are all evaluated. The architecture scales gracefully to N = 20 distributed units with only 7% fidelity reduction, whereas mitigation improves fidelity by 7%–11% under moderate noise. Overall, the RIS-QKD-GHZ integration enables secure, low-latency and scalable quantum–classical 6G networking.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/33048; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Entangled Quantum Neural Networks
 KW  - Quantum Neural Networks
 KW  - Reconfigurable Intelligent Surfaces
@@ -106,7 +108,8 @@ PB  - Wiley / IET
 DO  - 10.1049/qtc2.70027
 UR  - https://doi.org/10.1049/qtc2.70027
 L2  - https://bura.brunel.ac.uk/handle/2438/32659
-AB  - A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN.
+AB  - A cybersecurity-driven quantum digital twin (CQDT) is introduced to protect networked control chains against adversarial completely positive trace preserving perturbations. The design maps O-RAN telemetry to amplitude-encoded registers, forms multipartite entanglement through GHZ and one-dimensional cluster states and injects bit flip, phase flip and amplitude damping channels tied to measurable indicators. System integrity is tracked using fidelity F_t, von Neumann entropy S_t and trace distance D_t. A lightweight REINFORCE policy acts on these observables to preserve entanglement and limit decoherence within tight cycle-time budgets. Qiskit simulations maintain average fidelity above 0.91, entropy near 0.35 and trace distance below 0.18 under composite noise. Attack classification exceeds 87% with a software-loop latency of about 19.1 ms covering state preparation, entanglement, CPTP injection, measurement and policy inference. Compared with classical intrusion detection and thresholding over quantum observables, the framework improves detection while reducing false alarms and exposes quantum-state degradation in real time. The result is a reproducible and scalable basis for learning-based quantum-aware protection in disaggregated radio access networks and related systems.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/32659; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Quantum Digital Twin
 KW  - Open RAN Security
 KW  - Proactive Threat Reversal
@@ -223,7 +226,8 @@ SN  - 2047-4954
 DO  - 10.1049/ntw2.70012
 UR  - https://doi.org/10.1049/ntw2.70012
 L2  - https://bura.brunel.ac.uk/handle/2438/31653
-AB  - An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing.
+AB  - This paper proposes a strategy for designing Open Radio Access Networks (ORAN) to maximise their energy efficiency using solar power, supplemented by Reconfigurable Intelligent Surfaces (RIS) and Mobile Edge Computing (MEC). Because grid power is not always available where these ORAN systems are built, our approach manages the difficulties created by dynamic energy and timing issues found in isolated environments. The approach concentrates on allocating energy to all transmitters, CPU speed and RIS phases in real time, subject to strict rules on power use, latency issues and heat. The primal-dual algorithm we propose reacts to queue and energy changes to update the dual variables and control policies without access to every channel parameter. Our combined (composite) cost function measures energy use, delays encountered by users, reliability of the SINR and fairness. Results from the simulation indicate that using the proposed method lowers energy usage by 25% and average delay by 18%, outperforming baseline models under varying solar and traffic patterns. Robustness is further validated through sensitivity and ablation analyses. This work demonstrates the feasibility of deploying sustainable, intelligent ORAN infrastructures in remote 6G scenarios where conventional power and connectivity are unavailable.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/31653; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Off-Grid Open RAN
 KW  - Reconfigurable Intelligent Surfaces
 KW  - Edge Computing
@@ -252,7 +256,8 @@ SN  - 2169-3536
 DO  - 10.1109/ACCESS.2024.3375530
 UR  - https://doi.org/10.1109/ACCESS.2024.3375530
 L2  - https://bura.brunel.ac.uk/handle/2438/28659
-AB  - A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks.
+AB  - The open radio access network (ORAN) aims to improve network efficiency by reducing latency through the distributed unit (DU) and virtualization in the central unit (CU). However, the deployment of additional DU servers increases power usage and competition among virtual machines for user data processing. This study proposes a novel approach to address these challenges by incorporating load balancing strategies and quantum physics concepts, particularly entanglement theory in classical communication systems. The methodology enables the production of quantum information units from a single classical information unit, aiming to conserve energy. A simplified yet effective power consumption (PC) model for the ORAN architecture captures traffic fluctuations and provides a comprehensive characterization of power usage within a virtualized system. An optimization problem is formulated to select ORAN servers for quantum load balancing that are less energy-efficient, maximizing user benefits. The Lagrange multiplier method is used to deal with nonlinear objective functions. The presented problem is addressed through the use of two numerical methods, namely sequential quadratic programming (SQP) and the active-set approach. It is shown that the SQP model exhibits superior energy efficiency compared to the active-set model, with a difference of approximately 45%.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/28659; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Quantum-Based Load Balancing
 KW  - Open RAN
 KW  - Energy Efficiency
@@ -328,7 +333,8 @@ SN  - 2169-3536
 DO  - 10.1109/ACCESS.2021.3136782
 UR  - https://doi.org/10.1109/ACCESS.2021.3136782
 L2  - https://bura.brunel.ac.uk/handle/2438/23766
-AB  - A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.
+AB  - © Copyright 2021 The author(s). There are many problems in cellular communications cannot be resolved traditionally. The quantum communications can add new dimensions, safety, encryption and solution to the traditional networks because of its robust physical strength. However, it is not entirely realised how to adapt the quantum into the traditional communications because it is not entirely utilised. This paper addresses the necessary guidelines and assessments for future quantum solutions to the standard mobile cloud networks. In particular, using entanglement phenomenon to increase the performance of the X2 application (X2-AP) protocol by minimising the overhead signalling, represented by the time and energy consumption the conventional cloud encounters. We intended to offer a delay reduction while adapting the quantum technique into the cloud by modelling the latency of both paradigms. Finally, increasing the number of photons has decreased the delay to about 40% compared to the traditional network. In addition, the energy efficiency in the quantum case has been increased while decreasing the power consumption by about 10%.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/23766; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Quantum Entanglement
 KW  - Quality of Service
 KW  - Mobile Networks

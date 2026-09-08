@@ -1,6 +1,8 @@
 import { access, readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { researchContext, contextText, relatedPublications } from "./research-context.mjs";
+import { originalAbstracts } from "./original-abstracts.mjs";
+import { topics, topicPath, topicSlugs } from "./topics.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const required = ["index.html", "publications.html", "404.html", "assets/styles.css", "assets/app.js", "robots.txt", "sitemap.xml", "publications.json", "site.webmanifest"];
@@ -15,11 +17,13 @@ for (const file of required) {
 const publications = JSON.parse(await readFile(resolve(root, "publications.json"), "utf8"));
 const graph = JSON.parse(await readFile(resolve(root, "scholarly-graph.jsonld"), "utf8"));
 const llms = await readFile(resolve(root, "llms.txt"), "utf8");
+if (llms.includes("\\n-")) failures.push("llms.txt contains literal escaped newlines");
 if (Object.keys(researchContext).length !== publications.length) failures.push("Research context and catalogue counts differ");
 const researchFiles = (await readdir(resolve(root, "research"))).filter(file => file.endsWith(".html"));
 if (researchFiles.length !== publications.length) failures.push(`Expected ${publications.length} research pages, found ${researchFiles.length}`);
 
-const htmlFiles = ["index.html", "publications.html", "404.html", ...researchFiles.map(file => `research/${file}`)];
+const topicFiles = ["topics.html", ...topics.map(topic => topicPath(topic).slice(1))];
+const htmlFiles = ["index.html", "publications.html", "404.html", ...topicFiles, ...researchFiles.map(file => `research/${file}`)];
 for (const file of htmlFiles) {
   const html = await readFile(resolve(root, file), "utf8");
   if (!/^<!doctype html>/i.test(html)) failures.push(`${file}: missing doctype`);
@@ -80,9 +84,30 @@ for (const pub of publications) {
   for (const item of related) if (!html.includes(`href="/research/${item.slug}.html"`)) failures.push(`${file}: related link missing`);
   if (!pub.doi && html.includes('href="https://api.openalex.org/works/"')) failures.push(`${file}: non-specific OpenAlex lookup`);
   if (pub.authors.includes("et al.")) failures.push(`${file}: incomplete author list`);
+  const original = originalAbstracts[pub.slug];
+  if (original) {
+    if (pub.originalAbstract?.text !== original.text || node?.abstract !== original.text) failures.push(`${file}: original abstract differs between data formats`);
+    if (!html.includes(`<p class="abstract-text">${escapeHtml(original.text)}</p>`)) failures.push(`${file}: original abstract not fully visible`);
+    if (!html.includes(original.sourceUrl) || !html.includes(original.license)) failures.push(`${file}: missing abstract attribution`);
+    const ris = await readFile(resolve(root, `research/${pub.slug}.ris`), "utf8");
+    if (!ris.includes(`AB  - ${original.text}`) || !llms.includes(original.text)) failures.push(`${file}: original abstract missing from exports`);
+  } else if (node?.abstract || html.includes('class="abstract-text"')) failures.push(`${file}: unverified original abstract`);
+  for (const topic of topics.filter(topic => topicSlugs(topic).includes(pub.slug))) if (!html.includes(`href="${topicPath(topic)}"`)) failures.push(`${file}: missing topic backlink`);
 }
 
 const sitemap = await readFile(resolve(root, "sitemap.xml"), "utf8");
+for (const file of topicFiles) if (!sitemap.includes(`/${file}</loc>`)) failures.push(`Sitemap missing ${file}`);
+for (const topic of topics) {
+  const html = await readFile(resolve(root, topicPath(topic).slice(1)), "utf8");
+  for (const slug of topicSlugs(topic)) {
+    if (!publications.some(pub => pub.slug === slug)) failures.push(`Topic references unknown paper: ${slug}`);
+    if (!html.includes(`href="/research/${slug}.html"`)) failures.push(`Topic missing paper link: ${slug}`);
+  }
+}
+const textSitemap = (await readFile(resolve(root, "sitemap.txt"), "utf8")).trim().split("\n");
+const xmlUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+if (JSON.stringify(textSitemap) !== JSON.stringify(xmlUrls)) failures.push("XML and text sitemaps differ");
+if (new Set(xmlUrls).size !== xmlUrls.length || xmlUrls.length !== publications.length + topics.length + 3) failures.push("Unexpected sitemap count or duplicates");
 for (const pub of publications) if (!sitemap.includes(`/research/${pub.slug}.html`)) failures.push(`Sitemap missing ${pub.slug}`);
 
 if (new Set(publications.map(pub => pub.slug)).size !== publications.length) failures.push("Duplicate publication slug");
@@ -95,4 +120,5 @@ if (failures.length) {
 }
 
 console.log(`Validated ${htmlFiles.length} HTML pages and ${publications.length} publication records.`);
+console.log(`Verified ${Object.keys(originalAbstracts).length} complete licensed abstracts and ${topics.length} bidirectional topic guides.`);
 console.log(`Verified ${publications.filter(pub => pub.researchContext.basis === "abstract").length} abstract-based summaries, source links, visible/structured consistency and related publications.`);

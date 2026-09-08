@@ -13,7 +13,8 @@ SN  - 2169-3536
 DO  - 10.1109/ACCESS.2021.3136782
 UR  - https://doi.org/10.1109/ACCESS.2021.3136782
 L2  - https://bura.brunel.ac.uk/handle/2438/23766
-AB  - A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments.
+AB  - © Copyright 2021 The author(s). There are many problems in cellular communications cannot be resolved traditionally. The quantum communications can add new dimensions, safety, encryption and solution to the traditional networks because of its robust physical strength. However, it is not entirely realised how to adapt the quantum into the traditional communications because it is not entirely utilised. This paper addresses the necessary guidelines and assessments for future quantum solutions to the standard mobile cloud networks. In particular, using entanglement phenomenon to increase the performance of the X2 application (X2-AP) protocol by minimising the overhead signalling, represented by the time and energy consumption the conventional cloud encounters. We intended to offer a delay reduction while adapting the quantum technique into the cloud by modelling the latency of both paradigms. Finally, increasing the number of photons has decreased the delay to about 40% compared to the traditional network. In addition, the energy efficiency in the quantum case has been increased while decreasing the power consumption by about 10%.
+N1  - Original abstract: https://bura.brunel.ac.uk/handle/2438/23766; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Paragraph breaks, mathematical typography and extraction artefacts have been normalised; the abstract has not been paraphrased.
 KW  - Quantum Entanglement
 KW  - Quality of Service
 KW  - Mobile Networks

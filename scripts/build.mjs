@@ -1,12 +1,14 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { researchContext, contextText, relatedPublications } from "./research-context.mjs";
+import { originalAbstracts } from "./original-abstracts.mjs";
+import { topics, topicPath, topicSlugs } from "./topics.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const siteUrl = "https://yassiralkarawi.github.io";
 const author = "Yassir AL-Karawi";
 const profileImage = "https://avatars.githubusercontent.com/u/214294900?v=4";
-const siteUpdated = "2026-09-07";
+const siteUpdated = "2026-09-08";
 const orcidUrl = "https://orcid.org/0000-0003-2959-3893";
 const openAlexUrl = "https://openalex.org/A5012826964";
 const scholarUrl = "https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate";
@@ -398,7 +400,8 @@ for (const pub of publications) {
   const context = researchContext[pub.slug];
   if (!context) throw new Error(`Missing research context: ${pub.slug}`);
   pub.keywords = [...new Set([...(publicationKeywords[pub.slug] || pub.themes), ...(context.additionalKeywords || [])])];
-  pub.researchContext = { ...context, reviewedAt: siteUpdated };
+  pub.researchContext = { ...context, reviewedAt: "2026-09-07" };
+  if (originalAbstracts[pub.slug]) pub.originalAbstract = originalAbstracts[pub.slug];
 }
 
 const profiles = [
@@ -485,7 +488,8 @@ function ris(pub) {
   if (pub.doi) lines.push(`DO  - ${pub.doi}`);
   lines.push(`UR  - ${doiUrl(pub) || `${siteUrl}/research/${pub.slug}.html`}`);
   if (pub.repositoryUrl) lines.push(`L2  - ${pub.repositoryUrl}`);
-  lines.push(`AB  - ${pub.summary}`);
+  lines.push(`AB  - ${pub.originalAbstract?.text || pub.summary}`);
+  if (pub.originalAbstract) lines.push(`N1  - Original abstract: ${pub.originalAbstract.sourceUrl}; CC BY 4.0: ${pub.originalAbstract.license}; ${pub.originalAbstract.changes}`);
   pub.keywords.forEach(keyword => lines.push(`KW  - ${keyword}`));
   lines.push("ER  -");
   return lines.join("\n");
@@ -510,6 +514,7 @@ function scholarlyArticleNode(pub) {
     headline: pub.title,
     name: pub.title,
     description: `${pub.summary} ${contextText(pub.researchContext)}`,
+    abstract: pub.originalAbstract?.text,
     datePublished: pub.date,
     dateModified: siteUpdated,
     inLanguage: "en",
@@ -580,6 +585,7 @@ function nav(active = "") {
     ["Home", "/"],
     ["Research", "/#research"],
     ["Publications", "/publications.html"],
+    ["Topics", "/topics.html"],
     ["Profiles", "/#profiles"]
   ];
   return `<a class="skip-link" href="#main">Skip to content</a>
@@ -752,6 +758,7 @@ function publicationsPage() {
 <main id="main">
   <section class="page-hero"><div class="container"><p class="eyebrow"><span></span> Scholarly record · Updated ${siteUpdated}</p><h1>Publications</h1><p>A machine-readable catalogue of ${publications.length} works across communications engineering, Open RAN, quantum networks, wireless systems, optical transport, and signal processing.</p></div></section>
   <section class="publication-browser"><div class="container">
+    <section aria-label="Research topic guides"><h2>Explore by research question</h2>${topicLinks()}</section>
     <div class="filter-panel">
       <label class="search-box"><span>Search title, author, venue, DOI, or topic</span><input type="search" id="publication-search" placeholder="e.g. Open RAN, quantum, IEEE Access"><b>${icon("book")}</b></label>
       <div class="filter-groups"><label>Year<select id="year-filter"><option value="all">All years</option>${years.map(year => `<option value="${year}">${year}</option>`).join("")}</select></label><label>Type<select id="type-filter"><option value="all">All types</option>${types.map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`).join("")}</select></label><label>Theme<select id="theme-filter"><option value="all">All themes</option>${themes.map(theme => `<option value="${escapeHtml(theme)}">${escapeHtml(theme)}</option>`).join("")}</select></label></div>
@@ -762,6 +769,28 @@ function publicationsPage() {
     <aside class="data-note" aria-label="Machine-readable publication catalogue"><div>${icon("id")}</div><div><h2>Machine-readable catalogue</h2><p>Download verified published-work metadata for reference managers, search engines, and research assistants.</p></div><div class="data-links"><a href="/publications.bib">BibTeX</a><a href="/publications.ris">RIS</a><a href="/publications.json">JSON</a><a href="/scholarly-graph.jsonld">JSON-LD</a></div></aside>
   </div></section>
 </main>${pageEnd()}`;
+}
+
+function topicLinks(selected = topics) {
+  return `<div class="topic-links">${selected.map(topic => `<a href="${topicPath(topic)}"><strong>${escapeHtml(topic.title)}</strong><span>${escapeHtml(topic.description)}</span></a>`).join("")}</div>`;
+}
+
+function topicNode(topic) {
+  return { "@type": "CollectionPage", "@id": `${siteUrl}${topicPath(topic)}`, url: `${siteUrl}${topicPath(topic)}`, name: topic.title, description: topic.description, dateModified: siteUpdated, mainEntity: { "@type": "ItemList", itemListElement: topicSlugs(topic).map((slug, index) => ({ "@type": "ListItem", position: index + 1, item: { "@id": `${siteUrl}/research/${slug}.html#article`, url: `${siteUrl}/research/${slug}.html`, name: publications.find(pub => pub.slug === slug).title } })) } };
+}
+
+function topicsIndexPage() {
+  return `${head({title: `Research Topics | ${author}`, description: "Explore source-linked reading guides to quantum sensing, Open RAN cybersecurity and energy-efficient networks.", canonical: "/topics.html"})}<body>${nav("Topics")}<main id="main"><section class="page-hero"><div class="container"><p class="eyebrow">Research guides</p><h1>Research topics</h1><p>Start with a scientific question, then follow the relevant papers, original sources and evidence limits.</p></div></section><section class="section"><div class="container">${topicLinks()}<p class="topic-disclaimer">These are curated guides to this author's publications, not systematic reviews of the whole field. Topic pages are not additional research papers. Cite the original papers using their DOI.</p><a class="text-link" href="/publications.html">Browse all ${publications.length} publications</a></div></section></main>${pageEnd()}`;
+}
+
+function topicPage(topic) {
+  return `${head({title: `${topic.title} | ${author}`, description: topic.description, canonical: topicPath(topic), extra: `<script type="application/ld+json">${safeJsonLd({"@context":"https://schema.org", ...topicNode(topic)})}</script>`})}<body>${nav("Topics")}<main id="main"><section class="page-hero"><div class="container"><a class="back-link" href="/topics.html">All research topics</a><p class="eyebrow">Reading guide · ${siteUpdated}</p><h1 class="topic-title">${escapeHtml(topic.title)}</h1><p>${escapeHtml(topic.intro)}</p></div></section><div class="container topic-guide">${topic.sections.map(section => `<section class="topic-section"><h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.text)}</p>${section.papers.length ? `<div class="publication-list">${section.papers.map(slug => publicationCard(publications.find(pub => pub.slug === slug))).join("")}</div>` : ""}</section>`).join("")}<aside class="topic-disclaimer">Editorial synthesis of the linked papers and their source-backed summaries. Consult the original abstracts and full texts for methods and assumptions. Results from different tasks, simulations and baselines are not directly comparable.</aside><section class="topic-section"><h2>Other research topics</h2>${topicLinks(topics.filter(item => item.slug !== topic.slug))}</section></div></main>${pageEnd()}`;
+}
+
+function originalAbstractHtml(pub) {
+  const original = pub.originalAbstract;
+  if (!original) return "";
+  return `<section class="research-detail original-abstract" aria-labelledby="original-abstract-${pub.slug}"><h2 id="original-abstract-${pub.slug}">Original abstract</h2><p class="abstract-text">${escapeHtml(original.text)}</p><div class="context-sources"><p>© ${pub.year} The Author(s): ${escapeHtml(pub.authors.join("; "))}. From <cite>${escapeHtml(pub.title)}</cite>.</p><p>Reproduced from <a href="${original.sourceUrl}">${original.sourceLabel}</a> under <a href="${original.license}">CC BY 4.0</a>. <a href="${doiUrl(pub)}">Original publication (DOI)</a>.</p><p>${escapeHtml(original.changes)} Verified <time datetime="${original.verifiedAt}">${original.verifiedAt}</time>.</p></div></section>`;
 }
 
 function researchContextHtml(pub) {
@@ -819,7 +848,7 @@ function publicationPage(pub) {
 <body>${nav("Publications")}
 <main id="main">
   <section class="record-hero"><div class="container record-grid"><div><a class="back-link" href="/publications.html">${icon("arrow")} All publications</a><div class="record-meta"><span>Published</span><span>${pub.year}</span><span>${escapeHtml(pub.type)}</span><span>${escapeHtml(pub.publisher)}</span></div><h1 class="citation_title">${escapeHtml(pub.title)}</h1><p class="record-authors citation_author">${escapeHtml(pub.authors.join(" · "))}</p><p class="record-venue">${escapeHtml(pub.venue)}</p>${tags(pub.themes)}<div class="record-actions">${pub.doi ? `<a class="button primary" href="${doiUrl(pub)}">Open publisher record ${icon("external")}</a>` : ""}${pub.repositoryUrl ? `<a class="button secondary" href="${pub.repositoryUrl}">Open full text ${icon("external")}</a>` : ""}<button class="button secondary copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></div><aside class="record-id" aria-label="Publication identifiers"><span>Persistent record</span>${pub.doi ? `<strong>DOI</strong><a href="${doiUrl(pub)}">${escapeHtml(pub.doi)}</a>` : `<strong>Indexed record</strong><p>No DOI is recorded for this conference item.</p>`}<i></i><strong>Author identity</strong><a href="${orcidUrl}">ORCID 0000-0003-2959-3893</a><a href="${openAlexUrl}">OpenAlex A5012826964</a></aside></div></section>
-  <section class="section record-body"><div class="container record-content"><article><p class="section-label">Research context</p><h2>Plain-language summary</h2><p class="record-summary">${escapeHtml(pub.summary)}</p>${researchContextHtml(pub)}<section class="record-keywords" aria-labelledby="keywords-${pub.slug}"><h2 id="keywords-${pub.slug}">Research keywords</h2>${tags(pub.keywords)}</section><div class="citation-block"><div><h2>Citation</h2><p>Use the DOI whenever available to ensure that citations are attributed to the canonical publication record.</p></div><pre><code>${escapeHtml(bibtex(pub))}</code></pre><button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></article><aside class="record-aside" aria-label="Publication discovery links"><h2>Discoverability</h2>${pub.repositoryUrl ? `<a href="${pub.repositoryUrl}">Publisher / repository record ${icon("external")}</a>` : ""}<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}">Search in Google Scholar ${icon("external")}</a><a href="${pub.doi ? `https://api.openalex.org/works/https://doi.org/${pub.doi}` : `https://openalex.org/works?search=${encodeURIComponent(pub.title)}`}">OpenAlex lookup ${icon("external")}</a><a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(pub.title)}">Semantic Scholar search ${icon("external")}</a><a href="${orcidUrl}">Author ORCID ${icon("external")}</a><h2>Citation files</h2><a href="/research/${pub.slug}.bib">Download BibTeX ${icon("external")}</a><a href="/research/${pub.slug}.ris">Download RIS ${icon("external")}</a></aside></div></section>
+  <section class="section record-body"><div class="container record-content"><article><p class="section-label">Research context</p><h2>Plain-language summary</h2><p class="record-summary">${escapeHtml(pub.summary)}</p>${originalAbstractHtml(pub)}${researchContextHtml(pub)}<section class="record-keywords" aria-labelledby="keywords-${pub.slug}"><h2 id="keywords-${pub.slug}">Research keywords</h2>${tags(pub.keywords)}</section><div class="citation-block"><div><h2>Citation</h2><p>Use the DOI whenever available to ensure that citations are attributed to the canonical publication record.</p></div><pre><code>${escapeHtml(bibtex(pub))}</code></pre><button class="copy-citation" type="button" data-copy="${escapeHtml(bibtex(pub))}">Copy BibTeX</button></div></article><aside class="record-aside" aria-label="Publication discovery links"><h2>Discoverability</h2>${pub.repositoryUrl ? `<a href="${pub.repositoryUrl}">Publisher / repository record ${icon("external")}</a>` : ""}<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(pub.title)}">Search in Google Scholar ${icon("external")}</a><a href="${pub.doi ? `https://api.openalex.org/works/https://doi.org/${pub.doi}` : `https://openalex.org/works?search=${encodeURIComponent(pub.title)}`}">OpenAlex lookup ${icon("external")}</a><a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(pub.title)}">Semantic Scholar search ${icon("external")}</a><a href="${orcidUrl}">Author ORCID ${icon("external")}</a>${topics.some(topic => topicSlugs(topic).includes(pub.slug)) ? `<h2>Research topics</h2>${topics.filter(topic => topicSlugs(topic).includes(pub.slug)).map(topic => `<a href="${topicPath(topic)}">${escapeHtml(topic.title)}</a>`).join("")}` : ""}<h2>Citation files</h2><a href="/research/${pub.slug}.bib">Download BibTeX ${icon("external")}</a><a href="/research/${pub.slug}.ris">Download RIS ${icon("external")}</a></aside></div></section>
   ${related.length ? `<section class="section related-section"><div class="container"><div class="section-heading"><div><p class="section-label">Related work</p><h2>Explore connected publications</h2></div></div><div class="featured-publications">${related.map(item => publicationCard(item, true)).join("")}</div></div></section>` : ""}
 </main>${pageEnd()}`;
 }
@@ -891,7 +920,8 @@ const scholarlyGraph = safeJsonLd({
   "@graph": [
     machinePerson,
     { "@type": "CollectionPage", "@id": `${siteUrl}/publications.html#catalogue`, name: `${author} published research`, url: `${siteUrl}/publications.html`, dateModified: siteUpdated, mainEntity: publications.map(pub => ({ "@id": `${siteUrl}/research/${pub.slug}.html#article` })) },
-    ...publications.map(scholarlyArticleNode)
+    ...publications.map(scholarlyArticleNode),
+    ...topics.map(topicNode)
   ]
 }, 2);
 const publicationsBib = publications.map(bibtex).join("\n\n");
@@ -923,7 +953,14 @@ const llms = `# Yassir AL-Karawi — Published Research
 
 ## Published works (${publications.length})
 
-${publications.map(pub => `### ${pub.title}\n\n- Status: Published ${pub.type}\n- Authors: ${pub.authors.join("; ")}\n- Venue: ${pub.venue}\n- Publication date: ${pub.date}\n- Summary: ${pub.summary}\n- Editorial research context: ${contextText(pub.researchContext)}\n- Summary basis: ${pub.researchContext.basis === "abstract" ? "Paraphrase of linked abstract; not verbatim" : "Title and record only; no detailed results asserted"}\n- Sources: ${pub.researchContext.sources.map(source => source.url).join("; ")}\n- Research keywords: ${pub.keywords.join("; ")}\n${pub.doi ? `- DOI: https://doi.org/${pub.doi}\n` : ""}- Canonical record: ${siteUrl}/research/${pub.slug}.html\n${pub.repositoryUrl ? `- Publisher / repository record: ${pub.repositoryUrl}\n` : ""}- BibTeX: ${siteUrl}/research/${pub.slug}.bib\n- RIS: ${siteUrl}/research/${pub.slug}.ris`).join("\n\n")}
+## Research topic guides
+
+These editorial guides are not additional published papers. Cite the original DOI-linked works.
+${topics.map(topic => `- ${topic.title}: ${siteUrl}${topicPath(topic)}`).join("\n")}
+
+## Publication records
+
+${publications.map(pub => `### ${pub.title}\n\n- Status: Published ${pub.type}\n- Authors: ${pub.authors.join("; ")}\n- Venue: ${pub.venue}\n- Publication date: ${pub.date}\n${pub.originalAbstract ? `- Original abstract: ${pub.originalAbstract.text}\n- Abstract source: ${pub.originalAbstract.sourceUrl} (CC BY 4.0)\n` : ""}- Summary: ${pub.summary}\n- Editorial research context: ${contextText(pub.researchContext)}\n- Summary basis: ${pub.researchContext.basis === "abstract" ? "Paraphrase of linked abstract; not verbatim" : "Title and record only; no detailed results asserted"}\n- Sources: ${pub.researchContext.sources.map(source => source.url).join("; ")}\n- Research keywords: ${pub.keywords.join("; ")}\n${pub.doi ? `- DOI: https://doi.org/${pub.doi}\n` : ""}- Canonical record: ${siteUrl}/research/${pub.slug}.html\n${pub.repositoryUrl ? `- Publisher / repository record: ${pub.repositoryUrl}\n` : ""}- BibTeX: ${siteUrl}/research/${pub.slug}.bib\n- RIS: ${siteUrl}/research/${pub.slug}.ris`).join("\n\n")}
 `;
 const robots = `User-agent: OAI-SearchBot
 Allow: /
@@ -1014,6 +1051,8 @@ async function output(path, content) {
 
 await output("index.html", homePage());
 await output("publications.html", publicationsPage());
+await output("topics.html", topicsIndexPage());
+for (const topic of topics) await output(topicPath(topic).slice(1), topicPage(topic));
 for (const pub of publications) {
   await output(`research/${pub.slug}.html`, publicationPage(pub));
   await output(`research/${pub.slug}.bib`, bibtex(pub));
@@ -1031,6 +1070,16 @@ await output("assets/styles.css", styles + discoveryStyles + `
 .context-sources ul{padding-left:22px}.context-sources li{margin:8px 0}
 .context-sources a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .context-reviewed{font-size:.75rem;margin-top:20px}
+.topic-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin:24px 0 40px}
+.topic-links>a{padding:24px;border:1px solid var(--line);background:var(--white);border-top:3px solid var(--teal)}
+.topic-links strong{display:block;font-size:1.08rem;color:var(--blue);margin-bottom:10px}.topic-links span{display:block;font-size:.88rem;color:var(--ink-2)}
+.topic-links>a:hover,.topic-links>a:focus-visible{border-color:var(--blue)}
+.page-hero .topic-title{font-size:clamp(2.6rem,6vw,5rem);line-height:1.06;max-width:1000px}
+.topic-guide{padding-top:24px;padding-bottom:35px}.topic-section{padding:35px 0;border-bottom:1px solid var(--line)}
+.topic-section>h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(1.5rem,3vw,2rem)}
+.topic-section>p{max-width:850px;font-size:1.05rem;color:var(--ink-2)}
+.topic-disclaimer{padding:24px;background:var(--mint);margin:30px 0;font-size:.9rem}
+.original-abstract .abstract-text{line-height:1.85;font-size:1rem}
 `);
 await output("assets/app.js", appJs);
 await output("assets/og-card.svg", ogCard);
@@ -1042,12 +1091,13 @@ await output("publications.ris", publicationsRis);
 await output("scholarly-graph.jsonld", scholarlyGraph);
 await output("llms.txt", llms);
 await output("robots.txt", robots);
-await output("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${siteUrl}/</loc><lastmod>${siteUpdated}</lastmod><priority>1.0</priority></url>\n  <url><loc>${siteUrl}/publications.html</loc><lastmod>${siteUpdated}</lastmod><priority>0.9</priority></url>\n${publications.map(pub => `  <url><loc>${siteUrl}/research/${pub.slug}.html</loc><lastmod>${siteUpdated}</lastmod><priority>0.7</priority></url>`).join("\n")}\n</urlset>\n`);
-await output("sitemap.txt", [`${siteUrl}/`, `${siteUrl}/publications.html`, ...publications.map(pub => `${siteUrl}/research/${pub.slug}.html`)].join("\n"));
+const crawlPaths = ["/", "/publications.html", "/topics.html", ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
+await output("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${crawlPaths.map(path => `  <url><loc>${siteUrl}${path}</loc><lastmod>${siteUpdated}</lastmod></url>`).join("\n")}\n</urlset>\n`);
+await output("sitemap.txt", crawlPaths.map(path => `${siteUrl}${path}`).join("\n"));
 await output("feed.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><title>Yassir AL-Karawi — Publications</title><id>${siteUrl}/</id><updated>${siteUpdated}T00:00:00Z</updated><link href="${siteUrl}/feed.xml" rel="self"/>${publications.slice(0, 10).map(pub => `<entry><title>${escapeHtml(pub.title)}</title><id>${doiUrl(pub) || `${siteUrl}/research/${pub.slug}.html`}</id><link href="${siteUrl}/research/${pub.slug}.html"/><updated>${pub.date.length >= 10 ? pub.date : `${pub.year}-01-01`}T00:00:00Z</updated><summary>${escapeHtml(pub.summary)}</summary></entry>`).join("")}</feed>`);
 await output("404.html", `${head({ title: `Page not found | ${author}`, description: "The requested page could not be found.", canonical: "/404.html" })}<body>${nav()}<main id="main"><section class="page-hero"><div class="container"><p class="eyebrow"><span></span> 404</p><h1>Page not found</h1><p>The requested page does not exist or may have moved.</p><a class="button primary" href="/">Return home ${icon("arrow")}</a></div></section></main>${pageEnd()}`);
 await output("README.md", readme);
 await output("CITATION.cff", citation);
 await output(".nojekyll", "");
 
-console.log(`Built ${publications.length + 2} HTML pages in ${root}`);
+console.log(`Built ${crawlPaths.length} indexable pages plus the 404 page in ${root}`);

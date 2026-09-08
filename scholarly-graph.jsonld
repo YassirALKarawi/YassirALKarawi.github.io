@@ -77,7 +77,7 @@
       "@id": "https://yassiralkarawi.github.io/publications.html#catalogue",
       "name": "Yassir AL-Karawi published research",
       "url": "https://yassiralkarawi.github.io/publications.html",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "mainEntity": [
         {
           "@id": "https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html#article"
@@ -156,8 +156,9 @@
       "headline": "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels",
       "name": "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels",
       "description": "An adaptive quantum-cognitive detection framework that studies entanglement-assisted radar operation under realistic thermal-loss channels. The study asks how a radar can adapt its detection strategy when attenuation and thermal background noise change. It combines entangled signal and idler modes with feedback control, connecting quantum illumination to an adaptive sensing problem rather than treating the transmitter settings as fixed. A two-mode squeezed-vacuum transmitter, joint idler–signal receiver and quantum neural-network controller form the proposed system. A Gaussian correlation detector is compared with the quantum Chernoff bound, while the controller adjusts operating parameters under an energy constraint. Hardware-aware simulations report approximately 3 dB advantage and up to 40% shorter integration time at a false-alarm probability of 0.05. At a false-alarm probability of 0.001, reported detection probability is 0.47, versus 0.20 for the classical comparator. These are simulation results for the paper's channel and receiver assumptions, not measurements from a deployed radar.",
+      "abstract": "An adaptive Quantum-Cognitive Radar (QCR), which incorporates a two-mode squeezed-vacuum (TMSV) transmitter, a joint idler-signal receiver, and a Quantum Neural Network (QNN) controller to optimize parameters in real time, is introduced through this exchange of correspondence. An expression for a Gaussian correlation detector has been found for thermal-loss channels and compared with the quantum Chernoff bound (QCB). Hardware-aware simulations show that QCR achieves higher detection probability P_D at a fixed false-alarm probability P_FA (i.e., the probability of declaring a target when it is absent) than both coherent-state radar and nonadaptive quantum baselines. At P_FA = 0.05, QCR provides an approximately 3 dB advantage with up to 40% reduction in integration time while maintaining robustness as background noise increases. At the operationally stringent P_FA = 10^−3, QCR achieves P_D = 0.47 versus 0.20 for classical radar, corresponding to a 135% relative improvement. The receiver requires only homodyne/heterodyne sampling and digital correlation, making it compatible with noisy intermediate-scale quantum (NISQ) hardware. The adaptive policy optimizes the parameter vector (M, N_S, B, T_int, G) under fixed energy constraints, demonstrating that online adaptation preserves and extends quantum-illumination advantages in nonstationary sensing environments.",
       "datePublished": "2026",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -282,7 +283,7 @@
       "name": "Digital Twin and Native-AI Empowered 6G Networks: Architectures, Applications, Evaluation, and Open Challenges",
       "description": "A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks. This paper addresses the relationship between digital twins and native artificial intelligence in 6G networks. Its stated scope spans architecture, applications, evaluation and open challenges. It is a starting point for readers investigating how digital representations and AI-enabled network functions fit into future communications systems.",
       "datePublished": "2026-03-23",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -386,7 +387,7 @@
       "name": "Lossless Canonical Coding Design with FPGA Implementation Using High-Speed Architecture",
       "description": "A high-speed FPGA architecture for lossless canonical coding, with emphasis on efficient digital implementation. The paper connects lossless canonical coding with a high-speed FPGA implementation. Its scope concerns both the coding design and its realisation as digital hardware. Readers interested in hardware-oriented data compression can use the publication record to examine the architecture and the implementation evidence reported by the authors.",
       "datePublished": "2026-03-23",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -489,8 +490,9 @@
       "headline": "Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications",
       "name": "Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications",
       "description": "A secure synchronisation framework combining entangled quantum neural networks, reconfigurable intelligent surfaces, and quantum key distribution for 6G holographic communications. The proposed hybrid quantum–classical framework coordinates distributed quantum neural networks for 6G holographic communications. It combines entanglement-assisted synchronisation, reconfigurable intelligent surfaces and quantum key distribution within a single communication and learning model. GHZ-state gradient consensus and entropy- and trace-distance regularisation support synchronisation. QNN parameters and RIS phases are jointly adjusted to preserve fidelity under noise, with QKD protecting the modelled midhaul. Qiskit simulations compare the full framework with reduced versions that omit GHZ synchronisation or RIS assistance. Across 100 simulation trials, the abstract reports mean fidelity of 0.961 and latency of 22.5 ms. Fidelity improvements of 20–28% are reported relative to the reduced baselines. The reported evidence is simulation-based; these figures do not establish an operational 6G holographic network or experimentally demonstrated security.",
+      "abstract": "This paper presents a cybersecure hybrid quantum–classical architecture for synchronising distributed quantum neural networks (QNNs) in 6G holographic communications. The proposed framework targets secure, low-latency and high-fidelity end-to-end operation under realistic noise and adversarial conditions. Multipartite Greenberger–Horne–Zeilinger (GHZ) entanglement supports gradient-consensus synchronisation, regularised by von Neumann entropy and trace distance. Holographic tensor teleportation is executed over reconfigurable intelligent surface (RIS)-assisted midhaul links protected by quantum key distribution (QKD). Joint optimisation of QNN parameters and RIS phases targets high end-to-end fidelity under noise. Qiskit simulations averaged over 100 trials achieve F_avg = 0.961, E_sync = 0.010 and S(ρ) = 0.12, with 22.5 ms end-to-end latency. Compared with reduced baselines without GHZ synchronisation or without RIS control, fidelity improves by 20%–28% and synchronisation divergence decreases by about 90%. Scalability, security stress scenarios, classical-feedback impairments, hyperparameter sensitivity and noisy intermediate-scale quantum (NISQ)-oriented error mitigation are all evaluated. The architecture scales gracefully to N = 20 distributed units with only 7% fidelity reduction, whereas mitigation improves fidelity by 7%–11% under moderate noise. Overall, the RIS-QKD-GHZ integration enables secure, low-latency and scalable quantum–classical 6G networking.",
       "datePublished": "2026-01",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -612,8 +614,9 @@
       "headline": "Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN",
       "name": "Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN",
       "description": "A quantum digital-twin framework designed to support proactive cybersecurity analysis and threat reversal in Open RAN. This work models an Open RAN security digital twin using quantum-state representations of network telemetry. Its focus is proactive response to modelled attacks, with state fidelity and divergence used to track disruption and recovery. Amplitude encoding, GHZ and cluster-state entanglement represent telemetry. Bit-flip, phase-flip and amplitude-damping channels model adversarial effects. A lightweight REINFORCE policy selects responses, evaluated through Qiskit simulations and software-loop timing. The abstract reports mean fidelity above 0.91, attack classification above 87% and approximately 19.1 ms software-loop latency under the studied conditions. Comparisons include classical intrusion detection and quantum-thresholding baselines. Software-loop timing and simulated quantum states are not evidence of a deployed quantum security system. The paper's noise models and baselines define the scope of the results.",
+      "abstract": "A cybersecurity-driven quantum digital twin (CQDT) is introduced to protect networked control chains against adversarial completely positive trace preserving perturbations. The design maps O-RAN telemetry to amplitude-encoded registers, forms multipartite entanglement through GHZ and one-dimensional cluster states and injects bit flip, phase flip and amplitude damping channels tied to measurable indicators. System integrity is tracked using fidelity F_t, von Neumann entropy S_t and trace distance D_t. A lightweight REINFORCE policy acts on these observables to preserve entanglement and limit decoherence within tight cycle-time budgets. Qiskit simulations maintain average fidelity above 0.91, entropy near 0.35 and trace distance below 0.18 under composite noise. Attack classification exceeds 87% with a software-loop latency of about 19.1 ms covering state preparation, entanglement, CPTP injection, measurement and policy inference. Compared with classical intrusion detection and thresholding over quantum observables, the framework improves detection while reducing false alarms and exposes quantum-state degradation in real time. The result is a reproducible and scalable basis for learning-based quantum-aware protection in disaggregated radio access networks and related systems.",
       "datePublished": "2026-02-18",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -736,7 +739,7 @@
       "name": "Mitigating in Band Overshoot in Digital High-Pass Filters: Design and Analysis of Bessel and Gaussian Filters for Maximally Flat Step Response",
       "description": "Design and analysis of Bessel and Gaussian high-pass filters to reduce in-band overshoot while preserving a maximally flat step response. The paper examines a filter-design trade-off: a flat time-domain step response does not automatically imply a flat amplitude–frequency response. It compares high-pass designs derived from Bessel and Gaussian low-pass prototypes. Bilinear transformations generate the IIR high-pass designs. A parallel structure combines a direct path with a low-pass branch. Mathcad numerical evaluations compare filter orders and parallel versus stage-by-stage connections, considering both transient behaviour and frequency-response overshoot. Gaussian-based designs show smaller negative step overshoot in the evaluated examples, while frequency-response overshoot increases with order. The proposed parallel scheme reports up to 30% lower amplitude–frequency overshoot than the conventional schemes without degrading transient response. The comparisons are numerical filter-design results, not measured performance of every hardware implementation.",
       "datePublished": "2025-09-30",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -859,7 +862,7 @@
       "name": "Energy-Efficient Sub-Millisecond DWDM Backhaul for 6G Open RAN",
       "description": "An energy-efficient dense wavelength-division multiplexing backhaul design targeting sub-millisecond transport requirements in 6G Open RAN. This study targets the joint energy and latency demands of optical backhaul for 6G Open RAN. Rather than keeping all wavelength resources active, the proposed controller adapts optical capacity to changing traffic while observing transport-delay constraints. Three stages combine projected primal–dual wavelength allocation, energy-aware wavelength pruning and latency-responsive reconfiguration. The evaluation considers multiple topologies and bursty or diurnal traffic, with static provisioning, greedy control and a lightweight actor–critic among the comparators. The reported evaluations show up to 32% lower optical power than static provisioning, with delays around 0.7–0.8 ms. The paper also examines violations of the 1 ms latency threshold. Savings and delay figures depend on the evaluated topology, load and baseline; they are not a guarantee for a deployed backhaul.",
       "datePublished": "2025-12-20",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -986,7 +989,7 @@
       "name": "Cybersecurity-Aware Observer-Based Control for Smart Power Distribution Under False Data Injection Attacks",
       "description": "An observer-based control approach for improving the cybersecurity resilience of smart power-distribution systems under false-data injection attacks. This paper studies observer-based control for smart power distribution when measurement data can be corrupted by false-data injection. Its scope links control-system state estimation with cybersecurity. It is relevant to research on maintaining reliable control in power-distribution systems exposed to malicious data.",
       "datePublished": "2025-09-25",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1082,7 +1085,7 @@
       "name": "Reducing Transient Effects in FIR Digital Filters: An Efficient Compensation Technique for Enhanced Impulse Response Stability",
       "description": "A compensation technique for reducing transient effects and improving impulse-response stability in finite impulse response digital filters. This work focuses on transient effects in finite impulse response digital filters and a compensation technique intended to improve impulse-response behaviour. The topic is distinct from FPGA resource optimisation: the central concern here is the filter's response over time. Consult the original paper for the compensation procedure and its evaluation conditions.",
       "datePublished": "2025-05-12",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1177,8 +1180,9 @@
       "headline": "Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing",
       "name": "Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing",
       "description": "An energy-aware optimisation framework for off-grid Open RAN that integrates reconfigurable intelligent surfaces and edge computing. The paper studies solar-powered Open RAN in isolated environments, combining reconfigurable intelligent surfaces and mobile edge computing. The resource-management problem must accommodate changing harvested energy and traffic while respecting delay, power and temperature limits. A primal–dual controller updates transmit power, CPU speed and RIS phases from queue and energy conditions. The objective balances energy use, delay, SINR-related reliability and fairness. MATLAB simulations, sensitivity analysis and ablation tests examine the individual design choices. The abstract reports 25% lower energy consumption and 18% lower average delay than the baseline under the simulated solar and traffic conditions. The source identifies the evidence as MATLAB simulation, not field measurements from an off-grid network. Reported gains apply to the evaluated baseline and constraints.",
+      "abstract": "This paper proposes a strategy for designing Open Radio Access Networks (ORAN) to maximise their energy efficiency using solar power, supplemented by Reconfigurable Intelligent Surfaces (RIS) and Mobile Edge Computing (MEC). Because grid power is not always available where these ORAN systems are built, our approach manages the difficulties created by dynamic energy and timing issues found in isolated environments. The approach concentrates on allocating energy to all transmitters, CPU speed and RIS phases in real time, subject to strict rules on power use, latency issues and heat. The primal-dual algorithm we propose reacts to queue and energy changes to update the dual variables and control policies without access to every channel parameter. Our combined (composite) cost function measures energy use, delays encountered by users, reliability of the SINR and fairness. Results from the simulation indicate that using the proposed method lowers energy usage by 25% and average delay by 18%, outperforming baseline models under varying solar and traffic patterns. Robustness is further validated through sensitivity and ablation analyses. This work demonstrates the feasibility of deploying sustainable, intelligent ORAN infrastructures in remote 6G scenarios where conventional power and connectivity are unavailable.",
       "datePublished": "2025-01",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1302,8 +1306,9 @@
       "headline": "Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks",
       "name": "Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks",
       "description": "A quantum-based load-balancing approach developed to improve energy efficiency in Open Radio Access Networks. This work studies energy efficiency in virtualised Open RAN, where traffic variation and competition for virtual-machine resources affect power use. A quantum-based load-balancing model is used to formulate the allocation problem. The paper develops a power-consumption model and a nonlinear optimisation problem using Lagrange multipliers. Numerical solutions obtained with sequential quadratic programming are compared with an active-set method. The reported numerical comparison gives approximately 45% higher energy efficiency for sequential quadratic programming than for the active-set method. This figure compares the two evaluated optimisation methods; it is not a measured quantum-hardware speedup or a 45% saving against all conventional networks.",
+      "abstract": "The open radio access network (ORAN) aims to improve network efficiency by reducing latency through the distributed unit (DU) and virtualization in the central unit (CU). However, the deployment of additional DU servers increases power usage and competition among virtual machines for user data processing. This study proposes a novel approach to address these challenges by incorporating load balancing strategies and quantum physics concepts, particularly entanglement theory in classical communication systems. The methodology enables the production of quantum information units from a single classical information unit, aiming to conserve energy. A simplified yet effective power consumption (PC) model for the ORAN architecture captures traffic fluctuations and provides a comprehensive characterization of power usage within a virtualized system. An optimization problem is formulated to select ORAN servers for quantum load balancing that are less energy-efficient, maximizing user benefits. The Lagrange multiplier method is used to deal with nonlinear objective functions. The presented problem is addressed through the use of two numerical methods, namely sequential quadratic programming (SQP) and the active-set approach. It is shown that the SQP model exhibits superior energy efficiency compared to the active-set model, with a difference of approximately 45%.",
       "datePublished": "2024",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1428,7 +1433,7 @@
       "name": "Power Consumption Evaluation of Next Generation Open Radio Access Network",
       "description": "An evaluation of power-consumption components and energy implications in next-generation Open Radio Access Network architectures. The paper evaluates power consumption in next-generation Open Radio Access Networks. It provides an energy-focused perspective on an architecture characterised by network openness and vendor diversity. It complements the author's load-balancing and off-grid optimisation papers by addressing the evaluation of power demand itself.",
       "datePublished": "2024-02-28",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1528,7 +1533,7 @@
       "name": "Optimizing the Placement of Cloud Data Center in Virtualized Environment",
       "description": "A study of cloud data-center placement strategies in virtualized environments, addressing network and resource-allocation considerations. The study jointly considers where to place a mobile cloud data centre and how many virtual machines it should host. The objective is energy efficiency subject to network quality-of-service requirements, rather than placement based only on geographical proximity. Monte Carlo-oriented particle swarm optimisation and a genetic algorithm are used to explore virtual-machine counts and data-centre position. The power model includes both the virtualised server and radio units, with resource blocks, transmit and receive power, and overhead consumption among its inputs. The abstract describes an optimisation framework constrained by latency, resource-block availability and a minimum user data rate. It does not state a single numerical improvement percentage. The appropriate placement and virtual-machine count are model-dependent; the abstract does not support a universal best location.",
       "datePublished": "2022-06-01",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1654,8 +1659,9 @@
       "headline": "Quality of Service of Quantum Entanglement in Mobile Networks",
       "name": "Quality of Service of Quantum Entanglement in Mobile Networks",
       "description": "A quality-of-service study of quantum entanglement distribution and performance in mobile-network environments. This paper investigates a model for integrating quantum entanglement into mobile-cloud communications. It examines quality of service through signalling overhead, delay and energy use, linking quantum-network concepts with mobile-network operation. The analysis compares classical and quantum communication paradigms and considers entanglement-assisted reduction of X2-AP signalling overhead. Delay and power models are used to assess the proposed integration and its dependence on photon resources. The abstract reports lower modelled delay and power consumption for the proposed scenario. The comparisons should be interpreted within the paper's assumptions about quantum resources and mobile-network signalling. This is a modelling study, not evidence that an operational mobile network can exchange classical information instantaneously using entanglement.",
+      "abstract": "© Copyright 2021 The author(s). There are many problems in cellular communications cannot be resolved traditionally. The quantum communications can add new dimensions, safety, encryption and solution to the traditional networks because of its robust physical strength. However, it is not entirely realised how to adapt the quantum into the traditional communications because it is not entirely utilised. This paper addresses the necessary guidelines and assessments for future quantum solutions to the standard mobile cloud networks. In particular, using entanglement phenomenon to increase the performance of the X2 application (X2-AP) protocol by minimising the overhead signalling, represented by the time and energy consumption the conventional cloud encounters. We intended to offer a delay reduction while adapting the quantum technique into the cloud by modelling the latency of both paradigms. Finally, increasing the number of photons has decreased the delay to about 40% compared to the traditional network. In addition, the energy efficiency in the quantum case has been increased while decreasing the power consumption by about 10%.",
       "datePublished": "2021",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1780,7 +1786,7 @@
       "name": "On the Trade-offs of 5G Networks and Beyond",
       "description": "An examination of engineering trade-offs that shape fifth-generation mobile networks and their evolution beyond 5G. The paper examines green mobile-network design as a set of competing engineering and economic objectives. Energy efficiency is considered alongside deployment cost and service performance, rather than as an isolated target. Numerical analysis examines relationships involving power, bandwidth, spectral efficiency, delay, carbon emissions, deployment cost and revenue. The scope connects technical network choices with the cost considerations faced by operators and investors. The work highlights trade-offs between greener operation and cost efficiency. Its abstract does not establish a single configuration that is optimal for every network, or give a universal percentage improvement.",
       "datePublished": "2021-03-16",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -1904,7 +1910,7 @@
       "name": "Efficient FIR Filter Architecture Using FPGA",
       "description": "An efficient field-programmable gate array architecture for implementing finite impulse response digital filters. The paper targets the hardware cost of finite impulse response filtering. Its architecture reduces multiplier requirements using shift-and-add operations, addressing the resource and performance demands of digital filtering in communications systems. A 10-tap FIR design is expressed in Verilog HDL, simulated in Modelsim and implemented using Altera's Quartus II tools. FPGA synthesis provides the basis for comparison with existing reconfigurable architectures. The design example reports 25% lower resource usage and 37% higher speed than the compared existing methods. These are results for the paper's architecture and synthesis example, not measured advantages for every FPGA device or filter order.",
       "datePublished": "2019-06-03",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2020,7 +2026,7 @@
       "name": "On the Energy Detection Performance Based Welch's DCT Algorithm in Cognitive Radio Systems",
       "description": "An energy-detection performance study using a Welch discrete cosine transform algorithm for cognitive-radio systems. This paper addresses spectrum sensing for cognitive radio, where detecting an occupied channel is important before using otherwise idle spectrum. It considers energy detection for low signal-to-noise-ratio signals. The proposed detector uses the discrete cosine transform with Welch's periodogram to estimate power spectral density. Its evaluation considers digital video broadcasting signals over an additive white Gaussian noise channel, with different signal-to-noise ratios and user-terminal conditions. This overview describes the method stated in the paper's abstract. No numerical detection advantage is asserted here.",
       "datePublished": "2018",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2151,7 +2157,7 @@
       "name": "Reducing PAPR of OFDM Systems Using Cyclic Prefix Shifting Algorithm",
       "description": "A cyclic-prefix shifting algorithm for reducing the peak-to-average power ratio in orthogonal frequency-division multiplexing systems. The paper addresses peak-to-average power ratio in OFDM while also considering computational complexity and bit-error performance. It positions the proposed shifting method against amplitude clipping and selected mapping, which have different implementation trade-offs. The abstract describes cyclic shifting of frequency-domain OFDM samples to form alternative arrangements with reduced peak-to-average power ratio. Simulation is used to examine PAPR and bit-error behaviour, with selected mapping as a complexity comparator. The paper reports PAPR reduction without bit-error-rate degradation in its simulations, and approximately 68% lower computational complexity than the compared selected-mapping scheme. The 68% figure concerns the stated computational-complexity comparison, not a measured 68% reduction in device energy or battery use.",
       "datePublished": "2017",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2267,7 +2273,7 @@
       "name": "Applicability of DCA in HAPS-Based Systems in the 5850–7075 MHz Band",
       "description": "An assessment of dynamic channel assignment for high-altitude platform systems sharing spectrum in the 5850–7075 MHz band. This conference paper concerns the applicability of dynamic channel assignment to high-altitude platform systems in the 5850–7075 MHz band. It belongs to the author's spectrum-sharing work on HAPS and terrestrial communications. Its focus is channel assignment, distinct from the related paper on automatic transmit-power control.",
       "datePublished": "2012",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2363,7 +2369,7 @@
       "name": "Enhancement of Coexistence Between HAPS and Terrestrial System in 5.8 GHz Band",
       "description": "Techniques for enhancing coexistence between high-altitude platform stations and terrestrial systems operating in the 5.8 GHz band. This conference contribution concerns improving coexistence between high-altitude platforms and terrestrial systems in the 5.8 GHz band. It is part of the author's HAPS spectrum-sharing research. The separate ICCCE optimisation paper has a similar topic but a different title and publication record; the two should not be treated as interchangeable citations.",
       "datePublished": "2012",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2459,7 +2465,7 @@
       "name": "Optimizing the Coexistence Between HAPS Platform and Terrestrial System in 5.8 GHz Band",
       "description": "An optimisation study for spectrum coexistence between a high-altitude platform and terrestrial systems in the 5.8 GHz band. This ICCCE paper examines coexistence optimisation for a high-altitude platform and terrestrial systems in the 5.8 GHz band. Its subject is shared-spectrum operation across aerial and terrestrial links. Use its DOI for precise citation, since the catalogue also contains a separate PIERS paper on coexistence enhancement in the same band.",
       "datePublished": "2012",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2564,7 +2570,7 @@
       "name": "Studying Different Propagation Models for LTE-A System",
       "description": "A comparative study of radio-propagation models used to characterize coverage and performance in LTE-Advanced systems. This paper compares propagation models for LTE-Advanced systems. The topic concerns how radio-channel modelling informs estimates of path loss, coverage and network performance. It provides a propagation-focused counterpart to the author's work on spectrum coexistence and later mobile-network resource optimisation.",
       "datePublished": "2012",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2665,7 +2671,7 @@
       "name": "Utilizing ATPC Scheme to Facilitate Sharing Between HAPS and Terrestrial in 5.7 GHz Band",
       "description": "Application of automatic transmit power control to facilitate spectrum sharing between high-altitude platform and terrestrial systems in the 5.7 GHz band. This conference paper considers automatic transmit-power control as a means of facilitating spectrum sharing between HAPS and terrestrial systems. The publication title specifies the 5.7 GHz band. Its power-control focus distinguishes it from the related HAPS paper on dynamic channel assignment.",
       "datePublished": "2012",
-      "dateModified": "2026-09-07",
+      "dateModified": "2026-09-08",
       "inLanguage": "en",
       "creativeWorkStatus": "Published",
       "author": [
@@ -2752,6 +2758,153 @@
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://yassiralkarawi.github.io/topics/quantum-radar-and-sensing.html",
+      "url": "https://yassiralkarawi.github.io/topics/quantum-radar-and-sensing.html",
+      "name": "Quantum Radar and Adaptive Sensing",
+      "description": "Adaptive target detection under thermal loss, quantum illumination and entanglement: a research guide with original abstracts and DOI-linked papers.",
+      "dateModified": "2026-09-08",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html#article",
+              "url": "https://yassiralkarawi.github.io/research/quantum-cognitive-radar-thermal-loss.html",
+              "name": "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html#article",
+              "url": "https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html",
+              "name": "Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html#article",
+              "url": "https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html",
+              "name": "Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://yassiralkarawi.github.io/topics/open-ran-cybersecurity.html",
+      "url": "https://yassiralkarawi.github.io/topics/open-ran-cybersecurity.html",
+      "name": "Cybersecurity and Digital Twins in Open RAN",
+      "description": "Research on Open RAN quantum digital twins, learning-based security and secure QNN synchronisation, with methods, evidence limits and original sources.",
+      "dateModified": "2026-09-08",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html#article",
+              "url": "https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html",
+              "name": "Cybersecurity Driven Quantum Digital Twin for Proactive Threat Reversal in Open RAN"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html#article",
+              "url": "https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html",
+              "name": "Cybersecure Synchronisation of Entangled Quantum Neural Networks With Reconfigurable Intelligent Surface and Quantum Key Distribution for 6G Holographic Communications"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html#article",
+              "url": "https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html",
+              "name": "Digital Twin and Native-AI Empowered 6G Networks: Architectures, Applications, Evaluation, and Open Challenges"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.html#article",
+              "url": "https://yassiralkarawi.github.io/research/cybersecurity-observer-power-distribution.html",
+              "name": "Cybersecurity-Aware Observer-Based Control for Smart Power Distribution Under False Data Injection Attacks"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://yassiralkarawi.github.io/topics/energy-efficient-open-ran.html",
+      "url": "https://yassiralkarawi.github.io/topics/energy-efficient-open-ran.html",
+      "name": "Energy-Efficient Open RAN and Edge Computing",
+      "description": "Solar-powered off-grid Open RAN, RIS and edge computing, virtual-machine allocation and DWDM transport: a source-linked guide to energy research.",
+      "dateModified": "2026-09-08",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html#article",
+              "url": "https://yassiralkarawi.github.io/research/off-grid-oran-ris-edge-energy.html",
+              "name": "Energy-Aware Optimisation for Off-Grid ORAN With RIS and Edge Computing"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html#article",
+              "url": "https://yassiralkarawi.github.io/research/cloud-data-center-placement-virtualized.html",
+              "name": "Optimizing the Placement of Cloud Data Center in Virtualized Environment"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html#article",
+              "url": "https://yassiralkarawi.github.io/research/quantum-load-balancing-open-ran-energy.html",
+              "name": "Optimizing the Energy Efficiency Using Quantum Based Load Balancing in Open Radio Access Networks"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html#article",
+              "url": "https://yassiralkarawi.github.io/research/energy-efficient-dwdm-backhaul-open-ran.html",
+              "name": "Energy-Efficient Sub-Millisecond DWDM Backhaul for 6G Open RAN"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@id": "https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.html#article",
+              "url": "https://yassiralkarawi.github.io/research/power-consumption-next-generation-open-ran.html",
+              "name": "Power Consumption Evaluation of Next Generation Open Radio Access Network"
+            }
+          }
+        ]
       }
     }
   ]
