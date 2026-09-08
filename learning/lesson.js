@@ -41,8 +41,23 @@
   document.querySelector('#reset-order')?.addEventListener('click',()=>{slots.forEach(s=>{const b=s.querySelector('button');if(b)bank.append(b)});document.querySelector('#order-feedback').textContent='';});
   function calculate(){const a=+document.querySelector('#calc-a').value,t=+document.querySelector('#calc-t').value;document.querySelector('#energy-result').textContent=`${(a*a*t/2).toFixed(3)} mJ`;}
   document.querySelector('#calculate-energy')?.addEventListener('click',calculate);
+  const erfc = x => {
+    const z=Math.abs(x),t=1/(1+z/2);
+    const value=t*Math.exp(-z*z-1.26551223+t*(1.00002368+t*(.37409196+t*(.09678418+t*(-.18628806+t*(.27886807+t*(-1.13520398+t*(1.48851587+t*(-.82215223+t*.17087277)))))))));
+    return x>=0?value:2-value;
+  };
+  function updateBer(){
+    const db=+document.querySelector('#ebn0')?.value;
+    if(!Number.isFinite(db)) return;
+    const linear=10**(db/10),ber=.5*erfc(Math.sqrt(linear)/Math.SQRT2);
+    document.querySelector('#ebn0-out').textContent=`${db} dB`;
+    document.querySelector('#ebn0-linear').textContent=linear.toFixed(3);
+    const exponent=ber===0?0:Math.floor(Math.log10(ber)),mantissa=ber/(10**exponent);
+    document.querySelector('#ber-output').textContent=`${mantissa.toFixed(3)} × 10^${exponent}`;
+  }
+  document.querySelector('#ebn0')?.addEventListener('input',updateBer); updateBer();
   const saved=JSON.parse(localStorage.getItem('ya-ask-progress')||'{}');
-  document.querySelector('#quiz')?.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget);const correct=[data.get('q1')==='b',data.get('q2')==='b',data.get('q3')==='a'];const score=correct.filter(Boolean).length;document.querySelector('#quiz-result').innerHTML=`<strong>${score}/3 correct</strong><p>${score===3?'Excellent. You can explain the ASK model, energy scaling and noise sensitivity.':'Review: OOK suppresses the carrier for 0; energy is proportional to A²; additive noise obscures amplitude states.'}</p>`;saved.quiz=score;localStorage.setItem('ya-ask-progress',JSON.stringify(saved));updateProgress();});
-  function updateProgress(){const total=document.documentElement.scrollHeight-innerHeight;const viewed=total?scrollY/total:0;const score=saved.quiz||0;const percent=Math.min(100,Math.round(viewed*70+(score/3)*30));document.querySelector('#lesson-progress').style.width=`${percent}%`;document.querySelector('#progress-label').textContent=`${percent}%`;localStorage.setItem('ya-ask-view',String(Math.max(+(localStorage.getItem('ya-ask-view')||0),percent)));}
+  document.querySelector('#quiz')?.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget);const correct=[data.get('q1')==='b',data.get('q2')==='b',data.get('q3')==='a',data.get('q4')==='c',data.get('q5')==='a'];const score=correct.filter(Boolean).length;document.querySelector('#quiz-result').innerHTML=`<strong>${score}/5 correct</strong><p>${score===5?'Excellent. You can explain the ASK model, energy, bandwidth, receiver and noise sensitivity.':'Review: OOK suppresses the carrier for 0; energy scales with A²; rectangular OOK uses about 2Rb null-to-null bandwidth; the receiver ends with a threshold decision.'}</p>`;saved.quiz=score;localStorage.setItem('ya-ask-progress',JSON.stringify(saved));updateProgress();});
+  function updateProgress(){const total=document.documentElement.scrollHeight-innerHeight;const viewed=total?scrollY/total:0;const score=saved.quiz||0;const percent=Math.min(100,Math.round(viewed*70+(score/5)*30));document.querySelector('#lesson-progress').style.width=`${percent}%`;document.querySelector('#progress-label').textContent=`${percent}%`;localStorage.setItem('ya-ask-view',String(Math.max(+(localStorage.getItem('ya-ask-view')||0),percent)));}
   addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
 })();
