@@ -5,7 +5,7 @@ import { originalAbstracts } from "./original-abstracts.mjs";
 import { topics, topicPath, topicSlugs } from "./topics.mjs";
 
 const root = resolve(import.meta.dirname, "..");
-const required = ["index.html", "publications.html", "404.html", "assets/styles.css", "assets/app.js", "robots.txt", "sitemap.xml", "publications.json", "site.webmanifest", "learning/index.html", "learning/learning.css", "learning/lesson.js", "learning/digital-communications/ask-modulation.html"];
+const required = ["index.html", "publications.html", "404.html", "assets/styles.css", "assets/app.js", "robots.txt", "sitemap.xml", "publications.json", "site.webmanifest", "learning/index.html", "learning/learning.css", "learning/learning-visuals.css", "learning/lesson.js", "learning/digital-communications/ask-modulation.html"];
 const failures = [];
 const escapeHtml = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
 
