@@ -3,12 +3,13 @@ import { dirname, resolve } from "node:path";
 import { researchContext, contextText, relatedPublications } from "./research-context.mjs";
 import { originalAbstracts } from "./original-abstracts.mjs";
 import { topics, topicPath, topicSlugs } from "./topics.mjs";
+import { course as learningCourse } from "./learning-curriculum.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const siteUrl = "https://yassiralkarawi.github.io";
 const author = "Yassir AL-Karawi";
 const profileImage = "https://avatars.githubusercontent.com/u/214294900?v=4";
-const siteUpdated = "2026-09-08";
+const siteUpdated = "2026-09-14";
 const orcidUrl = "https://orcid.org/0000-0003-2959-3893";
 const openAlexUrl = "https://openalex.org/A5012826964";
 const scholarUrl = "https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate";
@@ -1092,7 +1093,12 @@ await output("publications.ris", publicationsRis);
 await output("scholarly-graph.jsonld", scholarlyGraph);
 await output("llms.txt", llms);
 await output("robots.txt", robots);
-const crawlPaths = ["/", "/publications.html", "/topics.html", "/learning/", "/learning/digital-communications/ask-modulation.html", ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
+const learningPaths = [
+  "/learning/",
+  ...learningCourse.lessons.map(lesson => `/learning/digital-communications/${lesson.slug}.html`),
+  "/learning/digital-communications/question-bank.html"
+];
+const crawlPaths = ["/", "/publications.html", "/topics.html", ...learningPaths, ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
 await output("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${crawlPaths.map(path => `  <url><loc>${siteUrl}${path}</loc><lastmod>${siteUpdated}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 await output("sitemap.txt", crawlPaths.map(path => `${siteUrl}${path}`).join("\n"));
 await output("feed.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><title>Yassir AL-Karawi — Publications</title><id>${siteUrl}/</id><updated>${siteUpdated}T00:00:00Z</updated><link href="${siteUrl}/feed.xml" rel="self"/>${publications.slice(0, 10).map(pub => `<entry><title>${escapeHtml(pub.title)}</title><id>${doiUrl(pub) || `${siteUrl}/research/${pub.slug}.html`}</id><link href="${siteUrl}/research/${pub.slug}.html"/><updated>${pub.date.length >= 10 ? pub.date : `${pub.year}-01-01`}T00:00:00Z</updated><summary>${escapeHtml(pub.summary)}</summary></entry>`).join("")}</feed>`);
