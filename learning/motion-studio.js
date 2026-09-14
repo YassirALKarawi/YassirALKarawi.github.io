@@ -82,6 +82,7 @@ nodes.forEach((el,i)=>el.addEventListener('click',()=>{time=(Math.floor(time/(no
 function closeExpanded(){const expanded=$('.motion-expanded');if(expanded)expanded.classList.remove('motion-expanded');document.body.classList.remove('figure-open');$$('[data-motion="expand"]').forEach(el=>{el.textContent='Enlarge figure';el.setAttribute('aria-expanded','false');});}
 $$('[data-motion="expand"]').forEach(el=>el.addEventListener('click',()=>{const figure=el.closest('.hero-instrument,.hero-console,.lab-chapter');if(!figure)return;const wasOpen=figure.classList.contains('motion-expanded');closeExpanded();if(!wasOpen){figure.classList.add('motion-expanded');document.body.classList.add('figure-open');el.textContent='Close large view';el.setAttribute('aria-expanded','true');}dirty=true;render(true);}));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeExpanded();});
+$$('[data-motion="close"]').forEach(el=>el.addEventListener('click',closeExpanded));
 [p,n,bitsInput].forEach(el=>el?.addEventListener('input',()=>{updateOutputs();dirty=true;render(true);}));
 $('#randomize')?.addEventListener('click',()=>{seed+=17;if(bitsInput)bitsInput.value=Array.from({length:8},(_,i)=>gaussian(i,seed)>0?'1':'0').join('');time=0;render(true);});
 const viewportObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){visible.add(entry.target);dirty=true;}else visible.delete(entry.target);});if(!running){render();dirty=false;}},{rootMargin:'80px'});canvases.forEach(canvas=>viewportObserver.observe(canvas));
