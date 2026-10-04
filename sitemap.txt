@@ -48,3 +48,4 @@ https://yassiralkarawi.github.io/learning/digital-communications/ofdm.html
 https://yassiralkarawi.github.io/learning/digital-communications/synchronization-equalization.html
 https://yassiralkarawi.github.io/learning/digital-communications/integrated-link-design.html
 https://yassiralkarawi.github.io/learning/digital-communications/question-bank.html
+https://yassiralkarawi.github.io/learning/electrical-fundamentals/
