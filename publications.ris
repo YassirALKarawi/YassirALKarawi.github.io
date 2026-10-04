@@ -1,4 +1,35 @@
 TY  - JOUR
+TI  - MT-OPMNet: Attention-Enhanced Multi-Task Deep Learning for Joint OSNR Estimation and Modulation Format Recognition in Elastic Optical Networks
+AU  - Yassir Al-Karawi
+AU  - Ahmed M. Jasim
+AU  - Raad S. Alhumaima
+AU  - Hamed S. Al-Raweshidy
+PY  - 2026
+JO  - IET Networks
+PB  - Wiley / IET
+VL  - 15
+IS  - 1
+C7  - e70038
+DO  - 10.1049/ntw2.70038
+UR  - https://doi.org/10.1049/ntw2.70038
+L2  - https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038
+AB  - Optical performance monitoring (OPM) underpins quality of transmission in modern elastic optical networks. This paper introduces MT‐OPMNet, a multi‐task deep learning framework for joint optical signal‐to‐noise ratio (OSNR) estimation and modulation format identification (MFI) from asynchronous amplitude histograms extracted at coherent receivers. The model combines a shared one‐dimensional convolutional backbone, a channel‐aware attention module and two task‐specific heads for parameter‐efficient inference. Validation uses a corrected nine‐channel wavelength‐division‐multiplexed simulation dataset covering distances from 500 to 3000 km, symbol rates of 28 GBd and 64 GBd, five launch‐power levels and five modulation formats. At 28 GBd, MT‐OPMNet achieves an OSNR root‐mean‐square error of approximately 2.4 dB; over the grouped mixed‐rate test split, it achieves an average OSNR RMSE of 3.4 dB and an MFI accuracy of 97.5%, while reducing trainable parameters by 23.8% relative to two separate single‐task models. The analytical channel model is further cross‐validated using a split‐step Fourier waveform simulator, achieving mean histogram cosine similarity of 0.976 and zero‐shot transfer to SSFM‐generated waveforms with 100% MFI accuracy and 2.1 dB OSNR RMSE over 14–22 dB OSNR. CPU inference latency remains suitable for low‐latency monitoring studies.
+N1  - Original abstract: https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038; CC BY 4.0: https://creativecommons.org/licenses/by/4.0/; Publisher-deposited abstract reproduced under CC BY 4.0; XML markup removed.
+KW  - Artificial Intelligence
+KW  - Deep Learning
+KW  - Machine Learning
+KW  - Multi-Task Learning
+KW  - Convolutional Neural Networks
+KW  - Channel Attention
+KW  - Optical Performance Monitoring
+KW  - OSNR Estimation
+KW  - Modulation Format Recognition
+KW  - Elastic Optical Networks
+KW  - Asynchronous Amplitude Histograms
+KW  - MT-OPMNet
+ER  -
+
+TY  - JOUR
 TI  - Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels
 AU  - Yassir AL-Karawi
 AU  - Raad S. Alhumaima
@@ -39,6 +70,7 @@ PB  - IEEE
 DO  - 10.1109/SmartIndustryCon68821.2026.11493034
 UR  - https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
 AB  - A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.
+KW  - Artificial Intelligence
 KW  - Digital Twins
 KW  - Native AI
 KW  - AI-Native Networks
@@ -91,7 +123,7 @@ KW  - Quantum Key Distribution
 KW  - 6G Holographic Communications
 KW  - Secure Synchronisation
 KW  - Quantum Communications
-KW  - Communications Security
+KW  - Cybersecurity
 KW  - GHZ-State Synchronisation
 KW  - Qiskit Simulation
 KW  - Quantum State Fidelity
@@ -121,6 +153,7 @@ KW  - Threat Detection
 KW  - Amplitude Encoding
 KW  - REINFORCE Policy
 KW  - Quantum State Fidelity
+KW  - Reinforcement Learning
 ER  -
 
 TY  - JOUR
@@ -222,6 +255,7 @@ AU  - Hamed Al-Raweshidy
 PY  - 2025
 JO  - IET Networks
 PB  - Wiley / IET
+C7  - e70012
 SN  - 2047-4954
 DO  - 10.1049/ntw2.70012
 UR  - https://doi.org/10.1049/ntw2.70012

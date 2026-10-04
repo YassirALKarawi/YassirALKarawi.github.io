@@ -5,7 +5,7 @@ Static, accessible, and search-friendly academic website for **Dr. Yassir AL-Kar
 ## What is included
 
 - Responsive academic homepage
-- Searchable catalogue of 23 publications
+- Searchable catalogue of 24 publications
 - A dedicated, machine-readable HTML record for every publication
 - Highwire citation metadata and Schema.org JSON-LD
 - BibTeX copy controls

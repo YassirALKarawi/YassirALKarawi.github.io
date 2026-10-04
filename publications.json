@@ -1,5 +1,69 @@
 [
   {
+    "slug": "mt-opmnet-deep-learning-optical-monitoring",
+    "title": "MT-OPMNet: Attention-Enhanced Multi-Task Deep Learning for Joint OSNR Estimation and Modulation Format Recognition in Elastic Optical Networks",
+    "authors": [
+      "Yassir Al-Karawi",
+      "Ahmed M. Jasim",
+      "Raad S. Alhumaima",
+      "Hamed S. Al-Raweshidy"
+    ],
+    "year": 2026,
+    "date": "2026-09-17",
+    "venue": "IET Networks",
+    "publisher": "Wiley / IET",
+    "type": "Journal article",
+    "doi": "10.1049/ntw2.70038",
+    "volume": "15",
+    "issue": "1",
+    "articleNumber": "e70038",
+    "repositoryUrl": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "themes": [
+      "Deep Learning",
+      "Artificial Intelligence",
+      "Optical Networks"
+    ],
+    "featured": true,
+    "summary": "Attention-enhanced multi-task deep learning for joint optical signal-to-noise ratio estimation and modulation format recognition in elastic optical networks.",
+    "keywords": [
+      "Artificial Intelligence",
+      "Deep Learning",
+      "Machine Learning",
+      "Multi-Task Learning",
+      "Convolutional Neural Networks",
+      "Channel Attention",
+      "Optical Performance Monitoring",
+      "OSNR Estimation",
+      "Modulation Format Recognition",
+      "Elastic Optical Networks",
+      "Asynchronous Amplitude Histograms",
+      "MT-OPMNet"
+    ],
+    "researchContext": {
+      "basis": "abstract",
+      "overview": "MT-OPMNet jointly estimates optical signal-to-noise ratio and identifies modulation formats from receiver-side amplitude histograms. The study connects deep learning and optical performance monitoring in elastic optical networks.",
+      "approach": "A shared one-dimensional convolutional backbone, channel-aware attention and two task-specific heads combine regression and classification. Evaluation uses a nine-channel simulated wavelength-division-multiplexed system with two symbol rates, five modulation formats and distances from 500 to 3000 km. A split-step Fourier simulator provides a waveform cross-check.",
+      "findings": "The abstract reports 3.4 dB OSNR root-mean-square error and 97.5% modulation-format identification accuracy on the grouped mixed-rate test split. The model uses 23.8% fewer trainable parameters than two separate single-task models.",
+      "note": "These outcomes describe the reported simulation dataset and test split. Laboratory and field validation remain future work.",
+      "reviewedAt": "2026-10-04",
+      "sources": [
+        {
+          "label": "Wiley / IET Networks: original abstract and full article",
+          "url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038"
+        }
+      ]
+    },
+    "originalAbstract": {
+      "text": "Optical performance monitoring (OPM) underpins quality of transmission in modern elastic optical networks. This paper introduces MT‐OPMNet, a multi‐task deep learning framework for joint optical signal‐to‐noise ratio (OSNR) estimation and modulation format identification (MFI) from asynchronous amplitude histograms extracted at coherent receivers. The model combines a shared one‐dimensional convolutional backbone, a channel‐aware attention module and two task‐specific heads for parameter‐efficient inference. Validation uses a corrected nine‐channel wavelength‐division‐multiplexed simulation dataset covering distances from 500 to 3000 km, symbol rates of 28 GBd and 64 GBd, five launch‐power levels and five modulation formats. At 28 GBd, MT‐OPMNet achieves an OSNR root‐mean‐square error of approximately 2.4 dB; over the grouped mixed‐rate test split, it achieves an average OSNR RMSE of 3.4 dB and an MFI accuracy of 97.5%, while reducing trainable parameters by 23.8% relative to two separate single‐task models. The analytical channel model is further cross‐validated using a split‐step Fourier waveform simulator, achieving mean histogram cosine similarity of 0.976 and zero‐shot transfer to SSFM‐generated waveforms with 100% MFI accuracy and 2.1 dB OSNR RMSE over 14–22 dB OSNR. CPU inference latency remains suitable for low‐latency monitoring studies.",
+      "sourceUrl": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038",
+      "sourceLabel": "Wiley / IET Networks",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "verifiedAt": "2026-10-04",
+      "changes": "Publisher-deposited abstract reproduced under CC BY 4.0; XML markup removed."
+    }
+  },
+  {
     "slug": "quantum-cognitive-radar-thermal-loss",
     "title": "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels",
     "authors": [
@@ -88,6 +152,7 @@
     ],
     "summary": "A structured view of digital-twin and native-AI architectures, applications, evaluation approaches, and open challenges for 6G networks.",
     "keywords": [
+      "Artificial Intelligence",
       "Digital Twins",
       "Native AI",
       "AI-Native Networks",
@@ -182,7 +247,7 @@
       "6G Holographic Communications",
       "Secure Synchronisation",
       "Quantum Communications",
-      "Communications Security",
+      "Cybersecurity",
       "GHZ-State Synchronisation",
       "Qiskit Simulation",
       "Quantum State Fidelity"
@@ -249,7 +314,8 @@
       "Threat Detection",
       "Amplitude Encoding",
       "REINFORCE Policy",
-      "Quantum State Fidelity"
+      "Quantum State Fidelity",
+      "Reinforcement Learning"
     ],
     "researchContext": {
       "basis": "abstract",

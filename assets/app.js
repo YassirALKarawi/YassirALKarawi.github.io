@@ -21,15 +21,17 @@
   const count = document.querySelector('#result-count');
   const empty = document.querySelector('#no-results');
   const apply = () => {
-    const query = (search?.value || '').trim().toLowerCase();
+    const normalise = value => value.toLowerCase().replace(/cyber[ -]+security/g, 'cybersecurity').replace(/deeplearning/g, 'deep learning');
+    const query = normalise((search?.value || '').trim());
     let visible = 0;
     cards.forEach(card => {
-      const match = (!query || card.dataset.search.includes(query)) && (!year || year.value === 'all' || card.dataset.year === year.value) && (!type || type.value === 'all' || card.dataset.type === type.value) && (!theme || theme.value === 'all' || card.dataset.theme.includes(theme.value));
+      const match = (!query || normalise(card.dataset.search).includes(query)) && (!year || year.value === 'all' || card.dataset.year === year.value) && (!type || type.value === 'all' || card.dataset.type === type.value) && (!theme || theme.value === 'all' || card.dataset.theme.includes(theme.value));
       card.hidden = !match; if (match) visible++;
     });
     if (count) count.textContent = String(visible);
     if (empty) empty.hidden = visible !== 0;
   };
+  if (search) { search.value = new URLSearchParams(location.search).get('q') || ''; apply(); }
   [search, year, type, theme].filter(Boolean).forEach(control => control.addEventListener(control === search ? 'input' : 'change', apply));
   document.querySelector('#clear-filters')?.addEventListener('click', () => { if (search) search.value = ''; [year, type, theme].filter(Boolean).forEach(control => control.value = 'all'); apply(); });
 })();

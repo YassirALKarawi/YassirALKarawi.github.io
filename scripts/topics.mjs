@@ -1,6 +1,18 @@
 // Editorial reading guides to this author's publications, not systematic reviews.
 export const topics = [
   {
+    slug: "artificial-intelligence-deep-learning-networks",
+    title: "Artificial Intelligence and Deep Learning for Networks",
+    description: "Deep learning, attention-based optical monitoring, reinforcement learning for cybersecurity and AI-native 6G: explore DOI-linked research by Yassir AL-Karawi.",
+    intro: "Artificial intelligence (AI) connects optical performance monitoring, cybersecurity and network management. This guide follows three concrete uses of learning: joint estimation and classification in optical networks, response policies in Open RAN security, and distributed quantum neural-network synchronisation.",
+    sections: [
+      { heading: "Deep learning and attention for optical performance monitoring", text: "MT-OPMNet uses multi-task deep learning to estimate optical signal-to-noise ratio (OSNR) and recognise modulation formats from asynchronous amplitude histograms. A shared one-dimensional convolutional neural network (CNN), channel-aware attention and two task heads combine regression and classification. The published evaluation uses simulated wavelength-division-multiplexed links and a split-step Fourier cross-check; its outcomes concern optical monitoring under those conditions.", papers: ["mt-opmnet-deep-learning-optical-monitoring"] },
+      { heading: "Reinforcement learning for Open RAN cybersecurity", text: "The cybersecurity-driven quantum digital twin uses a REINFORCE policy to select responses from fidelity, entropy and trace-distance observations. This connects reinforcement learning, threat detection and digital-twin control. Read the paper for its modelled attacks and simulation conditions when citing a security or response-time result.", papers: ["quantum-digital-twin-threat-reversal-open-ran"] },
+      { heading: "Quantum neural networks and AI-native 6G architectures", text: "The secure synchronisation study examines distributed quantum neural networks (QNNs), entanglement, reconfigurable intelligent surfaces and quantum key distribution. QNN synchronisation and the classical CNN in MT-OPMNet address different learning problems. The native-AI and digital-twin architecture paper provides a broader entry point to AI-enabled 6G network design.", papers: ["cybersecure-entangled-qnn-ris-qkd", "digital-twin-native-ai-6g-networks"] },
+      { heading: "Choose a paper for the claim being cited", text: "For deep learning and optical monitoring, start with MT-OPMNet. For learning-based security and threat response, start with the Open RAN quantum digital twin. For secure distributed QNN synchronisation, use the RIS–QKD paper. Each record includes the published title, authors, DOI and downloadable BibTeX and RIS citations.", papers: [] }
+    ]
+  },
+  {
     slug: "quantum-radar-and-sensing",
     title: "Quantum Radar and Adaptive Sensing",
     description: "Adaptive target detection under thermal loss, quantum illumination and entanglement: a research guide with original abstracts and DOI-linked papers.",

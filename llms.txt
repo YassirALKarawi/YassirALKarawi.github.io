@@ -14,6 +14,10 @@
 - Web of Science ResearcherID: https://www.webofscience.com/wos/author/record/O-2498-2016
 - Semantic Scholar: https://www.semanticscholar.org/author/Yassir-Al%E2%80%90Karawi/1414260996
 
+## Research areas
+
+Cybersecurity; artificial intelligence; deep learning; machine learning; reinforcement learning; quantum neural networks; digital twins; Open RAN; 6G; optical performance monitoring.
+
 ## Citation data
 
 - Publications catalogue: https://yassiralkarawi.github.io/publications.html
@@ -23,16 +27,36 @@
 - RIS: https://yassiralkarawi.github.io/publications.ris
 - Atom feed: https://yassiralkarawi.github.io/feed.xml
 
-## Published works (23)
+## Published works (24)
 
 ## Research topic guides
 
 These editorial guides are not additional published papers. Cite the original DOI-linked works.
+- Artificial Intelligence and Deep Learning for Networks: https://yassiralkarawi.github.io/topics/artificial-intelligence-deep-learning-networks.html
 - Quantum Radar and Adaptive Sensing: https://yassiralkarawi.github.io/topics/quantum-radar-and-sensing.html
 - Cybersecurity and Digital Twins in Open RAN: https://yassiralkarawi.github.io/topics/open-ran-cybersecurity.html
 - Energy-Efficient Open RAN and Edge Computing: https://yassiralkarawi.github.io/topics/energy-efficient-open-ran.html
 
 ## Publication records
+
+### MT-OPMNet: Attention-Enhanced Multi-Task Deep Learning for Joint OSNR Estimation and Modulation Format Recognition in Elastic Optical Networks
+
+- Status: Published Journal article
+- Authors: Yassir Al-Karawi; Ahmed M. Jasim; Raad S. Alhumaima; Hamed S. Al-Raweshidy
+- Venue: IET Networks
+- Publication date: 2026-09-17
+- Original abstract: Optical performance monitoring (OPM) underpins quality of transmission in modern elastic optical networks. This paper introduces MT‐OPMNet, a multi‐task deep learning framework for joint optical signal‐to‐noise ratio (OSNR) estimation and modulation format identification (MFI) from asynchronous amplitude histograms extracted at coherent receivers. The model combines a shared one‐dimensional convolutional backbone, a channel‐aware attention module and two task‐specific heads for parameter‐efficient inference. Validation uses a corrected nine‐channel wavelength‐division‐multiplexed simulation dataset covering distances from 500 to 3000 km, symbol rates of 28 GBd and 64 GBd, five launch‐power levels and five modulation formats. At 28 GBd, MT‐OPMNet achieves an OSNR root‐mean‐square error of approximately 2.4 dB; over the grouped mixed‐rate test split, it achieves an average OSNR RMSE of 3.4 dB and an MFI accuracy of 97.5%, while reducing trainable parameters by 23.8% relative to two separate single‐task models. The analytical channel model is further cross‐validated using a split‐step Fourier waveform simulator, achieving mean histogram cosine similarity of 0.976 and zero‐shot transfer to SSFM‐generated waveforms with 100% MFI accuracy and 2.1 dB OSNR RMSE over 14–22 dB OSNR. CPU inference latency remains suitable for low‐latency monitoring studies.
+- Abstract source: https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038 (CC BY 4.0)
+- Summary: Attention-enhanced multi-task deep learning for joint optical signal-to-noise ratio estimation and modulation format recognition in elastic optical networks.
+- Editorial research context: MT-OPMNet jointly estimates optical signal-to-noise ratio and identifies modulation formats from receiver-side amplitude histograms. The study connects deep learning and optical performance monitoring in elastic optical networks. A shared one-dimensional convolutional backbone, channel-aware attention and two task-specific heads combine regression and classification. Evaluation uses a nine-channel simulated wavelength-division-multiplexed system with two symbol rates, five modulation formats and distances from 500 to 3000 km. A split-step Fourier simulator provides a waveform cross-check. The abstract reports 3.4 dB OSNR root-mean-square error and 97.5% modulation-format identification accuracy on the grouped mixed-rate test split. The model uses 23.8% fewer trainable parameters than two separate single-task models. These outcomes describe the reported simulation dataset and test split. Laboratory and field validation remain future work.
+- Summary basis: Paraphrase of linked abstract; not verbatim
+- Sources: https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038
+- Research keywords: Artificial Intelligence; Deep Learning; Machine Learning; Multi-Task Learning; Convolutional Neural Networks; Channel Attention; Optical Performance Monitoring; OSNR Estimation; Modulation Format Recognition; Elastic Optical Networks; Asynchronous Amplitude Histograms; MT-OPMNet
+- DOI: https://doi.org/10.1049/ntw2.70038
+- Canonical record: https://yassiralkarawi.github.io/research/mt-opmnet-deep-learning-optical-monitoring.html
+- Publisher / repository record: https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038
+- BibTeX: https://yassiralkarawi.github.io/research/mt-opmnet-deep-learning-optical-monitoring.bib
+- RIS: https://yassiralkarawi.github.io/research/mt-opmnet-deep-learning-optical-monitoring.ris
 
 ### Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels
 
@@ -63,7 +87,7 @@ These editorial guides are not additional published papers. Cite the original DO
 - Editorial research context: This paper addresses the relationship between digital twins and native artificial intelligence in 6G networks. Its stated scope spans architecture, applications, evaluation and open challenges. It is a starting point for readers investigating how digital representations and AI-enabled network functions fit into future communications systems.
 - Summary basis: Title and record only; no detailed results asserted
 - Sources: https://ieeexplore.ieee.org/document/11493034/
-- Research keywords: Digital Twins; Native AI; AI-Native Networks; 6G Networks; Network Architecture; Network Automation; Predictive Assurance; Intelligent Orchestration
+- Research keywords: Artificial Intelligence; Digital Twins; Native AI; AI-Native Networks; 6G Networks; Network Architecture; Network Automation; Predictive Assurance; Intelligent Orchestration
 - DOI: https://doi.org/10.1109/SmartIndustryCon68821.2026.11493034
 - Canonical record: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.html
 - BibTeX: https://yassiralkarawi.github.io/research/digital-twin-native-ai-6g-networks.bib
@@ -97,7 +121,7 @@ These editorial guides are not additional published papers. Cite the original DO
 - Editorial research context: The proposed hybrid quantum–classical framework coordinates distributed quantum neural networks for 6G holographic communications. It combines entanglement-assisted synchronisation, reconfigurable intelligent surfaces and quantum key distribution within a single communication and learning model. GHZ-state gradient consensus and entropy- and trace-distance regularisation support synchronisation. QNN parameters and RIS phases are jointly adjusted to preserve fidelity under noise, with QKD protecting the modelled midhaul. Qiskit simulations compare the full framework with reduced versions that omit GHZ synchronisation or RIS assistance. Across 100 simulation trials, the abstract reports mean fidelity of 0.961 and latency of 22.5 ms. Fidelity improvements of 20–28% are reported relative to the reduced baselines. The reported evidence is simulation-based; these figures do not establish an operational 6G holographic network or experimentally demonstrated security.
 - Summary basis: Paraphrase of linked abstract; not verbatim
 - Sources: https://bura.brunel.ac.uk/handle/2438/33048
-- Research keywords: Entangled Quantum Neural Networks; Quantum Neural Networks; Reconfigurable Intelligent Surfaces; Quantum Key Distribution; 6G Holographic Communications; Secure Synchronisation; Quantum Communications; Communications Security; GHZ-State Synchronisation; Qiskit Simulation; Quantum State Fidelity
+- Research keywords: Entangled Quantum Neural Networks; Quantum Neural Networks; Reconfigurable Intelligent Surfaces; Quantum Key Distribution; 6G Holographic Communications; Secure Synchronisation; Quantum Communications; Cybersecurity; GHZ-State Synchronisation; Qiskit Simulation; Quantum State Fidelity
 - DOI: https://doi.org/10.1049/qtc2.70032
 - Canonical record: https://yassiralkarawi.github.io/research/cybersecure-entangled-qnn-ris-qkd.html
 - Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/33048
@@ -116,7 +140,7 @@ These editorial guides are not additional published papers. Cite the original DO
 - Editorial research context: This work models an Open RAN security digital twin using quantum-state representations of network telemetry. Its focus is proactive response to modelled attacks, with state fidelity and divergence used to track disruption and recovery. Amplitude encoding, GHZ and cluster-state entanglement represent telemetry. Bit-flip, phase-flip and amplitude-damping channels model adversarial effects. A lightweight REINFORCE policy selects responses, evaluated through Qiskit simulations and software-loop timing. The abstract reports mean fidelity above 0.91, attack classification above 87% and approximately 19.1 ms software-loop latency under the studied conditions. Comparisons include classical intrusion detection and quantum-thresholding baselines. Software-loop timing and simulated quantum states are not evidence of a deployed quantum security system. The paper's noise models and baselines define the scope of the results.
 - Summary basis: Paraphrase of linked abstract; not verbatim
 - Sources: https://bura.brunel.ac.uk/handle/2438/32659
-- Research keywords: Quantum Digital Twin; Open RAN Security; Proactive Threat Reversal; Cybersecurity; Digital Twins; Quantum Communications; 6G Networks; Threat Detection; Amplitude Encoding; REINFORCE Policy; Quantum State Fidelity
+- Research keywords: Quantum Digital Twin; Open RAN Security; Proactive Threat Reversal; Cybersecurity; Digital Twins; Quantum Communications; 6G Networks; Threat Detection; Amplitude Encoding; REINFORCE Policy; Quantum State Fidelity; Reinforcement Learning
 - DOI: https://doi.org/10.1049/qtc2.70027
 - Canonical record: https://yassiralkarawi.github.io/research/quantum-digital-twin-threat-reversal-open-ran.html
 - Publisher / repository record: https://bura.brunel.ac.uk/handle/2438/32659

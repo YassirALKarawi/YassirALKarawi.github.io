@@ -9,7 +9,8 @@ const root = resolve(import.meta.dirname, "..");
 const siteUrl = "https://yassiralkarawi.github.io";
 const author = "Yassir AL-Karawi";
 const profileImage = "https://avatars.githubusercontent.com/u/214294900?v=4";
-const siteUpdated = "2026-09-14";
+const siteUpdated = "2026-10-04";
+const researchExpertise = ["Cybersecurity", "Artificial Intelligence", "Deep Learning", "Machine Learning", "Reinforcement Learning", "Quantum Neural Networks", "Open RAN", "5G", "6G", "Digital Twins", "Quantum Communications", "Quantum Key Distribution", "Optical Performance Monitoring", "Wireless Communications"];
 const orcidUrl = "https://orcid.org/0000-0003-2959-3893";
 const openAlexUrl = "https://openalex.org/A5012826964";
 const scholarUrl = "https://scholar.google.com/citations?hl=en&user=Dg_tAlkAAAAJ&view_op=list_works&sortby=pubdate";
@@ -23,6 +24,34 @@ const authorIdentityUrls = [
 ];
 
 const publications = [
+  {
+    "slug": "mt-opmnet-deep-learning-optical-monitoring",
+    "title": "MT-OPMNet: Attention-Enhanced Multi-Task Deep Learning for Joint OSNR Estimation and Modulation Format Recognition in Elastic Optical Networks",
+    "authors": [
+      "Yassir Al-Karawi",
+      "Ahmed M. Jasim",
+      "Raad S. Alhumaima",
+      "Hamed S. Al-Raweshidy"
+    ],
+    "year": 2026,
+    "date": "2026-09-17",
+    "venue": "IET Networks",
+    "publisher": "Wiley / IET",
+    "type": "Journal article",
+    "doi": "10.1049/ntw2.70038",
+    "volume": "15",
+    "issue": "1",
+    "articleNumber": "e70038",
+    "repositoryUrl": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "themes": [
+      "Deep Learning",
+      "Artificial Intelligence",
+      "Optical Networks"
+    ],
+    "featured": true,
+    "summary": "Attention-enhanced multi-task deep learning for joint optical signal-to-noise ratio estimation and modulation format recognition in elastic optical networks."
+  },
   {
     slug: "quantum-cognitive-radar-thermal-loss",
     title: "Quantum Cognitive Radar: Adaptive Detection With Entanglement Under Thermal-Loss Channels",
@@ -364,10 +393,11 @@ const publications = [
 ];
 
 const publicationKeywords = {
+  "mt-opmnet-deep-learning-optical-monitoring": ["Artificial Intelligence", "Deep Learning", "Machine Learning", "Multi-Task Learning", "Convolutional Neural Networks", "Channel Attention", "Optical Performance Monitoring", "OSNR Estimation", "Modulation Format Recognition", "Elastic Optical Networks", "Asynchronous Amplitude Histograms", "MT-OPMNet"],
   "quantum-cognitive-radar-thermal-loss": ["Quantum Cognitive Radar", "Quantum Radar", "Entanglement-Assisted Detection", "Thermal-Loss Channels", "Quantum Sensing", "Adaptive Detection", "Two-Mode Squeezed Vacuum", "Target Detection"],
-  "digital-twin-native-ai-6g-networks": ["Digital Twins", "Native AI", "AI-Native Networks", "6G Networks", "Network Architecture", "Network Automation", "Predictive Assurance", "Intelligent Orchestration"],
+  "digital-twin-native-ai-6g-networks": ["Artificial Intelligence", "Digital Twins", "Native AI", "AI-Native Networks", "6G Networks", "Network Architecture", "Network Automation", "Predictive Assurance", "Intelligent Orchestration"],
   "lossless-canonical-coding-fpga": ["Lossless Coding", "Canonical Coding", "FPGA Implementation", "High-Speed Architecture", "Hardware Acceleration", "Digital Design", "Data Compression", "Real-Time Processing"],
-  "cybersecure-entangled-qnn-ris-qkd": ["Entangled Quantum Neural Networks", "Quantum Neural Networks", "Reconfigurable Intelligent Surfaces", "Quantum Key Distribution", "6G Holographic Communications", "Secure Synchronisation", "Quantum Communications", "Communications Security"],
+  "cybersecure-entangled-qnn-ris-qkd": ["Entangled Quantum Neural Networks", "Quantum Neural Networks", "Reconfigurable Intelligent Surfaces", "Quantum Key Distribution", "6G Holographic Communications", "Secure Synchronisation", "Quantum Communications", "Cybersecurity"],
   "quantum-digital-twin-threat-reversal-open-ran": ["Quantum Digital Twin", "Open RAN Security", "Proactive Threat Reversal", "Cybersecurity", "Digital Twins", "Quantum Communications", "6G Networks", "Threat Detection"],
   "high-pass-filter-overshoot-bessel-gaussian": ["Digital High-Pass Filters", "In-Band Overshoot", "Bessel Filters", "Gaussian Filters", "Maximally Flat Step Response", "Transient Response", "Digital Filter Design", "Signal Processing"],
   "energy-efficient-dwdm-backhaul-open-ran": ["DWDM Backhaul", "6G Open RAN", "Energy-Efficient Networks", "Sub-Millisecond Latency", "Optical Backhaul", "Dense Wavelength-Division Multiplexing", "Low-Latency Transport", "Open RAN Transport"],
@@ -390,7 +420,10 @@ const publicationKeywords = {
 };
 
 const seoOverrides = {
-  "quantum-digital-twin-threat-reversal-open-ran": { title: "Quantum Digital Twin Security for Open RAN | Yassir AL-Karawi", description: "IET Quantum Communication research on quantum digital-twin security for proactive threat reversal in Open RAN, with DOI, full text and citation files." },
+  "mt-opmnet-deep-learning-optical-monitoring": { title: "MT-OPMNet: Deep Learning for Optical Monitoring | Yassir AL-Karawi", description: "Multi-task deep learning with CNN attention for OSNR estimation and modulation recognition. IET Networks paper by Yassir Al-Karawi, DOI, abstract and citations." },
+  "cybersecure-entangled-qnn-ris-qkd": { title: "Cybersecurity and Quantum Neural Networks for 6G | Yassir AL-Karawi", description: "Secure quantum neural-network synchronisation with RIS and QKD for 6G holographic communications. Published paper, original abstract, DOI, BibTeX and RIS." },
+  "cybersecurity-observer-power-distribution": { title: "Cybersecurity for Smart Power Distribution | Yassir AL-Karawi", description: "Observer-based resilient control under false data injection attacks in smart power distribution. IEEE conference paper, DOI and downloadable citations." },
+  "quantum-digital-twin-threat-reversal-open-ran": { title: "Cybersecurity and Quantum Digital Twins in Open RAN | Yassir AL-Karawi", description: "IET Quantum Communication research on quantum digital-twin security for proactive threat reversal in Open RAN, with DOI, full text and citation files." },
   "quantum-load-balancing-open-ran-energy": { title: "Quantum Load Balancing for Efficient Open RAN | Yassir AL-Karawi", description: "IEEE Access research on quantum-based load balancing for improving energy efficiency in Open RAN, with DOI, open full text, BibTeX and RIS citation files." },
   "quantum-cognitive-radar-thermal-loss": { title: "Quantum Cognitive Radar Under Thermal Loss | Yassir AL-Karawi", description: "IEEE TAES research on quantum cognitive radar, adaptive detection, entanglement and thermal-loss channels, with DOI, full text and citation files." },
   "qos-quantum-entanglement-mobile-networks": { title: "Quantum Entanglement QoS in Mobile Networks | Yassir AL-Karawi", description: "IEEE Access research on quality of service for quantum-entanglement distribution in mobile networks, with DOI, open full text and citation files." },
@@ -401,7 +434,8 @@ for (const pub of publications) {
   const context = researchContext[pub.slug];
   if (!context) throw new Error(`Missing research context: ${pub.slug}`);
   pub.keywords = [...new Set([...(publicationKeywords[pub.slug] || pub.themes), ...(context.additionalKeywords || [])])];
-  pub.researchContext = { ...context, reviewedAt: "2026-09-07" };
+  if (pub.slug === "quantum-digital-twin-threat-reversal-open-ran") pub.keywords.push("Reinforcement Learning");
+  pub.researchContext = { ...context, reviewedAt: context.reviewedAt || "2026-09-07" };
   if (originalAbstracts[pub.slug]) pub.originalAbstract = originalAbstracts[pub.slug];
 }
 
@@ -463,6 +497,7 @@ function bibtex(pub) {
     `  year      = {${pub.year}},`
   ];
   if (pub.volume) lines.push(`  volume    = {${pub.volume}},`);
+  if (pub.issue) lines.push(`  number    = {${pub.issue}},`);
   if (pub.firstPage) lines.push(`  pages     = {${pub.firstPage}${pub.lastPage ? `--${pub.lastPage}` : ""}},`);
   if (pub.articleNumber) lines.push(`  eid       = {${pub.articleNumber}},`);
   if (pub.issn) lines.push(`  issn      = {${pub.issn}},`);
@@ -483,6 +518,8 @@ function ris(pub) {
     `PB  - ${pub.publisher}`
   ];
   if (pub.volume) lines.push(`VL  - ${pub.volume}`);
+  if (pub.issue) lines.push(`IS  - ${pub.issue}`);
+  if (pub.articleNumber) lines.push(`C7  - ${pub.articleNumber}`);
   if (pub.firstPage) lines.push(`SP  - ${pub.firstPage}`);
   if (pub.lastPage) lines.push(`EP  - ${pub.lastPage}`);
   if (pub.issn) lines.push(`SN  - ${pub.issn}`);
@@ -611,14 +648,14 @@ function footer() {
   <div class="container footer-grid">
     <div>
       <a class="wordmark footer-mark" href="/"><span class="wordmark-mark">YA</span><span><strong>Yassir AL-Karawi</strong><small>Assistant Professor · University of Diyala</small></span></a>
-      <p class="footer-note">Research in Open RAN, 5G/6G, quantum communications, AI-native networks, wireless systems, and optical communications.</p>
+      <p class="footer-note">Research in cybersecurity, artificial intelligence, deep learning, Open RAN, 5G/6G, digital twins, quantum communications and optical networks.</p>
     </div>
     <div><h2>Academic identity</h2><a href="https://orcid.org/0000-0003-2959-3893">ORCID</a><a href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a><a href="https://www.scopus.com/authid/detail.uri?authorId=58954746100">Scopus</a></div>
     <div><h2>Connect</h2><a href="https://uodiyala.academia.edu/YassirAAhmad">Academia.edu</a><a href="https://www.linkedin.com/in/yassir-ameen-al-karawi-67501243/">LinkedIn</a><a href="https://web.facebook.com/yassir.ameen.al.karawi">Facebook</a><a href="https://github.com/YassirALKarawi">GitHub</a><a href="mailto:yassir_al-karawi_eng@uodiyala.edu.iq">Email</a></div>
   </div>
   <div class="container footer-bottom"><span>© <span data-year></span> Yassir AL-Karawi</span><span>Recommended citation name: <strong>Yassir AL-Karawi</strong></span></div>
 </footer>
-<script src="/assets/app.js?v=3" defer></script>`;
+<script src="/assets/app.js?v=${siteUpdated}" defer></script>`;
 }
 
 function pageEnd() {
@@ -662,7 +699,7 @@ function homePage() {
     email: "mailto:yassir_al-karawi_eng@uodiyala.edu.iq",
     affiliation: { "@type": "CollegeOrUniversity", name: "University of Diyala", url: "https://uodiyala.edu.iq/" },
     alumniOf: [
-      { "@type": "CollegeOrUniversity", name: "Brunel University London" },
+      { "@type": "CollegeOrUniversity", name: "Brunel University of London" },
       { "@type": "CollegeOrUniversity", name: "Universiti Teknologi Malaysia" },
       { "@type": "CollegeOrUniversity", name: "University of Technology, Iraq" }
     ],
@@ -673,19 +710,19 @@ function homePage() {
       { "@type": "PropertyValue", propertyID: "ResearcherID", value: "O-2498-2016" },
       { "@type": "PropertyValue", propertyID: "OpenAlex", value: "A5012826964" }
     ],
-    knowsAbout: ["Open RAN", "5G", "6G", "Quantum Communications", "Quantum Key Distribution", "Integrated Sensing and Communication", "Digital Twins", "Optical Networks", "Wireless Communications"]
+    knowsAbout: researchExpertise
   }, 2);
   const description = "Academic homepage of Dr. Yassir AL-Karawi, Assistant Professor of Communications Engineering at the University of Diyala, researching Open RAN, 5G/6G, quantum communications, AI-native networks, and optical systems.";
-  return `${head({ title: "Yassir AL-Karawi | 6G, Open RAN & Quantum Communications", description: "Academic website of Dr. Yassir AL-Karawi at University of Diyala, covering 6G, Open RAN, quantum communications, digital twins, wireless and optical networks.", extra: `<link rel="me" href="https://orcid.org/0000-0003-2959-3893"><script type="application/ld+json">${personJson}</script>` })}
+  return `${head({ title: "Yassir AL-Karawi | Cybersecurity, AI & Deep Learning", description: "Yassir AL-Karawi: cybersecurity, artificial intelligence, deep learning, Open RAN and 6G research. Explore published papers, DOIs, abstracts and citations.", extra: `<link rel="me" href="https://orcid.org/0000-0003-2959-3893"><script type="application/ld+json">${personJson}</script>` })}
 <body>${nav("Home")}
 <main id="main">
   <section class="hero">
     <div class="hero-mesh" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><span></span> Communications Engineering · Open 6G RAN</p>
-        <h1>Engineering trustworthy communication systems for the <em>6G era.</em></h1>
-        <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My work connects Open RAN, quantum communications, AI-native networks, digital twins, wireless systems, and optical transport.</p>
+        <p class="eyebrow"><span></span> Cybersecurity · Artificial Intelligence · 6G Networks</p>
+        <h1>Advancing cybersecurity and <em>intelligent networks.</em></h1>
+        <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My research connects cybersecurity, artificial intelligence (AI), deep learning and quantum neural networks with Open RAN, 6G communications, digital twins and optical performance monitoring.</p>
         <div class="hero-actions"><a class="button primary" href="/publications.html">Explore publications ${icon("arrow")}</a><a class="button secondary" href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar ${icon("external")}</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
@@ -699,22 +736,25 @@ function homePage() {
 
   <section class="section intro-section">
     <div class="container split-intro">
-      <div><p class="section-label">Research perspective</p><h2>From physical links to certified network intelligence.</h2></div>
-      <div><p>My research examines how future communication systems can become more energy-aware, secure, interoperable, and trustworthy. The work spans physical-layer and optical transport problems through to Open RAN control, quantum-enabled networking, and AI-enabled network architectures.</p><a class="text-link" href="#research">View research themes ${icon("arrow")}</a></div>
+      <div><p class="section-label">Research perspective</p><h2>From deep learning to trustworthy network intelligence.</h2></div>
+      <div><p>My research examines how future communication systems can become more energy-aware, secure, interoperable, and trustworthy. The work spans attention-based deep learning for optical monitoring, reinforcement learning for Open RAN cybersecurity, quantum neural-network synchronisation and AI-native 6G architectures.</p><a class="text-link" href="#research">View research themes ${icon("arrow")}</a></div>
     </div>
   </section>
 
   <section class="section research-section" id="research">
-    <div class="container"><div class="section-heading"><div><p class="section-label">Research themes</p><h2>A connected research programme</h2></div><p>Five technical directions linked by a common focus on measurable performance, security, interoperability, and reproducibility.</p></div>
+    <div class="container"><div class="section-heading"><div><p class="section-label">Research themes</p><h2>A connected research programme</h2></div><p>Six technical directions linked by a common focus on measurable performance, security, interoperability, and reproducibility.</p></div>
       <div class="research-grid">
         <article class="research-card featured-theme"><span class="theme-index">01</span>${icon("network")}<h3>Open RAN &amp; 6G control</h3><p>Energy-aware optimisation, virtualised RAN architectures, near-real-time control, and efficient resource allocation.</p><div class="signal-line"><i></i><i></i><i></i><i></i><i></i></div></article>
         <article class="research-card"><span class="theme-index">02</span><h3>Quantum communications</h3><p>Entanglement quality, QKD-assisted security, quantum-aware networking, and thermal-loss channel modelling.</p></article>
-        <article class="research-card"><span class="theme-index">03</span><h3>AI-native digital twins</h3><p>Digital-twin architectures, native-AI network management, secure learning, and evaluation frameworks.</p></article>
+        <article class="research-card"><span class="theme-index">03</span><h3>Artificial intelligence &amp; deep learning</h3><p>Multi-task learning, convolutional neural networks, channel attention, optical monitoring and AI-native digital twins.</p><a class="text-link" href="/topics/artificial-intelligence-deep-learning-networks.html">Explore AI and deep learning ${icon("arrow")}</a></article>
         <article class="research-card"><span class="theme-index">04</span><h3>Wireless &amp; spectrum systems</h3><p>5G/6G mobile networks, cognitive radio, propagation, OFDM, HAPS coexistence, and spectrum-sharing optimisation.</p></article>
         <article class="research-card"><span class="theme-index">05</span><h3>Optical networks &amp; signal processing</h3><p>DWDM transport, optical-network monitoring, digital-filter design, FPGA architectures, and communication backhaul.</p></article>
+        <article class="research-card"><span class="theme-index">06</span><h3>Cybersecurity &amp; resilient control</h3><p>Open RAN security, reinforcement learning, threat detection, quantum key distribution and false data injection attacks.</p><a class="text-link" href="/topics/open-ran-cybersecurity.html">Explore cybersecurity ${icon("arrow")}</a></article>
       </div>
     </div>
   </section>
+
+  <section class="section discovery-section" id="research-guides"><div class="container"><div class="section-heading"><div><p class="section-label">Find relevant research</p><h2>Explore methods, applications and papers</h2></div><p>Follow a research theme to its original publications, DOI and ready-to-use citations.</p></div>${topicLinks()}<div class="research-languages" lang="ar" dir="rtl"><p>مجالات البحث: <a href="/topics/open-ran-cybersecurity.html">الأمن السيبراني</a>، <a href="/topics/artificial-intelligence-deep-learning-networks.html">الذكاء الاصطناعي والتعلّم العميق وتعلّم الآلة</a>، <a href="/topics/energy-efficient-open-ran.html">شبكات الجيل السادس وشبكات النفاذ الراديوي المفتوحة</a>، <a href="/topics/quantum-radar-and-sensing.html">الاتصالات والاستشعار الكمي</a>.</p></div></div></section>
 
   <section class="section publication-section">
     <div class="container"><div class="section-heading"><div><p class="section-label">Selected publications</p><h2>Recent work</h2></div><a class="button secondary dark" href="/publications.html">All ${publications.length} works ${icon("arrow")}</a></div>
@@ -725,7 +765,7 @@ function homePage() {
   <section class="section journey-section">
     <div class="container"><div class="section-heading"><div><p class="section-label">Academic path</p><h2>Education &amp; affiliation</h2></div><p>A communications-engineering pathway spanning Iraq, Malaysia, and the United Kingdom.</p></div>
       <div class="timeline">
-        <article><span>2024</span><div><h3>Ph.D., Electronic &amp; Electrical Engineering</h3><p>Brunel University London · Thesis on quality of service in quantum-oriented Open RAN for 5G and 6G.</p></div></article>
+        <article><span>2024</span><div><h3>Ph.D., Electronic &amp; Electrical Engineering</h3><p>Brunel University of London · Thesis on quality of service in quantum-oriented Open RAN for 5G and 6G.</p></div></article>
         <article><span>2012</span><div><h3>M.Sc., Communications Engineering</h3><p>Universiti Teknologi Malaysia.</p></div></article>
         <article><span>2006–present</span><div><h3>University of Diyala</h3><p>Department of Communications Engineering, College of Engineering.</p></div></article>
         <article><span>2002</span><div><h3>B.Sc., Electronics &amp; Communications Engineering</h3><p>University of Technology, Iraq.</p></div></article>
@@ -739,7 +779,7 @@ function homePage() {
     </div>
   </section>
 
-  <section class="contact-band"><div class="container"><div><p class="section-label">Research &amp; collaboration</p><h2>Interested in Open RAN, quantum communications, or trustworthy 6G systems?</h2></div><a class="button primary warm" href="mailto:yassir_al-karawi_eng@uodiyala.edu.iq">Start a conversation ${icon("mail")}</a></div></section>
+  <section class="contact-band"><div class="container"><div><p class="section-label">Research &amp; collaboration</p><h2>Interested in cybersecurity, deep learning or intelligent 6G networks?</h2></div><a class="button primary warm" href="mailto:yassir_al-karawi_eng@uodiyala.edu.iq">Start a conversation ${icon("mail")}</a></div></section>
 </main>${pageEnd()}`;
 }
 
@@ -747,7 +787,7 @@ function publicationsPage() {
   const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
   const types = [...new Set(publications.map(p => p.type))];
   const themes = [...new Set(publications.flatMap(p => p.themes))].sort();
-  const description = `Complete publication record for ${author}: ${publications.length} journal articles and conference papers in Open RAN, 5G/6G, quantum communications, wireless systems, optical networks, and signal processing.`;
+  const description = `Published research by ${author} on cybersecurity, artificial intelligence, deep learning, Open RAN, quantum communications and optical networks. DOIs and citations.`;
   const graph = safeJsonLd({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -758,11 +798,11 @@ function publicationsPage() {
   return `${head({ title: `Publications | ${author}`, description, canonical: "/publications.html", extra: `<script type="application/ld+json">${graph}</script>` })}
 <body>${nav("Publications")}
 <main id="main">
-  <section class="page-hero"><div class="container"><p class="eyebrow"><span></span> Scholarly record · Updated ${siteUpdated}</p><h1>Publications</h1><p>A machine-readable catalogue of ${publications.length} works across communications engineering, Open RAN, quantum networks, wireless systems, optical transport, and signal processing.</p></div></section>
+  <section class="page-hero"><div class="container"><p class="eyebrow"><span></span> Scholarly record · Updated ${siteUpdated}</p><h1>Publications</h1><p>Explore ${publications.length} published works on cybersecurity, artificial intelligence, deep learning, Open RAN, quantum networks, optical monitoring and signal processing. Each record links to its DOI and citation files.</p></div></section>
   <section class="publication-browser"><div class="container">
     <section aria-label="Research topic guides"><h2>Explore by research question</h2>${topicLinks()}</section>
     <div class="filter-panel">
-      <label class="search-box"><span>Search title, author, venue, DOI, or topic</span><input type="search" id="publication-search" placeholder="e.g. Open RAN, quantum, IEEE Access"><b>${icon("book")}</b></label>
+      <label class="search-box"><span>Search title, author, venue, DOI, or topic</span><input type="search" id="publication-search" placeholder="e.g. cybersecurity, deep learning, OSNR, Open RAN"><b>${icon("book")}</b></label>
       <div class="filter-groups"><label>Year<select id="year-filter"><option value="all">All years</option>${years.map(year => `<option value="${year}">${year}</option>`).join("")}</select></label><label>Type<select id="type-filter"><option value="all">All types</option>${types.map(type => `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`).join("")}</select></label><label>Theme<select id="theme-filter"><option value="all">All themes</option>${themes.map(theme => `<option value="${escapeHtml(theme)}">${escapeHtml(theme)}</option>`).join("")}</select></label></div>
       <div class="result-row"><p><strong id="result-count">${publications.length}</strong> works shown</p><button type="button" id="clear-filters">Clear filters</button></div>
     </div>
@@ -778,11 +818,11 @@ function topicLinks(selected = topics) {
 }
 
 function topicNode(topic) {
-  return { "@type": "CollectionPage", "@id": `${siteUrl}${topicPath(topic)}`, url: `${siteUrl}${topicPath(topic)}`, name: topic.title, description: topic.description, dateModified: siteUpdated, mainEntity: { "@type": "ItemList", itemListElement: topicSlugs(topic).map((slug, index) => ({ "@type": "ListItem", position: index + 1, item: { "@id": `${siteUrl}/research/${slug}.html#article`, url: `${siteUrl}/research/${slug}.html`, name: publications.find(pub => pub.slug === slug).title } })) } };
+  return { "@type": "CollectionPage", "@id": `${siteUrl}${topicPath(topic)}`, url: `${siteUrl}${topicPath(topic)}`, name: topic.title, description: topic.description, dateModified: siteUpdated, about: topicSlugs(topic).flatMap(slug => publications.find(pub => pub.slug === slug).keywords).filter((name, index, names) => names.indexOf(name) === index).map(name => ({ "@type": "Thing", name })), mainEntity: { "@type": "ItemList", itemListElement: topicSlugs(topic).map((slug, index) => ({ "@type": "ListItem", position: index + 1, item: { "@id": `${siteUrl}/research/${slug}.html#article`, url: `${siteUrl}/research/${slug}.html`, name: publications.find(pub => pub.slug === slug).title } })) } };
 }
 
 function topicsIndexPage() {
-  return `${head({title: `Research Topics | ${author}`, description: "Explore source-linked reading guides to quantum sensing, Open RAN cybersecurity and energy-efficient networks.", canonical: "/topics.html"})}<body>${nav("Topics")}<main id="main"><section class="page-hero"><div class="container"><p class="eyebrow">Research guides</p><h1>Research topics</h1><p>Start with a scientific question, then follow the relevant papers, original sources and evidence limits.</p></div></section><section class="section"><div class="container">${topicLinks()}<p class="topic-disclaimer">These are curated guides to this author's publications, not systematic reviews of the whole field. Topic pages are not additional research papers. Cite the original papers using their DOI.</p><a class="text-link" href="/publications.html">Browse all ${publications.length} publications</a></div></section></main>${pageEnd()}`;
+  return `${head({title: `Research Topics | ${author}`, description: "Explore cybersecurity, artificial intelligence, deep learning, quantum sensing and energy-efficient Open RAN through source-linked published research.", canonical: "/topics.html"})}<body>${nav("Topics")}<main id="main"><section class="page-hero"><div class="container"><p class="eyebrow">Research guides</p><h1>Research topics</h1><p>Start with a scientific question, then follow the relevant papers, original sources and evidence limits.</p></div></section><section class="section"><div class="container">${topicLinks()}<p class="topic-disclaimer">These are curated guides to this author's publications, not systematic reviews of the whole field. Topic pages are not additional research papers. Cite the original papers using their DOI.</p><a class="text-link" href="/publications.html">Browse all ${publications.length} publications</a></div></section></main>${pageEnd()}`;
 }
 
 function topicPage(topic) {
@@ -825,6 +865,7 @@ function publicationPage(pub) {
     pub.doi ? `<meta name="citation_doi" content="${escapeHtml(pub.doi)}">` : "",
     pub.issn ? `<meta name="citation_issn" content="${escapeHtml(pub.issn)}">` : "",
     pub.volume ? `<meta name="citation_volume" content="${escapeHtml(pub.volume)}">` : "",
+    pub.issue ? `<meta name="citation_issue" content="${escapeHtml(pub.issue)}">` : "",
     pub.firstPage ? `<meta name="citation_firstpage" content="${escapeHtml(pub.firstPage)}">` : "",
     pub.lastPage ? `<meta name="citation_lastpage" content="${escapeHtml(pub.lastPage)}">` : "",
     pub.articleNumber ? `<meta name="citation_article_number" content="${escapeHtml(pub.articleNumber)}">` : "",
@@ -882,20 +923,22 @@ const appJs = `(() => {
   const count = document.querySelector('#result-count');
   const empty = document.querySelector('#no-results');
   const apply = () => {
-    const query = (search?.value || '').trim().toLowerCase();
+    const normalise = value => value.toLowerCase().replace(/cyber[ -]+security/g, 'cybersecurity').replace(/deeplearning/g, 'deep learning');
+    const query = normalise((search?.value || '').trim());
     let visible = 0;
     cards.forEach(card => {
-      const match = (!query || card.dataset.search.includes(query)) && (!year || year.value === 'all' || card.dataset.year === year.value) && (!type || type.value === 'all' || card.dataset.type === type.value) && (!theme || theme.value === 'all' || card.dataset.theme.includes(theme.value));
+      const match = (!query || normalise(card.dataset.search).includes(query)) && (!year || year.value === 'all' || card.dataset.year === year.value) && (!type || type.value === 'all' || card.dataset.type === type.value) && (!theme || theme.value === 'all' || card.dataset.theme.includes(theme.value));
       card.hidden = !match; if (match) visible++;
     });
     if (count) count.textContent = String(visible);
     if (empty) empty.hidden = visible !== 0;
   };
+  if (search) { search.value = new URLSearchParams(location.search).get('q') || ''; apply(); }
   [search, year, type, theme].filter(Boolean).forEach(control => control.addEventListener(control === search ? 'input' : 'change', apply));
   document.querySelector('#clear-filters')?.addEventListener('click', () => { if (search) search.value = ''; [year, type, theme].filter(Boolean).forEach(control => control.value = 'all'); apply(); });
 })();`;
 
-const ogCard = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#0b1f33"/><g fill="none" stroke="#1d5470" opacity=".6"><circle cx="1010" cy="60" r="310"/><circle cx="1010" cy="60" r="230"/><circle cx="1010" cy="60" r="150"/><path d="M0 510h1200M0 550h1200M0 590h1200"/></g><rect x="70" y="72" width="66" height="66" fill="none" stroke="#7fcac3"/><text x="103" y="114" text-anchor="middle" fill="#fff" font-family="Arial" font-size="22" font-weight="700">YA</text><text x="70" y="275" fill="#fff" font-family="Georgia" font-size="72">Yassir AL-Karawi</text><text x="70" y="335" fill="#7fcac3" font-family="Arial" font-size="25" letter-spacing="4">COMMUNICATIONS ENGINEERING</text><text x="70" y="405" fill="#b7c8d5" font-family="Arial" font-size="27">Open RAN · 5G/6G · Quantum Communications · AI-Native Networks</text><rect x="70" y="474" width="150" height="5" fill="#e67832"/></svg>`;
+const ogCard = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#0b1f33"/><g fill="none" stroke="#1d5470" opacity=".6"><circle cx="1010" cy="60" r="310"/><circle cx="1010" cy="60" r="230"/><circle cx="1010" cy="60" r="150"/><path d="M0 510h1200M0 550h1200M0 590h1200"/></g><rect x="70" y="72" width="66" height="66" fill="none" stroke="#7fcac3"/><text x="103" y="114" text-anchor="middle" fill="#fff" font-family="Arial" font-size="22" font-weight="700">YA</text><text x="70" y="275" fill="#fff" font-family="Georgia" font-size="72">Yassir AL-Karawi</text><text x="70" y="335" fill="#7fcac3" font-family="Arial" font-size="25" letter-spacing="4">COMMUNICATIONS ENGINEERING</text><text x="70" y="405" fill="#b7c8d5" font-family="Arial" font-size="27">Cybersecurity · Artificial Intelligence · Deep Learning · 6G</text><rect x="70" y="474" width="150" height="5" fill="#e67832"/></svg>`;
 const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#0b1f33"/><text x="32" y="40" text-anchor="middle" fill="#fff" font-family="Arial" font-size="23" font-weight="800">YA</text><path d="M12 50h40" stroke="#e67832" stroke-width="4"/></svg>`;
 const manifest = JSON.stringify({ name: "Yassir AL-Karawi — Academic Homepage", short_name: "Yassir AL-Karawi", start_url: "/", display: "standalone", background_color: "#f7f5ef", theme_color: "#0b1f33", icons: [{ src: "/assets/favicon.svg", sizes: "any", type: "image/svg+xml" }] }, null, 2);
 const machinePerson = {
@@ -915,7 +958,7 @@ const machinePerson = {
     { "@type": "PropertyValue", propertyID: "Web of Science ResearcherID", value: "O-2498-2016" },
     { "@type": "PropertyValue", propertyID: "OpenAlex Author ID", value: "A5012826964", url: openAlexUrl }
   ],
-  knowsAbout: ["Open RAN", "5G", "6G", "Quantum Communications", "Quantum Key Distribution", "Digital Twins", "Optical Networks", "Wireless Communications"]
+  knowsAbout: researchExpertise
 };
 const scholarlyGraph = safeJsonLd({
   "@context": "https://schema.org",
@@ -943,6 +986,10 @@ const llms = `# Yassir AL-Karawi — Published Research
 - Scopus Author ID: https://www.scopus.com/authid/detail.uri?authorId=58954746100
 - Web of Science ResearcherID: https://www.webofscience.com/wos/author/record/O-2498-2016
 - Semantic Scholar: https://www.semanticscholar.org/author/Yassir-Al%E2%80%90Karawi/1414260996
+
+## Research areas
+
+Cybersecurity; artificial intelligence; deep learning; machine learning; reinforcement learning; quantum neural networks; digital twins; Open RAN; 6G; optical performance monitoring.
 
 ## Citation data
 
@@ -1062,6 +1109,7 @@ for (const pub of publications) {
 }
 await output("assets/styles.css", styles + discoveryStyles + `
 .record-content>article{min-width:0}
+.discovery-section{background:#fff}.research-languages{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;font-size:1rem;color:var(--ink-2)}.research-languages a{color:var(--blue);text-decoration:underline;text-underline-offset:4px}.research-card .text-link{margin-top:18px}.research-card{min-width:0}
 .research-detail{margin-top:38px;padding-top:30px;border-top:1px solid var(--line);max-width:780px}
 .research-detail h2{font-size:1.8rem;margin-bottom:18px}
 .research-detail h3{font-size:1.08rem;line-height:1.4;margin:28px 0 12px;color:var(--ink)}

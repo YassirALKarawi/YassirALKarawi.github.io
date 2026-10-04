@@ -7,6 +7,15 @@ const ieee = (id) => ({ label: "IEEE publication record", url: `https://ieeexplo
 const piers = { label: "PIERS 2012 conference programme", url: "https://piers.org/pierspublications/PIERS2012MoscowFinalProgram.pdf" };
 
 export const researchContext = {
+  "mt-opmnet-deep-learning-optical-monitoring": {
+    basis: "abstract",
+    overview: "MT-OPMNet jointly estimates optical signal-to-noise ratio and identifies modulation formats from receiver-side amplitude histograms. The study connects deep learning and optical performance monitoring in elastic optical networks.",
+    approach: "A shared one-dimensional convolutional backbone, channel-aware attention and two task-specific heads combine regression and classification. Evaluation uses a nine-channel simulated wavelength-division-multiplexed system with two symbol rates, five modulation formats and distances from 500 to 3000 km. A split-step Fourier simulator provides a waveform cross-check.",
+    findings: "The abstract reports 3.4 dB OSNR root-mean-square error and 97.5% modulation-format identification accuracy on the grouped mixed-rate test split. The model uses 23.8% fewer trainable parameters than two separate single-task models.",
+    note: "These outcomes describe the reported simulation dataset and test split. Laboratory and field validation remain future work.",
+    reviewedAt: "2026-10-04",
+    sources: [{ label: "Wiley / IET Networks: original abstract and full article", url: "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/ntw2.70038" }]
+  },
   "quantum-cognitive-radar-thermal-loss": {
     basis: "abstract",
     overview: "The study asks how a radar can adapt its detection strategy when attenuation and thermal background noise change. It combines entangled signal and idler modes with feedback control, connecting quantum illumination to an adaptive sensing problem rather than treating the transmitter settings as fixed.",
