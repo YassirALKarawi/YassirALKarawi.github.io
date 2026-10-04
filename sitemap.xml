@@ -3,24 +3,6 @@
   <url><loc>https://yassiralkarawi.github.io/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/publications.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/topics.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/signals-information-fundamentals.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/sampling-reconstruction.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/quantization-pcm.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/line-coding.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/pulse-shaping-isi.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/ask-modulation.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/fsk-modulation.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/psk-dpsk.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/qpsk-mpsk.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/qam.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/optimal-receivers.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/ber-link-design.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/channel-coding.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/ofdm.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/synchronization-equalization.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/integrated-link-design.html</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/question-bank.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/topics/artificial-intelligence-deep-learning-networks.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/topics/quantum-radar-and-sensing.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/topics/open-ran-cybersecurity.html</loc><lastmod>2026-10-04</lastmod></url>
@@ -49,4 +31,23 @@
   <url><loc>https://yassiralkarawi.github.io/research/optimizing-haps-terrestrial-coexistence-5-8ghz.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/rates-symbols-supplement.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/signals-information-fundamentals.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/sampling-reconstruction.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/quantization-pcm.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/line-coding.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/pulse-shaping-isi.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/ask-modulation.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/fsk-modulation.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/psk-dpsk.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/qpsk-mpsk.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/qam.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/optimal-receivers.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/ber-link-design.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/channel-coding.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/ofdm.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/synchronization-equalization.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/integrated-link-design.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://yassiralkarawi.github.io/learning/digital-communications/question-bank.html</loc><lastmod>2026-10-04</lastmod></url>
 </urlset>

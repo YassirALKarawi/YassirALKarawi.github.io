@@ -5,7 +5,7 @@
 
   function renderMath(){
     if (!window.katex) return setTimeout(renderMath, 120);
-    $$('.math').forEach(el => { try { katex.render(el.dataset.math, el, {throwOnError:false, displayMode:true}); } catch {} });
+    $$('.math').forEach(el => { try { katex.render(el.dataset.math, el, {throwOnError:false, displayMode:!el.classList.contains('inline')}); } catch {} });
   }
   if ($('.math')) renderMath();
 
