@@ -1,1 +1,940 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Systems and sampling | Digital Communication I</title><meta name="description" content="Interactive Digital Communication I lectures and signal laboratories by Dr. Yassir Al-Ameen."><link rel="stylesheet" href="course-assets/course.css"></head><body><header><a href="/">Dr. Yassir Al-Ameen</a><nav><a href="/learning/">All courses</a><a href="index.html">Digital Communication I</a></nav></header><main><p class="eyebrow">DIGITAL COMMUNICATION I / LECTURE 01</p><h1>Systems and sampling</h1><p>Follow the message through a communication system. Change the sampling rate and see when different signals produce identical samples.</p><nav><a href="#experiment">Experiment</a><a href="#practice">Worked practice</a><a href="#notes">Complete lecture</a></nav><section><h2>From a message to a decision</h2><p>A source produces information. The transmitter prepares a signal, the channel carries it, and the receiver estimates the message. Noise and distortion can change the received waveform.</p><p class="formula">Source → Transmitter → Channel → Receiver → Destination</p><h3>Three distinct operations</h3><p><b>Sampling</b> selects measurement times. <b>Quantization</b> selects amplitude levels. <b>Encoding</b> assigns a binary label to each level.</p><p class="formula">T<sub>s</sub> = 1/f<sub>s</sub> &nbsp; · &nbsp; f<sub>N</sub> = 2B</p><p>B is the highest baseband message frequency in hertz. A practical sampling rate is greater than 2B. Equality needs ideal conditions and care with signal phase at the band edge.</p></section><section id="experiment" data-lab="1"><small>LIVE SIGNAL LABORATORY</small><h2>Change a parameter and watch the signal</h2><div class="controls"><label>Message frequency (Hz)<input id="fm" type="range" min="1" max="100" value="20"></label><label>Sampling rate (samples/s)<input id="fs" type="range" min="10" max="300" value="100"></label><label>Signal phase (degrees)<input id="phase" type="range" min="0" max="180" value="0"></label></div><div class="labbar"><button id="play">Play scan</button><button id="step">Next instant</button><button id="reset">Reset</button></div><p class="legend">Teal: original signal · Orange: sampled or encoded representation. The moving cursor scans a fixed experiment without changing its values.</p><svg id="scope" class="plot" viewBox="0 0 1000 600" role="img" aria-label="Signal waveforms with labelled axes"></svg><output id="result" aria-live="polite"></output><div id="values" class="tablewrap"></div></section><section id="practice"><h2>Worked practice</h2><details><summary>A 3 kHz message is sampled at 8 ksample/s. Find its period and check the rate.</summary><div class="steps"><p>Nyquist rate: 2 × 3 = 6 ksample/s.</p><p>Check: 8 > 6, so a spectral gap is available.</p><p>Period: 1/8000 s = 125 μs.</p></div></details><details><summary>Why can a 100 Hz cosine look like 50 Hz when sampled at 150 samples/s?</summary><div class="steps"><p>Subtract the sample rate: 100 − 150 = −50 Hz.</p><p>Cosine is even, so the lower-frequency alias is 50 Hz.</p><p>The two cosines have identical sample values.</p></div></details></section><section id="notes"><h2>Complete lecture notes</h2><p>The full lecture, figures and exercises are available below.</p><a class="button" href="course-assets/Lecture_01.pdf" download>Download lecture 01 PDF</a><details><summary>Open the complete PDF here</summary><iframe loading="lazy" title="Lecture 1 PDF" src="course-assets/Lecture_01.pdf"></iframe></details></section><nav><a href="lecture-01-lab.html">Lecture 01</a><a href="lecture-02-lab.html">Lecture 02</a><a href="lecture-03-lab.html">Lecture 03</a></nav><script src="course-assets/lab.js" defer></script><script src="course-assets/builder.js" defer></script></main><footer>Dr. Yassir Al-Ameen · Department of Communications Engineering · University of Diyala<br>Academic year 2026–2027</footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Systems and sampling | Digital Communication I</title><meta name="description" content="Interactive Digital Communication I lectures and signal laboratories by Dr. Yassir Al-Ameen."><link rel="stylesheet" href="course-assets/course.css"><link rel="stylesheet" href="/learning/lecture-01.css"><script src="/learning/lecture-motion.js" defer></script></head><body><header><a href="/">Dr. Yassir Al-Ameen</a><nav><a href="/learning/">All courses</a><a href="index.html">Digital Communication I</a></nav></header><main><p class="eyebrow">DIGITAL COMMUNICATION I / LECTURE 01</p><h1>Systems and sampling</h1><p>Follow the message through a communication system. Change the sampling rate and see when different signals produce identical samples.</p><nav><a href="#experiment">Experiment</a><a href="#practice">Worked practice</a><a href="#notes">Complete lecture</a></nav><section><h2>From a message to a decision</h2><p>A source produces information. The transmitter prepares a signal, the channel carries it, and the receiver estimates the message. Noise and distortion can change the received waveform.</p><p class="formula">Source → Transmitter → Channel → Receiver → Destination</p><h3>Three distinct operations</h3><p><b>Sampling</b> selects measurement times. <b>Quantization</b> selects amplitude levels. <b>Encoding</b> assigns a binary label to each level.</p><p class="formula">T<sub>s</sub> = 1/f<sub>s</sub> &nbsp; · &nbsp; f<sub>N</sub> = 2B</p><p>B is the highest baseband message frequency in hertz. A practical sampling rate is greater than 2B. Equality needs ideal conditions and care with signal phase at the band edge.</p></section><section><h2>Lecture 01 · Full interactive explanation</h2><section class="lecture-downloads"><h2>Lecture 01 — Systems, channels and sampling</h2><p>This web chapter follows the same explanations, examples and homework as the 25-page lecture.</p><p><a href="/learning/digital-communications/lecture-01-assets/Lecture_01.pdf">Download lecture PDF</a> · <a href="/learning/digital-communications/lecture-01-assets/Lecture_01_LaTeX.zip">Download LaTeX and figures</a></p></section><div class="pdf-aligned-lecture"><h2 id="what-is-digital-communication">1.1 What is digital
+communication?</h2>
+<blockquote class="definition"><p><strong>Definition: Digital communication</strong> Digital
+communication sends information using a finite set of symbols. In a
+binary system, the information is represented by bits: 0 and 1.</p>
+</blockquote>
+<p>A voice message begins as sound. A microphone changes the sound into
+a voltage. The system represents this voltage by numbers, sends those
+numbers, and uses them to recover the message. The receiver does not
+need an exact copy of every transmitted voltage. It must identify the
+correct symbols, then interpret their agreed meaning.</p>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/simple_link.svg"  alt="Figure 1.2: Follow the arrows from the source to the
+destination." loading="lazy">
+<figcaption><b>Figure 1.2:</b> Follow the arrows from the source to the
+destination.</figcaption>
+</figure>
+<ol>
+<li><p><strong>Source.</strong> Produces information, such as voice,
+text or a photograph.</p></li>
+<li><p><strong>Transmitter.</strong> Changes the information into a
+waveform suitable for the channel.</p></li>
+<li><p><strong>Channel.</strong> Carries the waveform through a cable,
+optical fiber or free space.</p></li>
+<li><p><strong>Receiver.</strong> Uses the received waveform to estimate
+the transmitted information.</p></li>
+<li><p><strong>Destination.</strong> Uses the recovered information, for
+example through a loudspeaker or a screen.</p></li>
+</ol>
+<blockquote>
+<p><strong>Remember:</strong> Bits are labels. The channel carries a
+physical waveform, such as a voltage, a light signal or a radio
+wave.</p>
+</blockquote>
+<h3 class="unnumbered" id="quick-question">Quick question</h3>
+<p>In a voice call, what is the source? <strong>Answer:</strong> The
+speaker’s message. The microphone converts the sound into an electrical
+signal.</p>
+<h2 id="from-an-analog-signal-to-bits">1.2 From an analog signal to
+bits</h2>
+<blockquote class="definition"><p><strong>Definition: Analog signal</strong> An analog signal
+represents information using a continuously varying quantity, such as
+microphone voltage.</p>
+</blockquote>
+<p>Before an analog signal can be represented by bits, it passes through
+three different operations.</p>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/adc_stages.svg"  alt="Figure 1.3: Sampling chooses times, quantization chooses levels, and
+encoding assigns labels." loading="lazy">
+<figcaption><b>Figure 1.3:</b> Sampling chooses times, quantization chooses levels, and
+encoding assigns labels.</figcaption>
+</figure>
+<ol>
+<li><p><strong>Sample.</strong> Measure the voltage at regularly spaced
+times.</p></li>
+<li><p><strong>Quantize.</strong> Replace each measurement by the
+nearest allowed level.</p></li>
+<li><p><strong>Encode.</strong> Write the selected level as a binary
+word.</p></li>
+</ol>
+<p>Together, these operations form an <strong>analog-to-digital
+converter (ADC)</strong>. Sampling preserves the measured value at a
+chosen time. Quantization introduces rounding. Encoding changes the
+label, not the chosen level.</p>
+<h3 class="unnumbered" id="example-1">Example 1</h3>
+<h5 id="question">Question</h5>
+<p>A sample has value 0.62 V. The allowed levels are 0, 0.25, 0.50 and
+0.75 V, with labels 00, 01, 10 and 11. What word is produced?</p>
+<h5 id="solution">Solution</h5>
+<p><strong>Given:</strong> Measured sample: 0.62 V. Four allowed
+levels.</p>
+<ol>
+<li><p><strong>Find the nearest level.</strong> The distances to 0.50
+and 0.75 V are 0.12 and 0.13 V. Choose 0.50 V.</p></li>
+<li><p><strong>Read its label.</strong> The label of 0.50 V is
+10.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> The transmitted label for this sample is
+<strong>10</strong>.</p>
+</blockquote>
+<h2 id="sampling-choosing-the-time-instants">1.3 Sampling: choosing the time
+instants</h2>
+<blockquote class="definition"><p><strong>Definition: Sampling</strong> Sampling measures a
+continuous-time signal at selected instants. Uniform sampling uses the
+same time interval between consecutive measurements.</p>
+</blockquote>
+<p><span class="math display" data-math="T_s=\frac{1}{f_s},\qquad
+x[n]=x(nT_s)."></span></p>
+<ul>
+<li><p><span class="math inline" data-math="f_s"></span>: sampling rate in
+samples per second.</p></li>
+<li><p><span class="math inline" data-math="T_s"></span>: time between samples,
+in seconds.</p></li>
+<li><p><span class="math inline" data-math="n"></span>: integer sample number,
+<span class="math inline" data-math="0,1,2,\ldots"></span></p></li>
+<li><p><span class="math inline" data-math="x[n]"></span>: value of the sample
+taken at time <span class="math inline" data-math="nT_s"></span>.</p></li>
+</ul>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/sample_interval.svg"  alt="Figure 1.4: The continuous curve is measured at the marked
+instants." loading="lazy">
+<figcaption><b>Figure 1.4:</b> The continuous curve is measured at the marked
+instants.</figcaption>
+</figure>
+<h3 class="unnumbered" id="example-2">Example 2</h3>
+<h5 id="question-1">Question</h5>
+<p>A signal is sampled at 8000 samples/s. Find the time between
+samples.</p>
+<h5 id="solution-1">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="f_s=8000"></span>
+samples/s. Required: <span class="math inline" data-math="T_s"></span>.</p>
+<ol>
+<li><p><strong>Choose the rule.</strong> <span class="math inline" data-math="T_s=1/f_s"></span>.</p></li>
+<li><p><strong>Substitute.</strong> <span class="math inline" data-math="T_s=1/8000=0.000125"></span> s.</p></li>
+<li><p><strong>Convert the unit.</strong> <span class="math inline" data-math="0.000125\times10^6=125\,\mu"></span>s.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> One sample is taken every <span class="math inline" data-math="125\,\mu"></span>s.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> Sampling changes the time description. It
+does not, by itself, round the amplitude to a fixed level.</p>
+</blockquote>
+<h2 id="quantization-and-encoding">1.4 Quantization and encoding</h2>
+<blockquote class="definition"><p><strong>Definition: Quantization</strong> Quantization replaces each
+sample value by one of a finite number of allowed amplitude levels.</p>
+</blockquote>
+<blockquote class="definition"><p><strong>Definition: Encoding</strong> Encoding assigns a bit word to
+the selected level. With <span class="math inline" data-math="b"></span> bits per
+word, there are <span class="math inline" data-math="L=2^b"></span> possible
+words.</p>
+</blockquote>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/quantization_detail.svg"  alt="Figure 1.5: Quantization rounds sample values. The difference from the
+original value is the quantization error." loading="lazy">
+<figcaption><b>Figure 1.5:</b> Quantization rounds sample values. The difference from the
+original value is the quantization error.</figcaption>
+</figure>
+<p>For a uniform quantizer with range <span class="math inline" data-math="V_{\min}"></span> to <span class="math inline" data-math="V_{\max}"></span> and <span class="math inline" data-math="L"></span> equal bins, <span class="math display" data-math="\Delta=\frac{V_{\max}-V_{\min}}{L}."></span> Here
+<span class="math inline" data-math="\Delta"></span> is the bin width. For
+midpoint rounding without overload, the error magnitude is at most <span class="math inline" data-math="\Delta/2"></span>.</p>
+<h3 class="unnumbered" id="example-3">Example 3</h3>
+<h5 id="question-2">Question</h5>
+<p>A uniform 3-bit quantizer covers <span class="math inline" data-math="-1"></span> to <span class="math inline" data-math="+1"></span> V. Find the number of levels, bin
+width and maximum rounding error.</p>
+<h5 id="solution-2">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="b=3"></span>,
+<span class="math inline" data-math="V_{\min}=-1"></span> V, <span class="math inline" data-math="V_{\max}=1"></span> V.</p>
+<ol>
+<li><p><strong>Count the levels.</strong> <span class="math inline" data-math="L=2^3=8"></span>.</p></li>
+<li><p><strong>Divide the voltage range.</strong> <span class="math inline" data-math="\Delta=[1-(-1)]/8=0.25"></span> V.</p></li>
+<li><p><strong>Find half a bin.</strong> <span class="math inline" data-math="|e_q|\leq0.25/2=0.125"></span> V.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> 8 levels, bin width 0.25 V, and error
+magnitude at most 0.125 V for samples within the quantizer range.</p>
+</blockquote>
+<h2 id="what-do-the-other-blocks-do">1.5 What do the other blocks do?</h2>
+<p>The basic path is now clear. A practical system can include extra
+blocks to make transmission more efficient or more reliable. In the
+diagram, coding prepares the data before transmission. Decoding reverses
+the representation after the receiver has made its decisions.</p>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/architecture.svg"  alt="Figure 1.6: A more detailed link. The upper row prepares and transmits
+information. The lower row receives, decodes and delivers it. ADC means
+analog-to-digital converter." loading="lazy">
+<figcaption><b>Figure 1.6:</b> A more detailed link. The upper row prepares and transmits
+information. The lower row receives, decodes and delivers it. ADC means
+analog-to-digital converter.</figcaption>
+</figure>
+<ul>
+<li><p><strong>Source coding:</strong> represents information
+efficiently, for example by compressing an image.</p></li>
+<li><p><strong>Channel coding:</strong> adds structured extra bits to
+help detect or correct errors.</p></li>
+<li><p><strong>Pulse shaping:</strong> creates a controlled waveform
+from the symbols.</p></li>
+<li><p><strong>Carrier modulation:</strong> places information on a
+carrier when a passband channel is used.</p></li>
+<li><p><strong>Detection:</strong> decides which symbol was most likely
+sent.</p></li>
+</ul>
+<blockquote>
+<p><strong>Remember:</strong> Source coding and channel coding have
+different purposes. Compression reduces predictable redundancy.
+Error-control coding adds useful redundancy. A baseband wired link does
+not necessarily need radio-frequency (RF) modulation.</p>
+</blockquote>
+<h3 class="unnumbered" id="simple-example">Simple example</h3>
+<p>A receiver observes <span class="math inline" data-math="+0.8"></span> V. The
+system uses <span class="math inline" data-math="+1"></span> V for bit 1 and
+<span class="math inline" data-math="-1"></span> V for bit 0. With a zero
+threshold, the receiver decides <strong>1</strong>, because <span class="math inline" data-math="+0.8"></span> V is positive.</p>
+<h2 id="communication-channels">1.6 Communication channels</h2>
+<blockquote class="definition"><p><strong>Definition: Channel</strong> A communication channel is the
+path through which a transmitted signal reaches a receiver.</p>
+</blockquote>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/simple_channels.svg"  alt="Figure 1.7: Guided channels confine the signal to a physical path.
+Unguided channels transmit waves through space." loading="lazy">
+<figcaption><b>Figure 1.7:</b> Guided channels confine the signal to a physical path.
+Unguided channels transmit waves through space.</figcaption>
+</figure>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th>Channel</th>
+<th>What carries the signal?</th>
+<th>Familiar example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Twisted pair</td>
+<td>Electrical signal on a pair of wires</td>
+<td>Copper network cable</td>
+</tr>
+<tr class="even">
+<td>Coaxial cable</td>
+<td>Electrical signal between conductor and
+shield</td>
+<td>Antenna feeder</td>
+</tr>
+<tr class="odd">
+<td>Optical fiber</td>
+<td>Light in a glass fiber</td>
+<td>Optical data link</td>
+</tr>
+<tr class="even">
+<td>Terrestrial microwave</td>
+<td>Radio wave between ground antennas</td>
+<td>Point-to-point link</td>
+</tr>
+<tr class="odd">
+<td>Satellite</td>
+<td>Radio wave via a satellite</td>
+<td>Satellite television</td>
+</tr>
+<tr class="even">
+<td>Broadcast radio</td>
+<td>Radio wave to many receivers</td>
+<td>Radio broadcasting</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>Remember:</strong> Choose a channel by its required distance,
+data rate, interference environment and installation conditions. There
+is no single best medium for every link.</p>
+</blockquote>
+<h3 class="unnumbered" id="quick-question-1">Quick question</h3>
+<p>Is optical fiber a wireless channel because it carries light?
+<strong>Answer:</strong> No. The fiber guides the light, so it is a
+guided channel.</p>
+<h2 id="guided-channels-a-closer-look">1.7 Guided channels: a closer
+look</h2>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/media_sections.svg"  alt="Figure 1.8: The cross-sections show the layer order in three common
+media. Dimensions are schematic, not to scale." loading="lazy">
+<figcaption><b>Figure 1.8:</b> The cross-sections show the layer order in three common
+media. Dimensions are schematic, not to scale.</figcaption>
+</figure>
+<ol>
+<li><p><strong>Twisted pair.</strong> Two insulated conductors are
+twisted together. In a balanced link, the receiver measures the voltage
+difference between them. Twisting helps reduce interference
+pickup.</p></li>
+<li><p><strong>Coaxial cable.</strong> A central conductor is surrounded
+by insulation and an outer conducting shield. The geometry helps confine
+the electromagnetic field.</p></li>
+<li><p><strong>Optical fiber.</strong> A core and cladding guide light.
+The optical signal is not affected by electromagnetic pickup in the way
+a copper signal is.</p></li>
+</ol>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/fiber_lc.jpg" />
+<figcaption><b>Figure 1.9:</b> A real LC optical-fiber connector. Its ferrule holds the
+fiber accurately so that two fiber ends can be aligned.</figcaption>
+</figure>
+<h3 class="unnumbered" id="compare-before-choosing">Compare before
+choosing</h3>
+<p>Copper connections carry electrical signals and need suitable
+protection from interference. Fiber is useful where electrical isolation
+or long-distance optical transmission is needed. Fiber connectors must
+be clean and correctly aligned.</p>
+<blockquote>
+<p><strong>Remember:</strong> Fiber still has losses and signal
+distortion. Immunity to electrical interference does not mean that every
+optical link is error-free.</p>
+</blockquote>
+<h2 id="wireless-channels-and-signal-damage">1.8 Wireless channels and
+signal damage</h2>
+<ul>
+<li><p><strong>Terrestrial microwave:</strong> directional antennas
+connect two ground sites.</p></li>
+<li><p><strong>Satellite link:</strong> a satellite relays a signal
+between ground stations.</p></li>
+<li><p><strong>Broadcast radio:</strong> one transmitter serves many
+receivers.</p></li>
+</ul>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/goldstone_day.jpg" />
+<figcaption><b>Figure 1.10:</b> Dish antennas at the Goldstone complex. A reflector directs
+radio energy toward the feed when receiving and forms a narrow beam when
+transmitting.</figcaption>
+</figure>
+<p>Any channel can change the transmitted waveform. Three effects are
+especially important.</p>
+<blockquote class="definition"><p><strong>Definition: Attenuation</strong> A reduction in signal
+amplitude or power. The received signal becomes weaker.</p>
+</blockquote>
+<blockquote class="definition"><p><strong>Definition: Distortion</strong> A change in waveform shape,
+for example because different frequency components experience different
+gains or delays.</p>
+</blockquote>
+<blockquote class="definition"><p><strong>Definition: Noise</strong> An unwanted random contribution
+added to the received signal.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> A weak signal, a distorted signal and a
+noisy signal are different problems. On the next page, compare their
+shapes before using any equations.</p>
+</blockquote>
+<h2 id="recognizing-channel-effects">1.9 Recognizing channel effects</h2>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/impairments.svg"  alt="Figure 1.11: Compare each received waveform with the reference: smaller
+amplitude, changed shape, or random fluctuations." loading="lazy">
+<figcaption><b>Figure 1.11:</b> Compare each received waveform with the reference: smaller
+amplitude, changed shape, or random fluctuations.</figcaption>
+</figure>
+<p>A simple noise-only model is <span class="math display" data-math="r(t)=s(t)+n(t)."></span> Here <span class="math inline" data-math="s(t)"></span> is the transmitted signal, <span class="math inline" data-math="n(t)"></span> is additive noise, and <span class="math inline" data-math="r(t)"></span> is the received signal. A simple
+attenuation-and-noise model is <span class="math inline" data-math="r(t)=a
+s(t)+n(t)"></span>, where <span class="math inline" data-math="0&lt;a&lt;1"></span> is an amplitude scale
+factor.</p>
+<h3 class="unnumbered" id="example-4">Example 4</h3>
+<h5 id="question-3">Question</h5>
+<p>A transmitted sample is <span class="math inline" data-math="+1"></span> V.
+The channel scales it by 0.5 and adds <span class="math inline" data-math="-0.1"></span> V of noise. Find the received
+sample.</p>
+<h5 id="solution-3">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="s=1"></span> V,
+<span class="math inline" data-math="a=0.5"></span>, <span class="math inline" data-math="n=-0.1"></span> V.</p>
+<ol>
+<li><p><strong>Apply attenuation.</strong> <span class="math inline" data-math="as=0.5\times1=0.5"></span> V.</p></li>
+<li><p><strong>Add the noise.</strong> <span class="math inline" data-math="r=0.5+(-0.1)=0.4"></span> V.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> The receiver observes <span class="math inline" data-math="0.4"></span> V. A zero-threshold binary detector
+would still decide 1.</p>
+</blockquote>
+<h2 id="the-sampling-rule">1.10 The sampling rule</h2>
+<blockquote class="definition"><p><strong>Definition: Baseband bandwidth</strong> For this lecture, a
+real baseband signal has bandwidth <span class="math inline" data-math="B"></span> when its spectrum has no content
+outside <span class="math inline" data-math="-B"></span> to <span class="math inline" data-math="+B"></span>. Thus <span class="math inline" data-math="B"></span> is its highest positive frequency.</p>
+</blockquote>
+<p>To preserve a band-limited baseband signal, use <span class="math display" data-math="\boxed{f_s&gt;2B}."></span> The boundary <span class="math inline" data-math="2B"></span> is called the <strong>Nyquist
+rate</strong>. Its reciprocal <span class="math inline" data-math="1/(2B)"></span> is the <strong>Nyquist
+interval</strong>. Practical sampling uses a rate above the boundary to
+allow a real filter transition band.</p>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/replicas.svg"  alt="Figure 1.12: For a 2 kHz baseband limit, the repeated spectra are
+separate, touching, or overlapping. Only the central copy and its two
+neighbors are shown. Heights are normalized." loading="lazy">
+<figcaption><b>Figure 1.12:</b> For a 2 kHz baseband limit, the repeated spectra are
+separate, touching, or overlapping. Only the central copy and its two
+neighbors are shown. Heights are normalized.</figcaption>
+</figure>
+<blockquote>
+<p><strong>Remember:</strong> The equality <span class="math inline" data-math="f_s=2B"></span> is a limiting case, not a safe
+choice for every signal. A sine wave exactly at the boundary can produce
+all-zero samples for a particular phase.</p>
+</blockquote>
+<h3 class="unnumbered" id="three-cases">Three cases</h3>
+<p><span class="math inline" data-math="f_s&gt;2B"></span>: separated copies.
+<span class="math inline" data-math="f_s=2B"></span>: copies meet at the
+boundary.</p>
+<p><span class="math inline" data-math="f_s&lt;2B"></span>: copies overlap for a
+general signal occupying the band.</p>
+<h2 id="finding-a-frequency-from-an-equation">1.11 Finding a frequency from
+an equation</h2>
+<p>A sinusoid is commonly written as <span class="math display" data-math="x(t)=A\cos(2\pi ft+\phi)."></span> <span class="math inline" data-math="A"></span> is amplitude, <span class="math inline" data-math="f"></span> is frequency in hertz, <span class="math inline" data-math="t"></span> is time in seconds, and <span class="math inline" data-math="\phi"></span> is phase in radians. If the equation
+uses angular frequency <span class="math inline" data-math="\omega"></span>, then
+<span class="math inline" data-math="\omega=2\pi f"></span>.</p>
+<h3 class="unnumbered" id="example-5">Example 5</h3>
+<h5 id="question-4">Question</h5>
+<p>For <span class="math inline" data-math="x(t)=8\cos(200\pi t)"></span>, find
+the signal frequency, Nyquist rate and Nyquist interval.</p>
+<h5 id="solution-4">Solution</h5>
+<p><strong>Given:</strong> The coefficient of <span class="math inline" data-math="t"></span> is <span class="math inline" data-math="200\pi"></span> rad/s.</p>
+<ol>
+<li><p><strong>Compare with the standard form.</strong> <span class="math inline" data-math="2\pi f=200\pi"></span>.</p></li>
+<li><p><strong>Solve for frequency.</strong> <span class="math inline" data-math="f=200\pi/(2\pi)=100"></span> Hz. This single-tone
+signal has <span class="math inline" data-math="B=100"></span> Hz.</p></li>
+<li><p><strong>Double the highest frequency.</strong> <span class="math inline" data-math="R_N=2B=2(100)=200"></span> samples/s.</p></li>
+<li><p><strong>Take the reciprocal.</strong> <span class="math inline" data-math="T_N=1/R_N=1/200=0.005"></span> s <span class="math inline" data-math="=5"></span> ms.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> Frequency: 100 Hz. Nyquist rate: 200
+samples/s. Nyquist interval: 5 ms. Choose an actual sampling rate above
+200 samples/s.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> Do not use <span class="math inline" data-math="200\pi"></span> as a frequency in hertz. Divide
+the angular frequency by <span class="math inline" data-math="2\pi"></span>
+first. Amplitude 8 does not change the Nyquist rate.</p>
+</blockquote>
+<h3 class="unnumbered" id="check-yourself">Check yourself</h3>
+<p>For <span class="math inline" data-math="x(t)=3\sin(600\pi t)"></span>, <span class="math inline" data-math="f=300"></span> Hz and the Nyquist rate is 600
+samples/s. The amplitude 3 and the use of sine instead of cosine do not
+change this calculation.</p>
+<h2 id="a-sum-of-sinusoids">1.12 A sum of sinusoids</h2>
+<p>When several different sinusoidal components are added, list their
+frequencies and select the largest one that remains in the signal. Work
+with the frequency inside each sine or cosine. The number multiplying
+the whole term is its amplitude.</p>
+<h3 class="unnumbered" id="example-6">Example 6</h3>
+<h5 id="question-5">Question</h5>
+<p>Find the Nyquist rate for <span class="math inline" data-math="x(t)=3\cos(50\pi t)+10\sin(300\pi t)-\cos(100\pi
+t)"></span>.</p>
+<h5 id="solution-5">Solution</h5>
+<p><strong>Given:</strong> Three components with angular frequencies
+<span class="math inline" data-math="50\pi"></span>, <span class="math inline" data-math="300\pi"></span> and <span class="math inline" data-math="100\pi"></span> rad/s.</p>
+<ol>
+<li><p><strong>Convert each frequency.</strong> Divide each coefficient
+of <span class="math inline" data-math="t"></span> by <span class="math inline" data-math="2\pi"></span>.</p></li>
+</ol>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Calculation</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline" data-math="3\cos(50\pi
+t)"></span></td>
+<td><span class="math inline" data-math="50\pi/(2\pi)"></span></td>
+<td>25 Hz</td>
+</tr>
+<tr class="even">
+<td><span class="math inline" data-math="10\sin(300\pi t)"></span></td>
+<td><span class="math inline" data-math="300\pi/(2\pi)"></span></td>
+<td>150 Hz</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline" data-math="-\cos(100\pi
+t)"></span></td>
+<td><span class="math inline" data-math="100\pi/(2\pi)"></span></td>
+<td>50 Hz</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li><p><strong>Choose the largest.</strong> <span class="math inline" data-math="B=\max(25,150,50)=150"></span> Hz.</p></li>
+<li><p><strong>Apply the sampling rule.</strong> <span class="math inline" data-math="R_N=2B=2(150)=300"></span> samples/s.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> The Nyquist rate is 300 samples/s. Use an
+actual rate greater than 300 samples/s for this baseband signal.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> Do not add the component frequencies. The
+highest frequency sets the baseband limit. The minus sign changes a
+component’s sign, not its frequency.</p>
+</blockquote>
+<h3 class="unnumbered" id="why-does-this-method-work">Why does this
+method work?</h3>
+<p>Sampling must preserve the fastest oscillation present. A rate that
+preserves the 150 Hz component also exceeds the boundary for the 25 Hz
+and 50 Hz components.</p>
+<h2 id="a-product-of-sinusoids">1.13 A product of sinusoids</h2>
+<p>Multiplication creates new frequencies. Expand a product before
+finding its highest frequency. The sum-frequency term oscillates faster
+than either original component, so it determines the required sampling
+rate in this example.</p>
+<h3 class="unnumbered" id="example-7">Example 7</h3>
+<h5 id="question-6">Question</h5>
+<p>Find the Nyquist rate and interval for <span class="math inline" data-math="x(t)=\cos(4000\pi t)\cos(1000\pi t)"></span>.</p>
+<h5 id="solution-6">Solution</h5>
+<p><strong>Given:</strong> The two original frequencies are 2000 Hz and
+500 Hz.</p>
+<ol>
+<li><p><strong>Write the identity.</strong> <span class="math inline" data-math="\cos A\cos
+B=\tfrac12\cos(A+B)+\tfrac12\cos(A-B)"></span>.</p></li>
+<li><p><strong>Expand the product.</strong> <span class="math display" data-math="x(t)=\tfrac12\cos(5000\pi t)+\tfrac12\cos(3000\pi
+t)."></span></p></li>
+<li><p><strong>Read the new frequencies.</strong> <span class="math inline" data-math="f_1=2500"></span> Hz and <span class="math inline" data-math="f_2=1500"></span> Hz.</p></li>
+<li><p><strong>Find the rate.</strong> <span class="math inline" data-math="R_N=2(2500)=5000"></span> samples/s.</p></li>
+<li><p><strong>Find the interval.</strong> <span class="math inline" data-math="T_N=1/5000=0.0002"></span> s <span class="math inline" data-math="=0.2"></span> ms.</p></li>
+</ol>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/product_compact.svg"  alt="Figure 1.13: Multiplication produces components at the sum and difference
+frequencies. Each bilateral Fourier impulse has weight 1/4." loading="lazy">
+<figcaption><b>Figure 1.13:</b> Multiplication produces components at the sum and difference
+frequencies. Each bilateral Fourier impulse has weight 1/4.</figcaption>
+</figure>
+<blockquote class="answer"><p><strong>Answer:</strong> Nyquist rate: 5000 samples/s. Nyquist
+interval: 0.2 ms.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> For a product, choosing the larger
+original frequency would give the wrong answer. Expand first.</p>
+</blockquote>
+<h2 id="aliasing-a-false-frequency">1.14 Aliasing: a false frequency</h2>
+<blockquote class="definition"><p><strong>Definition: Aliasing</strong> Aliasing occurs when different
+continuous-time signals give the same samples. The samples alone cannot
+distinguish those signals.</p>
+</blockquote>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/simple_alias.svg"  alt="Figure 1.14: At 150 samples/s, the 100 Hz and 50 Hz cosines have the same
+sample values." loading="lazy">
+<figcaption><b>Figure 1.14:</b> At 150 samples/s, the 100 Hz and 50 Hz cosines have the same
+sample values.</figcaption>
+</figure>
+<h3 class="unnumbered" id="example-8">Example 8</h3>
+<h5 id="question-7">Question</h5>
+<p>A 100 Hz cosine is sampled at 150 samples/s. Find the alias frequency
+between 0 and <span class="math inline" data-math="f_s/2"></span>.</p>
+<h5 id="solution-7">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="f=100"></span>
+Hz, <span class="math inline" data-math="f_s=150"></span> samples/s. The interval
+ends at 75 Hz.</p>
+<ol>
+<li><p><strong>Check the sampling rate.</strong> <span class="math inline" data-math="150&lt;2(100)"></span>, so this rate is below the
+Nyquist rate.</p></li>
+<li><p><strong>Find a frequency in the first interval.</strong> <span class="math inline" data-math="f_a=|f-f_s|=|100-150|=50"></span> Hz.</p></li>
+<li><p><strong>Check the interval.</strong> <span class="math inline" data-math="0\leq50\leq75"></span> Hz.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> The samples are also consistent with a 50 Hz
+cosine.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> For a single cosine, choose an integer
+<span class="math inline" data-math="k"></span> so that <span class="math inline" data-math="f_a=|f-kf_s|"></span> lies between 0 and <span class="math inline" data-math="f_s/2"></span>. One subtraction is not enough for
+every frequency.</p>
+</blockquote>
+<h2 id="writing-the-sampled-signal">1.15 Writing the sampled signal</h2>
+<p>To find the sample sequence, replace time <span class="math inline" data-math="t"></span> by <span class="math inline" data-math="n/f_s"></span>. The sequence is a function of the
+integer <span class="math inline" data-math="n"></span>. For example, <span class="math inline" data-math="n=2"></span> means the measurement at <span class="math inline" data-math="2/f_s"></span> seconds. The coefficient of <span class="math inline" data-math="n"></span> is an angle per sample, not a frequency
+in hertz.</p>
+<h3 class="unnumbered" id="example-9">Example 9</h3>
+<h5 id="question-8">Question</h5>
+<p>For <span class="math inline" data-math="x(t)=8\cos(200\pi t)"></span>, find
+<span class="math inline" data-math="x[n]"></span> at (a) 400 samples/s and (b)
+150 samples/s.</p>
+<h5 id="solution-8">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="f=100"></span>
+Hz. Use <span class="math inline" data-math="x[n]=x(n/f_s)"></span>.</p>
+<h3 class="unnumbered" id="a-sampling-at-400-sampless">(a) Sampling at
+400 samples/s</h3>
+<ol>
+<li><p><strong>Substitute the sample time.</strong> <span class="math inline" data-math="x[n]=8\cos\bigl(200\pi
+n/400\bigr)"></span>.</p></li>
+<li><p><strong>Simplify.</strong> <span class="math inline" data-math="x[n]=8\cos(\pi n/2)"></span>.</p></li>
+<li><p><strong>Check the first values.</strong> For <span class="math inline" data-math="n=0,1,2,3"></span>, the values are <span class="math inline" data-math="8,0,-8,0"></span>. There are four samples per
+cycle.</p></li>
+</ol>
+<h3 class="unnumbered" id="b-sampling-at-150-sampless">(b) Sampling at
+150 samples/s</h3>
+<ol>
+<li><p><strong>Substitute the sample time.</strong> <span class="math inline" data-math="x[n]=8\cos(4\pi n/3)"></span>.</p></li>
+<li><p><strong>Use periodicity for integer <span class="math inline" data-math="n"></span>.</strong> Subtract <span class="math inline" data-math="2\pi n"></span> inside the cosine: <span class="math inline" data-math="4\pi n/3-2\pi n=-2\pi n/3"></span>.</p></li>
+<li><p><strong>Use cosine symmetry.</strong> <span class="math inline" data-math="\cos(-\theta)=\cos\theta"></span>, so <span class="math inline" data-math="x[n]=8\cos(2\pi n/3)"></span>.</p></li>
+<li><p><strong>Identify the alias.</strong> <span class="math inline" data-math="2\pi f_a/150=2\pi/3"></span>, giving <span class="math inline" data-math="f_a=50"></span> Hz.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> At 400 samples/s: <span class="math inline" data-math="8\cos(\pi n/2)"></span>. At 150 samples/s: <span class="math inline" data-math="8\cos(2\pi n/3)"></span>, which also represents a
+sampled 50 Hz cosine.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> The expressions <span class="math inline" data-math="8\cos(4\pi n/3)"></span> and <span class="math inline" data-math="8\cos(2\pi n/3)"></span> agree at integer <span class="math inline" data-math="n"></span>. They are not identical for arbitrary
+real-valued time.</p>
+</blockquote>
+<h2 id="preventing-aliasing-and-recovering-a-signal">1.16 Preventing aliasing
+and recovering a signal</h2>
+<blockquote class="definition"><p><strong>Definition: Anti-aliasing filter</strong> An analog filter
+placed before the sampler to reduce frequency components that would fold
+into the wanted band.</p>
+</blockquote>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/filter_order.svg"  alt="Figure 1.15: The unwanted component must be reduced before
+sampling." loading="lazy">
+<figcaption><b>Figure 1.15:</b> The unwanted component must be reduced before
+sampling.</figcaption>
+</figure>
+<p>A digital filter cannot separate two components that have already
+become indistinguishable through aliasing. The protection therefore
+starts in the analog path.</p>
+<blockquote class="definition"><p><strong>Definition: Reconstruction</strong> Reconstruction forms a
+continuous-time signal from its samples. Ideal reconstruction of a
+band-limited signal uses a low-pass interpolation filter.</p>
+</blockquote>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/reconstruction.svg"  alt="Figure 1.16: Three individual interpolation pulses are shown above.
+Below, a 1001-term sinc sum closely matches the original
+cosine." loading="lazy">
+<figcaption><b>Figure 1.16:</b> Three individual interpolation pulses are shown above.
+Below, a 1001-term sinc sum closely matches the original
+cosine.</figcaption>
+</figure>
+<h3 class="unnumbered" id="the-practical-sequence">The practical
+sequence</h3>
+<ol>
+<li><p>Limit the input bandwidth with an analog filter.</p></li>
+<li><p>Sample fast enough for the filtered signal.</p></li>
+<li><p>Process or transmit the sample values.</p></li>
+<li><p>Use a reconstruction stage to form the output waveform.</p></li>
+</ol>
+<h2 id="why-does-the-spectrum-repeat">1.17 Why does the spectrum repeat?</h2>
+<h3 class="unnumbered"
+id="detailed-explanation-after-the-basic-rule">Detailed explanation
+after the basic rule</h3>
+<p>A spectrum describes which frequencies are present. Let <span class="math inline" data-math="X(f)"></span> be the Fourier transform of <span class="math inline" data-math="x(t)"></span>, using frequency <span class="math inline" data-math="f"></span> in hertz.</p>
+<ol>
+<li><p><strong>Mark every sampling instant.</strong> An ideal impulse
+train is <span class="math display" data-math="p(t)=\sum_{n=-\infty}^{\infty}\delta(t-nT_s)."></span>
+The impulse <span class="math inline" data-math="\delta(t-nT_s)"></span> marks
+the instant <span class="math inline" data-math="nT_s"></span>.</p></li>
+<li><p><strong>Select the signal values.</strong> Multiply by the
+impulse train: <span class="math display" data-math="x_s(t)=x(t)p(t)=\sum_{n=-\infty}^{\infty}x(nT_s)\delta(t-nT_s)."></span>
+The weight of each impulse is the corresponding sample value.</p></li>
+<li><p><strong>Use the impulse-train transform.</strong> Its transform
+is another impulse train: <span class="math display" data-math="P(f)=\frac{1}{T_s}\sum_{k=-\infty}^{\infty}\delta(f-kf_s)."></span>
+The integer <span class="math inline" data-math="k"></span> identifies a spectral
+copy. For <span class="math inline" data-math="k=0"></span>, the copy stays at
+zero. For <span class="math inline" data-math="k=1"></span>, its center moves to
+<span class="math inline" data-math="f_s"></span>. For <span class="math inline" data-math="k=-1"></span>, its center moves to <span class="math inline" data-math="-f_s"></span>.</p></li>
+<li><p><strong>Apply multiplication–convolution duality.</strong>
+Multiplication in time becomes convolution in frequency: <span class="math display" data-math="X_s(f)=X(f)*P(f)=\frac{1}{T_s}\sum_{k=-\infty}^{\infty}X(f-kf_s)."></span>
+Here <span class="math inline" data-math="*"></span> denotes convolution. Each
+term is a shifted copy of <span class="math inline" data-math="X(f)"></span>.</p></li>
+<li><p><strong>Require a gap between copies.</strong> The original ends
+at <span class="math inline" data-math="B"></span>. The next copy starts at <span class="math inline" data-math="f_s-B"></span>. Separation requires <span class="math display" data-math="B&lt;f_s-B\quad\Longrightarrow\quad
+f_s&gt;2B."></span></p></li>
+</ol>
+<blockquote>
+<p><strong>Remember:</strong> The algebra leads to the same picture
+shown earlier: copies are spaced by <span class="math inline" data-math="f_s"></span>, and each baseband copy extends from
+<span class="math inline" data-math="-B"></span> to <span class="math inline" data-math="B"></span>.</p>
+</blockquote>
+<h2 id="the-reconstruction-formula">1.18 The reconstruction formula</h2>
+<p>The reconstruction filter keeps the original spectral copy and
+rejects the others. Its gain also removes the scale factor <span class="math inline" data-math="1/T_s"></span> introduced by sampling.</p>
+<ol>
+<li><p><strong>Choose an ideal low-pass filter.</strong> For <span class="math inline" data-math="f_s&gt;2B"></span>, choose <span class="math display" data-math="H(f)=\begin{cases}T_s,&amp;|f|&lt;f_s/2,\\0,&amp;|f|&gt;f_s/2.\end{cases}"></span>
+Inside the original band, <span class="math inline" data-math="T_sX_s(f)=X(f)"></span>.</p></li>
+<li><p><strong>Find its impulse response.</strong> The inverse Fourier
+transform gives <span class="math display" data-math="h(t)=T_s\int_{-f_s/2}^{f_s/2}e^{j2\pi ft}\,df
+=T_s\frac{\sin(\pi f_st)}{\pi t}
+=\operatorname{sinc}(t/T_s)."></span> Here <span class="math inline" data-math="j^2=-1"></span>, <span class="math inline" data-math="f_sT_s=1"></span>, and <span class="math inline" data-math="\operatorname{sinc}(u)=\sin(\pi u)/(\pi
+u)"></span> with <span class="math inline" data-math="\operatorname{sinc}(0)=1"></span>.</p></li>
+<li><p><strong>Add the response to every sample impulse.</strong>
+Convolving <span class="math inline" data-math="x_s(t)"></span> with <span class="math inline" data-math="h(t)"></span> gives <span class="math display" data-math="\boxed{x(t)=\sum_{n=-\infty}^{\infty}x[n]\operatorname{sinc}\left(\frac{t-nT_s}{T_s}\right).}"></span>
+Each sample sets the height of one shifted sinc pulse.</p></li>
+</ol>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/sinc_kernel.svg"  alt="Figure 1.17: A sinc pulse is 1 at its own sample instant and 0 at the
+other integer sample positions." loading="lazy">
+<figcaption><b>Figure 1.17:</b> A sinc pulse is 1 at its own sample instant and 0 at the
+other integer sample positions.</figcaption>
+</figure>
+<blockquote>
+<p><strong>Remember:</strong> At <span class="math inline" data-math="t=mT_s"></span>, only the term <span class="math inline" data-math="n=m"></span> remains, so the formula returns <span class="math inline" data-math="x[m]"></span>. The ideal formula uses infinitely
+many samples. Practical filters approximate it.</p>
+</blockquote>
+<h2 id="a-squared-sinc-example">1.19 A squared-sinc example</h2>
+<h3 class="unnumbered" id="example-10">Example 10</h3>
+<h5 id="question-9">Question</h5>
+<p>For <span class="math inline" data-math="x(t)=\operatorname{sinc}^2(200t)"></span>, find
+the baseband bandwidth, Nyquist rate and Nyquist interval. Use
+normalized sinc.</p>
+<h5 id="solution-9">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="\operatorname{sinc}(u)=\sin(\pi u)/(\pi
+u)"></span>.</p>
+<ol>
+<li><p><strong>Start with the unsquared sinc.</strong> The transform of
+<span class="math inline" data-math="\operatorname{sinc}(200t)"></span> is a
+rectangle extending from <span class="math inline" data-math="-100"></span> to
+<span class="math inline" data-math="+100"></span> Hz. Its scale factor is <span class="math inline" data-math="1/200"></span>.</p></li>
+<li><p><strong>Apply the square.</strong> Squaring in time convolves the
+rectangle with itself in frequency.</p></li>
+<li><p><strong>Add the frequency limits.</strong> The new support
+extends from <span class="math inline" data-math="-100-100=-200"></span> Hz to
+<span class="math inline" data-math="100+100=200"></span> Hz. Its shape is
+triangular.</p></li>
+<li><p><strong>Read the baseband bandwidth.</strong> <span class="math inline" data-math="B=200"></span> Hz, the positive upper
+edge.</p></li>
+<li><p><strong>Calculate rate and interval.</strong> <span class="math inline" data-math="R_N=2B=400"></span> samples/s and <span class="math inline" data-math="T_N=1/400=2.5"></span> ms.</p></li>
+</ol>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/sinc_squared.svg"  alt="Figure 1.18: The squared-sinc waveform has a triangular spectrum with
+edges at  Hz." loading="lazy">
+<figcaption><b>Figure 1.18:</b> The squared-sinc waveform has a triangular spectrum with
+edges at <span class="math inline" data-math="\pm200"></span> Hz.</figcaption>
+</figure>
+<blockquote class="answer"><p><strong>Answer:</strong> Bandwidth: 200 Hz. Nyquist rate: 400
+samples/s. Nyquist interval: 2.5 ms.</p>
+</blockquote>
+<blockquote>
+<p><strong>Remember:</strong> The total spectral width is 400 Hz, but
+the baseband bandwidth is 200 Hz. Squaring the waveform does not mean
+simply doubling its time argument.</p>
+</blockquote>
+<h2 id="bandpass-sampling">1.20 Bandpass sampling</h2>
+<blockquote class="definition"><p><strong>Definition: Bandpass signal</strong> A bandpass signal
+occupies a band away from zero frequency. Write its positive-frequency
+edges as <span class="math inline" data-math="f_L"></span> and <span class="math inline" data-math="f_H"></span>. Its occupied bandwidth is <span class="math inline" data-math="B=f_H-f_L"></span>.</p>
+</blockquote>
+<p>Sampling above <span class="math inline" data-math="2f_H"></span> is a
+straightforward safe choice. A lower rate may also work if the shifted
+positive and negative bands do not overlap.</p>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/bandpass.svg"  alt="Figure 1.19: An occupied band away from zero can fit into a suitable
+sampling window." loading="lazy">
+<figcaption><b>Figure 1.19:</b> An occupied band away from zero can fit into a suitable
+sampling window.</figcaption>
+</figure>
+<h3 class="unnumbered" id="how-to-test-a-lower-sampling-rate">How to
+test a lower sampling rate</h3>
+<p>For an ideal band-limited real signal, a candidate window is <span class="math display" data-math="\frac{2f_H}{m}\leq f_s\leq\frac{2f_L}{m-1},
+\qquad 2\leq m\leq\left\lfloor\frac{f_H}{B}\right\rfloor."></span></p>
+<ul>
+<li><p><span class="math inline" data-math="m"></span> is an integer that selects
+a possible sampling window.</p></li>
+<li><p><span class="math inline" data-math="\lfloor\cdot\rfloor"></span> means
+round down to an integer.</p></li>
+<li><p>Calculate both ends of the window before choosing <span class="math inline" data-math="f_s"></span>.</p></li>
+<li><p>Use an interior value in practice, allowing filter and frequency
+margins.</p></li>
+</ul>
+<blockquote>
+<p><strong>Remember:</strong> Do not use <span class="math inline" data-math="f_s=2B"></span> automatically for a bandpass
+signal. The band location matters as well as its width. If no <span class="math inline" data-math="m\geq2"></span> is available, use the ordinary
+rate above <span class="math inline" data-math="2f_H"></span>.</p>
+</blockquote>
+<h2 id="a-bandpass-sampling-example">1.21 A bandpass sampling example</h2>
+<h3 class="unnumbered" id="example-11">Example 11</h3>
+<h5 id="question-10">Question</h5>
+<p>A real signal occupies 17.5 to 22.5 MHz on its positive-frequency
+side. Find a permitted lower sampling-rate window and select a rate
+inside it.</p>
+<h5 id="solution-10">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="f_L=17.5"></span>
+MHz and <span class="math inline" data-math="f_H=22.5"></span> MHz.</p>
+<ol>
+<li><p><strong>Calculate the occupied bandwidth.</strong> <span class="math inline" data-math="B=22.5-17.5=5"></span> MHz.</p></li>
+<li><p><strong>Find the largest permitted integer.</strong> <span class="math inline" data-math="\lfloor
+f_H/B\rfloor=\lfloor22.5/5\rfloor=4"></span>. Choose <span class="math inline" data-math="m=4"></span> to test the lowest candidate
+window.</p></li>
+<li><p><strong>Calculate the lower limit.</strong> <span class="math inline" data-math="2f_H/m=2(22.5)/4=11.25"></span> MHz.</p></li>
+<li><p><strong>Calculate the upper limit.</strong> <span class="math inline" data-math="2f_L/(m-1)=2(17.5)/3=11.6667"></span>
+MHz.</p></li>
+<li><p><strong>Choose an interior rate.</strong> Use <span class="math inline" data-math="f_s=11.4"></span> Msample/s, which lies between
+the two limits.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> A candidate window is <span class="math inline" data-math="11.25\leq f_s\leq11.6667"></span> Msample/s. The
+choice <span class="math inline" data-math="11.4"></span> Msample/s is inside
+it.</p>
+</blockquote>
+<figure>
+<img src="/learning/digital-communications/lecture-01-assets/bandpass_fold.svg"  alt="Figure 1.20: At 11.4 Msample/s, the positive RF band folds into 0.3–5.3
+MHz, inside the interval 0–5.7 MHz." loading="lazy">
+<figcaption><b>Figure 1.20:</b> At 11.4 Msample/s, the positive RF band folds into 0.3–5.3
+MHz, inside the interval 0–5.7 MHz.</figcaption>
+</figure>
+<h3 class="unnumbered" id="check-the-folded-limits">Check the folded
+limits</h3>
+<p><span class="math inline" data-math="2f_s-f_H=22.8-22.5=0.3"></span> MHz and
+<span class="math inline" data-math="2f_s-f_L=22.8-17.5=5.3"></span> MHz. Both
+lie below <span class="math inline" data-math="f_s/2=5.7"></span> MHz. The order
+reverses, so the folded band is spectrally inverted. This means that the
+original upper edge becomes the lower folded edge. A receiver must
+account for this reversal when interpreting the spectrum.</p>
+<h2 id="practice-with-short-solutions">1.22 Practice with short
+solutions</h2>
+<h3 class="unnumbered" id="example-12">Example 12</h3>
+<h5 id="question-11">Question</h5>
+<p>A baseband signal has bandwidth 3 kHz. Find the Nyquist rate. If
+sampled at 8 ksample/s, find the sample interval.</p>
+<h5 id="solution-11">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="B=3000"></span>
+Hz and <span class="math inline" data-math="f_s=8000"></span> samples/s.</p>
+<ol>
+<li><p><strong>Find the boundary.</strong> <span class="math inline" data-math="R_N=2B=6000"></span> samples/s.</p></li>
+<li><p><strong>Check the chosen rate.</strong> <span class="math inline" data-math="8000&gt;6000"></span>, so it exceeds the
+boundary.</p></li>
+<li><p><strong>Find the interval.</strong> <span class="math inline" data-math="T_s=1/8000=125\,\mu"></span>s.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> Nyquist rate: 6 ksample/s. Actual sample
+spacing: <span class="math inline" data-math="125\,\mu"></span>s.</p>
+</blockquote>
+<h3 class="unnumbered" id="example-13">Example 13</h3>
+<h5 id="question-12">Question</h5>
+<p>A 900 Hz cosine is sampled at 1200 samples/s. Find its alias in the
+interval 0–600 Hz.</p>
+<h5 id="solution-12">Solution</h5>
+<p><strong>Given:</strong> <span class="math inline" data-math="f=900"></span> Hz
+and <span class="math inline" data-math="f_s=1200"></span> samples/s.</p>
+<ol>
+<li><p><strong>Check the boundary.</strong> <span class="math inline" data-math="1200&lt;2(900)"></span>, so undersampling
+occurs.</p></li>
+<li><p><strong>Fold the frequency.</strong> <span class="math inline" data-math="f_a=|900-1200|=300"></span> Hz.</p></li>
+<li><p><strong>Verify the interval.</strong> <span class="math inline" data-math="300&lt;600"></span> Hz.</p></li>
+</ol>
+<blockquote class="answer"><p><strong>Answer:</strong> The alias frequency is 300 Hz.</p>
+</blockquote>
+<h3 class="unnumbered" id="before-accepting-any-answer">Before accepting
+any answer</h3>
+<ol>
+<li><p>Did you convert radians per second to hertz?</p></li>
+<li><p>Did you find the largest frequency <em>after</em> expanding any
+product?</p></li>
+<li><p>Did you distinguish the Nyquist rate from the actual sampling
+rate?</p></li>
+<li><p>Are your units seconds, milliseconds or microseconds?</p></li>
+</ol>
+<h2 id="chapter-summary-and-reading">1.23 Chapter summary and reading</h2>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th>Idea</th>
+<th>Meaning or rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sampling</td>
+<td>Choose when to measure: <span class="math inline" data-math="x[n]=x(nT_s)"></span></td>
+</tr>
+<tr class="even">
+<td>Quantization</td>
+<td>Choose an allowed amplitude level</td>
+</tr>
+<tr class="odd">
+<td>Encoding</td>
+<td>Assign a bit word to the chosen level</td>
+</tr>
+<tr class="even">
+<td>Sample interval</td>
+<td><span class="math inline" data-math="T_s=1/f_s"></span></td>
+</tr>
+<tr class="odd">
+<td>Sinusoidal frequency</td>
+<td><span class="math inline" data-math="f=\omega/(2\pi)"></span></td>
+</tr>
+<tr class="even">
+<td>Baseband Nyquist rate</td>
+<td><span class="math inline" data-math="R_N=2B"></span></td>
+</tr>
+<tr class="odd">
+<td>Baseband Nyquist interval</td>
+<td><span class="math inline" data-math="T_N=1/(2B)"></span></td>
+</tr>
+<tr class="even">
+<td>Practical baseband choice</td>
+<td><span class="math inline" data-math="f_s&gt;2B"></span>, with filter margin</td>
+</tr>
+<tr class="odd">
+<td>Single-cosine alias</td>
+<td><span class="math inline" data-math="|f-kf_s|"></span> in <span class="math inline" data-math="[0,f_s/2]"></span></td>
+</tr>
+<tr class="even">
+<td>Reconstruction</td>
+<td>Recover a waveform from its samples</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="unnumbered" id="explain-these-in-your-own-words">Explain
+these in your own words</h3>
+<p>Why are sampling and quantization different? Why can a digital link
+carry a continuous waveform? Why does aliasing prevent unique recovery?
+Why should a filter come before the sampler?</p>
+<h3 class="unnumbered" id="further-reading">Further reading</h3>
+<div class="enumerate">
+<p>S. Sharma, <em>Principles of Communication</em>, S. K. Kataria &amp;
+Sons. Consult the digital communication and sampling chapters in the
+assigned edition.</p>
+<p>J. G. Proakis and M. Salehi, <em>Digital Communications</em>,
+McGraw-Hill. Further reading on digital communication systems and signal
+representation.</p>
+</div>
+<h3 class="unnumbered" id="photograph-credits">Photograph credits</h3>
+<p>Optical connector: Adamantios,
+<em>LC-optical-fiber-connector-hdr-0a.jpg</em>, Wikimedia Commons, <a
+href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+Photograph reproduced without alteration. <a
+href="https://commons.wikimedia.org/wiki/File:LC-optical-fiber-connector-hdr-0a.jpg">Image
+source</a>. Goldstone antennas: NASA/JPL-Caltech, <a
+href="https://www.jpl.nasa.gov/images/pia23214-nasas-deep-space-network-goldstone-complex/">PIA23214</a>.
+Diagrams are schematic teaching illustrations. Signal curves are
+calculated from their stated models.</p>
+<h2 id="homework">1.24 Homework</h2>
+<p>Show the rule, substitute the values, keep the units, and write a
+final sentence. For sampling questions, distinguish a theoretical
+Nyquist rate from a practical choice above it.</p>
+<h3 class="unnumbered" id="a.-understand-the-system">A. Understand the
+system</h3>
+<ol>
+<li><p>Draw the five main blocks of a digital communication system.
+Write one short sentence explaining each block.</p></li>
+<li><p>Explain sampling, quantization and encoding using one measured
+voltage as an example.</p></li>
+<li><p>Classify twisted pair, optical fiber, satellite and broadcast
+radio as guided or unguided.</p></li>
+<li><p>Sketch one clean pulse and three received versions showing
+attenuation, distortion and noise.</p></li>
+</ol>
+<h3 class="unnumbered" id="b.-use-the-basic-rules">B. Use the basic
+rules</h3>
+<ol>
+<li><p>A signal is sampled at 10 ksample/s. Find <span class="math inline" data-math="T_s"></span> in seconds and microseconds.</p></li>
+<li><p>A uniform 4-bit midpoint quantizer covers <span class="math inline" data-math="-2"></span> to <span class="math inline" data-math="+2"></span> V. Find the number of levels, bin
+width and maximum rounding-error magnitude without overload.</p></li>
+<li><p>For <span class="math inline" data-math="x(t)=5\cos(800\pi t)"></span>,
+find frequency, Nyquist rate and Nyquist interval. Choose a suitable
+rate above the boundary.</p></li>
+<li><p>Find the Nyquist rate for <span class="math inline" data-math="x(t)=2\sin(100\pi t)+4\cos(600\pi t)"></span>.
+Explain why amplitude does not set this rate.</p></li>
+<li><p>Expand <span class="math inline" data-math="x(t)=\cos(2000\pi
+t)\cos(600\pi t)"></span>. Find the two frequencies, Nyquist rate and
+Nyquist interval.</p></li>
+<li><p>A 700 Hz cosine is sampled at 1000 samples/s. Find the alias in
+0–500 Hz.</p></li>
+<li><p>Write the sample sequence of <span class="math inline" data-math="x(t)=2\cos(200\pi t)"></span> at 800 samples/s.
+Calculate its first four sample values.</p></li>
+</ol>
+<h3 class="unnumbered" id="c.-extend-your-understanding">C. Extend your
+understanding</h3>
+<ol>
+<li><p>Find the bandwidth and Nyquist rate of <span class="math inline" data-math="\operatorname{sinc}^2(100t)"></span> using
+normalized sinc. Sketch its spectral support.</p></li>
+<li><p>A real bandpass signal occupies 9–11 MHz. Test all allowed
+integers <span class="math inline" data-math="m\geq2"></span>, list the candidate
+sampling windows, and choose one interior rate.</p></li>
+<li><p>Explain why a 6 kHz unwanted cosine can appear at 2 kHz after
+sampling at 8 ksample/s. Where should the filter be placed?</p></li>
+</ol>
+</div></section><section id="experiment" data-lab="1"><small>LIVE SIGNAL LABORATORY</small><h2>Change a parameter and watch the signal</h2><div class="controls"><label>Message frequency (Hz)<input id="fm" type="range" min="1" max="100" value="20"></label><label>Sampling rate (samples/s)<input id="fs" type="range" min="10" max="300" value="100"></label><label>Signal phase (degrees)<input id="phase" type="range" min="0" max="180" value="0"></label></div><div class="labbar"><button id="play">Play scan</button><button id="step">Next instant</button><button id="reset">Reset</button></div><p class="legend">Teal: original signal · Orange: sampled or encoded representation. The moving cursor scans a fixed experiment without changing its values.</p><svg id="scope" class="plot" viewBox="0 0 1000 600" role="img" aria-label="Signal waveforms with labelled axes"></svg><output id="result" aria-live="polite"></output><div id="values" class="tablewrap"></div></section><section id="practice"><h2>Worked practice</h2><details><summary>A 3 kHz message is sampled at 8 ksample/s. Find its period and check the rate.</summary><div class="steps"><p>Nyquist rate: 2 × 3 = 6 ksample/s.</p><p>Check: 8 > 6, so a spectral gap is available.</p><p>Period: 1/8000 s = 125 μs.</p></div></details><details><summary>Why can a 100 Hz cosine look like 50 Hz when sampled at 150 samples/s?</summary><div class="steps"><p>Subtract the sample rate: 100 − 150 = −50 Hz.</p><p>Cosine is even, so the lower-frequency alias is 50 Hz.</p><p>The two cosines have identical sample values.</p></div></details></section><section id="notes"><h2>Complete lecture notes</h2><p>The full lecture, figures and exercises are available below.</p><a class="button" href="course-assets/Lecture_01.pdf" download>Download lecture 01 PDF</a><details><summary>Open the complete PDF here</summary><iframe loading="lazy" title="Lecture 1 PDF" src="course-assets/Lecture_01.pdf"></iframe></details></section><nav><a href="lecture-01-lab.html">Lecture 01</a><a href="lecture-02-lab.html">Lecture 02</a><a href="lecture-03-lab.html">Lecture 03</a></nav><script src="course-assets/lab.js" defer></script><script src="course-assets/builder.js" defer></script></main><footer>Dr. Yassir Al-Ameen · Department of Communications Engineering · University of Diyala<br>Academic year 2026–2027</footer></body></html>
