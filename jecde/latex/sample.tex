@@ -1,0 +1,128 @@
+\documentclass{jecde}
+\title{Designing reproducible engineering research: a guide to the JECDE article format}
+\jecshorttitle{Article layout and author guidance}
+\jecarticletype{Template demonstration}
+\jecauthors{JECDE Editorial Design}
+\jecaffiliations{Author template development edition; no editorial appointment is implied.}
+\jeccorrespondence{Template v1.0\quad |\quad Compile with pdfLaTeX\quad |\quad 30 October 2026}
+\jecabstract{This document demonstrates the proposed article design for the Journal of Electrical, Computer and Digital Engineering. It illustrates title hierarchy, a full-width abstract, two-column body text, numbered equations, vector figures, formal tables and an algorithm with a coloured header. The content is instructional rather than a published research article. Mathematical examples and graphics explain formatting conventions; they do not represent experimental findings. Publication identifiers and acceptance dates are deliberately absent because none have been assigned.}
+\jeckeywords{electrical engineering; electronics; computing; communications; artificial intelligence; cybersecurity; digital technologies}
+\begin{document}
+\maketitle
+\section{Purpose and scope}
+This template provides a consistent visual language across the journal's seven subject tracks. Electrical engineering, electronics, computing, communications, artificial intelligence, cybersecurity and digital technologies share the same article structure while retaining discipline-specific methods and notation.
+
+
+
+\begin{jecnote}{Design demonstration}
+This is an author template, not a published article. No ISSN, DOI, volume, acceptance date or indexing status is claimed. Replace all instructional content before submission.
+\end{jecnote}
+
+\subsection{Structure and contribution}
+An original research article should state a precise problem, explain its novelty in context, define a reproducible method and support its conclusions with evidence. A review article should describe its literature-selection method and provide critical synthesis.
+
+Use numbered sections and concise subsection titles. Define acronyms at first appearance. Cite figures, tables and equations in the text before discussing their implications.
+
+\section{Mathematics and notation}
+Mathematical notation should be consistent throughout the manuscript. For example, a generic engineering allocation problem can be expressed as
+\begin{align}
+\underset{\boldsymbol{x}}{\operatorname{minimize}}\quad &J(\boldsymbol{x})=\sum_{i=1}^{N}w_i f_i(x_i),\label{eq:objective}\\
+\text{subject to}\quad &\sum_{i=1}^{N}x_i\leq B,\quad x_i\geq0.\label{eq:constraints}
+\end{align}
+Here, $x_i$ denotes the resource allocated to component $i$, $B$ is the total budget, $w_i$ is a dimensionless importance weight and $f_i$ is a problem-specific cost function. Equations~\eqref{eq:objective} and~\eqref{eq:constraints} are formatting examples; a research manuscript must justify its own assumptions and units.
+
+\subsection{Reproducibility}
+Report software, data, parameters and evaluation conditions. Distinguish analytical, simulated and measured results. Table~\ref{tab:tracks} summarizes track-specific reporting checks.
+
+\begin{table*}[t]
+\caption{Recommended checks across the seven subject tracks.}\label{tab:tracks}
+\centering\small
+\begin{tabularx}{\textwidth}{@{}lXX@{}}\toprule
+Track & Typical evidence & Reporting emphasis\\\midrule
+Electrical engineering & Analysis, simulation or measurements & Units, operating conditions, stability and losses\\
+Electronics & Circuit models and device measurements & Component values, fabrication and uncertainty\\
+Computing & Benchmarks and software artifacts & Environment, complexity and reproducibility\\
+Communications & Link or network evaluation & Channels, traffic, baselines and metrics\\
+Artificial intelligence & Training and independent testing & Data splits, leakage prevention and robustness\\
+Cybersecurity & Threat models and security evaluation & Adversary capabilities and ethical handling\\
+Digital technologies & Integrated system evaluation & Architecture, deployment and interoperability\\\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section{Figures and visual evidence}
+Use vector graphics where practical and ensure labels remain readable at the final column width. Figure~\ref{fig:workflow} demonstrates a compact workflow with consistent shapes and line weights.
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[font=\sffamily\small,>=stealth]
+\tikzstyle{stage}=[draw=jecgreen,fill=jecsage,rounded corners=2pt,minimum width=5.2cm,minimum height=.65cm,align=center]
+\node[stage](a)at(0,0){Research question};
+\node[stage](b)at(0,-1){Model and assumptions};
+\node[stage](c)at(0,-2){Evaluation and uncertainty};
+\node[stage](d)at(0,-3){Evidence and interpretation};
+\draw[->,jecgreen,thick](a)--(b);\draw[->,jecgreen,thick](b)--(c);\draw[->,jecgreen,thick](c)--(d);
+\end{tikzpicture}
+\caption{A research workflow illustrated with editable vector artwork.}\label{fig:workflow}
+\end{figure}
+
+
+
+\subsection{Tables}
+Table~\ref{tab:components} uses formal horizontal rules rather than shaded cells or a dense grid. Keep units in column headings and explain abbreviations in the surrounding text.
+\begin{table}[ht]
+\centering\caption{Article components and their purpose.}\label{tab:components}
+\small\begin{tabularx}{\columnwidth}{@{}lX@{}}\toprule
+Component & Purpose\\\midrule
+Abstract & Problem, approach and supported findings\\
+Methods & Assumptions and reproducible procedure\\
+Results & Evidence, comparisons and uncertainty\\
+Discussion & Interpretation and limitations\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Algorithms}
+Use an explicit input/output structure and meaningful operations. The numbered example below demonstrates the journal's header-bar style. It is a manuscript-checking procedure, not a novel research algorithm.
+\begin{jecalgorithm}{Manuscript readiness check}\label{alg:check}
+\textbf{Input:} manuscript $M$, checklist $C$.\\
+\textbf{Output:} unresolved issues $U$.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+\item Initialize $U\leftarrow\varnothing$.
+\item For each requirement $c\in C$, inspect the relevant part of $M$.
+\item If $c$ is not satisfied, append an evidence-based note to $U$.
+\item Verify figures, equations, references and declarations.
+\item Return $U$ for author revision.
+\end{enumerate}
+\end{jecalgorithm}
+
+
+
+\section{Reporting and interpretation}
+A results section should explain how the evidence answers the research question. Report the evaluation conditions and appropriate baselines, then discuss why changes occur. Include uncertainty or repeatability information where applicable.
+
+
+
+\subsection{References}
+References should be accurate, relevant and cited in order of first appearance. A sample citation to a typesetting reference is provided here~\cite{lamport}. Replace it with sources appropriate to the submitted research.
+
+\section{Wide material and final checks}
+Two-column figures and tables are supported by the standard \texttt{figure*} and \texttt{table*} environments. Place wide content near its first discussion and allow the typesetting engine to find a suitable position.
+
+
+
+
+
+\section{Conclusion}
+The JECDE format combines a recognizable opening page with conventional scholarly typesetting. Authors should preserve readability, provide inspectable evidence and ensure that presentation supports the scientific contribution.
+
+\section*{Declarations}
+\textbf{Funding:} No external funding supported this template demonstration.
+
+\textbf{Competing interests:} No research competing interests are asserted in this design sample.
+
+\textbf{Data and code availability:} This document contains no experimental dataset. Its editable LaTeX source accompanies the template package.
+
+\textbf{Author contributions:} The document is a design and formatting demonstration, not a research authorship record.
+
+\begin{thebibliography}{1}
+\bibitem{lamport} L. Lamport, \emph{LaTeX: A Document Preparation System}, 2nd ed. Addison-Wesley, 1994.
+\end{thebibliography}
+\end{document}
