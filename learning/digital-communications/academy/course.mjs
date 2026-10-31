@@ -1,13 +1,13 @@
-import {language,loadLanguage,startLanguageUI,t} from './i18n.mjs?v=bilingual1';
-import {renderQuiz} from './quiz.mjs?v=bilingual1';
-import {startTerminology,resourcesHTML} from './terminology.mjs?v=bilingual1';
-import {startFigureMotion} from './figure-motion.mjs?v=motion5';
-import {mountLab} from './scope.mjs?v=bilingual1';
-import {models,evaluate} from '../interactive-bank/models.mjs';
-import {plot} from '../interactive-bank/plots.mjs';
+import {language,loadLanguage,startLanguageUI,t} from './i18n.mjs?v=finalAudit2';
+import {renderQuiz} from './quiz.mjs?v=finalAudit2';
+import {startTerminology,resourcesHTML} from './terminology.mjs?v=finalAudit2';
+import {startFigureMotion} from './figure-motion.mjs?v=finalAudit2';
+import {mountLab} from './scope.mjs?v=finalAudit2';
+import {models,evaluate} from '../interactive-bank/models.mjs?v=finalAudit2';
+import {plot} from '../interactive-bank/plots.mjs?v=finalAudit2';
 const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let curriculum=[],questions=[],questionTopics={},cleanups=[],completed=new Set();try{completed=new Set(JSON.parse(localStorage.getItem('dc4-completed')||'[]'))}catch{}
-const href=(view,n=1,topic='',q='')=>`?view=${view}&lecture=${n}${topic?'&topic='+topic:''}${q?'&q='+q:''}`;
+const href=(view,n=1,topic='',q='')=>`?view=${view}&lecture=${n}${topic?'&topic='+topic:''}${q?'&q='+q:''}&lang=${language}`;
 const topicById=id=>curriculum.flatMap(c=>c.topics.map(t=>({...t,lecture:c.n}))).find(t=>t.id===id);
 const questionById=id=>questions.find(q=>q.id===id);
 const plain=h=>{let d=document.createElement('div');d.innerHTML=h;return d.textContent};
@@ -28,8 +28,8 @@ function bank(n,id){nav('bank');let c=curriculum[n-1]||curriculum[0];n=c.n;let s
  math($('#content'));
 }
 function route(){cleanups.forEach(c=>c());cleanups=[];const u=new URL(location.href),view=u.searchParams.get('view')||'course',n=Math.max(1,Math.min(8,Number(u.searchParams.get('lecture'))||1));if(view==='quiz'){nav('quiz');$('#content').innerHTML='<div id="student-quiz"></div>';renderQuiz($('#student-quiz'),curriculum)}else if(view==='resources'){nav('resources');$('#content').innerHTML=resourcesHTML();$('#glossary-search').oninput=e=>{const v=e.target.value.toLowerCase();document.querySelectorAll('[data-glossary]').forEach(el=>el.hidden=!el.dataset.glossary.includes(v))}}else if(view==='lecture')lecture(n);else if(view==='lab')laboratory(n,u.searchParams.get('topic'));else if(view==='bank')bank(n,u.searchParams.get('q'));else home();math($('#content'));document.title=(view==='quiz'?'Student Test':view==='resources'?'References and terminology':view==='course'?'Digital Communication I':view==='lecture'?'Lecture '+n:view==='lab'?'Topic Laboratory':'Solved Question Bank')+' | Dr. Yassir AL-Ameen';}
-function go(url){history.pushState(null,'',url);route();window.scrollTo(0,0)}
+function go(url){const target=new URL(url,location.href);target.searchParams.set('lang',language);history.pushState(null,'',target.pathname+target.search+target.hash);route();window.scrollTo(0,0)}
 document.addEventListener('click',e=>{if(e.defaultPrevented)return;const a=e.target.closest('a');if(!a||e.ctrlKey||e.metaKey||e.shiftKey||a.target)return;let url=new URL(a.href,location.href);if(url.origin===location.origin&&url.pathname===location.pathname&&url.search!==location.search){e.preventDefault();go(url.pathname+url.search+url.hash)}});window.addEventListener('popstate',route);window.addEventListener('load',()=>math($('#content')));
-try{await loadLanguage();startLanguageUI();const [c,q,m]=await Promise.all([fetch(language==='ar'?'i18n/curriculum.ar.json?v=bilingual1':'curriculum.json?v=academy4'),fetch(language==='ar'?'i18n/questions.ar.json?v=bilingual1':'../interactive-bank/questions.json?v=academy4'),fetch('question-topics.json?v=academy4')]);if(!c.ok||!q.ok)throw Error('The course data could not be loaded. Please reload.');[curriculum,questions,questionTopics]=await Promise.all([c.json(),q.json(),m.json()]);await startTerminology($('#content'));startFigureMotion($('#content'));route()}catch(e){$('#content').innerHTML=`<p class="error">${esc(e.message)}</p>`;console.error(e)}
+try{await loadLanguage();startLanguageUI();const [c,q,m]=await Promise.all([fetch(language==='ar'?'i18n/curriculum.ar.json?v=finalAudit2':'curriculum.json?v=finalAudit2'),fetch(language==='ar'?'i18n/questions.ar.json?v=finalAudit2':'../interactive-bank/questions.json?v=finalAudit2'),fetch('question-topics.json?v=finalAudit2')]);if(!c.ok||!q.ok)throw Error('The course data could not be loaded. Please reload.');[curriculum,questions,questionTopics]=await Promise.all([c.json(),q.json(),m.json()]);await startTerminology($('#content'));startFigureMotion($('#content'));route()}catch(e){$('#content').innerHTML=`<p class="error">${esc(e.message)}</p>`;console.error(e)}
 
 try{const saved=JSON.parse(sessionStorage.getItem('dc-language-position')||'null');if(saved&&saved.path===location.pathname&&saved.search===new URL(location.href).searchParams.get('view')){requestAnimationFrame(()=>window.scrollTo(0,saved.scroll));sessionStorage.removeItem('dc-language-position')}}catch{}

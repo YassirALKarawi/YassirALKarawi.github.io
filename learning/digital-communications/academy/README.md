@@ -1,6 +1,6 @@
 # Digital Communication I — native interactive course
 
-Eight lecture units, 32 topic experiments, 200 solved questions and 86 adjustable numerical models. Student content is English. The root course URL and the former bank / laboratory URLs forward to this application; no PDF renderer is used.
+Eight lecture units, 32 topic experiments, 200 solved questions and 86 adjustable numerical models. Student content is available in English and Arabic. The root course URL and the former bank / laboratory URLs forward to this application; no PDF renderer is used.
 
 ## Signal acquisition
 
@@ -38,3 +38,9 @@ The header language control offers English and a complete authored Arabic editio
 The selected language is stored as `dc-language` and propagated to academy links through `lang=ar` / `lang=en`. Explicit URL language takes precedence. Switching languages retains the route, scroll position, numerical bank inputs, topic-lab input values/acquisition state/wiring and quiz session, including a draft answer. No student progress is uploaded. Language state and lab inputs are browser-local; clearing storage removes them.
 
 Validation: `node scripts/test-bilingual.mjs`, in addition to the three existing academy/bank/MCQ suites. Browser QA covered all 8 Arabic lectures (no KaTeX errors), all 32 Arabic lab screens, Arabic figures, quiz feedback, cross-language progress and mobile form sizing.
+
+## Final audit fixes
+
+Run `node scripts/test-final-audit.mjs` for the full 86-model / 200-result oracle, 180 single-field laboratory extremes, parsed-sequence/plot consistency, Arabic numeric input, receiver coordinate/bit outputs, exact BPSK/QPSK/4-QAM cases and damaged-session recovery. The theory comparison question now plots all four requested receiver models. Topic links retain the correct pulse-shaping convention. DEPSK is explicitly separated from differential detection. `finalAudit2` cache keys prevent reusing old application modules.
+
+Browser audit of this release: 200 Arabic bank screens rendered (86 numerical panels, all 16 drawing answers) with no KaTeX or calculation errors; 16 lecture displays across both languages rendered 64 topic instances; all 32 lab screens loaded; the 80-question quiz returned 1/80 for one correct, one incorrect and 78 unanswered, with 80 answer-review entries. A low-rate sampling warning, paused state, input value and partial wiring survived a language switch. Both 390px mobile test/lab frames had equal content and viewport widths (375px after scrollbar). Browser extension metadata errors were excluded from application findings.
