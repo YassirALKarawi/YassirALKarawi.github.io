@@ -17,3 +17,25 @@ html[lang=ar] body{font-family:Tahoma,'Noto Sans Arabic',Arial,system-ui,sans-se
 
 /* Course identity: a crisp vector pulse symbol at every size. */
 .mark{background:none;border-radius:12px;overflow:hidden;flex-shrink:0}.mark img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Guided practice and a calm, readable classroom view. */
+[hidden]{display:none!important}
+.classroom-toolbar{max-width:1180px;margin:18px auto 0;padding:10px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line,#dce6e8);border-radius:12px}
+.classroom-toolbar small{color:#526971;margin-inline-start:auto}
+.reveal-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0;padding:12px;background:#eef7f6;border-inline-start:3px solid #087d82;border-radius:8px}
+.reveal-controls button:nth-child(2){background:#087d82;color:white;border-color:#087d82}
+.reveal-controls span{font-size:.85rem;color:#526971;width:100%}
+button:disabled{opacity:.48;cursor:default}
+.practice-card{margin:16px 0;padding:20px 24px;border:1px solid #b6d8d5;border-radius:14px;background:#f1f8f7;color:#153b45}
+.practice-card h3{margin-top:0}.prediction-choices{display:flex;gap:10px;flex-wrap:wrap}.prediction-choices button{min-width:85px}
+.prediction-choices button[aria-pressed=true]{background:#153b45;color:white;border-color:#153b45}
+.practice-card [role=status]{margin:10px 0;min-height:1em}.practice-card [data-correct=true]{color:#136047}.practice-card [data-correct=false]{color:#9a431d}
+.classroom-mode .site-head nav,.classroom-mode .lesson-toc,.classroom-mode footer,.classroom-mode .select-bar,.classroom-mode .topic-nav,.classroom-mode .section-pagination,.classroom-mode .bank-toolbar,.classroom-mode .question-jump{display:none}
+.classroom-mode .site-head{position:static}.classroom-mode .classroom-toolbar{position:sticky;top:0;z-index:45;box-shadow:0 4px 20px #153b4512}
+.classroom-mode #content{max-width:1400px;font-size:1.18rem}.classroom-mode .lecture-layout{display:block}.classroom-mode .topic-section:not(.present-active){display:none}
+.classroom-mode .topic-section{padding:28px 36px}.classroom-mode .topic-section h2{font-size:2.1rem}.classroom-mode .equation{font-size:1.25em}.classroom-mode .lab-layout{grid-template-columns:250px minmax(0,1fr)}
+.classroom-mode .page-title{padding-top:16px}.classroom-mode .page-title p:last-child{display:none}
+@media(max-width:760px){.classroom-toolbar{margin:10px 12px 0}.classroom-toolbar small{width:100%;margin:0}.practice-card{padding:16px}.classroom-mode .lab-layout{grid-template-columns:1fr}.classroom-mode .topic-section{padding:20px 16px}.classroom-mode #content{font-size:1rem}.classroom-mode .topic-section h2{font-size:1.6rem}}
+@media print{.classroom-toolbar,.reveal-controls,.practice-card{display:none!important}.answer [hidden],#calculated [hidden],.classroom-mode .topic-section{display:block!important}}
+
+.classroom-toolbar>span{direction:ltr;unicode-bidi:isolate}.solution-hint{width:100%;margin:6px 0}.solution-part{margin-block:12px}
