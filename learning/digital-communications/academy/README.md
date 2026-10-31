@@ -48,3 +48,12 @@ Browser audit of this release: 200 Arabic bank screens rendered (86 numerical pa
 ## Scientific reference checks
 
 The Q function now uses converged regularized-gamma series / continued fractions rather than the earlier low-order approximation. It is checked against 14 independent SciPy Gaussian-tail values through z=37. Square Gray QAM BER is additionally computed from all one-axis Gaussian decision-bin transitions and Gray-label Hamming distances. M-PSK SER is additionally evaluated from its full AWGN integral using scaled adaptive quadrature. These reference rows are shown alongside the original requested teaching approximations in 8.24 and 8.25. Sixty independent SciPy CDF/integration cases span −10 to 30 dB and orders through 1024. Run `node scripts/test-scientific-references.mjs`. Model assumptions remain explicit; finite sample and finite pulse-shaping approximations remain educational models.
+
+
+## Topic-first teaching edition (deep7)
+
+`lessons.mjs` authors all 32 topics in English and Arabic: motivation, four mechanism steps, local symbol definitions, two reasoning relations, graph-reading guidance and specific assumptions. `lesson-view.mjs` places this material before worked examples and lazily mounts the corresponding numerical signal experiment inside each topic. All 191 symbol-table rows are context-specific; symbols with multiple meanings are distinguished locally.
+
+`quantizer-view.mjs` uses the same `quantize` function as the time-domain experiments. Its input–output staircase is a transfer characteristic, not a time-domain signal. A controllable input moves through the thresholds, showing its level, signed error, index and codeword. The fixed mapping is deliberately not animated as a travelling wave.
+
+Offscreen signal experiments stop acquiring and drawing until visible again. Expanded figures can be closed with Escape. Diagram dashes indicate processing direction, not a calibrated physical propagation delay. Reduced-motion preference starts signal acquisition and quantizer input animation paused.
