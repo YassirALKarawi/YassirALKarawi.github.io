@@ -1,0 +1,1602 @@
+[
+ {
+  "id": "1.01",
+  "lecture": 1,
+  "kind": "List",
+  "question": "<p>عدّد العمليات الثلاث التي تحوّل الإشارة التماثلية إلى سلسلة بتات PCM.</p>\n",
+  "answer": "<ul>\n<li><p>أخذ العينات يختار قيم الإشارة في أزمنة محددة.</p></li>\n<li><p>التكميم يستبدل كل قيمة بمستوى سعة مسموح.</p></li>\n<li><p>الترميز يخصّص بتات لكل مستوى.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "1.02",
+  "lecture": 1,
+  "kind": "Draw",
+  "question": "<p>ارسم موجة جيبية مستمرة وعيناتها المتساوية زمنياً، وسمِّ المحاور وفترة أخذ العينات.</p>\n",
+  "answer": "<p>المنحنى الناعم يمثّل الإشارة التماثلية. ينتهي كل خط عينة عند القيمة المقاسة في <span class=\"math inline\">\\(t=nT_s\\)</span>. تفصل بين العينات المتجاورة فترة <span class=\"math inline\">\\(T_s\\)</span>؛ ولا يشترط تساوي ارتفاعاتها.</p>\n<p>المحور الأفقي للزمن والعمودي للجهد. المنحنى مستمر، والخطوط تمثّل العينات المقاسة. المسافة الأفقية الثابتة هي فترة أخذ العينات.</p>\n",
+  "figure": "assets/easy_01.svg"
+ },
+ {
+  "id": "1.03",
+  "lecture": 1,
+  "kind": "Explain",
+  "question": "<p>علّل: أخذ العينات وحده لا ينتج بيانات ثنائية.</p>\n",
+  "answer": "<p>أخذ العينات يجعل الزمن متقطعاً، لكن سعة العينة قد تبقى أي قيمة حقيقية. نحتاج إلى التكميم والترميز الثنائي للحصول على تمثيل ثنائي محدود.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.04",
+  "lecture": 1,
+  "kind": "Compare",
+  "question": "<p>قارن معدل نايكويست بتردد نايكويست.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>معدل نايكويست</strong></th>\n<th style=\"text-align: left;\"><strong>تردد نايكويست</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">يعتمد على</td>\n<td style=\"text-align: left;\">عرض حزمة الإشارة B</td>\n<td style=\"text-align: left;\">معدل أخذ العينات <span\nclass=\"math inline\">\\(f_s\\)</span></td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">القيمة</td>\n<td style=\"text-align: left;\"><span class=\"math inline\">\\(2B\\)</span>\nعينة/ثانية</td>\n<td style=\"text-align: left;\"><span class=\"math inline\">\\(f_s/2\\)</span>\nHz</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المعنى</td>\n<td style=\"text-align: left;\">المعدل الحدّي لأخذ العينات</td>\n<td style=\"text-align: left;\">نصف معدل أخذ العينات الفعلي</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "1.05",
+  "lecture": 1,
+  "kind": "Explain",
+  "question": "<p>لماذا يوضع مرشح منع التراكب قبل آخذ العينات؟</p>\n",
+  "answer": "<p>يضعف مركبات الدخل الواقعة خارج الحزمة المطلوبة. وإلا قد تنطوي داخل الحزمة المفيدة، وعندها لا يستطيع مرشح لاحق فصلها عن الإشارة المطلوبة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.06",
+  "lecture": 1,
+  "kind": "Interpret",
+  "question": "<p>ماذا نسمّي تداخل النسخ الطيفية المتجاورة بعد أخذ العينات؟ وكيف نتجنبه؟</p>\n",
+  "answer": "<p>هذا التداخل هو التراكب الطيفي. نزيد معدل العينات، أو نقلّل عرض حزمة الدخل قبل أخذ العينات، أو نفعل الاثنين. لإشارة الحزمة الأساسية نستخدم <span class=\"math inline\">\\(f_s&gt;2B\\)</span> مع هامش عملي لانتقال المرشح.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.07",
+  "lecture": 1,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لنظام اتصال أساسي، وسمِّ أجزاؤه واشرح وظيفة كل جزء ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-1.svg\" alt=\"Labelled block diagram for question 1.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المصدر</td>\n<td style=\"text-align: left;\">ينتج الرسالة.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المرسل</td>\n<td style=\"text-align: left;\">يحوّل الرسالة إلى موجة مناسبة للقناة.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">القناة</td>\n<td style=\"text-align: left;\">تنقل الموجة، وقد تضيف توهيناً وتشويهاً وضوضاء.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المستقبل</td>\n<td style=\"text-align: left;\">يعالج الموجة المستقبلة ويقدّر الرسالة.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الوجهة</td>\n<td style=\"text-align: left;\">تستخدم المعلومات المستعادة.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "1.08",
+  "lecture": 1,
+  "kind": "Compare",
+  "question": "<p>قارن أخذ العينات بالتكميم في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>أخذ العينات</strong></th>\n<th style=\"text-align: left;\"><strong>التكميم</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">ما الذي يتغيّر؟</td>\n<td style=\"text-align: left;\">تمثيل الزمن</td>\n<td style=\"text-align: left;\">تمثيل السعة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">الخرج</td>\n<td style=\"text-align: left;\">عينات متقطعة زمنياً</td>\n<td style=\"text-align: left;\">مستويات سعة متقطعة</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المعامل الأساسي</td>\n<td style=\"text-align: left;\">معدل أخذ العينات</td>\n<td style=\"text-align: left;\">عدد المستويات</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "1.09",
+  "lecture": 1,
+  "kind": "Concept",
+  "question": "<p>اذكر الكتل الخمس الأساسية لوصلة الاتصال، واشرح وظيفة كل منها.</p>\n",
+  "answer": "<p>ينتج المصدر المعلومات. ينشئ المرسل موجة مناسبة. تنقلها القناة. يقدّر المستقبل الرموز المرسلة. تستخدم الوجهة المعلومات المستعادة.</p>\n<p>ينتج المصدر المعلومات. ينشئ المرسل موجة مناسبة. تنقلها القناة. يقدّر المستقبل الرموز المرسلة. تستخدم الوجهة المعلومات المستعادة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.10",
+  "lecture": 1,
+  "kind": "Concept",
+  "question": "<p>ميّز ترميز المصدر عن ترميز القناة. لماذا يحذف الأول التكرار بينما يضيفه الثاني؟</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>ترميز المصدر</strong></th>\n<th style=\"text-align: left;\"><strong>ترميز القناة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الهدف</td>\n<td style=\"text-align: left;\">تمثيل بكفاءة أعلى</td>\n<td style=\"text-align: left;\">الحماية من الأخطاء</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">التكرار</td>\n<td style=\"text-align: left;\">يحذف التكرار الممكن توقعه</td>\n<td style=\"text-align: left;\">يضيف تكراراً منظّماً</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">مثال</td>\n<td style=\"text-align: left;\">ضغط بلا فقد</td>\n<td style=\"text-align: left;\">شفرة لتصحيح الأخطاء</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "1.11",
+  "lecture": 1,
+  "kind": "Concept",
+  "question": "<p>صنّف الزوج المجدول والكابل المحوري والليف البصري والمايكروويف الأرضي ووصلات الأقمار الصناعية إلى موجّهة وغير موجّهة.</p>\n",
+  "answer": "<p>الزوج المجدول والكابل المحوري والليف البصري قنوات موجّهة. المايكروويف الأرضي والوصلات الراديوية الفضائية غير موجّهة. الليف يوجّه الضوء، لذلك ليس قناة لاسلكية.</p>\n<p>الزوج المجدول والكابل المحوري والليف البصري قنوات موجّهة. المايكروويف الأرضي والوصلات الراديوية الفضائية غير موجّهة. الليف يوجّه الضوء، لذلك ليس قناة لاسلكية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.12",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>للإشارة <span class=\"math inline\">\\(x(t)=3\\cos(1200\\pi t+\\pi/3)\\)</span>\nV، حيث <span class=\"math inline\">\\(t\\)</span> بالثواني، أوجد سعة القمة والتردد والزمن الدوري و <span\nclass=\"math inline\">\\(x(0)\\)</span>.</p>\n",
+  "answer": "<p><strong>معاملات الإشارة الجيبية</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nx(t)=A\\cos(\\omega t+\\phi)\\\\[2pt]f=\\omega/(2\\pi)\\\\[2pt]T=1/f\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>قارن بالصيغة القياسية لجيب التمام.<span\nclass=\"math display\">\\[\\begin{aligned}\nx(t)=A\\cos(2\\pi ft+\\phi)\\\\[2pt]A=3\\text{ V}\\\\[2pt]\\phi=\\pi/3\n\\end{aligned}\\]</span></p>\n<p>حوّل التردد الزاوي إلى هرتز.<span\nclass=\"math display\">\\[\\begin{aligned}\nf&amp;=\\frac{1200\\pi}{2\\pi}\\\\[2pt]&amp;=600\\text{ Hz}\n\\end{aligned}\\]</span></p>\n<p>خذ المقلوب واحسب الطور الابتدائي.<span\nclass=\"math display\">\\[\\begin{aligned}\nT&amp;=\\frac1{600}\\\\[2pt]&amp;=1.667\\text{\nms}\\\\[2pt]x(0)&amp;=3\\cos(\\pi/3)\\\\[2pt]&amp;=1.5\\text{ V}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(A=3\\)</span> V; <span\nclass=\"math inline\">\\(f=600\\)</span> Hz؛ <span\nclass=\"math inline\">\\(T=1.667\\)</span> ms؛ <span\nclass=\"math inline\">\\(x(0)=1.5\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.13",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>يعمل آخذ عينات بمعدل <span class=\"math inline\">\\(f_s=8\\)</span>\nألف عينة/ثانية. أوجد <span class=\"math inline\">\\(T_s\\)</span> وزمن العينة ذات الفهرس <span class=\"math inline\">\\(n=6\\)</span>، بدءاً من <span\nclass=\"math inline\">\\(n=0\\)</span> عند <span\nclass=\"math inline\">\\(t=0\\)</span>.</p>\n",
+  "answer": "<p><strong>فترة أخذ العينات وأزمنتها</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nT_s=1/f_s\\\\[2pt]t_n=nT_s\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>خذ المقلوب.<span class=\"math display\">\\[\\begin{aligned}\nT_s&amp;=\\frac1{8000}\\\\[2pt]&amp;=125\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>اضرب في فهرس العينة.<span class=\"math display\">\\[\\begin{aligned}\nt_6&amp;=6T_s\\\\[2pt]&amp;=6(125)\\\\[2pt]&amp;=750\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(T_s=125\\,\\mu\\)</span>s و <span\nclass=\"math inline\">\\(t_6=0.75\\)</span> ms.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.14",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>العينة <span class=\"math inline\">\\(x(t)=2\\cos(2\\pi1000t)\\)</span> V بمعدل 4 آلاف عينة/ثانية. أوجد <span class=\"math inline\">\\(x[n]\\)</span> وقيمها الخمس الأولى.</p>\n",
+  "answer": "<p><strong>علاقة أخذ العينات في الزمن المتقطع</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nx[n]=x(nT_s)\\\\[2pt]T_s=1/f_s\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>عوّض الزمن بزمن العينة.<span\nclass=\"math display\">\\[\\begin{aligned}\nx[n]&amp;=2\\cos(2\\pi1000n/4000)\\\\[2pt]&amp;=2\\cos(\\pi n/2)\n\\end{aligned}\\]</span></p>\n<p>احسب عند فهارس صحيحة.<span\nclass=\"math display\">\\[(x[0],x[1],x[2],x[3],x[4])=(2,0,-2,0,2)\\text{\nV}\\]</span></p>\n<p><span class=\"math inline\">\\(x[n]=2\\cos(\\pi n/2)\\)</span> V؛ وتتكرر المتتالية كل أربع عينات.</p>\n",
+  "figure": "assets/sampling_bank.svg"
+ },
+ {
+  "id": "1.15",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>مكمّم منتظم من النوع الوسطي بدقة 3 بت يغطي المجال <span\nclass=\"math inline\">\\([-1,+1)\\)</span> V. أوجد عدد المستويات والخطوة وأقصى خطأ داخل المجال.</p>\n",
+  "answer": "<p><strong>دقة المكمّم المنتظم</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nL=2^b\\\\[2pt]\\Delta=(V_{\\max}-V_{\\min})/L\\\\[2pt]|e_q|_{\\max}=\\Delta/2\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب عدد الكلمات الثنائية.<span class=\"math display\">\\[\\begin{aligned}\nL&amp;=2^3\\\\[2pt]&amp;=8\n\\end{aligned}\\]</span></p>\n<p>قسّم المجال الكامل إلى فترات متساوية.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\Delta&amp;=\\frac{1-(-1)}8\\\\[2pt]&amp;=0.25\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>التقريب إلى منتصف الفترة يجعل حدّ الخطأ نصف خطوة.<span\nclass=\"math display\">\\[\\begin{aligned}\n|e_q|\\le\\Delta/2&amp;=0.25/2\\\\[2pt]&amp;=0.125\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>8 مستويات؛ <span class=\"math inline\">\\(\\Delta=0.25\\)</span> V; <span\nclass=\"math inline\">\\(|e_q|\\le0.125\\)</span> V في غياب التجاوز.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.16",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>يستخدم محوّل ADC ثمانية بتات/عينة بمعدل 8 آلاف عينة/ثانية. الزيادة التنظيمية تساوي 25% من البيانات الأصلية. أوجد معدل البيانات والمعدل الكلي وفترة البت المرسل.</p>\n",
+  "answer": "<p><strong>معدل البيانات والزيادة التنظيمية</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nR_{\\rm payload}=bf_s\\\\[2pt]R_{\\rm total}=(1+\\alpha)R_{\\rm\npayload}\\\\[2pt]T_b=1/R_{\\rm total}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اضرب معدل العينات في طول الكلمة.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_{\\rm payload}&amp;=8000(8)\\\\[2pt]&amp;=64000\\text{ bit/s}\n\\end{aligned}\\]</span></p>\n<p>أضف الزيادة المحسوبة نسبةً إلى البيانات الأصلية.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_{\\rm total}&amp;=1.25(64000)\\\\[2pt]&amp;=80000\\text{ bit/s}\n\\end{aligned}\\]</span></p>\n<p>استخدم معدل الإرسال الكلي لحساب فترة البت.<span\nclass=\"math display\">\\[\\begin{aligned}\nT_b&amp;=1/80000\\\\[2pt]&amp;=12.5\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>البيانات الأصلية 64 kbit/s؛ المعدل الكلي 80 kbit/s؛ فترة البت 12.5 ميكروثانية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.17",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>إشارة قدرتها 10 mW تتعرّض لفقد قدرة 20 dB. قدرة ضوضاء المستقبل 0.01 mW. أوجد القدرة المستقبلة ونسبة الإشارة إلى الضوضاء خطياً وبالديسيبل.</p>\n",
+  "answer": "<p><strong>القدرة المستقبلة ونسبة الإشارة إلى الضوضاء</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nP_r=P_t10^{-L_{\\rm dB}/10}\\\\[2pt]\\mathrm{SNR}=P_r/P_n\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>حوّل فقد القدرة إلى نسبة خطية.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_r&amp;=P_t10^{-20/10}\\\\[2pt]&amp;=10(0.01)\\\\[2pt]&amp;=0.1\\text{ mW}\n\\end{aligned}\\]</span></p>\n<p>اقسم قدرة الإشارة على قدرة الضوضاء.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\mathrm{SNR}&amp;=0.1/0.01\\\\[2pt]&amp;=10\n\\end{aligned}\\]</span></p>\n<p>حوّل نسبة القدرة إلى ديسيبل.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\mathrm{SNR}_{\\rm dB}&amp;=10\\log_{10}10\\\\[2pt]&amp;=10\\text{ dB}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(P_r=0.1\\)</span> mW. النسبة الخطية تساوي 10، أي 10 dB.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.18",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>استخدم <span class=\"math inline\">\\(+1\\)</span> V للبت 1 و <span\nclass=\"math inline\">\\(-1\\)</span> V للبت 0 مع عتبة صفر. اتخذ القرار للقيم المستقبلة <span\nclass=\"math inline\">\\(0.8,-0.2,0.1,-1.2\\)</span> V. هل تكفي القرارات وحدها لإثبات عدم وقوع أخطاء؟</p>\n",
+  "answer": "<p><strong>القرار الثنائي بالعتبة</strong><span\nclass=\"math display\">\\[\\widehat\nb=\\begin{cases}1,&amp;r\\ge0,\\\\0,&amp;r&lt;0.\\end{cases}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>طبّق العتبة على كل قيمة منفردة.</p>\n<p>القيم غير السالبة تختار 1، والسالبة تختار 0.<span\nclass=\"math display\">\\[\\widehat{\\mathbf b}=(1,0,1,0)\\]</span></p>\n<p>لحساب الأخطاء نقارن بالبتات المرسلة، وهي غير معطاة.</p>\n<p>القرارات 1010؛ لا يمكن تحديد العدد الفعلي للأخطاء.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.19",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>أوجد معدل نايكويست وفترته للإشارة <span\nclass=\"math inline\">\\(x(t)=4\\sin(6000\\pi t)\\)</span>.</p>\n",
+  "answer": "<p><strong>معدل نايكويست لأخذ العينات</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nf_m=\\omega/(2\\pi)\\\\[2pt]R_N=2f_m\\\\[2pt]T_N=1/R_N\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>استخرج التردد بوحدة هرتز.<span\nclass=\"math display\">\\[\\begin{aligned}\nf_m&amp;=6000\\pi/(2\\pi)\\\\[2pt]&amp;=3000\\text{ Hz}\n\\end{aligned}\\]</span></p>\n<p>ضاعف أعلى تردد.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_N&amp;=2f_m\\\\[2pt]&amp;=2(3000)\\\\[2pt]&amp;=6000\\text{ sample/s}\n\\end{aligned}\\]</span></p>\n<p>احسب مقلوب المعدل الحدّي.<span\nclass=\"math display\">\\[\\begin{aligned}\nT_N&amp;=1/6000\\\\[2pt]&amp;=166.667\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>معدل نايكويست 6 آلاف عينة/ثانية؛ الفترة 166.667 ميكروثانية. نترك هامشاً عملياً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.20",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>أوجد الترددات الطيفية ومعدل نايكويست للإشارة <span\nclass=\"math inline\">\\(x(t)=\\cos(2\\pi1000t)\\cos(2\\pi1500t)\\)</span>.</p>\n",
+  "answer": "<p><strong>متطابقة تحويل حاصل الضرب إلى مجموع ومعدل نايكويست</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\cos a\\cos b=\\tfrac12\\cos(a-b)+\\tfrac12\\cos(a+b)\\\\[2pt]R_N=2f_{\\max}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>فكّ حاصل الضرب.<span class=\"math display\">\\[\\cos a\\cos\nb=\\tfrac12\\cos(a-b)+\\tfrac12\\cos(a+b)\\]</span></p>\n<p>حدّد مركبتي فرق الترددين ومجموعهما.<span\nclass=\"math display\">\\[x(t)=\\tfrac12\\cos(2\\pi500t)+\\tfrac12\\cos(2\\pi2500t)\\]</span></p>\n<p>ضاعف التردد الأعلى.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_N&amp;=2(2500)\\\\[2pt]&amp;=5000\\text{ sample/s}\n\\end{aligned}\\]</span></p>\n<p>المركبتان عند 500 و2500 Hz؛ معدل نايكويست 5 آلاف عينة/ثانية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.21",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>العينة <span class=\"math inline\">\\(x(t)=8\\cos(200\\pi t)\\)</span> بمعدل 150 عينة/ثانية. اكتب متتالية العينات وحدّد ترددها المطوي في الحزمة الأساسية.</p>\n",
+  "answer": "<p><strong>دورية التردد في الزمن المتقطع</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nx[n]=x(n/f_s)\\\\[2pt]\\cos(\\theta+2\\pi kn)=\\cos\\theta\\\\[2pt](k,n\\in\\mathbb\nZ)\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>عوّض بزمن العينة.<span\nclass=\"math display\">\\[\\begin{aligned}\nx[n]&amp;=8\\cos(200\\pi n/150)\\\\[2pt]&amp;=8\\cos(4\\pi n/3)\n\\end{aligned}\\]</span></p>\n<p>اطرح مضاعفاً صحيحاً من 2π عندما يكون n صحيحاً.<span\nclass=\"math display\">\\[\\begin{aligned}\nx[n]&amp;=8\\cos(-2\\pi n/3)\\\\[2pt]&amp;=8\\cos(2\\pi n/3)\n\\end{aligned}\\]</span></p>\n<p>حدّد التردد المكافئ.<span class=\"math display\">\\[2\\pi\nf_a/150=2\\pi/3\\quad\\Rightarrow\\quad f_a=50\\text{ Hz}\\]</span></p>\n<p>تمثّل العينات أيضاً موجة جيب تمام بتردد 50 Hz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.22",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>تنتهي حزمة إشارة أساسية عند 2 kHz. نريد هامشاً لا يقل عن 1 kHz بين هذه الحافة و <span class=\"math inline\">\\(f_s/2\\)</span>. أوجد أقل معدل يحقّق هذا الشرط.</p>\n",
+  "answer": "<p><strong>معدل العينات مع هامش حماية</strong><span\nclass=\"math display\">\\[f_s/2-B\\ge M\\quad\\Longrightarrow\\quad\nf_s\\ge2(B+M)\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اكتب متباينة الهامش.<span class=\"math display\">\\[f_s/2-B\\ge\nM\\]</span></p>\n<p>حلّ لإيجاد معدل العينات.<span\nclass=\"math display\">\\[\\begin{aligned}\nf_s\\ge2(B+M)&amp;=2(2000+1000)\\\\[2pt]&amp;=6000\\text{ sample/s}\n\\end{aligned}\\]</span></p>\n<p>6 آلاف عينة/ثانية. ما زلنا نحتاج إلى تحديد تموّج المرشح ورفضه.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.23",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>فقط <span class=\"math inline\">\\(x[0]=1\\)</span> V و <span\nclass=\"math inline\">\\(x[1]=0.5\\)</span> V غير صفريتين. باستخدام استيفاء sinc المطبّعة، أوجد <span class=\"math inline\">\\(y(0)\\)</span>,\n<span class=\"math inline\">\\(y(T_s)\\)</span> و <span\nclass=\"math inline\">\\(y(T_s/2)\\)</span>.</p>\n",
+  "answer": "<p><strong>استيفاء sinc</strong><span\nclass=\"math display\">\\[y(t)=\\sum_n\nx[n]\\operatorname{sinc}\\bigl((t-nT_s)/T_s\\bigr)\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اجمع مساهمتي النبضتين المزاحتين.<span\nclass=\"math display\">\\[y(t)=\\operatorname{sinc}(t/T_s)+0.5\\operatorname{sinc}(t/T_s-1)\\]</span></p>\n<p>عند المواضع الصحيحة تنعدم حدود sinc غير المطابقة.<span\nclass=\"math display\">\\[\\begin{aligned}\ny(0)=1\\text{ V}\\\\[2pt]y(T_s)=0.5\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>عند المنتصف استخدم sinc(1/2)=2/π.<span\nclass=\"math display\">\\[\\begin{aligned}\ny(T_s/2)&amp;=1.5\\frac2\\pi\\\\[2pt]&amp;=0.95493\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>1 V و0.5 V و0.95493 V على الترتيب. بقية عينات المتتالية المعطاة تساوي صفراً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.24",
+  "lecture": 1,
+  "kind": "Worked problem",
+  "question": "<p>للإشارة <span\nclass=\"math inline\">\\(x(t)=\\operatorname{sinc}^2(200t)\\)</span> حيث\n<span class=\"math inline\">\\(\\operatorname{sinc}(u)=\\sin(\\pi u)/(\\pi\nu)\\)</span>، أوجد المجال الطيفي وعرض الحزمة الأساسية ومعدل نايكويست.</p>\n",
+  "answer": "<p><strong>تحويل فورييه لنبضة sinc</strong><span\nclass=\"math display\">\\[\\operatorname{sinc}(at)\\longleftrightarrow\\frac1{|a|}\\operatorname{rect}(f/a)\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>تحويل sinc(200t) مستطيل ضمن المجال [-100,100] Hz.</p>\n<p>التربيع في الزمن يقابله التفاف المستطيلين في التردد.</p>\n<p>اجمع نهايات المجالين الطيفيين.<span\nclass=\"math display\">\\[[-100,100]+[-100,100]=[-200,200]\\text{\nHz}\\]</span></p>\n<p>اقرأ الحافة الموجبة وضاعفها.<span\nclass=\"math display\">\\[\\begin{aligned}\nB=200\\text{ Hz}\\\\[2pt]R_N&amp;=2(200)\\\\[2pt]&amp;=400\\text{ sample/s}\n\\end{aligned}\\]</span></p>\n<p>طيف مثلثي ضمن <span\nclass=\"math inline\">\\([-200,200]\\)</span> Hz؛ عرض الحزمة 200 Hz؛ معدل نايكويست 400 عينة/ثانية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "1.25",
+  "lecture": 1,
+  "kind": "Concept",
+  "question": "<p>لماذا لا يُعد أخذ العينات عند ضعف تردد الموجة الجيبية بالضبط تصميماً عملياً آمناً دائماً؟ أعط مثالاً يعتمد على الطور.</p>\n",
+  "answer": "<p>للإشارة <span class=\"math inline\">\\(x(t)=\\sin(2\\pi ft)\\)</span> و <span\nclass=\"math inline\">\\(f_s=2f\\)</span>، تصبح العينات <span\nclass=\"math inline\">\\(\\sin(\\pi n)=0\\)</span>. تضيع سعة الموجة المجهولة من هذه المتتالية. شروط الحافة الطيفية مهمة؛ عملياً نختار معدلاً أعلى من ضعف حدّ الحزمة.</p>\n<p>للإشارة <span class=\"math inline\">\\(x(t)=\\sin(2\\pi ft)\\)</span> و <span\nclass=\"math inline\">\\(f_s=2f\\)</span>، تصبح العينات <span\nclass=\"math inline\">\\(\\sin(\\pi n)=0\\)</span>. تضيع سعة الموجة المجهولة من هذه المتتالية. شروط الحافة الطيفية مهمة؛ عملياً نختار معدلاً أعلى من ضعف حدّ الحزمة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.01",
+  "lecture": 2,
+  "kind": "List",
+  "question": "<p>حدّد خاصية النبضة التي تحمل الرسالة في PAM وPWM وPPM.</p>\n",
+  "answer": "<ul>\n<li><p>PAM: سعة النبضة.</p></li>\n<li><p>PWM: عرض النبضة.</p></li>\n<li><p>PPM: موضع النبضة نسبةً إلى مرجع زمني.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "2.02",
+  "lecture": 2,
+  "kind": "Draw",
+  "question": "<p>ارسم نبضات PAM وPWM وPPM لثلاث عينات موجبة متزايدة للرسالة.</p>\n",
+  "answer": "<p>تزداد ارتفاعات PAM وعروض PWM. في تحويل PPM ذي الحساسية الموجبة تنتقل النبضات إلى أزمنة لاحقة داخل خاناتها، مع ثبات السعة والعرض.</p>\n<p>الخطوط العمودية المنقّطة حدود الخانات. يحمل الارتفاع معلومات PAM، والمسافة بين الحافتين معلومات PWM، والإزاحة عن مرجع الخانة معلومات PPM.</p>\n",
+  "figure": "assets/easy_02.svg"
+ },
+ {
+  "id": "2.03",
+  "lecture": 2,
+  "kind": "Explain",
+  "question": "<p>اشرح الفرق بين PAM الطبيعي وPAM ذي القمة المستوية.</p>\n",
+  "answer": "<p>في PAM الطبيعي تتبع قمة النبضة المفتوحة تغيّر الدخل. في PAM ذي القمة المستوية تثبت قيمة العينة طوال النبضة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.04",
+  "lecture": 2,
+  "kind": "List",
+  "question": "<p>اذكر متطلبين زمنيين لنظام PPM عملي.</p>\n",
+  "answer": "<ul>\n<li><p>مرجع أو ساعة متزامنة لتحديد كل خانة زمنية.</p></li>\n<li><p>أن تقع النبضة داخل خانتها مع فصل كافٍ عن النبضات المجاورة.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "2.05",
+  "lecture": 2,
+  "kind": "Explain",
+  "question": "<p>لماذا يمكن للمحدِّد تقليل ضوضاء السعة في PWM أو PPM؟</p>\n",
+  "answer": "<p>الرسالة محمولة أساساً في توقيت النبضة، لذا يمكن قصّ تغيّر الارتفاع غير المرغوب. لا يزيل المحدّد ارتعاش التوقيت؛ فالحواف المشوّشة قد تغيّر العرض أو الموضع المقاس.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.06",
+  "lecture": 2,
+  "kind": "Interpret",
+  "question": "<p>بالاستعانة برسم السؤال 2.02، أي موجة ثابتة العرض ومتغيرة الموضع؟ وكيف نستعيد الرسالة؟</p>\n",
+  "answer": "<p>هي PPM. نقيس إزاحة النبضة عن مرجع الخانة، ونطرح الإزاحة الثابتة، ثم نقسم على حساسية الموضع. الإزاحة الموجبة الأكبر تعني دخلاً أكبر وفق التحويل المرسوم.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.07",
+  "lecture": 2,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لمولّد PAM ذي القمة المستوية، وسمِّ الأجزاء واشرح وظائفها ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-2.svg\" alt=\"Labelled block diagram for question 2.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">مرشح منع التراكب</td>\n<td style=\"text-align: left;\">يحدّد عرض حزمة الدخل التماثلي قبل أخذ العينات.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">أخذ عينات وتثبيت</td>\n<td style=\"text-align: left;\">يقيس الدخل عند نبضات الساعة ويثبّت كل قيمة طوال النبضة.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">ساعة العينات</td>\n<td style=\"text-align: left;\">تحدّد فترة تكرار النبضات وتوقيت التثبيت.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">خرج PAM</td>\n<td style=\"text-align: left;\">تمثّل ارتفاعات النبضات قيم الدخل المقاسة.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "2.08",
+  "lecture": 2,
+  "kind": "Compare",
+  "question": "<p>قارن PWM وPPM في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>PWM</strong></th>\n<th style=\"text-align: left;\"><strong>PPM</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">تحمل الرسالة في</td>\n<td style=\"text-align: left;\">عرض النبضة</td>\n<td style=\"text-align: left;\">موضع النبضة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">الخاصية الثابتة</td>\n<td style=\"text-align: left;\">سعة النبضة</td>\n<td style=\"text-align: left;\">السعة والعرض</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الاستعادة</td>\n<td style=\"text-align: left;\">قياس المدة</td>\n<td style=\"text-align: left;\">قياس الإزاحة الزمنية</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "2.09",
+  "lecture": 2,
+  "kind": "Concept",
+  "question": "<p>قارن PAM وPWM وPPM من حيث المعامل المتغيّر وما يقيسه المستقبل.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>النوع</strong></th>\n<th style=\"text-align: left;\"><strong>خاصية الرسالة</strong></th>\n<th style=\"text-align: left;\"><strong>قياس المستقبل</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">PAM</td>\n<td style=\"text-align: left;\">السعة</td>\n<td style=\"text-align: left;\">ارتفاع النبضة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">PWM</td>\n<td style=\"text-align: left;\">العرض</td>\n<td style=\"text-align: left;\">الزمن بين الحافتين</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">PPM</td>\n<td style=\"text-align: left;\">الموضع</td>\n<td style=\"text-align: left;\">زمن الوصول نسبةً إلى الساعة</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "2.10",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>تنتهي حزمة رسالة عند 3.4 kHz. اختبر معدل 8 آلاف عينة/ثانية، وأوجد التردد المطوي لموجة جيب تمام غير مرغوبة عند 7 kHz.</p>\n",
+  "answer": "<p><strong>معدل نايكويست والتردد المطوي</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nR_N=2B\\\\[2pt]M=f_s/2-B\\\\[2pt]f_a=|f-kf_s|\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>قارن بمعدل نايكويست للرسالة.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_N&amp;=2(3.4)\\\\[2pt]&amp;=6.8\\text{ ksample/s}&lt;8\n\\end{aligned}\\]</span></p>\n<p>أوجد الهامش حتى نصف معدل العينات.<span class=\"math display\">\\[\\begin{aligned}\nf_s/2-B&amp;=4-3.4\\\\[2pt]&amp;=0.6\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>اطوِ التردد غير المرغوب إلى الحزمة الأساسية.<span class=\"math display\">\\[\\begin{aligned}\nf_a&amp;=|7-8|\\\\[2pt]&amp;=1\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>المعدل أعلى من حدّ الرسالة، لكن المركبة المتداخلة عند 7 kHz تظهر عند 1 kHz إن لم تُزل مسبقاً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.11",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>لبوابات مستطيلة بارتفاع واحد ومراكز عند <span\nclass=\"math inline\">\\(nT_s\\)</span>، اشتق <span\nclass=\"math inline\">\\(c_k\\)</span>. احسب <span\nclass=\"math inline\">\\(c_0\\)</span> و <span\nclass=\"math inline\">\\(c_1\\)</span> عند <span\nclass=\"math inline\">\\(d=0.25\\)</span>.</p>\n",
+  "answer": "<p><strong>معاملات متسلسلة فورييه للبوابة المستطيلة</strong><span\nclass=\"math display\">\\[c_k=\\frac1{T_s}\\int_{-\\tau/2}^{\\tau/2}e^{-j2\\pi\nkt/T_s}\\,dt\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>كامل بوابة واحدة متمركزة حول الصفر.<span\nclass=\"math display\">\\[c_k=\\frac1{T_s}\\int_{-\\tau/2}^{\\tau/2}e^{-j2\\pi\nkt/T_s}dt\\]</span></p>\n<p>استخدم sinc المطبّعة.<span class=\"math display\">\\[\\begin{aligned}\nc_k=d\\operatorname{sinc}(kd)\\\\[2pt]c_0=d\n\\end{aligned}\\]</span></p>\n<p>عوّض بنسبة التشغيل المعطاة.<span\nclass=\"math display\">\\[\\begin{aligned}\nc_1&amp;=0.25\\frac{\\sin(0.25\\pi)}{0.25\\pi}\\\\[2pt]&amp;=0.22508\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(c_0=0.25\\)</span> و <span\nclass=\"math inline\">\\(c_1=0.22508\\)</span>؛ إزاحة البوابة تغيّر طور المعاملات.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.12",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>عينات ذات قمم مستوية <span class=\"math inline\">\\(x[0]=1\\)</span>, <span\nclass=\"math inline\">\\(x[1]=0.5\\)</span> و <span\nclass=\"math inline\">\\(x[2]=-0.5\\)</span> V، تفصل بينها فترة <span\nclass=\"math inline\">\\(T_s=1\\)</span> ms. تستمر كل نبضة تثبيت مستطيلة مدة\n<span class=\"math inline\">\\(\\tau=0.4\\)</span> ms. اكتب الخرج وحدّد قيمه عند 0.2 و0.6 و1.2 ms.</p>\n",
+  "answer": "<p><strong>بناء موجة PAM ذات القمم المستوية</strong><span\nclass=\"math display\">\\[\\begin{aligned}\ny(t)=\\sum_n x[n]h(t-nT_s)\\\\[2pt]h(t)=u(t)-u(t-\\tau)\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>عرّف نبضة تثبيت بارتفاع واحد.<span\nclass=\"math display\">\\[h(t)=u(t)-u(t-\\tau)\\]</span></p>\n<p>أزح نبضة لكل عينة واضربها في قيمة تلك العينة.<span\nclass=\"math display\">\\[y(t)=h(t)+0.5h(t-T_s)-0.5h(t-2T_s)\\]</span></p>\n<p>تحقّق هل يقع الزمن داخل فترة تثبيت.<span\nclass=\"math display\">\\[\\begin{aligned}\ny(0.2\\text{ ms})=1\\\\[2pt]y(0.6\\text{ ms})=0\\\\[2pt]y(1.2\\text{\nms})=0.5\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>الفجوة عند 0.6 ms تساوي صفراً لأن مدة التثبيت أقل من فترة أخذ العينات.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.13",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>مدة التثبيت 50 ميكروثانية. أوجد نسبة السعة إلى قيمتها عند DC بتردد 4 kHz، والتوهين بالديسيبل، وكسب المعادل عند ذلك التردد.</p>\n",
+  "answer": "<p><strong>استجابة فتحة التثبيت ومعادلتها</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nA(f)=|\\operatorname{sinc}(f\\tau)|\\\\[2pt]A_{\\rm\ndB}=20\\log_{10}A\\\\[2pt]G_{\\rm eq}=1/A\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب حاصل الضرب عديم الأبعاد.<span\nclass=\"math display\">\\[\\begin{aligned}\nf\\tau&amp;=4000(50\\times10^{-6})\\\\[2pt]&amp;=0.2\n\\end{aligned}\\]</span></p>\n<p>احسب الاستجابة المطبّعة.<span\nclass=\"math display\">\\[\\begin{aligned}\nA&amp;=|\\operatorname{sinc}(0.2)|\\\\[2pt]&amp;=0.93549\n\\end{aligned}\\]</span></p>\n<p>حوّل النسبة وخذ مقلوبها.<span\nclass=\"math display\">\\[\\begin{aligned}\n20\\log_{10}A&amp;=20\\log_{10}(0.93549)\\\\[2pt]&amp;=-0.579\\text{\ndB}\\\\[2pt]G_{\\rm eq}&amp;=1/A\\\\[2pt]&amp;=1/0.93549\\\\[2pt]&amp;=1.06896\n\\end{aligned}\\]</span></p>\n<p>نسبة السعة 0.93549؛ الفقد 0.579 dB؛ كسب المعادل 1.06896.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.14",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>للإشارة <span class=\"math inline\">\\(x(t)=\\cos(2\\pi1000t)\\)</span> V، قدّر أكبر خطأ عينة من الرتبة الأولى ناتج عن خطأ توقيت مقداره ميكروثانية واحدة.</p>\n",
+  "answer": "<p><strong>تقريب خطأ ارتعاش التوقيت من الرتبة الأولى</strong><span\nclass=\"math display\">\\[\\begin{aligned}\ne_t\\simeq x\\prime(t)\\delta t\\\\[2pt]\\max|x\\prime(t)|=2\\pi fA\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>استخدم تقريب الزمن من الرتبة الأولى.<span\nclass=\"math display\">\\[e_t\\simeq x\\prime(t)\\delta t\\]</span></p>\n<p>أكبر ميل لموجة جيبية هو 2πfA.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\max|x\\prime(t)|&amp;=2\\pi(1000)(1)\\\\[2pt]&amp;=6283.19\\text{ V/s}\n\\end{aligned}\\]</span></p>\n<p>اضرب الميل في خطأ التوقيت.<span\nclass=\"math display\">\\[|e_t|_{\\max}\\simeq6283.19(10^{-6})=0.006283\\text{\nV}\\]</span></p>\n<p>تقريباً 6.283 mV؛ باستخدام تقريب الارتعاش الصغير.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.15",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>عند 20 ألف عينة/ثانية تستمر البوابة 5 ميكروثوانٍ. أوجد نسبة التشغيل وكسب استعادة PAM الطبيعي.</p>\n",
+  "answer": "<p><strong>نسبة التشغيل وكسب الاستعادة</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nT_s=1/f_s\\\\[2pt]d=\\tau/T_s\\\\[2pt]G=1/d\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>أوجد فترة الخانة الزمنية.<span class=\"math display\">\\[\\begin{aligned}\nT_s&amp;=1/20000\\\\[2pt]&amp;=50\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>اقسم المدتين بعد توحيد الوحدات.<span\nclass=\"math display\">\\[\\begin{aligned}\nd&amp;=5/50\\\\[2pt]&amp;=0.1\n\\end{aligned}\\]</span></p>\n<p>عوّض تأثير معامل DC بأخذ مقلوبه.<span class=\"math display\">\\[\\begin{aligned}\nG&amp;=1/d\\\\[2pt]&amp;=1/0.1\\\\[2pt]&amp;=10\n\\end{aligned}\\]</span></p>\n<p>نسبة التشغيل 0.1 والكسب 10.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.16",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>للإشارة <span\nclass=\"math inline\">\\(x(t)=\\operatorname{sinc}^2(1000t)\\)</span>، باستخدام sinc المطبّعة، أوجد الحافة الطيفية الموجبة واختر معدل عينات عملياً أعلى من الحدّ.</p>\n",
+  "answer": "<p><strong>طيف sinc ومعدل نايكويست</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\operatorname{sinc}(at)\\longleftrightarrow\\frac1{|a|}\\operatorname{rect}(f/a)\\\\[2pt]R_N=2B\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>مجال sinc غير المربّعة هو [-500,500] Hz. التفاف هذا المجال مع نفسه يعطي [-1000,1000] Hz.</p>\n<p>احسب الحدّ واختر معدلاً أعلى.<span\nclass=\"math display\">\\[\\begin{aligned}\nB=1000\\text{ Hz}\\\\[2pt]R_N&amp;=2(1000)\\\\[2pt]&amp;=2000\\text{\nsample/s}\\\\[2pt]f_s=2500\\text{ sample/s}\n\\end{aligned}\\]</span></p>\n<p>الحافة الموجبة 1 kHz؛ يمكن اختيار 2.5 ألف عينة/ثانية كهامش مبدئي، مع مراعاة تصميم المرشح.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.17",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>يستخدم نظام PWM العلاقة <span class=\"math inline\">\\(w=8+12x\\)</span>\nميكروثانية، حيث <span class=\"math inline\">\\(x\\)</span> بالفولت. استعد الرسالة من عرض مقاس يساوي 17 ميكروثانية.</p>\n",
+  "answer": "<p><strong>علاقة استعادة السعة من PWM</strong><span\nclass=\"math display\">\\[x=(w-w_0)/K_w\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اطرح العرض الأساسي.<span\nclass=\"math display\">\\[\\begin{aligned}\nw-w_0&amp;=17-8\\\\[2pt]&amp;=9\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>اقسم على حساسية العرض.<span\nclass=\"math display\">\\[\\begin{aligned}\nx&amp;=\\frac{9\\,\\mu\\text{s}}{12\\,\\mu\\text{s/V}}\\\\[2pt]&amp;=0.75\\text{\nV}\n\\end{aligned}\\]</span></p>\n<p>العينة المستعادة 0.75 V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.18",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>يرتفع منحدر من 0 إلى 2 V خلال 40 ميكروثانية. يكون الخرج عالياً ما دام المنحدر دون عينة مثبتة قيمتها 1.2 V. أوجد عرض النبضة وتحقّق من الاستعادة العكسية.</p>\n",
+  "answer": "<p><strong>علاقة PWM باستخدام مقارن المنحدر</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nw=T_s\\frac m{A_r}\\\\[2pt]m=A_r\\frac w{T_s}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>ساوِ بين نسبة السعة ونسبة الزمن في المنحدر.<span\nclass=\"math display\">\\[\\begin{aligned}\nw&amp;=T_s\\frac{m}{A_r}\\\\[2pt]&amp;=40\\frac{1.2}{2}\\\\[2pt]&amp;=24\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>اعكس التحويل.<span class=\"math display\">\\[\\begin{aligned}\nm&amp;=A_r\\frac w{T_s}\\\\[2pt]&amp;=2\\frac{24}{40}\\\\[2pt]&amp;=1.2\\text{\nV}\n\\end{aligned}\\]</span></p>\n<p>العرض 24 ميكروثانية؛ السعة المستعادة 1.2 V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.19",
+  "lecture": 2,
+  "kind": "Concept",
+  "question": "<p>ما الذي يبقى ثابتاً في PWM ذي الحافة الخلفية المتحركة؟ وكيف يتغيّر الرسم عند اعتماد محاذاة أخرى؟</p>\n",
+  "answer": "<p>في PWM ذي الحافة الخلفية المتحركة تثبت الحافة الأمامية. وفي النوع ذي الحافة الأمامية المتحركة تثبت الخلفية. وفي المحاذاة المركزية تتحرك الحافتان حول مركز ثابت. في جميعها يحمل العرض الرسالة.</p>\n<p>في PWM ذي الحافة الخلفية المتحركة تثبت الحافة الأمامية. وفي النوع ذي الحافة الأمامية المتحركة تثبت الخلفية. وفي المحاذاة المركزية تتحرك الحافتان حول مركز ثابت. في جميعها يحمل العرض الرسالة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.20",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>تبدأ نبضة PPM بعد 18 ميكروثانية من مرجع الخانة. إذا كان\n<span class=\"math inline\">\\(t_0=10\\,\\mu\\)</span>s و <span\nclass=\"math inline\">\\(K_t=20\\,\\mu\\)</span>s/V، فأوجد جهد الرسالة.</p>\n",
+  "answer": "<p><strong>علاقة استعادة السعة من PPM</strong><span\nclass=\"math display\">\\[x=(t_{\\rm start}-t_0)/K_t\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اطرح الإزاحة الثابتة.<span class=\"math display\">\\[\\begin{aligned}\n\\Delta t&amp;=18-10\\\\[2pt]&amp;=8\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>اقسم على حساسية الموضع.<span\nclass=\"math display\">\\[\\begin{aligned}\nx&amp;=8/20\\\\[2pt]&amp;=0.4\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>0.4 V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.21",
+  "lecture": 2,
+  "kind": "Concept",
+  "question": "<p>كيف تولّد الحافة المتحركة لـPWM نبضة PPM ثابتة العرض؟ ولماذا نتحقّق من نهاية النبضة بالنسبة إلى نهاية الخانة؟</p>\n",
+  "answer": "<p>يشغّل كاشف الحافة مولّد نبضة أحادية ثابتة المدة عند الحافة المتحركة. يحمل زمن التشغيل الرسالة. قد تنتهي النبضة الجديدة بعد الحافة الأصلية، لذلك يجب أن يقع عرضها كله داخل المجال الزمني المسموح.</p>\n<p>يشغّل كاشف الحافة مولّد نبضة أحادية ثابتة المدة عند الحافة المتحركة. يحمل زمن التشغيل الرسالة. قد تنتهي النبضة الجديدة بعد الحافة الأصلية، لذلك يجب أن يقع عرضها كله داخل المجال الزمني المسموح.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.22",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>تتغيّر حافة صاعدة بمقدار 1 V خلال 0.2 ميكروثانية. الانحراف المعياري لضوضاء الجهد 20 mV. قدّر الانحراف المعياري لخطأ التوقيت.</p>\n",
+  "answer": "<p><strong>ميل الحافة وعدم يقين التوقيت</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nS_e=\\Delta v/\\Delta t\\\\[2pt]\\sigma_t\\simeq\\sigma_v/|S_e|\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب الميل المحلي.<span\nclass=\"math display\">\\[\\begin{aligned}\nS_e&amp;=1/(0.2\\times10^{-6})\\\\[2pt]&amp;=5\\times10^6\\text{ V/s}\n\\end{aligned}\\]</span></p>\n<p>حوّل الميليفولت واقسم على مقدار الميل.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\sigma_t\\simeq\\frac{\\sigma_v}{|S_e|}&amp;=\\frac{0.020}{5\\times10^6}\\\\[2pt]&amp;=4\\text{\nns}\n\\end{aligned}\\]</span></p>\n<p>تقريباً 4 ns، بافتراض ضوضاء صغيرة وحافة خطية محلياً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.23",
+  "lecture": 2,
+  "kind": "Worked problem",
+  "question": "<p>خطأ وصول النبضة وخطأ الساعة المرجعية مستقلان، وانحرافاهما المعياريان 4 ns و3 ns. إذا كان <span\nclass=\"math inline\">\\(K_t=100\\)</span> ns/V، فأوجد عدم اليقين المكافئ عند الدخل.</p>\n",
+  "answer": "<p><strong>انتشار أخطاء التوقيت المستقلة في PPM</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\sigma_{\\Delta t}=\\sqrt{\\sigma_{\\rm arrival}^2+\\sigma_{\\rm\nref}^2}\\\\[2pt]\\sigma_x=\\sigma_{\\Delta t}/|K_t|\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اجمع تبايني الخطأين المستقلين في فرق الزمن المقاس.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\sigma_{\\Delta t}&amp;=\\sqrt{4^2+3^2}\\\\[2pt]&amp;=5\\text{ ns}\n\\end{aligned}\\]</span></p>\n<p>حوّل عدم يقين الزمن إلى جهد.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\sigma_x&amp;=\\sigma_{\\Delta\nt}/|K_t|\\\\[2pt]&amp;=5/100\\\\[2pt]&amp;=0.05\\text{ V}\n\\end{aligned}\\]</span></p>\n<p>50 mV؛ لو كان المرجع خالياً من الضوضاء لكانت القيمة 40 mV.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.24",
+  "lecture": 2,
+  "kind": "Concept",
+  "question": "<p>صف استعادة الرسالة في PAM وPWM وPPM. هل يزيل محدّد السعة كل الضوضاء؟</p>\n",
+  "answer": "<p>في PAM نقيس السعة ونعوّض الكسب وتأثير التثبيت المعلومين. في PWM نقيس العرض ونعكس التحويل. في PPM نقيس الوصول نسبةً إلى الساعة ونعكس التحويل. نرشّح المتتالية المستعادة للحصول على الرسالة. يقلّل المحدّد تغيّر السعة في طرق التوقيت، لكنه لا يزيل كل ارتعاش الحواف؛ وفي PAM يفسد معلومات السعة.</p>\n<p>في PAM نقيس السعة ونعوّض الكسب وتأثير التثبيت المعلومين. في PWM نقيس العرض ونعكس التحويل. في PPM نقيس الوصول نسبةً إلى الساعة ونعكس التحويل. نرشّح المتتالية المستعادة للحصول على الرسالة. يقلّل المحدّد تغيّر السعة في طرق التوقيت، لكنه لا يزيل كل ارتعاش الحواف؛ وفي PAM يفسد معلومات السعة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "2.25",
+  "lecture": 2,
+  "kind": "Concept",
+  "question": "<p>قطار نبضات ثابت السعة: في الحالة A تتغيّر العروض، وفي B تثبت العروض وتتحرك البدايات. حدّد النوعين والمرجع الإضافي الذي يحتاجه المستقبل الثاني.</p>\n",
+  "answer": "<p>الحالة A هي PWM والحالة B هي PPM. يحتاج مستقبل PPM إلى مرجع الخانات لتفسير إزاحات الوصول. ثبات السعة وحده لا يحدّد النوع ولا يضمن المناعة من الضوضاء.</p>\n<p>الرسم A هو PWM والرسم B هو PPM. يحتاج مستقبل PPM إلى مرجع الخانات لتفسير إزاحات الوصول. ثبات السعة وحده لا يحدّد النوع ولا يضمن المناعة من الضوضاء.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.01",
+  "lecture": 3,
+  "kind": "List",
+  "question": "<p>عدّد عمليات مرسل PCM الثلاث والعمليات المقابلة في المستقبل.</p>\n",
+  "answer": "<ul>\n<li><p>المرسل: أخذ عينات، ثم تكميم، ثم ترميز.</p></li>\n<li><p>المستقبل: فكّ البتات إلى مستويات إعادة بناء، ثم تكوين موجة مثبتة، ثم ترشيح تمرير منخفض.</p></li>\n<li><p>يعيد المستقبل تقريب الإشارة الأصلية؛ التكميم الاعتيادي غير قابل للعكس بدقة تامة.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "3.02",
+  "lecture": 3,
+  "kind": "Draw",
+  "question": "<p>ارسم مكمّماً صاعداً من أربعة مستويات لدخل من -2 إلى 2 V، وسمِّ العتبات ومستويات إعادة البناء.</p>\n",
+  "answer": "<p>العتبات الداخلية هي <span\nclass=\"math inline\">\\(-1,0,1\\)</span> V. مستويات إعادة البناء هي\n<span class=\"math inline\">\\(-1.5,-0.5,0.5,1.5\\)</span> V. يحوّل كل مقطع أفقي فترةً من قيم الدخل إلى خرج واحد. الدوائر المغلقة يساراً والمفتوحة يميناً تبيّن حدود الفترات المعتمدة.</p>\n<p>المحور الأفقي لجهد الدخل والعمودي لجهد الخرج. المقاطع الأفقية مستويات إعادة البناء. تقع الانتقالات عند عتبات القرار. الخط القطري المتقطّع هو الاستجابة المثالية بلا تكميم.</p>\n",
+  "figure": "assets/easy_03.svg"
+ },
+ {
+  "id": "3.03",
+  "lecture": 3,
+  "kind": "Explain",
+  "question": "<p>اشرح خطأ التكميم بكلمات بسيطة.</p>\n",
+  "answer": "<p>خطأ التكميم هو الفرق بين مستوى إعادة البناء المختار والعينة الأصلية. وفق اصطلاح الإشارة هنا، <span class=\"math inline\">\\(e_q=q-x\\)</span>. مثلاً، تحويل\n<span class=\"math inline\">\\(0.7\\)</span> V إلى <span\nclass=\"math inline\">\\(0.5\\)</span> V يعطي <span\nclass=\"math inline\">\\(e_q=-0.2\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.04",
+  "lecture": 3,
+  "kind": "Compare",
+  "question": "<p>قارن زيادة معدل العينات بزيادة عدد البتات لكل عينة.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>معدل عينات أعلى</strong></th>\n<th style=\"text-align: left;\"><strong>بتات أكثر/عينة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">ما الذي يتغيّر؟</td>\n<td style=\"text-align: left;\">كثافة العينات الزمنية</td>\n<td style=\"text-align: left;\">دقة السعة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المعامل</td>\n<td style=\"text-align: left;\"><span\nclass=\"math inline\">\\(f_s\\)</span></td>\n<td style=\"text-align: left;\">طول الكلمة n</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">معدل PCM</td>\n<td style=\"text-align: left;\">يزداد عند ثبات n</td>\n<td style=\"text-align: left;\">يزداد عند ثبات <span\nclass=\"math inline\">\\(f_s\\)</span></td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "3.05",
+  "lecture": 3,
+  "kind": "Explain",
+  "question": "<p>لماذا قد يفشل حدّ خطأ نصف خطوة عند تجاوز مجال المكمّم؟</p>\n",
+  "answer": "<p>يفترض الحدّ أن الدخل داخل مجال المكمّم وأنه يقرّب إلى منتصف الفترة. خارج المجال يُقصّ الدخل إلى مستوى طرفي، وقد يتجاوز الخطأ نصف خطوة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.06",
+  "lecture": 3,
+  "kind": "List",
+  "question": "<p>اذكر فائدتين وكلفة واحدة لزيادة طول كلمة PCM.</p>\n",
+  "answer": "<ul>\n<li><p>فائدة: دقة أعلى للسعة.</p></li>\n<li><p>فائدة: خطأ تكميم أقل داخل مجال الدخل المسموح.</p></li>\n<li><p>الكلفة: معدل بتات أعلى، وعادةً عرض حزمة إرسال أكبر.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "3.07",
+  "lecture": 3,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لمرسل PCM، وسمِّ الأجزاء واشرح وظيفة كل جزء ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-3.svg\" alt=\"Labelled block diagram for question 3.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">آخذ العينات</td>\n<td style=\"text-align: left;\">يختار قيمة الإشارة عند كل نبضة ساعة؛ ويسبقه عملياً مرشح منع التراكب.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المكمّم</td>\n<td style=\"text-align: left;\">يختار أقرب مستوى إعادة بناء مسموح.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المرمّز الثنائي</td>\n<td style=\"text-align: left;\">يخصّص كلمة من n بت لكل مستوى مختار.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">خرج PCM</td>\n<td style=\"text-align: left;\">ينقل المتتالية الناتجة بمعدل بتات\n<span class=\"math inline\">\\(R_b=nf_s\\)</span>.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "3.08",
+  "lecture": 3,
+  "kind": "Compare",
+  "question": "<p>قارن زيادة العينات بزيادة البتات لكل عينة في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>عينات أكثر</strong></th>\n<th style=\"text-align: left;\"><strong>بتات أكثر لكل عينة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">ما الذي يتحسن؟</td>\n<td style=\"text-align: left;\">كثافة العينات الزمنية</td>\n<td style=\"text-align: left;\">دقة السعة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المعامل</td>\n<td style=\"text-align: left;\">تردد أخذ العينات</td>\n<td style=\"text-align: left;\">طول كلمة PCM</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الكلفة</td>\n<td style=\"text-align: left;\">معدل بتات أعلى</td>\n<td style=\"text-align: left;\">معدل بتات أعلى</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "3.09",
+  "lecture": 3,
+  "kind": "Concept",
+  "question": "<p>عرّف PCM.</p>\n",
+  "answer": "<p>تُكمّم سعة العينة وتُمثَّل بكلمة ثنائية.</p>\n<p>تُكمّم سعة العينة وتُمثَّل بكلمة ثنائية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.10",
+  "lecture": 3,
+  "kind": "Worked problem",
+  "question": "<p>نظام PCM يأخذ 8 آلاف عينة/ثانية ويستخدم 64 مستوى منتظماً ضمن\n<span class=\"math inline\">\\([-2,2)\\)</span> V. أوجد البتات/عينة والخطوة ومعدل البتات وأقل عرض حزمة أساسية ثنائية مثالي. أهمل الزيادة التنظيمية.</p>\n",
+  "answer": "<p><strong>الدقة</strong><span class=\"math display\">\\[n=\\log_2\nL\\]</span><span class=\"math display\">\\[n=\\log_2 64=6\\text{\nbits/sample}\\]</span></p>\n<p><strong>خطوة التكميم</strong><span\nclass=\"math display\">\\[\\Delta=(V_{\\max}-V_{\\min})/L\\]</span><span\nclass=\"math display\">\\[\\Delta=(2-(-2))/64=0.0625\\text{ V}\\]</span></p>\n<p><strong>معدل بتات PCM</strong><span\nclass=\"math display\">\\[R_b=nf_s\\]</span><span\nclass=\"math display\">\\[R_b=6(8000)=48000\\text{ bit/s}=48\\text{\nkbit/s}\\]</span></p>\n<p><strong>عرض الحزمة الأساسية المثالي</strong><span\nclass=\"math display\">\\[B_{\\min}=R_b/2\\]</span><span\nclass=\"math display\">\\[B_{\\min}=48000/2=24000\\text{ Hz}=24\\text{\nkHz}\\]</span>هذا حدّ نايكويست الثنائي المثالي بمعامل زيادة طيفية صفر؛ قد يحتاج التشكيل العملي للنبضات حزمة أكبر.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.11",
+  "lecture": 3,
+  "kind": "Concept",
+  "question": "<p>لماذا نستخدم مرشح منع التراكب؟</p>\n",
+  "answer": "<p>لتحديد عرض حزمة الدخل قبل أخذ العينات.</p>\n<p>لتحديد عرض حزمة الدخل قبل أخذ العينات.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.12",
+  "lecture": 3,
+  "kind": "Concept",
+  "question": "<p>ما هو التجاوز؟</p>\n",
+  "answer": "<p>تتجاوز سعة الدخل مجال المكمّم فتُقصّ.</p>\n<p>تتجاوز سعة الدخل مجال المكمّم فتُقصّ.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.13",
+  "lecture": 3,
+  "kind": "Concept",
+  "question": "<p>ماذا يفعل مجدّد الإشارة؟</p>\n",
+  "answer": "<p>يتخذ قرارات البتات ويولّد نبضات جديدة.</p>\n<p>يتخذ قرارات البتات ويولّد نبضات جديدة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.14",
+  "lecture": 3,
+  "kind": "Concept",
+  "question": "<p>لماذا نستخدم الضغط والتمديد؟</p>\n",
+  "answer": "<p>لتحسين الدقة الفعالة عند سعات الدخل الصغيرة.</p>\n<p>لتحسين الدقة الفعالة عند سعات الدخل الصغيرة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.15",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>كم مستوى توفّر 5 بتات؟</p>\n",
+  "answer": "<p><strong>عدد مستويات التكميم</strong><span\nclass=\"math display\">\\[L=2^n\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[L=2^5\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[L=32\\text{\nlevels}\\]</span></p>\n<p><span class=\"math inline\">\\(L=2^5=32\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.16",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>مكمّم منتظم يقسّم مجال دخل عرضه 8 V إلى 16 فترة متساوية. أوجد خطوة التكميم.</p>\n",
+  "answer": "<p><strong>خطوة التكميم المنتظم</strong><span\nclass=\"math display\">\\[\\Delta=(V_{\\max}-V_{\\min})/L\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\Delta=\\frac{8}{16}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\Delta=0.5\\text{\nV}\\]</span></p>\n<p><span class=\"math inline\">\\(\\Delta=8/16=0.5\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.17",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>لمكمّم منتظم خطوته <span\nclass=\"math inline\">\\(\\Delta=0.6\\)</span> V، قدّر متوسط مربع خطأ التكميم وفق نموذج الخطأ المنتظم.</p>\n",
+  "answer": "<p><strong>قدرة ضوضاء التكميم المنتظم</strong><span\nclass=\"math display\">\\[P_q=\\Delta^2/12\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[P_q=\\frac{(0.6)^2}{12}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[P_q=0.03\\text{\nV}^2\\]</span></p>\n<p><span class=\"math inline\">\\(P_q=0.6^2/12=0.03\\)</span> V<span\nclass=\"math inline\">\\(^2\\)</span> وفق نموذج الخطأ المنتظم.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.18",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد فترة البت عند 100 kbit/s.</p>\n",
+  "answer": "<p><strong>مدة البت</strong><span\nclass=\"math display\">\\[T_b=1/R_b\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[T_b=\\frac1{100\\times10^3}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\nT_b&amp;=10^{-5}\\text{ s}\\\\[2pt]&amp;=10\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(T_b=1/10^5=10\\,\\mu\\)</span>s.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.19",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>قدّر SQNR لموجة جيبية بكامل المجال ومكمّم منتظم من 6 بتات، وفق تقريب الخطأ المنتظم ومن دون تجاوز.</p>\n",
+  "answer": "<p><strong>SQNR لموجة جيبية بكامل المجال</strong><span\nclass=\"math display\">\\[\\mathrm{SQNR}_{\\rm\ndB}\\simeq6.02n+1.76\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\mathrm{SQNR}_{\\rm\ndB}\\simeq6.02(6)+1.76\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[\\mathrm{SQNR}_{\\rm dB}\\simeq37.88\\text{\ndB}\\]</span></p>\n<p><span class=\"math inline\">\\(6.02(6)+1.76=37.88\\)</span> dB تقريباً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.20",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>احسب خطأ التكميم باستخدام <span\nclass=\"math inline\">\\(e_q=q-x\\)</span> عندما يكون الدخل <span\nclass=\"math inline\">\\(x=0.36\\)</span> V والخرج <span\nclass=\"math inline\">\\(q=0.4\\)</span> V.</p>\n",
+  "answer": "<p><strong>خطأ التكميم</strong><span\nclass=\"math display\">\\[e_q=q-x\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[e_q=0.40-0.36\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[e_q=+0.04\\text{\nV}\\]</span></p>\n<p><span class=\"math inline\">\\(e_q=q-x=0.04\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.21",
+  "lecture": 3,
+  "kind": "Worked exercise",
+  "question": "<p>رمّز الفهرس 6 بثلاثة بتات.</p>\n",
+  "answer": "<p><strong>التمثيل الثنائي الموضعي</strong><span\nclass=\"math display\">\\[i=\\sum_{k=0}^{n-1}b_k2^k\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[6=1(4)+1(2)+0(1)\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[6=110_2\\]</span></p>\n<p><span class=\"math inline\">\\(6=110_2\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.22",
+  "lecture": 3,
+  "kind": "Concept",
+  "question": "<p>هل تزيد المستويات عند زيادة معدل العينات؟</p>\n",
+  "answer": "<p>لا؛ الذي يحدّد عدد المستويات هو عدد بتات العينة.</p>\n<p>لا؛ الذي يحدّد عدد المستويات هو عدد بتات العينة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.23",
+  "lecture": 3,
+  "kind": "Worked problem",
+  "question": "<p>اشتق قدرة ضوضاء التكميم لخطأ منتظم ضمن <span\nclass=\"math inline\">\\([-\\Delta/2,\\Delta/2]\\)</span>. ثم اشتق SQNR لموجة جيبية بكامل المجال ومكمّم منتظم من n بت.</p>\n",
+  "answer": "<p><strong>متوسط مربع ضوضاء التكميم وSQNR</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nP_q=\\int e^2p_e(e)\\,de\\\\[2pt]\\mathrm{SQNR}=P_s/P_q\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب متوسط مربع الخطأ باستخدام كثافة الاحتمال المنتظمة.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_q&amp;=\\frac1\\Delta\\int_{-\\Delta/2}^{\\Delta/2}e^2de\\\\[2pt]&amp;=\\frac{\\Delta^2}{12}\n\\end{aligned}\\]</span></p>\n<p>متوسط مربع موجة جيبية سعتها القصوى A يساوي A²/2.<span class=\"math display\">\\[\\begin{aligned}\nP_s=A^2/2\\\\[2pt]\\Delta=2A/2^n\n\\end{aligned}\\]</span></p>\n<p>اقسم قدرة الإشارة على قدرة ضوضاء التكميم.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\frac{P_s}{P_q}&amp;=\\frac{A^2/2}{\\Delta^2/12}\\\\[2pt]&amp;=\\frac32\\,2^{2n}\n\\end{aligned}\\]</span></p>\n<p>حوّل النسبة إلى ديسيبل.<span\nclass=\"math display\">\\[\\mathrm{SQNR}_{\\rm\ndB}=10\\log_{10}(3/2)+20n\\log_{10}2\\simeq1.76+6.02n\\]</span></p>\n<p>يشترط القانون موجة جيبية بكامل المجال، وعدم التجاوز، ونموذج الخطأ المنتظم.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "3.24",
+  "lecture": 3,
+  "kind": "Worked problem",
+  "question": "<p>لدخل مطبّع <span class=\"math inline\">\\(x=0.1\\)</span> و\n<span class=\"math inline\">\\(\\mu=255\\)</span>، احسب خرج ضاغط µ-law. طبّق المعكوس من دون تكميم، واشرح ما يتغيّر عند إضافة التكميم.</p>\n",
+  "answer": "<p><strong>الضغط بقانون µ</strong><span\nclass=\"math display\">\\[y=\\operatorname{sgn}(x)\\frac{\\ln(1+\\mu|x|)}{\\ln(1+\\mu)}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>استخدم قانون الضغط للدخل الموجب.<span\nclass=\"math display\">\\[\\begin{aligned}\ny&amp;=\\frac{\\ln(1+\\mu\nx)}{\\ln(1+\\mu)}\\\\[2pt]&amp;=\\frac{\\ln(1+255(0.1))}{\\ln(1+255)}\\\\[2pt]&amp;=\\frac{\\ln26.5}{\\ln256}\\\\[2pt]&amp;=0.59099\n\\end{aligned}\\]</span></p>\n<p>اعكس الخرج الدقيق قبل التقريب.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\hat x&amp;=\\frac{256^y-1}{255}\\\\[2pt]&amp;=0.1\n\\end{aligned}\\]</span></p>\n<p>يغيّر التكميم y قبل التمديد؛ لذلك يمدّد المعكوس خطأ التكميم مع الإشارة.</p>\n<p><span class=\"math inline\">\\(y\\approx0.591\\)</span>؛ يعيد المعكوس المثالي القيمة 0.1. الضغط وحده قابل للعكس، أما التكميم فليس كذلك.</p>\n",
+  "figure": "assets/companding.svg"
+ },
+ {
+  "id": "3.25",
+  "lecture": 3,
+  "kind": "Worked problem",
+  "question": "<p>لدخل مطبّع، استخدم قانون A حيث <span\nclass=\"math inline\">\\(A=87.6\\)</span>. حدّد الفرع المناسب لكل من\n<span class=\"math inline\">\\(x=0.005\\)</span> و <span\nclass=\"math inline\">\\(x=0.1\\)</span>، واحسب خرجي الضغط.</p>\n",
+  "answer": "<p><strong>الضغط بقانون A</strong><span\nclass=\"math display\">\\[F(x)=\\begin{cases}Ax/(1+\\ln A),&amp;0\\le\nx&lt;1/A,\\\\[2pt](1+\\ln(Ax))/(1+\\ln A),&amp;1/A\\le\nx\\le1.\\end{cases}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>أوجد حدّ الفصل بين الفرعين.<span class=\"math display\">\\[\\begin{aligned}\n1/A&amp;=1/87.6\\\\[2pt]&amp;=0.011416\n\\end{aligned}\\]</span></p>\n<p>الدخل الأصغر يقع في الفرع الخطي.<span\nclass=\"math display\">\\[\\begin{aligned}\nF(0.005)&amp;=\\frac{87.6(0.005)}{1+\\ln87.6}\\\\[2pt]&amp;=0.08003\n\\end{aligned}\\]</span></p>\n<p>الدخل الأكبر يقع في الفرع اللوغاريتمي.<span\nclass=\"math display\">\\[\\begin{aligned}\nF(0.1)&amp;=\\frac{1+\\ln(87.6\\times0.1)}{1+\\ln87.6}\\\\[2pt]&amp;=0.57927\n\\end{aligned}\\]</span></p>\n<p>الخرجان تقريباً 0.08003 و0.57927. دالة الضاغط فردية للدخل السالب.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.01",
+  "lecture": 4,
+  "kind": "List",
+  "question": "<p>اذكر الإشارات الثلاث المستخدمة في حساب خطأ التنبؤ في DPCM.</p>\n",
+  "answer": "<ul>\n<li><p>الدخل الحالي <span\nclass=\"math inline\">\\(x[n]\\)</span>.</p></li>\n<li><p>التنبؤ <span\nclass=\"math inline\">\\(\\hat{x}[n]\\)</span>.</p></li>\n<li><p>الفرق <span\nclass=\"math inline\">\\(e[n]=x[n]-\\hat{x}[n]\\)</span>، الذي يُكمّم ويُرمّز.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "4.02",
+  "lecture": 4,
+  "kind": "Draw",
+  "question": "<p>ارسم مرمّز DPCM موضحاً المتنبئ وحلقة إعادة البناء المحلية.</p>\n",
+  "answer": "<p>اطرح التنبؤ من الدخل، ثم كمّم الخطأ ورمّزه. أضف الخطأ المكمّم إلى التنبؤ لتكوين العينة المعاد بناؤها. أعد هذه العينات إلى المتنبئ لكي يتشارك المرسل والمستقبل تاريخ التنبؤ نفسه.</p>\n",
+  "figure": "assets/easy_04.svg"
+ },
+ {
+  "id": "4.03",
+  "lecture": 4,
+  "kind": "Explain",
+  "question": "<p>اشرح تجاوز الميل في تضمين دلتا.</p>\n",
+  "answer": "<p>يتغيّر الدخل أسرع مما يستطيع السلم تتبعه؛ فلا تكفي حتى الخطوات المتتالية في الاتجاه نفسه للحاق به. زيادة الخطوة أو معدل العينات ترفع أكبر ميل ممكن تتبعه.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.04",
+  "lecture": 4,
+  "kind": "Compare",
+  "question": "<p>قارن تشوّه تجاوز الميل بضوضاء التحبّب.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>تجاوز الميل</strong></th>\n<th style=\"text-align: left;\"><strong>ضوضاء التحبّب</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الدخل المعتاد</td>\n<td style=\"text-align: left;\">سريع التغيّر</td>\n<td style=\"text-align: left;\">بطيء التغيّر</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">حجم الخطوة</td>\n<td style=\"text-align: left;\">صغيرة بالنسبة إلى الميل</td>\n<td style=\"text-align: left;\">كبيرة نسبياً</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">السلوك</td>\n<td style=\"text-align: left;\">يتأخر السلم عن الإشارة</td>\n<td style=\"text-align: left;\">يتذبذب السلم حول الإشارة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المعالجة</td>\n<td style=\"text-align: left;\">زيادة الخطوة أو المعدل</td>\n<td style=\"text-align: left;\">تقليل الخطوة أو تكييفها</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "4.05",
+  "lecture": 4,
+  "kind": "List",
+  "question": "<p>اذكر الفروق الأساسية بين FDM وTDM.</p>\n",
+  "answer": "<ul>\n<li><p>يخصّص FDM حزمة ترددية مختلفة لكل مستخدم.</p></li>\n<li><p>يخصّص TDM خانات زمنية مختلفة في قناة مشتركة.</p></li>\n<li><p>يحتاج FDM إلى فصل الحزم، بينما يحتاج TDM إلى تزامن الخانات.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "4.06",
+  "lecture": 4,
+  "kind": "Explain",
+  "question": "<p>لماذا يجب أن يستخدم متنبئ DPCM العينات المعاد بناؤها بدلاً من العينات الأصلية غير المتاحة للمستقبل؟</p>\n",
+  "answer": "<p>يعرف المستقبل الأخطاء المفكوكة وعيناته المعاد بناؤها، ولا يعرف العينات الأصلية الدقيقة. تحافظ حلقتا إعادة البناء المتطابقتان على اتساق المتنبئين عند اتفاق الحالة والبيانات المستقبلة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.07",
+  "lecture": 4,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لوصلة TDM، وسمِّ الأجزاء واشرح وظيفة كل جزء ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-4.svg\" alt=\"Labelled block diagram for question 4.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المجمِّع</td>\n<td style=\"text-align: left;\">يدمج عينات المستخدمين في خانات دورية مخصّصة.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">ساعة الإطار</td>\n<td style=\"text-align: left;\">تحدّد حدود الخانات وترتيب المستخدمين.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">القناة</td>\n<td style=\"text-align: left;\">تنقل الموجة التسلسلية المشتركة.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">مفرّق القنوات</td>\n<td style=\"text-align: left;\">يستخدم توقيت الإطار المستعاد لتوجيه الخانات إلى المستخدم الصحيح.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "4.08",
+  "lecture": 4,
+  "kind": "Compare",
+  "question": "<p>قارن FDM وTDM في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>FDM</strong></th>\n<th style=\"text-align: left;\"><strong>TDM</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الفصل</td>\n<td style=\"text-align: left;\">حزم ترددية</td>\n<td style=\"text-align: left;\">خانات زمنية</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المورد المشترك</td>\n<td style=\"text-align: left;\">عرض حزمة القناة</td>\n<td style=\"text-align: left;\">زمن القناة</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المتطلبات</td>\n<td style=\"text-align: left;\">حزم حماية ومرشحات</td>\n<td style=\"text-align: left;\">تزامن الإطارات والخانات</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "4.09",
+  "lecture": 4,
+  "kind": "Concept",
+  "question": "<p>عرّف DPCM.</p>\n",
+  "answer": "<p>تكميم خطأ التنبؤ وترميزه.</p>\n<p>تكميم خطأ التنبؤ وترميزه.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.10",
+  "lecture": 4,
+  "kind": "Concept",
+  "question": "<p>في مرمّز DPCM ذي حلقة مغلقة وفاكّ ترميزه، أي عينات تحدّث المتنبئين؟ ولماذا؟</p>\n",
+  "answer": "<p>يستخدم المتنبئان العينات المعاد بناؤها. تتطابق حالتا المرمّز وفاكّ الترميز عند استقبال الأخطاء المكمّمة بصورة صحيحة. استخدام العينات الأصلية في المرمّز وحده يسبّب عدم تطابق التنبؤ.</p>\n<p>العينات المعاد بناؤها، بالطريقة نفسها عند الطرفين.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.11",
+  "lecture": 4,
+  "kind": "Worked exercise",
+  "question": "<p>تنبؤ مستقبل DPCM يساوي 1.7 V، والخطأ المكمّم المستلم 0.25 V. أوجد العينة المعاد بناؤها.</p>\n",
+  "answer": "<p><strong>إعادة البناء في DPCM</strong><span\nclass=\"math display\">\\[\\tilde x=\\hat x+e_q\\]</span></p>\n<p><strong>التعويض</strong><span class=\"math display\">\\[\\tilde\nx=1.7+0.25\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\tilde\nx=1.95\\text{ V}\\]</span></p>\n<p><span class=\"math inline\">\\(\\tilde{x}=1.7+0.25=1.95\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.12",
+  "lecture": 4,
+  "kind": "Concept",
+  "question": "<p>كم بتاً لكل عينة DM؟</p>\n",
+  "answer": "<p>بت واحد.</p>\n<p>بت واحد.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.13",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>استخدم خطوة DM مقدارها <span class=\"math inline\">\\(\\Delta=0.2\\)</span> V، وتقديراً ابتدائياً صفراً، وخطوة صاعدة عندما يساوي الدخل التقدير السابق أو يتجاوزه. رمّز العينات <span\nclass=\"math inline\">\\((0.1,0.4,0.3,0)\\)</span> V. اذكر كل قيمة من قيم السلم.</p>\n",
+  "answer": "<p><strong>قرار تضمين دلتا وإعادة البناء</strong><span\nclass=\"math display\">\\[b[k]=\\begin{cases}1,&amp;x[k]\\ge\\tilde\nx[k-1],\\\\0,&amp;x[k]&lt;\\tilde x[k-1],\\end{cases}\\quad\\tilde x[k]=\\tilde\nx[k-1]+\\Delta(2b[k]-1)\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>قارن 0.1 بالصفر الابتدائي.<span\nclass=\"math display\">\\[\\begin{aligned}\nb_0=1\\\\[2pt]\\tilde x_0&amp;=0+0.2\\\\[2pt]&amp;=0.2\n\\end{aligned}\\]</span></p>\n<p>قارن 0.4 مع 0.2.<span class=\"math display\">\\[\\begin{aligned}\nb_1=1\\\\[2pt]\\tilde x_1&amp;=0.2+0.2\\\\[2pt]&amp;=0.4\n\\end{aligned}\\]</span></p>\n<p>قارن 0.3 مع 0.4.<span class=\"math display\">\\[\\begin{aligned}\nb_2=0\\\\[2pt]\\tilde x_2&amp;=0.4-0.2\\\\[2pt]&amp;=0.2\n\\end{aligned}\\]</span></p>\n<p>قارن 0 مع 0.2.<span class=\"math display\">\\[\\begin{aligned}\nb_3=0\\\\[2pt]\\tilde x_3&amp;=0.2-0.2\\\\[2pt]&amp;=0\n\\end{aligned}\\]</span></p>\n<p>البتات 1100؛ قيم السلم <span\nclass=\"math inline\">\\((0.2,0.4,0.2,0)\\)</span> V.</p>\n",
+  "figure": "assets/dm_trace_bank.svg"
+ },
+ {
+  "id": "4.14",
+  "lecture": 4,
+  "kind": "Concept",
+  "question": "<p>اكتب شرط DM الذي يربط حجم الخطوة <span\nclass=\"math inline\">\\(\\Delta\\)</span>ومعدل العينات <span\nclass=\"math inline\">\\(f_s\\)</span> بأكبر ميل للدخل لتجنّب تجاوز الميل.</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(\\Delta f_s\\ge\\max|dx/dt|\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\Delta f_s\\ge\\max|dx/dt|\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.15",
+  "lecture": 4,
+  "kind": "Worked exercise",
+  "question": "<p>أكبر ميل لدخل DM هو 5000 V/s، ومعدل العينات 50 ألف عينة/ثانية. أوجد أصغر خطوة تحقق شرط الميل.</p>\n",
+  "answer": "<p><strong>شرط تجنّب تجاوز الميل</strong><span\nclass=\"math display\">\\[\\Delta\\ge S_{\\max}/f_s\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\Delta_{\\min}=\\frac{5000}{50000}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[\\Delta_{\\min}=0.1\\text{ V}\\]</span></p>\n<p><span class=\"math inline\">\\(\\Delta\\ge5000/50000=0.1\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.16",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>تبدأ قاعدة ADM التوضيحية بخطوة <span\nclass=\"math inline\">\\(\\Delta_0=0.1\\)</span> V وبت سابق 0. بعد تكرار البت نضاعف الخطوة التالية بحد أقصى 0.4 V، وعند تغيّره ننصّفها بحد أدنى 0.05 V. للبتات 1,1,1,0، أوجد الخطوة المستخدمة لكل بت والخطوة التالية.</p>\n",
+  "answer": "<p><strong>تحديث الخطوة المتكيّفة</strong><span\nclass=\"math display\">\\[\\Delta_{k+1}=\\begin{cases}\\min(2\\Delta_k,0.4),&amp;b_k=b_{k-1},\\\\\\max(\\Delta_k/2,0.05),&amp;b_k\\ne\nb_{k-1}.\\end{cases}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>البت الأول يختلف عن المرجع.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\Delta_0=0.1\\\\[2pt]\\Delta_1&amp;=\\max(0.1/2,0.05)\\\\[2pt]&amp;=0.05\n\\end{aligned}\\]</span></p>\n<p>البت الثاني مكرر.<span class=\"math display\">\\[\\begin{aligned}\n\\Delta_2&amp;=\\min(2(0.05),0.4)\\\\[2pt]&amp;=0.1\n\\end{aligned}\\]</span></p>\n<p>البت الثالث مكرر أيضاً.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\Delta_3&amp;=\\min(2(0.1),0.4)\\\\[2pt]&amp;=0.2\n\\end{aligned}\\]</span></p>\n<p>البت الرابع مختلف.<span class=\"math display\">\\[\\begin{aligned}\n\\Delta_4&amp;=\\max(0.2/2,0.05)\\\\[2pt]&amp;=0.1\n\\end{aligned}\\]</span></p>\n<p>الخطوات المستخدمة 0.10 و0.05 و0.10 و0.20 V؛ التالية 0.10 V. توقيت التحديث جزء من القاعدة المعطاة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.17",
+  "lecture": 4,
+  "kind": "Concept",
+  "question": "<p>عرّف TDM.</p>\n",
+  "answer": "<p>تشغل القنوات المختلفة خانات زمنية دورية منفصلة.</p>\n<p>تشغل القنوات المختلفة خانات زمنية دورية منفصلة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.18",
+  "lecture": 4,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد عرض FDM لثلاث قنوات بعرض 4 kHz لكل منها، وحزمتي حماية بعرض 1 kHz لكل منهما.</p>\n",
+  "answer": "<p><strong>عرض حزمة FDM مع الحماية</strong><span\nclass=\"math display\">\\[B_{\\rm total}=NB_c+(N-1)B_g\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nB=3(4)+2(1)\\\\[2pt]\\text{in kHz}\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[B=14\\text{\nkHz}\\]</span></p>\n<p><span class=\"math inline\">\\(B=3(4)+2(1)=14\\)</span> kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.19",
+  "lecture": 4,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد المعدل لإطارات من 66 بت بمعدل 8 آلاف إطار/ثانية.</p>\n",
+  "answer": "<p><strong>معدل إرسال TDM</strong><span\nclass=\"math display\">\\[R_b=N_{\\rm frame}f_{\\rm frame}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[R_b=66(8000)\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\nR_b&amp;=528000\\text{ bit/s}\\\\[2pt]&amp;=528\\text{ kbit/s}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(R_b=66(8000)=528\\)</span> kbit/s.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.20",
+  "lecture": 4,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد كفاءة البيانات الأصلية إذا كانت 64 بتاً من مجموع 66 بتاً.</p>\n",
+  "answer": "<p><strong>كفاءة البيانات الأصلية</strong><span\nclass=\"math display\">\\[\\eta=\\frac{N_{\\rm payload}}{N_{\\rm\ntotal}}\\times100\\%\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\eta=\\frac{64}{66}\\times100\\%\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[\\eta\\simeq96.97\\%\\]</span></p>\n<p><span class=\"math inline\">\\(64/66=96.97\\%\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.21",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>استخدم المتنبئ <span class=\"math inline\">\\(\\hat x[k]=\\tilde\nx[k-1]\\)</span>وقيمة معاد بناؤها ابتدائية صفراً، وقرّب خطأ التنبؤ إلى أقرب مضاعف لـ0.25 V دون قصّ. للدخل <span\nclass=\"math inline\">\\((0.30,0.70,0.60)\\)</span> V، احسب أخطاء التنبؤ والأخطاء المكمّمة والعينات المعاد بناؤها.</p>\n",
+  "answer": "<p><strong>علاقات DPCM ذي الحلقة المغلقة</strong><span\nclass=\"math display\">\\[\\begin{aligned}\ne[k]=x[k]-\\tilde x[k-1]\\\\[2pt]e_q[k]=Q(e[k])\\\\[2pt]\\tilde x[k]=\\tilde\nx[k-1]+e_q[k]\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>عالج العينة الأولى بدءاً من حالة الصفر.<span\nclass=\"math display\">\\[\\begin{aligned}\ne[0]&amp;=0.30-0\\\\[2pt]&amp;=0.30\\\\[2pt]e_q[0]=0.25\\\\[2pt]\\tilde\nx[0]&amp;=0+0.25\\\\[2pt]&amp;=0.25\n\\end{aligned}\\]</span></p>\n<p>تنبّأ من القيمة المعاد بناؤها، لا من الدخل الأصلي.<span\nclass=\"math display\">\\[\\begin{aligned}\ne[1]&amp;=0.70-0.25\\\\[2pt]&amp;=0.45\\\\[2pt]e_q[1]=0.50\\\\[2pt]\\tilde\nx[1]&amp;=0.25+0.50\\\\[2pt]&amp;=0.75\n\\end{aligned}\\]</span></p>\n<p>حدّث مرة أخرى باستخدام إعادة البناء السابقة.<span\nclass=\"math display\">\\[\\begin{aligned}\ne[2]&amp;=0.60-0.75\\\\[2pt]&amp;=-0.15\\\\[2pt]e_q[2]=-0.25\\\\[2pt]\\tilde\nx[2]&amp;=0.75-0.25\\\\[2pt]&amp;=0.50\n\\end{aligned}\\]</span></p>\n<p>إعادة البناء <span class=\"math inline\">\\((0.25,0.75,0.50)\\)</span>\nV. أخطاء إعادة البناء هي <span\nclass=\"math inline\">\\((-0.05,+0.05,-0.10)\\)</span> V.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.22",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>يأخذ نظام DM العينات بخمسة أمثال معدل نايكويست لحزمة رسالة 3 kHz، وخطوته 250 mV. اشتق واحسب أكبر سعة لموجة جيبية بتردد 2 kHz تحقق شرط تتبع الميل.</p>\n",
+  "answer": "<p><strong>شرط تتبع ميل الموجة الجيبية</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nf_s=5(2B)\\\\[2pt]\\Delta f_s\\ge\\max|x\\prime(t)|=2\\pi f_mA_m\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>أوجد معدل العينات.<span class=\"math display\">\\[\\begin{aligned}\nf_s&amp;=5(2)(3000)\\\\[2pt]&amp;=30000\\text{ sample/s}\n\\end{aligned}\\]</span></p>\n<p>اشتق الدخل الجيبي.<span\nclass=\"math display\">\\[\\begin{aligned}\nx(t)=A_m\\sin(2\\pi f_mt)\\\\[2pt]\\max|x\\prime(t)|=2\\pi f_m A_m\n\\end{aligned}\\]</span></p>\n<p>اشترط أن يكون ميل السلم مساوياً لأقصى ميل للدخل أو أكبر منه.<span\nclass=\"math display\">\\[\\Delta f_s\\ge2\\pi f_m A_m\\]</span></p>\n<p>حلّ لإيجاد السعة.<span\nclass=\"math display\">\\[A_m\\le\\frac{0.25(30000)}{2\\pi(2000)}=0.59683\\text{\nV}\\]</span></p>\n<p>أكبر سعة نحو 0.597 V وفق شرط الميل؛ لا يعني ذلك زوال خطأ التحبّب.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.23",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>أربع قنوات، كل منها تعطي عينات من 8 بت بمعدل 8 آلاف عينة/ثانية. يحمل الإطار عينة لكل قناة وبت تأطير واحداً. أوجد حجم الإطار ومعدل الوصلة وفترة الإطار وفترة البت وكفاءة البيانات وأقل عرض حزمة أساسية مثالي.</p>\n",
+  "answer": "<p><strong>علاقات إطار PCM-TDM ومعدله</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nN_f=Nn+h\\\\[2pt]R_b=N_ff_f\\\\[2pt]T_f=1/f_f\\\\[2pt]T_b=1/R_b\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب بتات الإطار.<span class=\"math display\">\\[\\begin{aligned}\nN_f&amp;=4(8)+1\\\\[2pt]&amp;=33\\text{ bits}\n\\end{aligned}\\]</span></p>\n<p>عينة لكل قناة في الإطار تحدّد معدل الإطارات.<span\nclass=\"math display\">\\[\\begin{aligned}\nf_f=8000\\text{ frame/s}\\\\[2pt]R_b&amp;=33(8000)\\\\[2pt]&amp;=264\\text{\nkbit/s}\n\\end{aligned}\\]</span></p>\n<p>خذ المقلوب.<span class=\"math display\">\\[\\begin{aligned}\nT_f&amp;=1/8000\\\\[2pt]&amp;=125\\,\\mu\\text{s}\\\\[2pt]T_b&amp;=1/264000\\\\[2pt]&amp;=3.78788\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>احسب الكفاءة وعرض الحزمة.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\eta&amp;=32/33\\\\[2pt]&amp;=96.97\\%\\\\[2pt]B_{\\min}&amp;=264/2\\\\[2pt]&amp;=132\\text{\nkHz}\n\\end{aligned}\\]</span></p>\n<p>33 بتاً/إطار؛ 264 kbit/s؛ فترة الإطار 125 ميكروثانية؛ فترة البت 3.788 ميكروثانية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.24",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>خمس قنوات هاتفية، حزمة كل منها 4 kHz، وقناة موسيقى بحزمة 20 kHz. خذ عينات كل قناة بمعدل نايكويست النظري. أوجد معدل عينات PAM الكلي وتوزيعاً ممكناً عند 8 آلاف إطار/ثانية وعرض حزمة نايكويست الأساسية الحقيقية المثالي. أهمل أزمنة الحماية.</p>\n",
+  "answer": "<p><strong>أخذ العينات غير متساوي المعدل في PAM-TDM</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nf_{s,i}=2B_i\\\\[2pt]R_{\\rm sample}=\\sum_i f_{s,i}\\\\[2pt]B_{\\min}=R_{\\rm\nsample}/2\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>أوجد معدل كل قناة.<span\nclass=\"math display\">\\[\\begin{aligned}\nf_{s,v}=8\\text{ ksample/s}\\\\[2pt]f_{s,m}=40\\text{ ksample/s}\n\\end{aligned}\\]</span></p>\n<p>اجمع معدلات العينات، لا عدد القنوات فقط.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_{sample}&amp;=5(8)+40\\\\[2pt]&amp;=80\\text{ ksample/s}\n\\end{aligned}\\]</span></p>\n<p>عند 8 آلاف إطار/ثانية خصّص عينة لكل قناة صوتية وخمس عينات للموسيقى.<span class=\"math display\">\\[\\begin{aligned}\nN_f&amp;=5+5\\\\[2pt]&amp;=10\\text{ sample slots/frame}\n\\end{aligned}\\]</span></p>\n<p>استخدم عرض حزمة نايكويست المثالي لرموز PAM الحقيقية.<span\nclass=\"math display\">\\[\\begin{aligned}\nB_{\\min}&amp;=R_{sample}/2\\\\[2pt]&amp;=80/2\\\\[2pt]&amp;=40\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>80 ألف عينة/ثانية وعرض حزمة مثالي 40 kHz. يجب تساوي الفواصل بين عينات الموسيقى؛ ترتيب ممكن هو M,V1,M,V2,M,V3,M,V4,M,V5.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "4.25",
+  "lecture": 4,
+  "kind": "Worked problem",
+  "question": "<p>إطار PCM فيه 24 قناة، لكل منها عينة من 8 بت، مع بت تأطير واحد. معدل الإطارات 8000 إطار/ثانية. أوجد معدل البيانات والمعدل الكلي ونسبة بتات التأطير.</p>\n",
+  "answer": "<p><strong>طول إطار PCM ومعدل الإرسال</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nN_{\\rm payload}=Nn\\\\[2pt]N_f=Nn+h\\\\[2pt]R=N_ff_f\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب جزأي الإطار.<span\nclass=\"math display\">\\[\\begin{aligned}\nN_{payload}&amp;=24(8)\\\\[2pt]&amp;=192\\\\[2pt]N_f&amp;=192+1\\\\[2pt]&amp;=193\n\\end{aligned}\\]</span></p>\n<p>اضرب كلاً منهما في معدل الإطارات.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_{payload}&amp;=192(8000)\\\\[2pt]&amp;=1.536\\text{\nMbit/s}\\\\[2pt]R_{total}&amp;=193(8000)\\\\[2pt]&amp;=1.544\\text{ Mbit/s}\n\\end{aligned}\\]</span></p>\n<p>استخدم مجموع البتات في المقام.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\eta_{\\rm framing}&amp;=1/193\\times100\\%\\\\[2pt]&amp;=0.5181\\%\n\\end{aligned}\\]</span></p>\n<p>معدل البيانات 1.536 Mbit/s؛ الكلي 1.544 Mbit/s؛ نسبة التأطير 0.5181%.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.01",
+  "lecture": 5,
+  "kind": "List",
+  "question": "<p>اذكر خاصية الحامل التي تتغيّر في ASK وPSK وFSK.</p>\n",
+  "answer": "<ul>\n<li><p>ASK يغيّر السعة.</p></li>\n<li><p>PSK يغيّر الطور.</p></li>\n<li><p>FSK يغيّر التردد.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "5.02",
+  "lecture": 5,
+  "kind": "Draw",
+  "question": "<p>ارسم BPSK للبتات 1,0,1,1 باستخدام طور 0 للبت 1 وطور π للبت 0.</p>\n",
+  "answer": "<p>ثبّت سعة الحامل وتردده، واعكس إشارته للبت 0. آخر بتين لهما الطور نفسه لأن كليهما 1. يكمل الحامل المرسوم ثلاث دورات لكل بت.</p>\n<p>اللوحة العليا للبتات والسفلى للحامل. الحدود المنقّطة تفصل فترات البت؛ عكس إشارة الحامل يغيّر الطور بمقدار π.</p>\n",
+  "figure": "assets/easy_05.svg"
+ },
+ {
+  "id": "5.03",
+  "lecture": 5,
+  "kind": "Explain",
+  "question": "<p>لماذا يحتاج مستقبل BPSK إلى مرجع طور للحامل؟</p>\n",
+  "answer": "<p>يمثّل البت بطور بالنسبة إلى مرجع؛ يجب أن يقارن المستقبل الموجة بحامل متزامن بصورة مناسبة للتمييز الثابت بين الطورين.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.04",
+  "lecture": 5,
+  "kind": "Compare",
+  "question": "<p>قارن تمثيل الإشارة في OOK وBPSK.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>OOK</strong></th>\n<th style=\"text-align: left;\"><strong>BPSK</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الحالتان</td>\n<td style=\"text-align: left;\">الحامل غائب / موجود</td>\n<td style=\"text-align: left;\">طوران متعاكسان</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">طاقة الرمز</td>\n<td style=\"text-align: left;\">صفرية أو غير صفرية</td>\n<td style=\"text-align: left;\">متساوية للحالتين</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">خاصية الرسالة</td>\n<td style=\"text-align: left;\">السعة</td>\n<td style=\"text-align: left;\">الطور</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "5.05",
+  "lecture": 5,
+  "kind": "Explain",
+  "question": "<p>ما معنى التعامد بين إشارتَي BFSK؟</p>\n",
+  "answer": "<p>جداؤهما الداخلي خلال فترة رصد الرمز يساوي صفراً، فيفصل المربط بين الإشارتين المثاليتين. يعتمد تباعد التردد المطلوب على افتراضات الطور ونوع المستقبل.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.06",
+  "lecture": 5,
+  "kind": "Interpret",
+  "question": "<p>كاشف BPSK عتبته صفر ويربط القيم الموجبة بالبت 1. ما القرار للخرج السالب؟ ولماذا؟</p>\n",
+  "answer": "<p>نقرر البت 0؛ خرج المربط السالب يقع في جهة النقطة السالبة في فضاء الإشارة. قد تنقل الضوضاء الملاحظة عبر الصفر فيقع خطأ.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.07",
+  "lecture": 5,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لمرسل BPSK، وسمِّ الأجزاء واشرح وظيفة كل جزء ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-5.svg\" alt=\"Labelled block diagram for question 5.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">محوّل BPSK</td>\n<td style=\"text-align: left;\">يحوّل البت 1 إلى +1 والبت 0 إلى -1 وفق الاصطلاح المعتمد.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">مذبذب الحامل</td>\n<td style=\"text-align: left;\">يوفّر الحامل الجيبي.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المضاعِف</td>\n<td style=\"text-align: left;\">يغيّر إشارة الحامل، فينتج الطور 0 أو π.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">الخرج</td>\n<td style=\"text-align: left;\">يحمل الإشارة المضمّنة؛ يتحكم تشكيل النبضات العملي بعرض حزمته.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "5.08",
+  "lecture": 5,
+  "kind": "Compare",
+  "question": "<p>قارن OOK وBPSK في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>OOK</strong></th>\n<th style=\"text-align: left;\"><strong>BPSK</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">حالتا البت</td>\n<td style=\"text-align: left;\">الحامل غائب / موجود</td>\n<td style=\"text-align: left;\">طوران متعاكسان</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">طاقة الرمز</td>\n<td style=\"text-align: left;\">صفرية أو غير صفرية</td>\n<td style=\"text-align: left;\">متساوية للبتين</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">تحمل المعلومات في</td>\n<td style=\"text-align: left;\">السعة</td>\n<td style=\"text-align: left;\">الطور</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "5.09",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>عرّف التضمين الرقمي.</p>\n",
+  "answer": "<p>اختيار موجة من مجموعة محدودة لكل رمز.</p>\n<p>اختيار موجة من مجموعة محدودة لكل رمز.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.10",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>ما الذي يتغيّر في PSK؟</p>\n",
+  "answer": "<p>طور الحامل.</p>\n<p>طور الحامل.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.11",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>ما هو OOK؟</p>\n",
+  "answer": "<p>حالة من ASK تكون فيها سعة أحد الرمزين صفراً.</p>\n<p>حالة من ASK تكون فيها سعة أحد الرمزين صفراً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.12",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>ما فرق الطور المستخدم في BPSK؟</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(\\pi\\)</span> راديان، أو <span\nclass=\"math inline\">\\(180^\\circ\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\pi\\)</span> راديان، أو <span\nclass=\"math inline\">\\(180^\\circ\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.13",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>ماذا يتطلب الكشف المتزامن؟</p>\n",
+  "answer": "<p>مرجع حامل متزامناً وتوقيت رصد صحيحاً.</p>\n<p>مرجع حامل متزامناً وتوقيت رصد صحيحاً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.14",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>ما هو تعامد الموجات؟</p>\n",
+  "answer": "<p>جداء داخلي صفري خلال فترة الرصد.</p>\n<p>جداء داخلي صفري خلال فترة الرصد.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.15",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد <span class=\"math inline\">\\(R_s\\)</span> لتضمين ثنائي عند 40 kbit/s.</p>\n",
+  "answer": "<p><strong>معدل الرموز الثنائية</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nk=1\\\\[2pt]R_s=R_b/k\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[R_s=\\frac{40000}{1}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\nR_s&amp;=40000\\text{ symbol/s}\\\\[2pt]&amp;=40\\text{ kbaud}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(R_s=40\\)</span> kbaud.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.16",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>نبضة التشغيل في OOK هي <span class=\"math inline\">\\(s(t)=A\\cos(2\\pi\nf_ct)\\)</span> عند <span class=\"math inline\">\\(0\\le t&lt;T_b\\)</span>، حيث <span class=\"math inline\">\\(A=1\\)</span> V و <span\nclass=\"math inline\">\\(T_b=20\\,\\mu\\)</span>s. أوجد طاقة التشغيل لحمل مطبّع <span class=\"math inline\">\\(1\\,\\Omega\\)</span> ، بافتراض عدد صحيح من دورات الحامل.</p>\n",
+  "answer": "<p><strong>طاقة رمز التشغيل في OOK</strong><span\nclass=\"math display\">\\[E_1=A^2T_b/2\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[E_1=\\frac{1^2(20\\times10^{-6})}{2}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[E_1=10\\,\\mu\\text{J}\\]</span></p>\n<p><span class=\"math inline\">\\(E_1=A^2T_b/2=10\\,\\mu\\)</span>J عندما <span\nclass=\"math inline\">\\(1\\,\\Omega\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.17",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>لـOOK متساوي الاحتمال، طاقة الإطفاء صفر وطاقة التشغيل <span\nclass=\"math inline\">\\(10\\,\\mu\\)</span>J. أوجد متوسط طاقة البت.</p>\n",
+  "answer": "<p><strong>متوسط طاقة بت OOK</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nE_b&amp;=(E_0+E_1)/2\\\\[2pt]&amp;=E_1/2\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[E_b=\\frac{0+10}{2}\\,\\mu\\text{J}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[E_b=5\\,\\mu\\text{J}\\]</span></p>\n<p><span class=\"math inline\">\\(E_b=E_1/2=5\\,\\mu\\)</span>J.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.18",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>في BPSK يمثّل البت 1 بالنقطة الموجبة والعتبة صفر. اتخذ القرار لإحصاء مستقبَل مقداره <span\nclass=\"math inline\">\\(z=0.2\\)</span>.</p>\n",
+  "answer": "<p><strong>قرار عتبة BPSK المتزامن</strong><span\nclass=\"math display\">\\[z\\ge0\\Rightarrow1,\\quad\nz&lt;0\\Rightarrow0\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[z=0.2&gt;0\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\widehat\nb=1\\]</span></p>\n<p>البت 1 وفق التحويل المعطى.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.19",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد تباعد نغمتي BFSK المتعامد غير المتزامن عند 25 kbit/s.</p>\n",
+  "answer": "<p><strong>تباعد ترددي BFSK المتعامد غير المتزامن</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\delta f&amp;=1/T_b\\\\[2pt]&amp;=R_b\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span class=\"math display\">\\[\\delta\nf=25000\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\delta f=25\\text{\nkHz}\\]</span></p>\n<p><span class=\"math inline\">\\(1/T_b=25\\)</span> kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.20",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد عرض حزمة مرور BPSK بتشكيل جيب التمام المرفوع عند <span\nclass=\"math inline\">\\(R_b\\)</span>=80 kbit/s و <span\nclass=\"math inline\">\\(\\alpha\\)</span> = 0.25.</p>\n",
+  "answer": "<p><strong>عرض حزمة المرور لجيب التمام المرفوع</strong><span\nclass=\"math display\">\\[B=(1+\\alpha)R_b\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[B=(1+0.25)(80000)\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\nB&amp;=100000\\text{ Hz}\\\\[2pt]&amp;=100\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(B=1.25(80)=100\\)</span> kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.21",
+  "lecture": 5,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد تقريب الامتداد بين أول انعدامين خارجيين لـBFSK مستطيل بتباعد نغمتين 10 kHz ومعدل 10 kbit/s.</p>\n",
+  "answer": "<p><strong>عرض الحزمة بين الانعدامَين الخارجيين لـBFSK المستطيل</strong><span\nclass=\"math display\">\\[B_{\\rm null}\\simeq\\delta f+2R_b\\]</span></p>\n<p><strong>التعويض</strong><span class=\"math display\">\\[B_{\\rm\nnull}\\simeq10000+2(10000)\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[B_{\\rm\nnull}\\simeq30\\text{ kHz}\\]</span></p>\n<p><span class=\"math inline\">\\(B\\approx10+20=30\\)</span> kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.22",
+  "lecture": 5,
+  "kind": "Concept",
+  "question": "<p>في مستقبل BPSK بعتبة صفر، هل إحصاء القرار الموجب وحده يثبت صحة البت؟ وضّح.</p>\n",
+  "answer": "<p>لا؛ تعتمد الصحة أيضاً على البت المرسل.</p>\n<p>لا؛ تعتمد الصحة أيضاً على البت المرسل.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.23",
+  "lecture": 5,
+  "kind": "Worked problem",
+  "question": "<p>استخدم البتات 10110. في OOK استخدم A للبت 1 وصفر للبت 0. في BPSK استخدم طور صفر للبت 1 وπ للبت 0. في BFSK استخدم <span\nclass=\"math inline\">\\(f_1\\)</span> للبت 1 و <span\nclass=\"math inline\">\\(f_0\\)</span> للبت 0. اكتب متتالية المعاملات واشرح الرسوم المتحاذية زمنياً.</p>\n",
+  "answer": "<p><strong>تحويل البتات إلى سعة وطور وتردد</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nA_{\\rm OOK}=Ab\\\\[2pt]\\theta_{\\rm BPSK}=\\pi(1-b)\\\\[2pt]f_{\\rm\nBFSK}=f_0+(f_1-f_0)b\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>طبّق تحويل السعة.<span class=\"math display\">\\[\\mathbf\nA_{\\rm OOK}=(A,0,A,A,0)\\]</span></p>\n<p>طبّق تحويل الطور.<span\nclass=\"math display\">\\[\\boldsymbol\\theta_{\\rm\nBPSK}=(0,\\pi,0,0,\\pi)\\]</span></p>\n<p>طبّق تحويل التردد.<span class=\"math display\">\\[\\mathbf\nf_{\\rm BFSK}=(f_1,f_0,f_1,f_1,f_0)\\]</span></p>\n<p>اتبع فترة البت نفسها عمودياً عبر لوحات الموجات الثلاث.</p>\n<p>يتحكم نمط بتات واحد بثلاث خواص فيزيائية مختلفة؛ وعلى الكاشف قياس الخاصية المختارة.</p>\n",
+  "figure": "assets/binary.svg"
+ },
+ {
+  "id": "5.24",
+  "lecture": 5,
+  "kind": "Worked problem",
+  "question": "<p>إحداثيات كوكبة BPSK هي <span\nclass=\"math inline\">\\(\\pm\\sqrt{E_b}\\)</span> حيث <span\nclass=\"math inline\">\\(E_b=4\\)</span> بوحدات طاقة مطبّعة. يستخدم البت 1 النقطة الموجبة. للإحصاءات المستقبلة <span\nclass=\"math inline\">\\((0.8,-0.3,0.1,-1.2)\\)</span>، أعط القرارات وأقل مسافة بين النقطتين.</p>\n",
+  "answer": "<p><strong>إحداثيات فضاء BPSK والمسافة</strong><span\nclass=\"math display\">\\[\\begin{aligned}\ns_1=+\\sqrt{E_b}\\\\[2pt]s_0=-\\sqrt{E_b}\\\\[2pt]d=|s_1-s_0|\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>أوجد الإحداثيين المثاليين.<span\nclass=\"math display\">\\[\\begin{aligned}\ns_1=+2\\\\[2pt]s_0=-2\n\\end{aligned}\\]</span></p>\n<p>طبّق عتبة الصفر على كل ملاحظة.<span\nclass=\"math display\">\\[\\hat{\\mathbf b}=(1,0,1,0)\\]</span></p>\n<p>احسب المسافة بين النقطتين.<span\nclass=\"math display\">\\[\\begin{aligned}\nd&amp;=|2-(-2)|\\\\[2pt]&amp;=4\\\\[2pt]d^2&amp;=16\\\\[2pt]&amp;=4E_b\n\\end{aligned}\\]</span></p>\n<p>القرارات 1010 والمسافة 4. حساب عدد الأخطاء الفعلي يتطلب البتات المرسلة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "5.25",
+  "lecture": 5,
+  "kind": "Worked problem",
+  "question": "<p>عند <span class=\"math inline\">\\(R_b=20\\)</span> kbit/s، أوجد عرض BPSK بزيادة طيفية 0.25، وعرض BPSK المستطيل بين أول انعدامَين، وامتداد BFSK المستطيل الخارجي بتباعد نغمتيه 20 kHz. لماذا تختلف النتائج؟</p>\n",
+  "answer": "<p><strong>تعريفات عرض حزمة المرور</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nB_{\\rm RC}=(1+\\alpha)R_b\\\\[2pt]B_{\\rm main}=2R_b\\\\[2pt]B_{\\rm\nFSK}\\simeq\\delta f+2R_b\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>استخدم قانون حزمة المرور لجيب التمام المرفوع.<span\nclass=\"math display\">\\[\\begin{aligned}\nB_{RC}&amp;=(1+0.25)(20)\\\\[2pt]&amp;=25\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>يقع أول انعدامَين لـBPSK المستطيل على بعد معدل بتات واحد من الحامل.<span\nclass=\"math display\">\\[\\begin{aligned}\nB_{main}&amp;=2R_b\\\\[2pt]&amp;=2(20)\\\\[2pt]&amp;=40\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>أضف معدل بتات واحداً خارج كل نغمة طرفية لـBFSK.<span\nclass=\"math display\">\\[B_{FSK}\\simeq20+2(20)=60\\text{ kHz}\\]</span></p>\n<p>25 و40 و60 kHz. تختلف أشكال النبضات أو مقاييس الحزمة؛ وتبقى الفصوص الجانبية في الإشارات المستطيلة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.01",
+  "lecture": 6,
+  "kind": "List",
+  "question": "<p>عرّف M وk ومعدل البتات ومعدل الرموز.</p>\n",
+  "answer": "<ul>\n<li><p><span class=\"math inline\">\\(M\\)</span>: عدد الرموز الممكنة.</p></li>\n<li><p><span class=\"math inline\">\\(k=\\log_2M\\)</span>: بتات الرمز عندما يكون عدد الحالات قوة للعدد 2.</p></li>\n<li><p>معدل البتات: عدد البتات المرسلة في الثانية.</p></li>\n<li><p>معدل الرموز: عدد الرموز المرسلة في الثانية.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "6.02",
+  "lecture": 6,
+  "kind": "Draw",
+  "question": "<p>ارسم كوكبة QPSK بترميز غراي، وسمِّ محوري I وQ.</p>\n",
+  "answer": "<p>ضع أربع نقاط متساوية التباعد على دائرة. تختلف تسميات النقطتين المتجاورتين ببت واحد. هذا توزيع غراي صحيح؛ يجب أن يستخدم المستقبل التوزيع نفسه.</p>\n<p>المحور الأفقي I والعمودي Q. تمثّل كل نقطة بتين. بعدها عن الأصل هو جذر طاقة الرمز في فضاء إشارة مطبّع.</p>\n",
+  "figure": "assets/easy_06.svg"
+ },
+ {
+  "id": "6.03",
+  "lecture": 6,
+  "kind": "Explain",
+  "question": "<p>لماذا يحمل رمز QPSK ضعف بتات رمز BPSK؟</p>\n",
+  "answer": "<p>يختار BPSK بين حالتين، أي بت واحد. يختار QPSK بين أربع حالات، أي بتين. لذلك يكون معدل رموز QPSK نصف معدل BPSK عند تساوي معدل البتات.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.04",
+  "lecture": 6,
+  "kind": "Compare",
+  "question": "<p>قارن كوكبتي M-PSK وQAM.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>M-PSK</strong></th>\n<th style=\"text-align: left;\"><strong>QAM</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">النقاط</td>\n<td style=\"text-align: left;\">على دائرة واحدة</td>\n<td style=\"text-align: left;\">على أنصاف أقطار متعددة عادةً</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">سعة الرمز</td>\n<td style=\"text-align: left;\">ثابتة</td>\n<td style=\"text-align: left;\">متغيرة عادةً</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المعلومات</td>\n<td style=\"text-align: left;\">الطور</td>\n<td style=\"text-align: left;\">السعة والطور</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "6.05",
+  "lecture": 6,
+  "kind": "Explain",
+  "question": "<p>ما فائدة ترميز غراي؟</p>\n",
+  "answer": "<p>تختلف النقاط المتجاورة ببت واحد. عند SNR مرتفع تسود أخطاء الجار الأقرب، فيغيّر كثير منها بتاً واحداً فقط. لا يزيد ترميز غراي المسافة الهندسية بين النقاط.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.06",
+  "lecture": 6,
+  "kind": "Interpret",
+  "question": "<p>وفق توزيع QPSK في السؤال 6.02، ما البتان عند I=-1 وQ=+1؟</p>\n",
+  "answer": "<p>النقطة العلوية اليسرى تحمل 01. تجعلها I السالبة يسار الأصل وQ الموجبة فوق المحور الأفقي.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.07",
+  "lecture": 6,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لمرسل QPSK، وسمِّ الأجزاء واشرح وظائفها ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-6.svg\" alt=\"Labelled block diagram for question 6.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">محوّل I/Q</td>\n<td style=\"text-align: left;\">يحوّل كل زوج بتات إلى إحداثيين ذوي إشارة.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">فرع I</td>\n<td style=\"text-align: left;\">يضرب I في حامل جيب التمام.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">فرع Q</td>\n<td style=\"text-align: left;\">يضرب Q في حامل جيب سالب، متعامد مع جيب التمام.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">الجامع</td>\n<td style=\"text-align: left;\">يُكوّن <span\nclass=\"math inline\">\\(s(t)=I(t)\\cos(2\\pi f_ct)-Q(t)\\sin(2\\pi\nf_ct)\\)</span>. يحدّد تشكيل النبضات والتطبيع السعة والطيف العمليين.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "6.08",
+  "lecture": 6,
+  "kind": "Compare",
+  "question": "<p>قارن M-PSK وQAM في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>M-PSK</strong></th>\n<th style=\"text-align: left;\"><strong>QAM</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الكوكبة</td>\n<td style=\"text-align: left;\">نقاط على دائرة</td>\n<td style=\"text-align: left;\">نقاط على أنصاف أقطار متعددة</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">السعة</td>\n<td style=\"text-align: left;\">نصف قطر رموز ثابت</td>\n<td style=\"text-align: left;\">متغيرة عادةً</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">تحمل المعلومات في</td>\n<td style=\"text-align: left;\">الطور</td>\n<td style=\"text-align: left;\">السعة والطور</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "6.09",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>كم بتاً في الرمز متعدد الحالات؟</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(k=\\log_2M\\)</span> عند <span\nclass=\"math inline\">\\(M=2^k\\)</span>.</p>\n<p><span class=\"math inline\">\\(k=\\log_2M\\)</span> عند <span\nclass=\"math inline\">\\(M=2^k\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.10",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>ماذا تمثّل I وQ؟</p>\n",
+  "answer": "<p>معاملا دالتَي أساس لحاملين متعامدين.</p>\n<p>معاملا دالتَي أساس لحاملين متعامدين.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.11",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>كم طوراً في 8-PSK؟</p>\n",
+  "answer": "<p>ثمانية.</p>\n<p>ثمانية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.12",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>كم بتاً في رمز 16-QAM؟</p>\n",
+  "answer": "<p>أربعة.</p>\n<p>أربعة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.13",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>ما قاعدة القرار في AWGN مع تساوي الاحتمالات؟</p>\n",
+  "answer": "<p>اختيار أقرب نقطة في الكوكبة.</p>\n<p>اختيار أقرب نقطة في الكوكبة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.14",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>لماذا يتطلب QAM عالي الرتبة عناية بالمضخّمات؟</p>\n",
+  "answer": "<p>تشوّه السعة يغيّر إحداثيات الكوكبة.</p>\n<p>تشوّه السعة يغيّر إحداثيات الكوكبة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.15",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد <span class=\"math inline\">\\(R_s\\)</span> لـ8-PSK عند 90 kbit/s.</p>\n",
+  "answer": "<p><strong>تحويل معدل البتات إلى معدل الرموز</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nk=\\log_2 M\\\\[2pt]R_s=R_b/k\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nR_s&amp;=\\frac{90000}{\\log_2(8)}\\\\[2pt]&amp;=\\frac{90000}{3}\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[R_s=30\\text{\nkbaud}\\]</span></p>\n<p><span class=\"math inline\">\\(R_s=90/3=30\\)</span> kbaud.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.16",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد <span class=\"math inline\">\\(R_b\\)</span> لـ16-QAM عند 50 kbaud.</p>\n",
+  "answer": "<p><strong>معدل البتات متعدد الحالات</strong><span\nclass=\"math display\">\\[R_b=R_s\\log_2 M\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nR_b&amp;=50000\\log_2(16)\\\\[2pt]&amp;=50000(4)\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[R_b=200\\text{\nkbit/s}\\]</span></p>\n<p><span class=\"math inline\">\\(R_b=4(50)=200\\)</span> kbit/s.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.17",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد تباعد أطوار 16-PSK.</p>\n",
+  "answer": "<p><strong>التباعد الزاوي في PSK</strong><span\nclass=\"math display\">\\[\\Delta\\theta=360^\\circ/M\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\Delta\\theta=\\frac{360^\\circ}{16}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[\\Delta\\theta=22.5^\\circ\\]</span></p>\n<p><span class=\"math inline\">\\(360/16=22.5^\\circ\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.18",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>لكوكبة 16-QAM مربعة ومتساوية الاحتمالات، قيم كل محور ضمن <span\nclass=\"math inline\">\\(\\{-3a,-a,a,3a\\}\\)</span>. أوجد متوسط طاقة الرمز عندما <span class=\"math inline\">\\(a=2\\)</span> بوحدات فضاء إشارة مطبّعة.</p>\n",
+  "answer": "<p><strong>متوسط طاقة رمز 16-QAM</strong><span\nclass=\"math display\">\\[E_s=10a^2\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[E_s=10(2)^2\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\nE_s=40\\\\[2pt]\\text{(normalized energy units)}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(E_s=10a^2=40\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.19",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>لكوكبة 16-QAM مربعة وقيم كل محور ضمن <span\nclass=\"math inline\">\\(\\{-3,-1,1,3\\}\\)</span>، اكشف النقطة المستقبلة\n<span class=\"math inline\">\\((2.7,0.8)\\)</span> بقاعدة أقرب مسافة.</p>\n",
+  "answer": "<p><strong>كشف QAM بأقرب إحداثيين</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\widehat I=\\operatorname{nearest}\\{-3,-1,1,3\\}\\\\[2pt]\\widehat\nQ=\\operatorname{nearest}\\{-3,-1,1,3\\}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n|2.7-3|=0.3\\\\[2pt]|0.8-1|=0.2\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[(\\widehat\nI,\\widehat Q)=(3,1)\\]</span></p>\n<p><span class=\"math inline\">\\((3,1)\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.20",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد عرض حزمة المرور الكامل لجيب التمام المرفوع في QPSK عند 100 kbit/s ومعامل زيادة طيفية <span class=\"math inline\">\\(\\alpha=0.2\\)</span>.</p>\n",
+  "answer": "<p><strong>عرض حزمة QPSK لجيب التمام المرفوع</strong><span\nclass=\"math display\">\\[B=(1+\\alpha)R_b/2\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[B=\\frac{(1+0.2)(100000)}2\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[B=60\\text{\nkHz}\\]</span></p>\n<p><span class=\"math inline\">\\(B=1.2(100/2)=60\\)</span> kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.21",
+  "lecture": 6,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد الكفاءة الطيفية لـ64-QAM دون ترميز تصحيح ومعامل زيادة طيفية <span class=\"math inline\">\\(\\alpha=0.5\\)</span>، باستخدام عرض حزمة المرور الكامل.</p>\n",
+  "answer": "<p><strong>الكفاءة الطيفية لجيب التمام المرفوع</strong><span\nclass=\"math display\">\\[\\eta=\\log_2 M/(1+\\alpha)\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\eta&amp;=\\frac{\\log_2(64)}{1+0.5}\\\\[2pt]&amp;=\\frac6{1.5}\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\eta=4\\text{\nbit/s/Hz}\\]</span></p>\n<p><span class=\"math inline\">\\(\\eta=6/1.5=4\\)</span> bit/s/Hz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.22",
+  "lecture": 6,
+  "kind": "Concept",
+  "question": "<p>لماذا نميّز أخطاء الرموز عن أخطاء البتات؟</p>\n",
+  "answer": "<p>الرمز الخاطئ قد يغيّر بتاً واحداً أو عدة بتات بحسب تسميته.</p>\n<p>الرمز الخاطئ قد يغيّر بتاً واحداً أو عدة بتات بحسب تسميته.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.23",
+  "lecture": 6,
+  "kind": "Worked problem",
+  "question": "<p>استخدم تسميات QPSK <span class=\"math inline\">\\(00,01,11,10\\)</span> عند أطوار <span class=\"math inline\">\\(45,135,225,315\\)</span> درجة. عندما\n<span class=\"math inline\">\\(E_s=2\\)</span>، حوّل 00111001 إلى أطوار ونقاط I/Q. عند 120 kbit/s أوجد معدل الرمز وفترته.</p>\n",
+  "answer": "<p><strong>إحداثيات QPSK ومعدل الرموز</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nI=\\sqrt{E_s}\\cos\\theta\\\\[2pt]Q=\\sqrt{E_s}\\sin\\theta\\\\[2pt]R_s=R_b/\\log_2M\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>قسّم البتات إلى أزواج.<span\nclass=\"math display\">\\[00\\mid11\\mid10\\mid01\\]</span></p>\n<p>اقرأ الأطوار من التوزيع المعطى.<span\nclass=\"math display\">\\[\\boldsymbol\\theta=(45,225,315,135)^\\circ\\]</span></p>\n<p>احسب I وQ باستخدام نصف قطر يساوي جذر طاقة الرمز.<span\nclass=\"math display\">\\[\\begin{aligned}\nI=\\sqrt2\\cos\\theta\\\\[2pt]Q=\\sqrt2\\sin\\theta\n\\end{aligned}\\]</span></p>\n<p>اكتب النقاط الناتجة.<span\nclass=\"math display\">\\[(I,Q)=(1,1),(-1,-1),(1,-1),(-1,1)\\]</span></p>\n<p>يشترك بتان في كل رمز.<span\nclass=\"math display\">\\[\\begin{aligned}\nR_s&amp;=120/2\\\\[2pt]&amp;=60\\text{\nkbaud}\\\\[2pt]T_s&amp;=1/60000\\\\[2pt]&amp;=16.667\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>أربعة رموز QPSK؛ المعدل 60 kbaud؛ الفترة 16.667 ميكروثانية.</p>\n",
+  "figure": "assets/qpsk_bank.svg"
+ },
+ {
+  "id": "6.24",
+  "lecture": 6,
+  "kind": "Worked problem",
+  "question": "<p>يستخدم 16-QAM المربع مستويات محاور <span\nclass=\"math inline\">\\(-3,-1,1,3\\)</span>، وتسمياتها <span\nclass=\"math inline\">\\(00,01,11,10\\)</span>. كل النقاط متساوية الاحتمال وتأتي بتات I أولاً. أوجد متوسط طاقة الرمز، واكشف <span\nclass=\"math inline\">\\((2.6,-0.7)\\)</span> واذكر بتاتها.</p>\n",
+  "answer": "<p><strong>متوسط طاقة رمز QAM</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nE_s=E[I^2]+E[Q^2]\\\\[2pt]E[I^2]=\\sum_i p_iI_i^2\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>احسب متوسط طاقة محور واحد.<span class=\"math display\">\\[\\begin{aligned}\nE[I^2]&amp;=(9+1+1+9)/4\\\\[2pt]&amp;=5\n\\end{aligned}\\]</span></p>\n<p>اجمع مساهمتي I وQ المتساويتين.<span\nclass=\"math display\">\\[\\begin{aligned}\nE_s&amp;=E[I^2]+E[Q^2]\\\\[2pt]&amp;=5+5\\\\[2pt]&amp;=10\n\\end{aligned}\\]</span></p>\n<p>اختر أقرب مستويين للإحداثيين.<span\nclass=\"math display\">\\[(\\hat I,\\hat Q)=(3,-1)\\]</span></p>\n<p>اقرأ تسميتي المحورين.<span class=\"math display\">\\[I:10,\\qquad\nQ:01\\quad\\Rightarrow\\quad1001\\]</span></p>\n<p>متوسط طاقة الرمز 10؛ النقطة المختارة (3,-1)؛ البتات 1001.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "6.25",
+  "lecture": 6,
+  "kind": "Worked problem",
+  "question": "<p>نظام 64-QAM لديه <span class=\"math inline\">\\(E_b/N_0=12\\)</span>\ndB ومعامل زيادة طيفية 0.5. أوجد <span\nclass=\"math inline\">\\(E_s/N_0\\)</span> خطياً وبالديسيبل، والكفاءة الطيفية.</p>\n",
+  "answer": "<p><strong>تحويل نسبة الطاقة والكفاءة الطيفية</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nk=\\log_2M\\\\[2pt]\\gamma_s=k\\gamma_b\\\\[2pt]\\eta=k/(1+\\alpha)\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>أوجد بتات الرمز وحوّل نسبة طاقة البت.<span\nclass=\"math display\">\\[\\begin{aligned}\nk&amp;=\\log_2\n64\\\\[2pt]&amp;=6\\\\[2pt]\\gamma_b&amp;=10^{12/10}\\\\[2pt]&amp;=15.8489\n\\end{aligned}\\]</span></p>\n<p>اضرب النسبة الخطية فقط.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\gamma_s&amp;=k\\gamma_b\\\\[2pt]&amp;=6(15.8489)\\\\[2pt]&amp;=95.0936\n\\end{aligned}\\]</span></p>\n<p>حوّل النتيجة إلى ديسيبل.<span class=\"math display\">\\[\\begin{aligned}\n\\gamma_{s,\\rm dB}&amp;=12+10\\log_{10}6\\\\[2pt]&amp;=19.7815\\text{ dB}\n\\end{aligned}\\]</span></p>\n<p>استخدم قانون كفاءة جيب التمام المرفوع.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\eta&amp;=k/(1+\\alpha)\\\\[2pt]&amp;=6/1.5\\\\[2pt]&amp;=4\\text{ bit/s/Hz}\n\\end{aligned}\\]</span></p>\n<p>النسبة الخطية هي <span\nclass=\"math inline\">\\(E_s/N_0=95.0936\\)</span>، وتقابل <span\nclass=\"math inline\">\\(19.7815\\)</span> dB. الكفاءة الطيفية هي <span\nclass=\"math inline\">\\(4\\)</span> bit/s/Hz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.01",
+  "lecture": 7,
+  "kind": "List",
+  "question": "<p>اذكر الكميتين اللازمتين لفك بت مرمّز تفاضلياً.</p>\n",
+  "answer": "<ul>\n<li><p>حالة الترميز المستقبلة الحالية.</p></li>\n<li><p>حالة الترميز المستقبلة السابقة، أو مرجع ابتدائي معلوم للبت الأول.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "7.02",
+  "lecture": 7,
+  "kind": "Draw",
+  "question": "<p>ارسم طور MSK المستمر للإشارات +1,-1,+1,+1,-1 بدءاً من الصفر.</p>\n",
+  "answer": "<p>يغيّر كل بت الطور بمقدار <span class=\"math inline\">\\(+\\pi/2\\)</span>\nأو <span class=\"math inline\">\\(-\\pi/2\\)</span>. صِل قيم الحدود بخطوط مستقيمة. يتغيّر الميل مع الإشارة، لكن الطور لا يقفز.</p>\n<p>المسافة الأفقية زمن بوحدات فترة البت. الموضع العمودي هو الطور المتراكم. يحدّد ميل كل خط تردداً، وتظهر النهايات المتصلة استمرارية الطور.</p>\n",
+  "figure": "assets/easy_07.svg"
+ },
+ {
+  "id": "7.03",
+  "lecture": 7,
+  "kind": "Explain",
+  "question": "<p>لماذا يقارن كشف الطور التفاضلي رمزين متجاورين؟</p>\n",
+  "answer": "<p>تحمل المعلومات في فرق الطور بين رمزين متتاليين. قد تزيل المقارنة الطور المجهول المشترك للحامل إذا بقي مستقراً بما يكفي خلال فترة المقارنة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.04",
+  "lecture": 7,
+  "kind": "Compare",
+  "question": "<p>قارن الترميز التفاضلي بالكشف التفاضلي.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>الترميز</strong></th>\n<th style=\"text-align: left;\"><strong>الكشف</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الموقع</td>\n<td style=\"text-align: left;\">المرسل</td>\n<td style=\"text-align: left;\">المستقبل</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">العملية</td>\n<td style=\"text-align: left;\">يربط حالات الترميز</td>\n<td style=\"text-align: left;\">يقارن الرموز المستقبلة</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الدور</td>\n<td style=\"text-align: left;\">يمثّل المعلومات بالتغيّرات</td>\n<td style=\"text-align: left;\">يقدّر المعلومات من التغيّرات</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "7.05",
+  "lecture": 7,
+  "kind": "Explain",
+  "question": "<p>لماذا يؤثر خطأ حالة ترميز واحدة في بتين مفكوكين تفاضلياً؟</p>\n",
+  "answer": "<p>يستخدم البت المفكوك الحالة الحالية والسابقة. تشترك الحالة الخاطئة في مقارنتين متتاليتين، فتؤثر في البتين.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.06",
+  "lecture": 7,
+  "kind": "Interpret",
+  "question": "<p>في رسم طور MSK للسؤال 7.02، ماذا يعني الخط الصاعد؟ وماذا يحدث بين إشارتَي +1 المتتاليتين؟</p>\n",
+  "answer": "<p>الخط الصاعد يعني ميل طور موجباً والتردد الأعلى وفق هذا التحويل. تبقي إشارتا +1 المتتاليتان الميل نفسه، فيستمر الخط بسلاسة عبر الحدّ بينهما.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.07",
+  "lecture": 7,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لمرسل PSK مرمّز تفاضلياً، وسمِّ الأجزاء واشرح وظائفها ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-7.svg\" alt=\"Labelled block diagram for question 7.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المرمّز التفاضلي</td>\n<td style=\"text-align: left;\">يحسب <span\nclass=\"math inline\">\\(d_k=b_k\\oplus d_{k-1}\\)</span> باستخدام حالة ابتدائية معلومة.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">مضمّن PSK</td>\n<td style=\"text-align: left;\">يحوّل الحالة المرمّزة إلى طور حامل.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الخرج</td>\n<td style=\"text-align: left;\">يحمل المعلومات في تغيّر الطور؛ يجب أن يستخدم المستقبل الاصطلاح نفسه.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "7.08",
+  "lecture": 7,
+  "kind": "Compare",
+  "question": "<p>قارن الترميز التفاضلي بالكشف التفاضلي في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>الترميز التفاضلي</strong></th>\n<th style=\"text-align: left;\"><strong>الكشف التفاضلي</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الموقع</td>\n<td style=\"text-align: left;\">المرسل</td>\n<td style=\"text-align: left;\">المستقبل</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">العملية</td>\n<td style=\"text-align: left;\">ربط الحالات المتتالية</td>\n<td style=\"text-align: left;\">مقارنة الأطوار المستقبلة</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الهدف</td>\n<td style=\"text-align: left;\">ترميز التغيّرات</td>\n<td style=\"text-align: left;\">استعادة التغيّرات</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "7.09",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>ما هو الترميز التفاضلي؟</p>\n",
+  "answer": "<p>تمثيل المعلومات بالتغيّر بين الحالات المتتالية.</p>\n<p>تمثيل المعلومات بالتغيّر بين الحالات المتتالية.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.10",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>لماذا يحتاج المرمّز وفاكّ الترميز التفاضليان إلى حالة مرجعية سابقة قبل أول بت معلومات؟</p>\n",
+  "answer": "<p>تحتاج المقارنة الأولى إلى مرجع.</p>\n<p>تحتاج المقارنة الأولى إلى مرجع.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.11",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>ماذا يقارن كاشف DPSK؟</p>\n",
+  "answer": "<p>طورَي رمزين مستقبَلين متجاورين.</p>\n<p>طورَي رمزين مستقبَلين متجاورين.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.12",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>هل يزيل الكشف التفاضلي انزياح التردد؟</p>\n",
+  "answer": "<p>لا؛ يسبّب انزياح التردد انجرافاً في الطور.</p>\n<p>لا؛ يسبّب انزياح التردد انجرافاً في الطور.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.13",
+  "lecture": 7,
+  "kind": "Worked exercise",
+  "question": "<p>رمّز بتات المعلومات 1,1,0 باستخدام <span\nclass=\"math inline\">\\(d_k=b_k\\oplus d_{k-1}\\)</span> وحالة ابتدائية\n<span class=\"math inline\">\\(d_{-1}=0\\)</span>.</p>\n",
+  "answer": "<p><strong>الترميز التفاضلي</strong><span\nclass=\"math display\">\\[d_k=b_k\\oplus d_{k-1}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>طبّق XOR على البت الأول.<span\nclass=\"math display\">\\[\\begin{aligned}\nd_0&amp;=1\\oplus0\\\\[2pt]&amp;=1\n\\end{aligned}\\]</span></p>\n<p>استخدم الحالة الجديدة للبت التالي.<span\nclass=\"math display\">\\[\\begin{aligned}\nd_1&amp;=1\\oplus1\\\\[2pt]&amp;=0\n\\end{aligned}\\]</span></p>\n<p>أكمل مع آخر بت معلومات.<span\nclass=\"math display\">\\[\\begin{aligned}\nd_2&amp;=0\\oplus0\\\\[2pt]&amp;=0\n\\end{aligned}\\]</span></p>\n<p>الحالات المرمّزة: 1,0,0.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.14",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>ماذا يحدث لفك الترميز التفاضلي إذا أخطأنا في حالة مرمّزة واحدة فقط وكانت حالتاها المجاورتان صحيحتين؟</p>\n",
+  "answer": "<p>قد يخطئ بتان مفكوكان متجاوران.</p>\n<p>قد يخطئ بتان مفكوكان متجاوران.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.15",
+  "lecture": 7,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد BER لـDBPSK عند النسبة الخطية <span\nclass=\"math inline\">\\(E_b/N_0\\)</span>=4.</p>\n",
+  "answer": "<p><strong>احتمال خطأ BPSK ذي الكشف التفاضلي</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nP_b=\\tfrac12e^{-\\gamma_b}\\\\[2pt]\\gamma_b=E_b/N_0\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[P_b=\\frac12e^{-4}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[P_b=0.0091578\\]</span></p>\n<p><span class=\"math inline\">\\(P_b=0.5e^{-4}=0.00916\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.16",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>ما انحراف تردد MSK؟</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(\\Delta f=1/(4T_b)\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\Delta f=1/(4T_b)\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.17",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>ما تباعد نغمتي MSK؟</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(2\\Delta f=1/(2T_b)\\)</span>.</p>\n<p><span class=\"math inline\">\\(2\\Delta f=1/(2T_b)\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.18",
+  "lecture": 7,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد ترددي MSK عندما <span class=\"math inline\">\\(f_c\\)</span> =300 kHz والانحراف 20 kHz.</p>\n",
+  "answer": "<p><strong>ترددا MSK</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nf_0=f_c-\\Delta f\\\\[2pt]f_1=f_c+\\Delta f\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nf_0=300-20\\\\[2pt]f_1=300+20\\\\[2pt]\\text{in kHz}\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\nf_0=280\\text{ kHz}\\\\[2pt]f_1=320\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>280 و320 kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.19",
+  "lecture": 7,
+  "kind": "Worked exercise",
+  "question": "<p>كم بتاً في رمز 8-FSK؟</p>\n",
+  "answer": "<p><strong>بتات الرمز في M-FSK</strong><span\nclass=\"math display\">\\[k=\\log_2M\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[k=\\log_2(8)\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[k=3\\text{\nbits/symbol}\\]</span></p>\n<p>ثلاثة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.20",
+  "lecture": 7,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد تباعد الترددات المتعامدة غير المتزامنة عند 20 kbaud.</p>\n",
+  "answer": "<p><strong>تباعد النغمات المتعامدة غير المتزامنة</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\delta f&amp;=1/T_s\\\\[2pt]&amp;=R_s\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\delta f&amp;=R_s\\\\[2pt]&amp;=20000\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\delta f=20\\text{\nkHz}\\]</span></p>\n<p><span class=\"math inline\">\\(\\delta f=20\\)</span> kHz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.21",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>أي فرع يختاره كاشف الطاقة؟</p>\n",
+  "answer": "<p>الفرع ذو الطاقة المقاسة الأكبر.</p>\n<p>الفرع ذو الطاقة المقاسة الأكبر.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.22",
+  "lecture": 7,
+  "kind": "Concept",
+  "question": "<p>هل عرض الحزمة حتى أول انعدام حدّ طيفي صارم؟</p>\n",
+  "answer": "<p>لا؛ تبقى فصوص جانبية بعد أول انعدامَين.</p>\n<p>لا؛ تبقى فصوص جانبية بعد أول انعدامَين.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.23",
+  "lecture": 7,
+  "kind": "Worked problem",
+  "question": "<p>رمّز بتات المعلومات 10110 باستخدام <span\nclass=\"math inline\">\\(d_k=b_k\\oplus d_{k-1}\\)</span> وحالة ابتدائية\n<span class=\"math inline\">\\(d_{-1}=0\\)</span>. ثم فكّ الترميز للتحقّق من كل بت.</p>\n",
+  "answer": "<p><strong>الترميز التفاضلي وفكّه</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nd_k=b_k\\oplus d_{k-1}\\\\[2pt]b_k=d_k\\oplus d_{k-1}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>طبّق XOR بالتتابع.<span class=\"math display\">\\[\\begin{aligned}\nd_0=1\\\\[2pt]d_1=1\\\\[2pt]d_2=0\\\\[2pt]d_3=1\\\\[2pt]d_4=1\n\\end{aligned}\\]</span></p>\n<p>فكّ الترميز باستخدام الحالة المرمّزة السابقة.<span\nclass=\"math display\">\\[\\begin{aligned}\nb_0&amp;=1\\oplus0\\\\[2pt]&amp;=1\\\\[2pt]b_1&amp;=1\\oplus1\\\\[2pt]&amp;=0\n\\end{aligned}\\]</span></p>\n<p>أكمل المقارنات المتبقية.<span\nclass=\"math display\">\\[\\begin{aligned}\nb_2&amp;=0\\oplus1\\\\[2pt]&amp;=1\\\\[2pt]b_3&amp;=1\\oplus0\\\\[2pt]&amp;=1\\\\[2pt]b_4&amp;=1\\oplus1\\\\[2pt]&amp;=0\n\\end{aligned}\\]</span></p>\n<p>المتتالية المرمّزة 11011؛ والمستعادة 10110.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.24",
+  "lecture": 7,
+  "kind": "Worked problem",
+  "question": "<p>استخدم تغيّر طور صفر للمعلومة 0 وπ للمعلومة 1. الأطوار المستقبلة مع المرجع هي <span\nclass=\"math inline\">\\(0,0,\\pi,\\pi,0\\)</span>. أوجد البتات المفكوكة، ثم نسبة الطاقة المطلوبة لـDBPSK لتحقيق BER مقداره <span\nclass=\"math inline\">\\(10^{-3}\\)</span> في AWGN مثالية.</p>\n",
+  "answer": "<p><strong>قرار الطور التفاضلي واحتمال خطأ DBPSK</strong><span class=\"math display\">\\[\\begin{aligned}\n\\Delta\\theta_k=\\theta_k-\\theta_{k-1}\\pmod{2\\pi}\\\\[2pt]P_b=\\tfrac12e^{-\\gamma_b}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اطرح الأطوار المتجاورة مع دورية دورة كاملة.<span\nclass=\"math display\">\\[\\Delta\\boldsymbol\\theta=(0,\\pi,0,\\pi)\\quad\\Rightarrow\\quad\\mathbf\nb=0101\\]</span></p>\n<p>استخدم قانون الخطأ الثنائي التفاضلي.<span\nclass=\"math display\">\\[10^{-3}=\\tfrac12e^{-\\gamma_b}\\]</span></p>\n<p>خذ اللوغاريتم الطبيعي.<span class=\"math display\">\\[\\begin{aligned}\n\\gamma_b&amp;=-\\ln(0.002)\\\\[2pt]&amp;=6.21461\n\\end{aligned}\\]</span></p>\n<p>حوّل إلى ديسيبل.<span\nclass=\"math display\">\\[10\\log_{10}(6.21461)=7.934\\text{ dB}\\]</span></p>\n<p>البتات 0101؛ نسبة DBPSK المثالية المطلوبة نحو 7.934 dB.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "7.25",
+  "lecture": 7,
+  "kind": "Worked problem",
+  "question": "<p>صمّم 8-FSK متعامداً غير متزامن عند 30 kbit/s بنبضات رمزية مستطيلة وأدنى تردد 100 kHz. أوجد معدل الرموز ومدتها والتباعد ومجموعة الترددات والامتداد بين أول انعدامَين خارجيين.</p>\n",
+  "answer": "<p><strong>معدل رموز M-FSK وتباعد النغمات وعرض الحزمة</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nk=\\log_2M\\\\[2pt]R_s=R_b/k\\\\[2pt]\\delta f=1/T_s\\\\[2pt]B_{\\rm\nnull}\\simeq(M-1)\\delta f+2/T_s\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>اجمع ثلاثة بتات لكل رمز.<span\nclass=\"math display\">\\[\\begin{aligned}\nk=3\\\\[2pt]R_s&amp;=30/3\\\\[2pt]&amp;=10\\text{\nkbaud}\\\\[2pt]T_s&amp;=1/10000\\\\[2pt]&amp;=100\\,\\mu\\text{s}\n\\end{aligned}\\]</span></p>\n<p>استخدم مقلوب فترة الرمز كتباعد بين النغمات.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\delta\nf&amp;=1/T_s\\\\[2pt]&amp;=1/(100\\times10^{-6})\\\\[2pt]&amp;=10\\text{ kHz}\n\\end{aligned}\\]</span></p>\n<p>ولّد ثمانية ترددات متساوية التباعد.<span\nclass=\"math display\">\\[\\begin{aligned}\nf_i=100+10i\\text{ kHz}\\\\[2pt]i=0,\\ldots,7\n\\end{aligned}\\]</span></p>\n<p>أضف معدل رموز واحداً خارج الترددين الأدنى والأعلى.<span\nclass=\"math display\">\\[B_{\\rm null}\\simeq7(10)+2(10)=90\\text{\nkHz}\\]</span></p>\n<p>الترددات من 100 إلى 170 kHz بخطوة 10 kHz؛ الامتداد بين الانعدامَين الخارجيين 90 kHz. تمتد الفصوص الجانبية أبعد من ذلك.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.01",
+  "lecture": 8,
+  "kind": "List",
+  "question": "<p>عدّد عمليات المستقبل الأساسية لكشف رمز في AWGN.</p>\n",
+  "answer": "<ul>\n<li><p>أسقط الموجة المستقبلة باستخدام المربطات أو المرشحات المطابقة.</p></li>\n<li><p>خذ عينات إحصاءات القرار في الزمن المناسب.</p></li>\n<li><p>قارن المرشحين وفق معيار القرار المناسب.</p></li>\n<li><p>حوّل الرمز المختار إلى بتات.</p></li>\n</ul>\n",
+  "figure": null
+ },
+ {
+  "id": "8.02",
+  "lecture": 8,
+  "kind": "Draw",
+  "question": "<p>ارسم مناطق القرار وتوزيعات الضوضاء لـBPSK متساوي الاحتمال بعتبة صفر.</p>\n",
+  "answer": "<p>يمثّل المنحنيان إحصاء القرار عند إرسال كل بت. نختار 0 يسار الصفر و1 يمينه. الذيل المظلّل يقع في منطقة القرار الخاطئ ويمثّل احتمال الخطأ.</p>\n<p>كل منحنى كثافة احتمال شرطية، والخط العمودي هو العتبة. المساحة تحت كل منحنى في الجهة الخاطئة هي ذيل الخطأ.</p>\n",
+  "figure": "assets/easy_08.svg"
+ },
+ {
+  "id": "8.03",
+  "lecture": 8,
+  "kind": "Explain",
+  "question": "<p>ما هدف المرشح المطابق؟</p>\n",
+  "answer": "<p>لنبضة معلومة في ضوضاء بيضاء، يعظّم المرشح المطابق SNR عند زمن أخذ العينة المختار. لا يزيل كل الضوضاء ولا يضمن قراراً خالياً من الخطأ.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.04",
+  "lecture": 8,
+  "kind": "Compare",
+  "question": "<p>قارن احتمال خطأ البت باحتمال خطأ الرمز.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>خطأ البت</strong></th>\n<th style=\"text-align: left;\"><strong>خطأ الرمز</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">العنصر الخاطئ</td>\n<td style=\"text-align: left;\">بت</td>\n<td style=\"text-align: left;\">رمز</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المقياس</td>\n<td style=\"text-align: left;\">BER</td>\n<td style=\"text-align: left;\">SER</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">تأثير التسمية</td>\n<td style=\"text-align: left;\">يعتمد على التسمية</td>\n<td style=\"text-align: left;\">خطأ واحد قد يغيّر عدة بتات</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "8.05",
+  "lecture": 8,
+  "kind": "Explain",
+  "question": "<p>لماذا تقل BER عادةً عند زيادة نسبة طاقة البت إلى الضوضاء مع ثبات التضمين والمستقبل؟</p>\n",
+  "answer": "<p>تزداد المسافات بين نقاط الإشارة مقارنةً بانتشار الضوضاء، فتقل فرصة دفع إحصاء القرار عبر حدّ القرار.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.06",
+  "lecture": 8,
+  "kind": "Interpret",
+  "question": "<p>في رسم قرار BPSK للسؤال 8.02، أي ذيل مظلّل يمثّل الخطأ عند إرسال البت 1؟</p>\n",
+  "answer": "<p>ذيل التوزيع الأيمن الواقع يسار الصفر. رغم إرسال 1، يصبح الإحصاء سالباً بسبب الضوضاء فيختار الكاشف 0.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.07",
+  "lecture": 8,
+  "kind": "Draw block diagram",
+  "question": "<p>ارسم المخطط الكتلي لمستقبل رقمي بمرشح مطابق، وسمِّ الأجزاء واشرح وظائفها ومسار الإشارة.</p>\n",
+  "answer": "<figure><img src=\"assets/answer-block-8.svg\" alt=\"Labelled block diagram for question 8.07\"><figcaption>اتبع الأسهم؛ يوضّح الجدول وظيفة كل جزء.</figcaption></figure><div class=\"center\">\n\n</div>\n<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>الجزء</strong></th>\n<th style=\"text-align: left;\"><strong>الوظيفة</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">المرشح المطابق</td>\n<td style=\"text-align: left;\">يطابق النبضة المعلومة ويعظّم SNR للعينة في ضوضاء بيضاء.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">استعادة التوقيت</td>\n<td style=\"text-align: left;\">تحدّد أزمنة أخذ العينات الصحيحة.</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">آخذ العينات</td>\n<td style=\"text-align: left;\">يستخرج إحصاء قرار واحداً لكل رمز في هذا النموذج أحادي البعد.</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">القرار والتحويل</td>\n<td style=\"text-align: left;\">يختار الرمز وبتاته. تستخدم الإشارات متعددة الأبعاد مجموعة مرشحات مطابقة أو معالجة I/Q مكافئة.</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "8.08",
+  "lecture": 8,
+  "kind": "Compare",
+  "question": "<p>قارن خطأ البت بخطأ الرمز في جدول بسيط.</p>\n",
+  "answer": "<table>\n<thead>\n<tr class=\"header\">\n<th style=\"text-align: left;\"><strong>وجه المقارنة</strong></th>\n<th style=\"text-align: left;\"><strong>خطأ البت</strong></th>\n<th style=\"text-align: left;\"><strong>خطأ الرمز</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">الوحدة الخاطئة</td>\n<td style=\"text-align: left;\">بت واحد</td>\n<td style=\"text-align: left;\">رمز واحد</td>\n</tr>\n<tr class=\"even\">\n<td style=\"text-align: left;\">المقياس</td>\n<td style=\"text-align: left;\">BER</td>\n<td style=\"text-align: left;\">SER</td>\n</tr>\n<tr class=\"odd\">\n<td style=\"text-align: left;\">العلاقة</td>\n<td style=\"text-align: left;\">تعتمد على تحويل البتات</td>\n<td style=\"text-align: left;\">قد يسبّب عدة أخطاء بتات</td>\n</tr>\n</tbody>\n</table>\n",
+  "figure": null
+ },
+ {
+  "id": "8.09",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>ماذا تعني AWGN؟</p>\n",
+  "answer": "<p>ضوضاء غاوسية بيضاء مضافة.</p>\n<p>ضوضاء غاوسية بيضاء مضافة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.10",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>لـAWGN بكثافة طيف قدرة ثنائية الجانب <span class=\"math inline\">\\(N_0/2\\)</span>، ما تباين الضوضاء بعد إسقاطها على دالة أساس حقيقية ذات طاقة واحدة؟</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(N_0/2\\)</span>.</p>\n<p><span class=\"math inline\">\\(N_0/2\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.11",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>كيف تتغيّر قاعدة أقل خطأ في AWGN عندما تختلف الاحتمالات القبلية للرموز؟</p>\n",
+  "answer": "<p>نستخدم قرار الاحتمال البعدي الأعظم بدلاً من أقل مسافة باحتمالات متساوية. لمتجه مرشح <span class=\"math inline\">\\(\\mathbf\ns_i\\)</span> باحتمال قبلي <span class=\"math inline\">\\(P_i\\)</span>، نختار أصغر مقياس:</p>\n<p><span class=\"math display\">\\[\\|\\mathbf r-\\mathbf s_i\\|^2-N_0\\ln\nP_i.\\]</span></p>\n<p>يزيح حدّ الاحتمال القبلي الحدود نحو الرموز الأقل احتمالاً. عند تساوي الاحتمالات تختزل القاعدة إلى أقل مسافة.</p>\n<p>نضمّن الاحتمالات القبلية في مقياس القرار.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.12",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>اكتب استجابة المرشح المطابق لإشارة حقيقية.</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(h(t)=s(T-t)\\)</span>.</p>\n<p><span class=\"math inline\">\\(h(t)=s(T-t)\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.13",
+  "lecture": 8,
+  "kind": "Worked problem",
+  "question": "<p>عند النسبة الخطية <span class=\"math inline\">\\(E_b/N_0=4\\)</span>، قارن BPSK المتزامن وBFSK المتعامد المتزامن وDBPSK التفاضلي وBFSK المتعامد غير المتزامن. استخدم <span\nclass=\"math inline\">\\(Q(2)=0.02275\\)</span> و <span\nclass=\"math inline\">\\(Q(\\sqrt8)=0.002339\\)</span>.</p>\n",
+  "answer": "<p><strong>احتمالات خطأ التضمين الثنائي</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nP_b=Q(\\sqrt{2\\gamma_b})\\ \\text{(BPSK)}\\\\[2pt]P_b=Q(\\sqrt{\\gamma_b})\\\n\\text{(coherent BFSK)}\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>استخدم نتيجة الإشارات المتعاكسة المتزامنة.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_{b,\\rm\nBPSK}&amp;=Q(\\sqrt{2(4)})\\\\[2pt]&amp;=Q(\\sqrt8)\\\\[2pt]&amp;=0.002339\n\\end{aligned}\\]</span></p>\n<p>استخدم نتيجة الإشارات المتعامدة المتزامنة.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_{b,\\rm BFSK}&amp;=Q(\\sqrt4)\\\\[2pt]&amp;=Q(2)\\\\[2pt]&amp;=0.02275\n\\end{aligned}\\]</span></p>\n<p>استخدم العلاقتين الأسّيتين.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_{b,\\rm DBPSK}&amp;=0.5e^{-4}\\\\[2pt]&amp;=0.009158\n\\end{aligned}\\]</span></p>\n<p>أسّ BFSK غير المتزامن يساوي النصف.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_{b,\\rm NCFSK}&amp;=0.5e^{-2}\\\\[2pt]&amp;=0.067668\n\\end{aligned}\\]</span></p>\n<p>عند تساوي متوسط طاقة البت، تعطي BPSK أقل BER بين هذه الحالات المثالية الأربع.</p>\n",
+  "figure": "assets/ber.svg"
+ },
+ {
+  "id": "8.14",
+  "lecture": 8,
+  "kind": "Worked exercise",
+  "question": "<p>يستقبل مرشح مطابق إشارة معلومة في AWGN حيث <span\nclass=\"math inline\">\\(E/N_0=3\\)</span> خطياً. أوجد أكبر SNR عند الخرج.</p>\n",
+  "answer": "<p><strong>أكبر SNR عند خرج المرشح المطابق</strong><span\nclass=\"math display\">\\[\\mathrm{SNR}_{\\rm out}=2E/N_0\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\mathrm{SNR}_{\\rm out}=2(3)\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\begin{aligned}\n\\mathrm{SNR}_{\\rm out}=6\\\\[2pt]\\text{(linear)}\n\\end{aligned}\\]</span></p>\n<p><span class=\"math inline\">\\(2(3)=6\\)</span> خطياً.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.15",
+  "lecture": 8,
+  "kind": "Worked exercise",
+  "question": "<p>لإحداثيات إشارة متساوية الاحتمال <span\nclass=\"math inline\">\\(-1,+1\\)</span> في AWGN، اتخذ القرار للإحصاء المستقبَل <span class=\"math inline\">\\(r=-0.3\\)</span> باستخدام أقل مسافة.</p>\n",
+  "answer": "<p><strong>كشف أقل مسافة</strong><span\nclass=\"math display\">\\[\\widehat\ns=\\arg\\min_{s\\in\\{-1,1\\}}|r-s|^2\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n|-0.3-(-1)|^2=0.49\\\\[2pt]|-0.3-1|^2=1.69\n\\end{aligned}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\widehat\ns=-1\\]</span></p>\n<p>اختر -1.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.16",
+  "lecture": 8,
+  "kind": "Worked exercise",
+  "question": "<p>حوّل 10 dB إلى نسبة خطية.</p>\n",
+  "answer": "<p><strong>التحويل من ديسيبل إلى خطي</strong><span\nclass=\"math display\">\\[\\gamma=10^{\\gamma_{\\rm dB}/10}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\gamma=10^{10/10}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[\\gamma=10\\]</span></p>\n<p><span class=\"math inline\">\\(10^{10/10}=10\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.17",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>اكتب BER لـBFSK المتعامد المتزامن.</p>\n",
+  "answer": "<p><span class=\"math inline\">\\(Q(\\sqrt{E_b/N_0})\\)</span>.</p>\n<p><span class=\"math inline\">\\(Q(\\sqrt{E_b/N_0})\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.18",
+  "lecture": 8,
+  "kind": "Worked exercise",
+  "question": "<p>لـDBPSK ذي الكشف التفاضلي في AWGN مثالية، أوجد BER عند النسبة الخطية\n<span class=\"math inline\">\\(E_b/N_0=5\\)</span>.</p>\n",
+  "answer": "<p><strong>احتمال خطأ بت DBPSK</strong><span\nclass=\"math display\">\\[P_b=\\tfrac12e^{-\\gamma_b}\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[P_b=\\frac12e^{-5}\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[P_b\\simeq0.0033690\\]</span></p>\n<p><span class=\"math inline\">\\(0.5e^{-5}=0.00337\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.19",
+  "lecture": 8,
+  "kind": "Worked exercise",
+  "question": "<p>اربط طاقة الرمز بطاقة البت في 16-QAM.</p>\n",
+  "answer": "<p><strong>علاقة طاقة البت والرمز</strong><span\nclass=\"math display\">\\[E_s=(\\log_2 M)E_b\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[E_s=\\log_2(16)E_b\\]</span></p>\n<p><strong>النتيجة</strong><span\nclass=\"math display\">\\[E_s=4E_b\\]</span></p>\n<p><span class=\"math inline\">\\(E_s=4E_b\\)</span>.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.20",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>تحت أي شروط يكون <span class=\"math inline\">\\(P_b\\approx\nP_s/\\log_2M\\)</span> تقريباً مفيداً لكوكبة متعددة الحالات؟</p>\n",
+  "answer": "<p>ترميز غراي وSNR مرتفع مع سيادة أخطاء الجار الأقرب.</p>\n<p>ترميز غراي وSNR مرتفع مع سيادة أخطاء الجار الأقرب.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.21",
+  "lecture": 8,
+  "kind": "Worked exercise",
+  "question": "<p>أوجد الكفاءة الطيفية لمعدل 100 kbit/s ضمن حزمة 50 kHz.</p>\n",
+  "answer": "<p><strong>الكفاءة الطيفية</strong><span\nclass=\"math display\">\\[\\eta=R_b/B\\]</span></p>\n<p><strong>التعويض</strong><span\nclass=\"math display\">\\[\\eta=\\frac{100000}{50000}\\]</span></p>\n<p><strong>النتيجة</strong><span class=\"math display\">\\[\\eta=2\\text{\nbit/s/Hz}\\]</span></p>\n<p><span class=\"math inline\">\\(\\eta=2\\)</span> bit/s/Hz.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.22",
+  "lecture": 8,
+  "kind": "Concept",
+  "question": "<p>عند ثبات معدل البتات، لماذا لا تكون زيادة رتبة PSK أو QAM تحسيناً بلا كلفة؟ قارن ذلك بـM-FSK المتعامد.</p>\n",
+  "answer": "<p>قد تقلّل زيادة رتبة PSK/QAM معدل الرموز والحزمة المشغولة، لكن تقارب النقاط يحتاج عادةً نسبة طاقة بت إلى ضوضاء أعلى لنفس احتمال الخطأ. في M-FSK المتعامد قد تحسّن زيادة M كفاءة الطاقة مع زيادة الحزمة. يجب تحديد التضمين وشكل النبضة وافتراضات المستقبل عند المقارنة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.23",
+  "lecture": 8,
+  "kind": "Worked problem",
+  "question": "<p>اشتق BER لـBPSK المتزامن باحتمالات متساوية ونقطتين <span\nclass=\"math inline\">\\(\\pm\\sqrt{E_b}\\)</span> وتباين ضوضاء مسقطة <span class=\"math inline\">\\(N_0/2\\)</span>. احسب عند\n<span class=\"math inline\">\\(E_b/N_0=6\\)</span> dB. استخدم <span\nclass=\"math inline\">\\(Q(2.8217)\\approx0.002388\\)</span>.</p>\n",
+  "answer": "<p><strong>حدث خطأ BPSK وذيل غاوس</strong><span\nclass=\"math display\">\\[\\begin{aligned}\nP_b=P\\{n&lt;-\\sqrt{E_b}\\}\\\\[2pt]n\\sim\\mathcal N(0,N_0/2)\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>عند إرسال النقطة الموجبة، يحدث الخطأ بعبور الصفر.<span\nclass=\"math display\">\\[P_b=P\\{n&lt;-\\sqrt{E_b}\\}\\]</span></p>\n<p>طبّع باستخدام الانحراف المعياري للضوضاء.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_b&amp;=Q\\left(\\frac{\\sqrt{E_b}}{\\sqrt{N_0/2}}\\right)\\\\[2pt]&amp;=Q(\\sqrt{2\\gamma_b})\n\\end{aligned}\\]</span></p>\n<p>حوّل النسبة المعطاة بالديسيبل.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\gamma_b&amp;=10^{0.6}\\\\[2pt]&amp;=3.98107\n\\end{aligned}\\]</span></p>\n<p>احسب وسيط دالة Q وذيلها.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\sqrt{2\\gamma_b}&amp;=\\sqrt{2(3.98107)}\\\\[2pt]&amp;=2.8217\\\\[2pt]P_b\\approx0.002388\n\\end{aligned}\\]</span></p>\n<p>BER تقريباً <span\nclass=\"math inline\">\\(2.388\\times10^{-3}\\)</span> وفق الافتراضات المثالية المذكورة.</p>\n",
+  "figure": "assets/decision.svg"
+ },
+ {
+  "id": "8.24",
+  "lecture": 8,
+  "kind": "Worked problem",
+  "question": "<p>لكوكبة 16-QAM مربعة متساوية الاحتمال في AWGN متزامنة مثالية عند <span\nclass=\"math inline\">\\(E_b/N_0=10\\)</span> dB، احسب احتمال خطأ الرمز وتقريب BER بغراي عند SNR مرتفع. استخدم <span\nclass=\"math inline\">\\(Q(\\sqrt8)=0.0023389\\)</span>.</p>\n",
+  "answer": "<p><strong>نسبة طاقة QAM المربعة وذيل غاوس</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\gamma_s=(\\log_2M)\\gamma_b\\\\[2pt]a=Q\\!\\left(\\sqrt{3\\gamma_s/(M-1)}\\right)\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>حوّل إلى نسبة طاقة رمز خطية.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\gamma_b=10\\\\[2pt]\\gamma_s&amp;=4\\gamma_b\\\\[2pt]&amp;=4(10)\\\\[2pt]&amp;=40\n\\end{aligned}\\]</span></p>\n<p>كوّن وسيط دالة Q.<span\nclass=\"math display\">\\[\\begin{aligned}\na&amp;=Q\\left(\\sqrt{\\frac{3\\gamma_s}{M-1}}\\right)\\\\[2pt]&amp;=Q\\left(\\sqrt{\\frac{3(40)}{16-1}}\\right)\\\\[2pt]&amp;=Q(\\sqrt{2(4)})\\\\[2pt]&amp;=Q(\\sqrt8)\\\\[2pt]&amp;=0.0023389\n\\end{aligned}\\]</span></p>\n<p>استخدم قانون خطأ الرمز لكوكبة QAM مربعة.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_s&amp;=4(1-1/4)a-4(1-1/4)^2a^2\\\\[2pt]&amp;=3a-2.25a^2\n\\end{aligned}\\]</span></p>\n<p>احسب احتمال خطأ الرمز واقسم تقريبياً على أربعة.<span class=\"math display\">\\[\\begin{aligned}\nP_s=3(0.0023389)-2.25(0.0023389)^2\\approx0.0070043\\\\[2pt]P_b\\approx\nP_s/4&amp;=0.0070043/4\\\\[2pt]&amp;=0.0017511\n\\end{aligned}\\]</span></p>\n<p>SER نحو 0.0070043؛ وBER بغراي نحو 0.0017511. علاقة BER تقريبية وليست هوية تامة.</p>\n",
+  "figure": null
+ },
+ {
+  "id": "8.25",
+  "lecture": 8,
+  "kind": "Worked problem",
+  "question": "<p>قدّر SER عند SNR مرتفع وBER بغراي لـ8-PSK المتزامن عندما <span\nclass=\"math inline\">\\(E_b/N_0=12\\)</span> dB. استخدم <span\nclass=\"math inline\">\\(Q(3.7318)\\approx9.507\\times10^{-5}\\)</span>. اذكر التقريب المستخدم.</p>\n",
+  "answer": "<p><strong>تقريب خطأ الجار الأقرب لـM-PSK</strong><span\nclass=\"math display\">\\[\\begin{aligned}\n\\gamma_s=(\\log_2M)\\gamma_b\\\\[2pt]P_s\\simeq2Q\\!\\left(\\sqrt{2\\gamma_s}\\sin(\\pi/M)\\right)\n\\end{aligned}\\]</span></p>\n<p><strong>التعويض والحساب</strong></p>\n<p>حوّل نسبة طاقة البت إلى نسبة طاقة الرمز.<span\nclass=\"math display\">\\[\\begin{aligned}\n\\gamma_b&amp;=10^{1.2}\\\\[2pt]&amp;=15.8489\\\\[2pt]\\gamma_s&amp;=3\\gamma_b\\\\[2pt]&amp;=3(15.8489)\\\\[2pt]&amp;=47.5468\n\\end{aligned}\\]</span></p>\n<p>استخدم تقريب PSK للجار الأقرب.<span\nclass=\"math display\">\\[P_s\\simeq2Q\\left(\\sqrt{2\\gamma_s}\\sin(\\pi/8)\\right)\\]</span></p>\n<p>احسب وسيط المسافة.<span\nclass=\"math display\">\\[\\sqrt{2(47.5468)}\\sin(\\pi/8)\\simeq3.7318\\]</span></p>\n<p>اقسم تقريبياً على البتات الثلاثة في الرمز.<span\nclass=\"math display\">\\[\\begin{aligned}\nP_s\\simeq2Q(3.7318)\\simeq1.90\\times10^{-4}\\\\[2pt]P_b\\simeq(1.90\\times10^{-4})/3\\simeq6.33\\times10^{-5}\n\\end{aligned}\\]</span></p>\n<p>SER التقريبي <span\nclass=\"math inline\">\\(1.90\\times10^{-4}\\)</span> وBER بغراي <span\nclass=\"math inline\">\\(6.33\\times10^{-5}\\)</span>؛ بافتراض سيادة أخطاء الجار الأقرب.</p>\n",
+  "figure": null
+ }
+]

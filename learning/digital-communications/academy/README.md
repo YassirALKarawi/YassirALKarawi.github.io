@@ -30,3 +30,11 @@ node scripts/test-interactive-bank.mjs
 ```
 
 These check all topics, acquisition bounds, signal invariants, original question coverage, numerical fixtures and invalid-input handling. Browser QA covers all eight lectures and representative pulse, PCM, ADM, QPSK, MSK, FSK and receiver experiments. Mobile CSS provides horizontally inspectable signal axes and vector figures where labels would otherwise become too small.
+
+## Arabic / English edition
+
+The header language control offers English and a complete authored Arabic edition. Arabic curriculum, question/solution HTML, MCQs and labelled vector assets live in `i18n/`; `ar.json` supplies the UI and live-model vocabulary. Numerical algorithms remain shared. Equation source, question identifiers, correct option indices and progress keys are identical across editions. Scientific axes, signal-flow geometry and mathematical notation retain LTR coordinates while Arabic prose uses RTL.
+
+The selected language is stored as `dc-language` and propagated to academy links through `lang=ar` / `lang=en`. Explicit URL language takes precedence. Switching languages retains the route, scroll position, numerical bank inputs, topic-lab input values/acquisition state/wiring and quiz session, including a draft answer. No student progress is uploaded. Language state and lab inputs are browser-local; clearing storage removes them.
+
+Validation: `node scripts/test-bilingual.mjs`, in addition to the three existing academy/bank/MCQ suites. Browser QA covered all 8 Arabic lectures (no KaTeX errors), all 32 Arabic lab screens, Arabic figures, quiz feedback, cross-language progress and mobile form sizing.
