@@ -57,3 +57,12 @@ The Q function now uses converged regularized-gamma series / continued fractions
 `quantizer-view.mjs` uses the same `quantize` function as the time-domain experiments. Its input–output staircase is a transfer characteristic, not a time-domain signal. A controllable input moves through the thresholds, showing its level, signed error, index and codeword. The fixed mapping is deliberately not animated as a travelling wave.
 
 Offscreen signal experiments stop acquiring and drawing until visible again. Expanded figures can be closed with Escape. Diagram dashes indicate processing direction, not a calibrated physical propagation delay. Reduced-motion preference starts signal acquisition and quantizer input animation paused.
+
+
+## Causal visual examples (visual8)
+
+Six topic pages and their corresponding laboratories include purpose-built visual explanations: sampling and aliasing link acquired sine samples to an analytical impulse-line spectrum; reconstruction reveals individually weighted sinc contributions; QPSK and 16-QAM synchronize bit labels, valid constellation points and both carrier branches; the matched-filter example shows the shifted reversed pulse, overlap product and accumulated integral. These examples have their own explicitly labeled controls, independent of the circuit workspace.
+
+Sampling spectra combine complex coefficients before magnitude, so the zero-phase sine cancels correctly at coincident Nyquist replicas. Spectral weights are normalized by sample rate and use the same 0.8 V source amplitude as the time plots. Constellation axes are equally scaled waveform coefficients in volts, not energy-normalized coordinates. The rectangular-pulse convolution is normalized by T.
+
+Run `node scripts/test-mechanisms.mjs` for independent fixtures and numerical-integration checks of these relationships. All diagrams are authored in code; reference lecture artwork is not copied.
