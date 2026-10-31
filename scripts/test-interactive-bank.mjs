@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {models,evaluate,Q,deltaTrace,differential} from '../learning/digital-communications/interactive-bank/models.mjs';
+import {plot} from '../learning/digital-communications/interactive-bank/plots.mjs';
+const base=new URL('../learning/digital-communications/interactive-bank/',import.meta.url),questions=JSON.parse(fs.readFileSync(new URL('questions.json',base)));
+assert.equal(questions.length,200);assert.equal(new Set(questions.map(q=>q.id)).size,200);
+for(let n=1;n<=8;n++)assert.equal(questions.filter(q=>q.lecture===n).length,25);
+const defaults=id=>Object.fromEntries(models[id].fields.map(f=>[f.key,f.value]));
+for(const q of questions){assert(q.question.trim()&&q.answer.trim());if(q.kind.startsWith('Worked'))assert(models[q.id],`missing numerical model ${q.id}`);for(const match of q.answer.matchAll(/src="([^"]+)"/g))assert(fs.existsSync(new URL(match[1],base)));if(q.figure)assert(fs.existsSync(new URL(q.figure,base)));}
+for(const [id,m] of Object.entries(models)){const p=defaults(id),rows=evaluate(id,p);assert(rows.length>0);assert(!JSON.stringify(rows).match(/NaN|Infinity|Outside valid/),id);const fig=plot(id,p);assert(!fig.includes('NaN'),id);for(const f of m.fields.filter(f=>f.type!=='text'))assert.throws(()=>evaluate(id,{...p,[f.key]:NaN}));}
+const close=(actual,expected,tol=1e-6)=>assert(Math.abs(actual-expected)<=tol*Math.max(1,Math.abs(expected)),`${actual} != ${expected}`);
+const val=(id,index=0,changes={})=>Number(evaluate(id,{...defaults(id),...changes})[index].value);
+close(val('1.12',2),1.5);close(val('1.13'),.000125);close(val('1.13',1),.00075);close(val('1.15',1),.25);close(val('1.16',1),80000);close(val('1.17',2),10);close(val('1.19'),6000);close(val('1.20',2),5000);close(val('1.22'),6000);close(val('1.23',2),3/Math.PI);close(val('2.11',1),Math.sin(Math.PI/4)/Math.PI);close(val('2.17'),.75);close(val('2.18'),24);close(val('2.20'),.4);close(val('2.22',1),4);close(val('2.23',1),.05);close(val('3.10',2),48000);close(val('3.17'),.03);close(val('3.20'),.04);close(val('3.24',1),.1);close(val('4.11'),1.95);close(val('4.15'),.1);close(val('4.18'),14000);close(val('4.19'),528000);close(val('4.23',2),264000);close(val('4.25',2),1544000);close(val('5.16'),.00001);close(val('5.19'),25000);close(val('5.20',1),100000);close(val('5.25',2),60000);close(val('6.15',1),30000);close(val('6.16'),200000);close(val('6.18'),40);close(val('6.20',1),60000);close(val('6.25',1),95.0935915);close(val('7.15'),.5*Math.exp(-4));close(val('7.18',2),80000);close(val('7.25',4),90000);close(val('8.14'),6);close(val('8.16'),10);close(val('8.21'),2);close(val('8.23',2),.00238829,2e-7);close(val('8.24',1),.00700429,2e-6);close(Q(2),.02275013,1e-7);
+assert.deepEqual(deltaTrace([.1,.4,.3,0],.2).map(s=>Number(s.y.toFixed(8))),[.2,.4,.2,0]);assert.deepEqual(differential([1,0,1,1,0]),[1,1,0,1,1]);
+assert.throws(()=>evaluate('3.21',{i:8,b:3}));assert.throws(()=>evaluate('2.15',{fs:20000,tau:60}));assert.throws(()=>evaluate('4.20',{payload:100,total:66}));assert.throws(()=>evaluate('6.23',{bits:'101',Es:2,Rb:120000}));
+close(val('1.15',1,{b:4}),.125);close(val('4.23',2,{n:8}),520000);close(val('6.16',0,{Rs:25000}),100000);
+console.log(`PASS: ${questions.length} questions, ${Object.keys(models).length} live numerical models, default evaluations, figures, domain rejection, independent numerical fixtures and parameter-change checks.`);
