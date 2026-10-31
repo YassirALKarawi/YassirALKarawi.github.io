@@ -1,4 +1,4 @@
-import {Q,fmt} from '../interactive-bank/models.mjs?v=scienceRef3';
+import {Q,fmt} from '../interactive-bank/models.mjs?v=scienceRef4';
 export const TAU=2*Math.PI;
 export const sinc=x=>Math.abs(x)<1e-10?1:Math.sin(Math.PI*x)/(Math.PI*x);
 const F=(k,label,v,min,max,step)=>({k,label,v,min,max,step});

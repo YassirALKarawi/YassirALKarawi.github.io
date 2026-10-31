@@ -1,6 +1,6 @@
-import {t} from './i18n.mjs?v=scienceRef3';
-import {fields,defaults,buildSignal,acquisition,tracePoints,flow} from './signals.mjs?v=scienceRef3';
-import {fmt} from '../interactive-bank/models.mjs?v=scienceRef3';
+import {t} from './i18n.mjs?v=scienceRef4';
+import {fields,defaults,buildSignal,acquisition,tracePoints,flow} from './signals.mjs?v=scienceRef4';
+import {fmt} from '../interactive-bank/models.mjs?v=scienceRef4';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const colors=['#67d8cf','#f7b56c','#b9b9ff'];
 export function mountLab(topic,host){let p=defaults(topic.id),model=buildSignal(topic.id,p),elapsed=0,running=!matchMedia('(prefers-reduced-motion: reduce)').matches,speed=1,last=0,lastPaint=0,raf=0,dead=false,selected=0,pending=null,links=new Set(flow(topic.id).edges.map(e=>e.join('-')));
