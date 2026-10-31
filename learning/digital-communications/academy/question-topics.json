@@ -1,0 +1,10 @@
+{
+"1":["pcm","sampling","pcm","alias","alias","alias","link","quantizer","link","link","link","sampling","sampling","sampling","quantizer","pcm","link","decision","sampling","sampling","alias","alias","reconstruct","sampling","alias"],
+"2":["pam","pam","pam","ppm","ppm","ppm","pam","pwm","pam","alias","pam","pam","aperture","aperture","pam","sampling","pwm","pwm","pwm","ppm","ppm","aperture","ppm","pam","pwm"],
+"3":["pcm","quantizer","quantizer","pcm","quantizer","sqnr","pcm","pcm","pcm","pcm","alias","quantizer","pcm","compand","quantizer","quantizer","sqnr","pcm","sqnr","quantizer","pcm","quantizer","sqnr","compand","compand"],
+"4":["dpcm","dpcm","dm","dm","tdm","dpcm","tdm","fdm","dpcm","dpcm","dpcm","dm","dm","dm","dm","adm","tdm","fdm","tdm","tdm","dpcm","dm","tdm","tdm","tdm"],
+"5":["bpsk","bpsk","bpsk","ask","bfsk","decision","bpsk","ask","bpsk","bpsk","ask","bpsk","decision","bfsk","bpsk","ask","ask","decision","bfsk","bandwidth","bfsk","decision","bpsk","bpsk","bandwidth"],
+"6":["efficiency","qpsk","qpsk","mpsk","qpsk","qpsk","qpsk","qam","efficiency","qpsk","mpsk","qam","decision","qam","mpsk","qam","mpsk","qam","qam","bandwidth","efficiency","ber","qpsk","qam","efficiency"],
+"7":["dpsk","msk","dpsk","dpsk","dpsk","msk","dpsk","dpsk","dpsk","dpsk","dpsk","dpsk","dpsk","dpsk","ber","msk","msk","msk","mfsk","mfsk","mfsk","bandwidth","dpsk","dpsk","mfsk"],
+"8":["matched","decision","matched","ber","ber","decision","matched","ber","decision","decision","decision","matched","ber","matched","decision","ber","ber","ber","efficiency","ber","efficiency","tradeoff","decision","qam","mpsk"]
+}
