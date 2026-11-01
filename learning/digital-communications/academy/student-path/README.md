@@ -4,7 +4,7 @@ This folder adds a separate page. No existing academy file, stylesheet, navigati
 
 ## Student workflow
 
-- Understand: all 32 course topics, four mechanism steps, local symbol definitions, the topic relation and one authored concept check.
+- Understand: all 32 course topics, four mechanism steps, labeled block diagrams with selectable roles, local symbol definitions, the topic relation and one authored concept check.
 - Solve: one numerical practice per topic, editable inputs, an optional hint, numerical checking with 1% relative tolerance, exact binary-word checks and vertical solution rows. Five introductory practice models (quantizer step, RC bandwidth, DPCM reconstruction, ADM next step and symbol energy) are authored locally; the other 27 reuse verified course models.
 - Try and repair: six bounded teaching scenarios (aliasing, quantizer overload, DM slope capacity, matched-filter timing, PCM link rate and known-reference QPSK phase). Both the diagnosis and the numerical repair condition must be correct. Plots distinguish the original faulty settings from current student settings.
 
