@@ -77,3 +77,23 @@ the interface waits for the clip before displaying the educational measurement.
 UI validation additionally exercised CV/CC values, manual probe attachment,
 rotary keyboard control, false-edge NORMAL waiting, future SINGLE capture,
 ROLL, scope STOP independent of circuit time, and time/voltage cursor readings.
+
+
+### Live-first interface (live4)
+
+The default page opens a powered reference circuit and immediately runs in ROLL,
+so students see acquisition without a multi-button setup sequence. Selecting an
+experiment does the same. A single prominent Run/Pause control coordinates
+circuit time and scope acquisition. The diagram and scope share a desktop row;
+mobile puts the scope first. Generator/supply panels, meter and expert scope
+controls remain available in disclosures. Essential source settings are moved
+(not duplicated) to the live toolbar. Manual unwired assembly is an explicit
+option. Component edits/probe changes restart a previously running circuit if
+the new netlist solves; invalid wiring stops with an error. Trigger stabilization
+remains optional through the stable/moving view selector.
+
+Wire coloring encodes actual node-voltage polarity, not current direction.
+Component labels show actual terminal voltage or resistor branch current. No
+particles or fake current-flow animations are substituted for electrical values.
+The live animation refresh target is 35 ms; integration time remains a bounded
+teaching-scale clock and is displayed separately from wall time.
