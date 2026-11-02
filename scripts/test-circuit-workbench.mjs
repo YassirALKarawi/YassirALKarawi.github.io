@@ -17,3 +17,20 @@ assert.throws(()=>createSolver(sh.parts,sh.wires.filter(w=>!w.includes('S1.g')))
 // Same potential probes read exactly zero; KCL source current has expected sign.
 assert.equal(r.at('C1.b')-r.at('GND.0'),0);assert.ok(Number.isFinite(r.current('V1')));
 console.log('Circuit workbench: RC charge/discharge, polarity, sine gain, sampling, hold droop and wiring faults passed.');
+// Realistic instrument extensions: finite output resistance and disabled high impedance.
+const output=[{id:'V',type:'source',amp:0,offset:4,f:500,rout:50},{id:'R',type:'resistor',value:50},{id:'G',type:'ground'}],ow=[['V.a','R.a'],['R.b','G.0'],['V.b','G.0']];
+s=createSolver(output,ow);r=s.step(1e-7);assert.ok(Math.abs(r.at('R.a')-2)<1e-10);assert.ok(Math.abs(r.current('V')+.04)<1e-10);output[0].enabled=false;r=s.step(1e-7);assert.ok(Math.abs(r.at('R.a'))<1e-10);
+const supply=[{id:'P',type:'supply',value:5,limit:.02},{id:'R',type:'resistor',value:1000},{id:'G',type:'ground'}],pw=[['P.a','R.a'],['R.b','G.0'],['P.b','G.0']];
+s=createSolver(supply,pw);r=s.step(1e-7);assert.equal(r.mode('P'),'CV');assert.equal(r.at('P.a'),5);assert.ok(Math.abs(r.current('P')+.005)<1e-12);
+supply[0].limit=.002;r=s.step(1e-7);assert.equal(r.mode('P'),'CC');assert.ok(Math.abs(r.at('P.a')-2)<1e-12);assert.ok(Math.abs(r.current('P')+.002)<1e-12);supply[0].limit=.02;r=s.step(1e-7);assert.equal(r.mode('P'),'CV');assert.equal(r.at('P.a'),5);
+// A shorted supply must limit current rather than pretend the load is still 5 V.
+s=createSolver(supply,[...pw,['P.a','P.b']]);r=s.step(1e-7);assert.equal(r.mode('P'),'CC');assert.equal(r.at('P.a'),0);assert.ok(Math.abs(r.current('P')+.02)<1e-12);
+// Probe loading is measurable: 1 MΩ on a 1 MΩ divider halves the unprobed output.
+const pparts=[{id:'V',type:'source',amp:0,offset:5,f:1},{id:'R',type:'resistor',value:1e6},{id:'Probe',type:'resistor',value:1e6},{id:'G',type:'ground'}];
+s=createSolver(pparts,[['V.a','R.a'],['R.b','Probe.a'],['Probe.b','G.0'],['V.b','G.0']]);r=s.step(1e-7);assert.ok(Math.abs(r.at('Probe.a')-2.5)<1e-12);
+console.log('PASS: 50 Ω source loading, output OFF, CV→CC→CV, supply short limiting and probe input resistance.');
+// Output OFF preserves capacitor voltage; it discharges through the actual load.
+const charged=[{id:'V',type:'source',amp:0,offset:5,f:1,rout:50},{id:'C',type:'capacitor',value:100e-9},{id:'R',type:'resistor',value:10000},{id:'G',type:'ground'}],cw=[['V.a','C.a'],['C.a','R.a'],['C.b','G.0'],['R.b','G.0'],['V.b','G.0']];s=createSolver(charged,cw);for(let i=0;i<2000;i++)r=s.step(1e-7);const v0=r.at('C.a');charged[0].enabled=false;for(let i=0;i<100;i++)r=s.step(1e-7);assert.ok(v0>4.97);assert.ok(Math.abs(r.at('C.a')/v0-Math.exp(-10e-6/(10000*100e-9)))<1e-5);
+// Current-limited capacitive startup crosses to CV without discarding charge.
+const charging=[{id:'P',type:'supply',value:5,limit:.001},{id:'C',type:'capacitor',value:1e-6},{id:'R',type:'resistor',value:100000},{id:'G',type:'ground'}],pc=[['P.a','C.a'],['C.a','R.a'],['C.b','G.0'],['R.b','G.0'],['P.b','G.0']];s=createSolver(charging,pc);for(let i=0;i<1000;i++)r=s.step(1e-6);assert.equal(r.mode('P'),'CC');assert.ok(Math.abs(r.at('C.a')-100*(1-Math.exp(-.001/.1)))<1e-5);for(let i=0;i<7000;i++)r=s.step(1e-6);assert.equal(r.mode('P'),'CV');assert.equal(r.at('C.a'),5);
+console.log('PASS: output-OFF capacitor retention/discharge and current-limited capacitive startup.');

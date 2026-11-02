@@ -2,8 +2,9 @@
 export const pins=c=>c.type==='ground'?['0']:c.type==='switch'?['a','b','g','r']:['a','b'];
 export const terminal=(id,p)=>`${id}.${p}`;
 export function prepare(parts,wires){
- if(!parts.length||parts.length>20)throw Error('parts');
+ if(!parts.length||parts.length>40)throw Error('parts');
  for(const c of parts){if(c.type==='resistor'&&!(c.value>0&&Number.isFinite(c.value)))throw Error('value');if(c.type==='capacitor'&&!(c.value>0&&Number.isFinite(c.value)))throw Error('value');if(['source','clock'].includes(c.type)&&!(c.f>0&&Number.isFinite(c.f)))throw Error('value')}
+ for(const c of parts)if(c.type==='supply'&&(!(c.value>=0&&Number.isFinite(c.value))||!(c.limit>0&&Number.isFinite(c.limit))))throw Error('value');
  const parent=new Map(parts.flatMap(c=>pins(c).map(p=>[terminal(c.id,p),terminal(c.id,p)])));
  const root=x=>{if(!parent.has(x))throw Error('terminal');let p=parent.get(x);if(p!==x){p=root(p);parent.set(x,p)}return p};
  for(const [a,b]of wires)parent.set(root(a),root(b));
@@ -11,9 +12,9 @@ export function prepare(parts,wires){
  const g=root(terminal(grounds[0].id,'0'));for(const c of grounds)parent.set(root(terminal(c.id,'0')),g);
  const nodes=[...new Set([...parent.keys()].map(root))].filter(x=>x!==root(g)),index=new Map(nodes.map((x,i)=>[x,i]));
  const node=p=>root(p)===root(g)?-1:index.get(root(p));
- const sources=parts.filter(c=>['source','clock'].includes(c.type));
+ const sources=parts.filter(c=>['source','clock','supply'].includes(c.type));
  if(!sources.length)throw Error('source');
- for(const c of sources)if(node(c.id+'.a')===node(c.id+'.b'))throw Error('short');
+ for(const c of sources)if(node(c.id+'.a')===node(c.id+'.b')&&c.type!=='supply'&&!(c.rout>0))throw Error('short');
  // A disconnected island is an error, not an implicit ground connection.
  const adj=new Map([...parent.keys()].map(root).map(x=>[x,new Set()]));
  const edge=(a,b)=>{a=root(a);b=root(b);adj.get(a).add(b);adj.get(b).add(a)};
@@ -25,19 +26,32 @@ export function prepare(parts,wires){
  const n=nodes.length,s=sources.length;
  return {parts,wires,node,n,s,sources,size:n+s};
 }
-export function voltage(c,t,power=true){if(!power)return 0;if(c.type==='clock')return (t*c.f%1)<c.duty?c.high:0;return c.offset+c.amp*Math.sin(2*Math.PI*c.f*t)}
+export function voltage(c,t,power=true){
+ if(!power||c.enabled===false)return 0;if(c.type==='supply')return c.value;
+ if(c.type==='clock')return (t*c.f%1)<c.duty?c.high:0;
+ const q=((t*c.f+(c.phase||0)/360)%1+1)%1;
+ const y=c.wave==='square'?(q<(c.duty??.5)?1:-1):c.wave==='triangle'?1-4*Math.abs(q-.5):c.wave==='ramp'?2*q-1:c.wave==='dc'?0:Math.sin(2*Math.PI*q);
+ return c.offset+c.amp*y;
+}
 export function gaussian(A,b){const n=b.length;for(let k=0;k<n;k++){let pivot=k;for(let i=k+1;i<n;i++)if(Math.abs(A[i][k])>Math.abs(A[pivot][k]))pivot=i;if(Math.abs(A[pivot][k])<1e-18)throw Error('singular');[A[k],A[pivot]]=[A[pivot],A[k]];[b[k],b[pivot]]=[b[pivot],b[k]];for(let i=k+1;i<n;i++){const q=A[i][k]/A[k][k];if(!q)continue;for(let j=k;j<n;j++)A[i][j]-=q*A[k][j];b[i]-=q*b[k]}}const x=Array(n).fill(0);for(let i=n-1;i>=0;i--){let r=b[i];for(let j=i+1;j<n;j++)r-=A[i][j]*x[j];x[i]=r/A[i][i];if(!Number.isFinite(x[i])||Math.abs(x[i])>1e9)throw Error('singular')}return x}
 export function createSolver(parts,wires){const net=prepare(parts,wires);let caps={},prev=Array(net.size).fill(0),t=0;const v=(x,p)=>{const i=net.node(p);return i<0?0:(x[i]||0)};
- function step(dt,power=true){if(!(dt>0&&Number.isFinite(dt)))throw Error('dt');const time=t+dt;let guess=prev.slice(),result;for(let iteration=0;iteration<12;iteration++){
+ function step(dt,power=true){if(!(dt>0&&Number.isFinite(dt)))throw Error('dt');const time=t+dt;let guess=prev.slice(),result;const modes=Object.fromEntries(net.sources.filter(c=>c.type==='supply').map(c=>[c.id,net.node(c.id+'.a')===net.node(c.id+'.b')?'CC':'CV']));for(let iteration=0;iteration<24;iteration++){
   const A=Array.from({length:net.size},()=>Array(net.size).fill(0)),b=Array(net.size).fill(0);
   const conduct=(a,z,g,h=0)=>{a=net.node(a);z=net.node(z);if(a>=0){A[a][a]+=g;b[a]+=h}if(z>=0){A[z][z]+=g;b[z]-=h}if(a>=0&&z>=0){A[a][z]-=g;A[z][a]-=g}};
   for(const c of parts){if(c.type==='resistor')conduct(c.id+'.a',c.id+'.b',1/c.value);if(c.type==='capacitor'){const g=c.value/dt;conduct(c.id+'.a',c.id+'.b',g,g*(caps[c.id]||0))}if(c.type==='switch'){const on=v(guess,c.id+'.g')-v(guess,c.id+'.r')>=c.threshold;conduct(c.id+'.a',c.id+'.b',1/(on?c.ron:c.roff))}}
-  net.sources.forEach((c,j)=>{const a=net.node(c.id+'.a'),z=net.node(c.id+'.b'),k=net.n+j;if(a>=0){A[a][k]+=1;A[k][a]+=1}if(z>=0){A[z][k]-=1;A[k][z]-=1}b[k]=voltage(c,time,power)});
-  result=gaussian(A,b);const changed=parts.some(c=>c.type==='switch'&&((v(result,c.id+'.g')-v(result,c.id+'.r')>=c.threshold)!==(v(guess,c.id+'.g')-v(guess,c.id+'.r')>=c.threshold)));
-  guess=result;if(!changed)break;if(iteration===11)throw Error('convergence');
+  net.sources.forEach((c,j)=>{const a=net.node(c.id+'.a'),z=net.node(c.id+'.b'),k=net.n+j;
+   if(a>=0)A[a][k]+=1;if(z>=0)A[z][k]-=1;
+   if(c.enabled===false){if(a>=0)A[k][a]+=1;if(z>=0)A[k][z]-=1;A[k][k]=-1e9;return}
+   if(c.type==='supply'&&power&&modes[c.id]==='CC'){A[k][k]=1;b[k]=-c.limit;return}
+   if(a>=0)A[k][a]+=1;if(z>=0)A[k][z]-=1;A[k][k]=-(c.rout||0);b[k]=voltage(c,time,power);
+  });
+  result=gaussian(A,b);let changed=parts.some(c=>c.type==='switch'&&((v(result,c.id+'.g')-v(result,c.id+'.r')>=c.threshold)!==(v(guess,c.id+'.g')-v(guess,c.id+'.r')>=c.threshold)));
+  net.sources.forEach((c,j)=>{if(c.type!=='supply'||!power||c.enabled===false)return;const k=net.n+j,delivered=-result[k],out=v(result,c.id+'.a')-v(result,c.id+'.b');if(modes[c.id]==='CV'&&delivered>c.limit+1e-10){modes[c.id]='CC';changed=true}else if(modes[c.id]==='CC'&&out>c.value+1e-8){modes[c.id]='CV';changed=true}});
+
+  guess=result;if(!changed)break;if(iteration===23)throw Error('convergence');
  }
  prev=result;t=time;for(const c of parts)if(c.type==='capacitor')caps[c.id]=v(result,c.id+'.a')-v(result,c.id+'.b');
- return {t,at:p=>v(result,p),current:id=>{const j=net.sources.findIndex(c=>c.id===id);return j<0?NaN:result[net.n+j]},switchOn:id=>{const c=parts.find(c=>c.id===id);return v(result,c.id+'.g')-v(result,c.id+'.r')>=c.threshold}};
+ return {t,mode:id=>modes[id]||'CV',at:p=>v(result,p),current:id=>{const j=net.sources.findIndex(c=>c.id===id);return j<0?NaN:result[net.n+j]},switchOn:id=>{const c=parts.find(c=>c.id===id);return v(result,c.id+'.g')-v(result,c.id+'.r')>=c.threshold}};
  }
  return {step,get time(){return t},net};
 }

@@ -23,25 +23,57 @@ Shared reference material and full animated explanations remain linked from the 
 
 ## Electronic workbench
 
-`circuits.html?lang=ar` / `?lang=en` is an independent circuit-building page.
-The experiment card and a new navigation button open it; the original course is unchanged.
-Two starting experiments place **unwired** parts: RC low-pass and clock-controlled
-sample-and-hold with a leakage resistor. Students add/remove/move parts, wire
-terminals, select differential probes, switch sources on/off, pause or step time,
-and edit component values. A reference-wiring button is optional and resets parts.
+`circuits.html?lang=ar` / `?lang=en` opens the separate circuit-building page.
+The original course remains unchanged.
 
-`circuit-engine.mjs` solves the actual connected R/C/source/switch netlist with
-modified nodal analysis and backward Euler capacitor companions. No implicit
-wire, reference ground, source signal or canned output is substituted. Switch
-states are iterated against their actual gate voltage. Floating islands, missing
-ground, source shorts and singular equations stop the simulation. Voltage probes
-are ideal high impedance. Supply OFF sets both signal and clock sources to zero
-while retaining capacitor state; topology/value edits explicitly reset it.
-The UI adapts the time step to source period and the smallest R·C, and rejects
-settings requiring <0.01 µs. Models and limitations are disclosed in both languages.
-This is an educational bounded solver, not a general transistor/SPICE engine.
+### Virtual instrument bench (bench3)
 
-Validation: `node scripts/test-circuit-workbench.mjs` checks analytical RC charge,
-discharge, inverted polarity, sine gain, sample acquisition/hold, leakage droop,
-and invalid wiring. UI QA covers manual two-terminal wiring, reference assembly,
-probe selection, power toggling, parameter edits and identical-probe zero voltage.
+The circuit page now has front panels inspired by the supplied laboratory
+photographs (not manufacturer-certified replicas): a two-channel function
+generator, two independent CV/CC DC outputs, a storage oscilloscope and a 10 MΩ
+voltmeter. The generator offers sine, pulse/square, triangle, ramp, DC, phase,
+duty, offset and Vpp controls. Numeric fields, frequency sliders and accessible
+rotary controls all change the same live source parameters. Instrument jacks
+connect to board terminals; probe buttons attach to chosen test points.
+
+The generator's 50 Ω output is represented in the source equation. Disabled
+outputs are modeled as 1 GΩ. Supply current limits are solved iteratively,
+including a supply short. Generator COMs share earth; supply negatives float
+until wired. The scope earth clip physically merges its selected node with
+ground. A 1×/10× probe adds 1 MΩ/10 MΩ respectively; the meter adds 10 MΩ.
+Instrument outputs entirely unused by wires or probes are excluded; unwired
+passive components still produce a wiring error. Changing topology or probes
+resets time, while source setting/power edits retain capacitor state.
+
+Scope voltage divisions, positions, time divisions, AUTO/NORMAL edge trigger,
+level/source/slope, display RUN/STOP, future SINGLE capture, AUTO SET and time
+cursors are functional. Scope STOP freezes acquisition independently from circuit
+time. AC display is a continuously streamed 10 Hz high-pass model; it does not
+model a physical coupling capacitor's loading. GND coupling displays zero and
+does not short the probe tip. Probe capacitance and real device bandwidth are
+excluded. Mean/RMS/Vpp/frequency are measured, never copied from source settings.
+RMS(win) uses the acquired visible window. Meter mean/RMS uses up to the latest
+5 ms (including startup). Frequency remains unavailable without two crossings.
+
+Three experiments are offered: RC filter, track-and-hold, and supply CV/CC.
+`Run a ready example` assembles, probes, powers and runs a solved live reference
+circuit. It does not replay a canned trace. Manual assembly remains the default.
+Sources and limits are disclosed in both languages, and the original academy
+page remains untouched.
+
+Additional validation: `node scripts/test-bench-instruments.mjs` covers waveform
+phase/duty, actual RMS/frequency, valid and absent trigger edges, cursor
+interpolation and persistent AC filter state. Extended circuit tests cover output
+resistance, OFF impedance, CV→CC→CV, supply short and resistive probe loading.
+
+ROLL mode intentionally bypasses edge locking and scrolls the acquired waveform.
+SINGLE switches ROLL to NORMAL and requires a future trigger after arming.
+The ready example initializes a short real acquisition and continues time without
+blocking the UI for a long precomputed trace; auto fitting follows after enough
+recorded cycles. The rolling buffer retains ≤50,000 samples / 30 ms. AC filter
+state survives rolling-buffer truncation. Scope input resistance is connected
+from every attached tip to instrument earth, even before the clip is attached;
+the interface waits for the clip before displaying the educational measurement.
+UI validation additionally exercised CV/CC values, manual probe attachment,
+rotary keyboard control, false-edge NORMAL waiting, future SINGLE capture,
+ROLL, scope STOP independent of circuit time, and time/voltage cursor readings.
