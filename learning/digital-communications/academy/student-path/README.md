@@ -19,3 +19,29 @@ Shared reference material and full animated explanations remain linked from the 
 ## Verification
 
 `node scripts/test-student-path.mjs` checks initial faults, repairs, boundary rejection, malformed input, sampled alias equivalence, saturation, carrier-reference bit labels, Arabic digits and numeric tolerance. Existing academy, question-bank and mechanism tests remain applicable and unchanged.
+
+
+## Electronic workbench
+
+`circuits.html?lang=ar` / `?lang=en` is an independent circuit-building page.
+The experiment card and a new navigation button open it; the original course is unchanged.
+Two starting experiments place **unwired** parts: RC low-pass and clock-controlled
+sample-and-hold with a leakage resistor. Students add/remove/move parts, wire
+terminals, select differential probes, switch sources on/off, pause or step time,
+and edit component values. A reference-wiring button is optional and resets parts.
+
+`circuit-engine.mjs` solves the actual connected R/C/source/switch netlist with
+modified nodal analysis and backward Euler capacitor companions. No implicit
+wire, reference ground, source signal or canned output is substituted. Switch
+states are iterated against their actual gate voltage. Floating islands, missing
+ground, source shorts and singular equations stop the simulation. Voltage probes
+are ideal high impedance. Supply OFF sets both signal and clock sources to zero
+while retaining capacitor state; topology/value edits explicitly reset it.
+The UI adapts the time step to source period and the smallest R·C, and rejects
+settings requiring <0.01 µs. Models and limitations are disclosed in both languages.
+This is an educational bounded solver, not a general transistor/SPICE engine.
+
+Validation: `node scripts/test-circuit-workbench.mjs` checks analytical RC charge,
+discharge, inverted polarity, sine gain, sample acquisition/hold, leakage droop,
+and invalid wiring. UI QA covers manual two-terminal wiring, reference assembly,
+probe selection, power toggling, parameter edits and identical-probe zero voltage.
