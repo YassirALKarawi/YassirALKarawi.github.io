@@ -1,3 +1,4 @@
+import {pushView} from '/assets/site-navigation.mjs';
 import {flow} from '../signals.mjs?v=scienceRef4';
 import {lessons,blockRoles} from '../lessons.mjs?v=deep7';
 import {challengeData} from '../practice.mjs?v=learn6';
@@ -16,7 +17,7 @@ function link(t,view='lecture'){return `../?view=${view}&lecture=${t.lecture}&to
 function findTopic(id){return topics.find(t=>t.id===id)||topics[0]}
 function remember(mode,id){state.last={mode,id};save()}
 function url(mode,id=''){const u=new URL(location.href);u.searchParams.set('lang',lang);if(mode==='home'){u.searchParams.delete('mode');u.searchParams.delete('id')}else{u.searchParams.set('mode',mode);u.searchParams.set('id',id)}return u.pathname+u.search}
-function go(mode,id=''){if(mode==='circuit'){location.href='circuits.html?lang='+lang;return}history.pushState(null,'',url(mode,id));render(mode,id);scrollTo(0,0)}
+function go(mode,id=''){if(mode==='circuit'){location.href='circuits.html?lang='+lang;return}pushView(url(mode,id));render(mode,id);scrollTo(0,0)}
 function navigation(mode){return `<nav class="path-nav" aria-label="${L('Study path','مسار الدراسة')}">${[['home',L('My path','مساري')],['learn',L('Understand','أفهم')],['solve',L('Solve','أحل')],['circuit',L('Circuit workbench','مختبر الدوائر')],['repair',L('Diagnose signals','تشخيص الإشارات')]].map(([v,title])=>`<button data-mode="${v}" ${v===mode?'aria-current="page"':''}>${title}</button>`).join('')}</nav>`}
 function frame(mode,body){$('#workspace').innerHTML=navigation(mode)+body;document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>go(b.dataset.mode,b.dataset.mode==='repair'?cases[0].id:topics[0].id));math()}
 function topicSelector(t){return `<label class="topic-select">${L('Choose a topic','اختر الموضوع')}<select id="topic-choice">${curriculum.map(c=>`<optgroup label="${esc(c.title)}">${topics.filter(x=>x.lecture===c.n).map(x=>`<option value="${x.id}" ${x.id===t.id?'selected':''}>${esc(x.title)}</option>`).join('')}</optgroup>`).join('')}</select></label>`}

@@ -15,4 +15,4 @@
 @keyframes signalPacket{0%{transform:translateX(0) scale(.7);opacity:0}18%{opacity:1}82%{opacity:1}100%{transform:translateX(42px) scale(1.15);opacity:0}}@keyframes deviceBreathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.16)}}
 @media(max-width:760px){.lecture-author,.hub-author{grid-template-columns:1fr;border-radius:16px}.lecture-author span,.hub-author span{grid-row:auto}.formula-card{grid-template-columns:38px minmax(0,1fr)}.formula-card>div{padding:20px 17px}.derivation-theatre{padding:22px 16px}.derivation-steps li{grid-template-columns:34px minmax(0,1fr);padding:12px}.derivation-steps li:before{width:32px;height:32px}.flow-node{min-width:135px}.node-icon{width:58px;height:58px}.node-icon svg{width:38px;height:38px}}
 
-.academy-brand>span:first-child{background:url(/learning/engineering/yassir-ameen.jpg) center 29%/cover no-repeat;border-radius:50%;color:transparent;font-size:0}
+.academy-brand>span:first-child{background:url(/assets/yassir-personal.jpg) center 29%/cover no-repeat;border-radius:50%;color:transparent;font-size:0}

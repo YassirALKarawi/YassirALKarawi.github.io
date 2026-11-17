@@ -723,15 +723,20 @@ function homePage() {
         <p class="eyebrow"><span></span> Cybersecurity · Artificial Intelligence · 6G Networks</p>
         <h1>Advancing cybersecurity and <em>intelligent networks.</em></h1>
         <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My research connects cybersecurity, artificial intelligence (AI), deep learning and quantum neural networks with Open RAN, 6G communications, digital twins and optical performance monitoring.</p>
-        <div class="hero-actions"><a class="button primary" href="/publications.html">Explore publications ${icon("arrow")}</a><a class="button secondary" href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar ${icon("external")}</a></div>
+        <div class="hero-actions"><a class="button primary" href="/learning/">Engineering studio <span lang="ar" dir="rtl">بوابة الهندسة</span></a><a class="button secondary" href="/publications.html">Explore publications ${icon("arrow")}</a><a class="button secondary" href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar ${icon("external")}</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
       <aside class="hero-profile" aria-label="Academic profile">
-        <div class="profile-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><img src="${profileImage}" alt="Dr. Yassir AL-Karawi" width="320" height="320"></div>
+        <div class="profile-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><img src="/assets/yassir-personal.jpg" alt="Dr. Yassir AL-Karawi" width="320" height="320"></div>
         <div class="profile-caption"><p>Assistant Professor</p><strong>Department of Communications Engineering</strong><span>College of Engineering · University of Diyala · Iraq</span></div>
       </aside>
     </div>
     <div class="container stat-rail"><div><strong>${publications.length}</strong><span>Published works</span></div><div><strong>${journalCount}</strong><span>Journal articles</span></div><div><strong>${conferenceCount}</strong><span>Conference papers</span></div><div><strong>4</strong><span>Persistent author IDs</span></div></div>
+  </section>
+
+  <section class="section campus-section" id="teaching" aria-labelledby="teaching-title">
+    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Engineering studio</h2></div><p>Study a subject, run its experiments and practise for an engineering interview. The studio is available in Arabic and English.</p></div>
+    <div class="campus-links"><a href="/learning/#catalog"><strong>Curricula</strong><span>Choose your discipline and stage</span></a><a href="/learning/digital-communications/academy/?view=course&amp;lang=en#lecture-roadmap"><strong>Digital Communication I</strong><span>Follow the lecture sequence</span></a><a href="/learning/#labs"><strong>Virtual laboratories</strong><span>Open a bench and take a measurement</span></a><a href="/learning/#career"><strong>Tests and interviews</strong><span>Practise for your next assessment</span></a></div></div>
   </section>
 
   <section class="section intro-section">
@@ -900,7 +905,8 @@ const styles = `:root{--ink:#10253d;--ink-2:#24415e;--muted:#66788c;--paper:#f7f
 
 const discoveryStyles = `.data-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}.data-links a{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.24);padding:7px 10px;font-size:.72rem;font-weight:800}.record-id a+a{margin-top:8px}.record-keywords{margin-top:42px;padding-top:30px;border-top:1px solid var(--line)}.record-keywords h2{font-size:1.45rem}.record-keywords .tags{max-width:780px}.record-keywords .tags span{background:var(--white)}@media(max-width:760px){.data-links{grid-column:1/-1;justify-content:flex-start}}`;
 
-const appJs = `(() => {
+const appJs = `import('/assets/site-navigation.mjs');
+(() => {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
   if (toggle && nav) toggle.addEventListener('click', () => {

@@ -24,7 +24,7 @@ const svgIcon=name=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
 function render(){
   document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title=`${t('title')} | Dr. Yassir AL-Ameen`;
   $('#app').innerHTML=`
-  <header class="masthead"><a class="brand" href="../?view=course&lang=${lang}"><img class="faculty-photo" src="/learning/engineering/yassir-ameen.jpg" alt=""><span>${t('studio')}<small dir="ltr">DR. YASSIR AL-AMEEN</small></span></a><div class="head-actions"><a class="back" href="../?view=lecture&lecture=3&lang=${lang}">${t('course')}</a><button data-action="language" class="lang" lang="${lang==='ar'?'en':'ar'}">${t('language')}</button></div></header>
+  <header class="masthead"><a class="brand" href="../?view=course&lang=${lang}"><img class="faculty-photo" src="/assets/yassir-personal.jpg" alt=""><span>${t('studio')}<small dir="ltr">DR. YASSIR AL-AMEEN</small></span></a><div class="head-actions"><a class="back" href="../?view=lecture&lecture=3&lang=${lang}">${t('course')}</a><button data-action="language" class="lang" lang="${lang==='ar'?'en':'ar'}">${t('language')}</button></div></header>
   <main id="main"><section class="intro"><div><p class="eyebrow">${t('eyebrow')}</p><h1>${t('title')}</h1><p class="lede">${t('intro')}</p></div><aside class="mission"><p class="eyebrow">${t('mission')}</p><p>${t('missionText')}</p><div class="targets"><div><b dir="ltr">64 <small>kbit/s</small></b><span>${t('capacity')}</span></div><div><b dir="ltr">≥35 <small>dB</small></b><span>${t('quality')}</span></div><div><b>0</b><span>${t('overload')}</span></div></div></aside></section>
   <div class="lesson-links"><a href="../?view=lecture&lecture=3&lang=${lang}#topic-quantizer">${t('quantizerLesson')}</a><a href="../?view=lecture&lecture=3&lang=${lang}#topic-pcm">${t('pcmLesson')}</a><a href="../?view=quiz&lecture=3&lang=${lang}">${t('lectureTest')}</a></div><p class="caption">${t('lectureContext')}</p>
   ${state.shared?`<p class="notice">${t('shared')}</p>`:''}
@@ -150,7 +150,7 @@ document.addEventListener('click',e=>{
   const button=e.target.closest('[data-action]');if(!button||button.disabled)return;
   const action=button.dataset.action;
   if(action==='stop')stopAudio();
-  if(action==='language'){stopAudio();lang=lang==='ar'?'en':'ar';try{localStorage.setItem('dc-language',lang)}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(null,'',url);render()}
+  if(action==='language'){stopAudio();lang=lang==='ar'?'en':'ar';try{localStorage.setItem('dc-language',lang)}catch{}const url=new URL(location.href);url.searchParams.set('lang',lang);history.replaceState(history.state,'',url);render()}
   if(action==='diagnose')diagnose();
   if(action==='test')testRepair();
   if(action==='reset'){stopAudio();state.settings={...BASELINE};state.tests=null;delete state.evidence[state.caseId];recompute();render()}
@@ -161,7 +161,7 @@ document.addEventListener('click',e=>{
   if(action==='wav')download(wavBytes(current.output),`sound-lab-${state.caseId}-G${state.settings.gain}-b${state.settings.bits}.wav`,'audio/wav');
   if(action==='report'&&Object.keys(state.evidence).length)download(reportHTML(record(),lang,location.href),`sound-lab-experiment-${lang}.html`,'text/html;charset=utf-8');
   if(action==='previous'&&previousRecord)download(reportHTML(previousRecord,lang,location.href),`sound-lab-previous-record-${lang}.html`,'text/html;charset=utf-8');
-  if(action==='restart'){stopAudio();plotStart=null;acquiredEnd=null;state={settings:{...BASELINE},caseId:'normal',shared:false,measurements:new Set(),choice:'',diagnosed:false,selected:1288,evidence:{},tests:null};const u=new URL(location.href);u.search=`lang=${lang}`;u.hash='';history.replaceState(null,'',u);recompute();render();window.scrollTo(0,0)}
+  if(action==='restart'){stopAudio();plotStart=null;acquiredEnd=null;state={settings:{...BASELINE},caseId:'normal',shared:false,measurements:new Set(),choice:'',diagnosed:false,selected:1288,evidence:{},tests:null};const u=new URL(location.href);u.search=`lang=${lang}`;u.hash='';history.replaceState(history.state,'',u);recompute();render();window.scrollTo(0,0)}
 });
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio()});
 window.addEventListener('pagehide',()=>{stopAudio();audioContext?.close();audioContext=null});

@@ -1,3 +1,4 @@
+import('/assets/site-navigation.mjs');
 (() => {
   'use strict';
   const $ = (s, r=document) => r.querySelector(s);

@@ -27,7 +27,7 @@ const tr=(ar,en)=>language==='ar'?ar:en;
 const link=(url,label,kind='')=>'<a class="btn '+kind+'" href="'+url+'">'+label+'</a>';
 const resource=(view='course')=>'digital-communications/academy/?view='+view+'&amp;lang='+language+(view==='course'?'#lecture-roadmap':'');
 const linkDept=d=>'#department/'+d.id, linkLab=l=>'#lab/'+l.id;
-let clean=[],labCase,liveFilters={text:'',dept:''},lastRoute='',workingTheme;
+let clean=[],labCase,liveFilters={text:'',dept:''},renderedHash,workingTheme;
 function onExit(fn){clean.push(fn)}
 function routeParts(){return location.hash.slice(1).split('/')}
 function iconCode(d){return '<span class="dept-code">'+d.code+'</span>'}
@@ -42,7 +42,25 @@ function applyShell(){
   $('#nav').innerHTML=[['home','الرئيسية|Home'],['catalog','دليل التخصصات|Explore'],['labs','المختبرات|Labs'],['career','الاختبارات والمقابلات|Career'],['progress','تقدّمي|Progress']].map(([v,name])=>'<a href="#'+v+'" '+(active===v?'aria-current="page"':'')+'>'+T(name)+'</a>').join('');
 }
 function head(title,description,parent='#home',parentText=tr('الرئيسية','Home')){
-  return '<div class="trail"><a href="'+parent+'">'+parentText+'</a><span aria-hidden="true">/</span><span>'+title+'</span></div><header class="pagehead"><h1>'+title+'</h1><p class="lead">'+description+'</p></header>';
+  const [view,id,sub,topic]=routeParts();
+  const crumbs = new Map([['#home',tr('رئيسية البوابة','Studio home')]]);
+  let dept,subject;
+  if (['subject','bank','practice','interview','department'].includes(view)) {dept=department(id);subject=sub;}
+  if (view==='lab' && department(sub)) {dept=department(sub);subject=topic;}
+  if (dept) {
+    crumbs.set('#catalog',tr('التخصصات','Disciplines'));
+    if(view!=='department' || sub) crumbs.set(linkDept(dept),T(dept.title));
+    const year=stages(dept.id).findIndex(group=>group.includes(subject));
+    if(year>=0){
+      crumbs.set(linkDept(dept)+'/'+(year+1),stageLabel(year,T));
+      if(view!=='subject') crumbs.set(subjectLink(dept,subject),T(subjects[subject].title));
+    }
+  } else if(view==='lab') crumbs.set('#labs',tr('دليل المختبرات','Lab directory'));
+  else if(parent!=='#home') crumbs.set(parent,parentText);
+  const current=view==='department'&&sub?stageLabel(Number(sub)-1,T)||title:title;
+  const trail=[...crumbs].map(([href,label])=>'<a href="'+href+'">'+label+'</a>').join('<span aria-hidden="true">/</span>');
+  return '<nav class="trail" data-trail aria-label="'+tr('مسار الصفحة','Breadcrumb')+'">'+trail+'<span aria-hidden="true">/</span><span aria-current="page">'+current+'</span></nav><header class="pagehead"><h1>'+title+'</h1><p class="lead">'+description+'</p></header>';
+
 }
 const options=()=>departments.map(d=>'<option value="'+d.id+'">'+T(d.title)+'</option>').join('');
 function deptCard(d){return '<a class="card" href="'+linkDept(d)+'">'+iconCode(d)+'<h3>'+T(d.title)+'</h3><p>'+d.labs.map(l=>T(l.concept)).join(tr('، ',' · '))+'</p><span class="textlink">'+tr('استكشف التخصص','Explore discipline')+' '+tr('←','→')+'</span></a>'}
@@ -56,6 +74,7 @@ function goalCards(){return '<div class="grid">'+[
 function sectionTitle(title,url='',label=''){return '<div class="headrow"><h2>'+title+'</h2>'+(url?'<a class="textlink" href="'+url+'">'+label+' '+tr('←','→')+'</a>':'')+'</div>'}
 function home(){
  root.innerHTML='<section class="hero"><div><div class="eyebrow">'+tr('استوديو التعلّم الهندسي','Engineering learning studio')+'</div><h1>'+tr('افهم الفكرة.<br><em>اختبرها بنفسك.</em>','Understand the idea.<br><em>Put it to the test.</em>')+'</h1><p>'+tr('من المحاضرة إلى المختبر ثم إلى المقابلة. اختر تخصصك، غيّر قيم النموذج، واستخدم النتيجة لتفسّر قرارك الهندسي.','From the lecture to the lab and the interview. Choose your discipline, adjust a model, and use the results to explain an engineering decision.')+'</p><div class="actions">'+link('#catalog',tr('تصفّح المناهج والمراحل','Explore curricula and stages'),'primary')+link('#labs',tr('ادخل المختبرات','Open the labs'),'secondary')+'</div></div><div class="scope"><div class="screenhead"><span><i class="scope-ind"></i> SIGNAL MONITOR</span><span>1 V/div</span></div><canvas id="wave" role="img" aria-label="'+tr('إشارة جيبية متحركة متغيرة التردد','Live sine wave with adjustable frequency')+'"></canvas><div class="scopefoot"><label for="freq">'+tr('التردد','Frequency')+' <output id="freq-value">2 Hz</output></label><input id="freq" type="range" min="1" max="6" value="2"><button type="button" id="pause"></button></div></div></section><div class="metrics">'+[[departments.length,'تخصصاً هندسياً|engineering disciplines'],[labs.length,'مختبراً تأسيسياً|foundation labs'],[departments.length,'حالة مقابلة|interview cases']].map(([n,s])=>'<div class="meter"><strong>'+n+'</strong>'+T(s)+'</div>').join('')+'</div><section class="section">'+sectionTitle(tr('ما هدفك اليوم؟','What are you here to do?'))+goalCards()+'</section>'+feature()+'<section class="section">'+sectionTitle(tr('استكشف التخصصات','Explore disciplines'),'#catalog',tr('الدليل الكامل','Full directory'))+'<div class="grid">'+[0,4,5,3,9,14].map(i=>deptCard(departments[i])).join('')+'</div></section>';
+ root.insertAdjacentHTML('beforeend','<section class="academic-bridge section"><img src="/assets/yassir-personal.jpg" width="76" height="76" alt=""><div><h2>'+tr('د. ياسر الأمين','Dr. Yassir Al-Ameen')+'</h2><p>'+tr('أستاذ مساعد في هندسة الاتصالات بجامعة ديالى. تعرف على عملي في شبكات الجيل السادس والاتصالات الكمية والضوئية.','Assistant Professor of Communications Engineering at the University of Diyala. Explore my work in 6G, quantum and optical communications.')+'</p><div class="actions">'+link('/',tr('موقعي الأكاديمي','My academic site'))+link('/publications.html',tr('منشوراتي العلمية','Publications'))+link('/topics.html',tr('أدلة البحث','Research guides'))+'</div></div></section>');
  wave();
 }
 function canvasSetup(canvas){const box=canvas.getBoundingClientRect(),ratio=Math.min(window.devicePixelRatio||1,2),w=Math.max(1,box.width),h=Math.max(1,box.height);
@@ -82,8 +101,9 @@ function catalog(isLabs){
  const cards=pool.filter(o=>{const d=isLabs?department(o.dept):o,items=isLabs?[o]:d.labs;
  const hay=[d.title,d.code,...(isLabs?[]:stages(d.id).flat().map(k=>subjects[k].title)),...items.flatMap(l=>[l.title,l.concept,l.equation])].join(' ');
  return (!id||coveredModels(id).includes(o.id))&&norm(hay).includes(q)});$('#matches').textContent=cards.length+' '+tr('نتيجة',cards.length===1?'result':'results');$('#cards').innerHTML=cards.length?cards.map(isLabs?labCard:deptCard).join(''):'<p class="empty">'+tr('جرّب كلمة أخرى أو أزل مرشح التخصص.','Try another search or clear the discipline filter.')+'</p>'};
- $('#query').value=liveFilters.text;$('#query').oninput=e=>{liveFilters.text=e.target.value;filter()};if(isLabs){$('#dept-filter').value=liveFilters.dept;$('#dept-filter').onchange=e=>{liveFilters.dept=e.target.value;filter()}}filter();
+ $('#query').value=liveFilters.text;$('#query').oninput=e=>{liveFilters.text=e.target.value;rememberDirectory();filter()};if(isLabs){$('#dept-filter').value=liveFilters.dept;$('#dept-filter').onchange=e=>{liveFilters.dept=e.target.value;rememberDirectory();filter()}}filter();
 }
+function rememberDirectory(){history.replaceState({...history.state,studioFilters:{...liveFilters}},'')}
 function departmentPage(d,year){
  root.innerHTML=head(T(d.title),tr('اختر مرحلة لعرض موادها أو ابدأ تدريباً يغطي موضوعات القسم.','Select a stage to see its subjects, or practice across the discipline.'),'#catalog',tr('دليل التخصصات','Discipline directory'))+'<div class="actions">'+link('#bank/'+d.id,tr('بنك تمارين القسم','Department exercise bank'),'primary')+link('#practice/'+d.id,tr('نماذج اختبارات القسم','Department test forms'))+link('#interview/'+d.id,tr('مقابلة فنية','Technical interview'))+'</div>'+degreeMap(d,year,T)+(d.id==='communications'?feature():'');
 }
@@ -173,16 +193,24 @@ function skillRecord(){
 }
 function render(scroll=true){
  clean.splice(0).forEach(f=>f());workingTheme=null;const [v,id,sub,topic]=routeParts();applyShell();
- if(lastRoute!==v&&v!=='labs'&&v!=='catalog')liveFilters={text:'',dept:''};
+ if(v==='labs'||v==='catalog')liveFilters={text:'',dept:'',...history.state?.studioFilters};
  if(v!=='lab')labCase=null;
  if(v==='catalog'||v==='labs')catalog(v==='labs');else if(v==='department'&&department(id))departmentPage(department(id),Number(sub)>=1&&Number(sub)<=4?sub:0);
  else if(v==='subject'&&department(id)&&stages(id).flat().includes(sub)){root.innerHTML=subjectPage(department(id),sub,T,head,link,resource);const l=model(subjects[sub].models[0]);const preview=document.createElement('section');preview.className='live-bench panel section';root.querySelector('.source-link').closest('section').before(preview);const values=[l.x.initial,l.y.initial];const bench=attachBench(preview,l,()=>values,T);const controls=document.createElement('div');controls.className='bench-inputs';controls.innerHTML=[l.x,l.y].map(p=>'<label class="slider"><span>'+T(p.label)+'<output>'+num(p.initial)+' '+p.unit+'</output></span><input aria-label="'+T(p.label)+'" type="range" min="'+p.min+'" max="'+p.max+'" step="'+p.step+'" value="'+p.initial+'"></label>').join('');preview.querySelector('.instrument').before(controls);controls.querySelectorAll('input').forEach((el,i)=>el.oninput=()=>{values[i]=Number(el.value);controls.querySelectorAll('output')[i].textContent=num(values[i])+' '+[l.x.unit,l.y.unit][i];bench.refresh()});onExit(bench.destroy)}
  else if(v==='bank'&&department(id))bankView(root,department(id),stages(id).flat().includes(sub)?sub:null,topic,T,head,link);
  else if(v==='lab'&&model(id)){const d=department(sub);labPage(model(id),d&&stages(d.id).flat().includes(topic)&&subjects[topic].models.includes(id)?d:null,topic)}else if(v==='career')career();else if(v==='project')project();else if(v==='practice')examPage(id,sub);else if(v==='interview')interview(id);else if(v==='progress')skillRecord();else if(!v||v==='home'){home();stagePicker(root,T);root.insertAdjacentHTML('beforeend',projectFeature())}else{root.innerHTML=head(tr('المسار غير موجود','Page not found'),tr('اختر تخصصاً من الدليل للمتابعة.','Choose a discipline in the directory to continue.'))+link('#catalog',tr('دليل التخصصات','Explore disciplines'))}
- lastRoute=v;document.title=(!v||v==='home'?tr('بوابة الهندسة','Engineering Studio'):(root.querySelector('h1')?.textContent||'Engineering Studio'))+' · Yassir Al-Ameen';
- if(scroll){window.scrollTo(0,0);root.focus({preventScroll:true})}
+ renderedHash=location.hash;document.title=(!v||v==='home'?tr('بوابة الهندسة','Engineering Studio'):(root.querySelector('h1')?.textContent||'Engineering Studio'))+' · Yassir Al-Ameen';
+ dispatchEvent(new Event('studio:route'));
+ if(scroll){window.scrollTo({top:history.state?.studioScroll||0,behavior:'instant'});root.focus({preventScroll:true})}
 }
 $('#theme').onclick=()=>{theme=theme==='dark'?'light':'dark';write(key+'.theme',theme);applyShell();workingTheme?.()};
-$('#lang').onclick=()=>{language=language==='ar'?'en':'ar';write(key+'.lang',language);const u=new URL(location.href);u.searchParams.set('lang',language);history.replaceState(null,'',u);render(false)};
+$('#lang').onclick=()=>{language=language==='ar'?'en':'ar';write(key+'.lang',language);const u=new URL(location.href);u.searchParams.set('lang',language);history.replaceState(history.state,'',u);render(false)};
 $('#skip').onclick=e=>{e.preventDefault();root.focus();root.scrollIntoView()};
+function savePosition(){
+ if(renderedHash===location.hash && history.state?.studioScroll!==scrollY)history.replaceState({...history.state,studioScroll:scrollY},'');
+}
+let scrollTimer;
+addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(savePosition,140)},{passive:true});
+document.addEventListener('click',savePosition,true);
+addEventListener('pagehide',savePosition);
 addEventListener('hashchange',()=>render());render(false);
