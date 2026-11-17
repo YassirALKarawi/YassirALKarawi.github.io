@@ -67,17 +67,17 @@ export function attachBench(host,l,read,T){
    return {x,y,z,f,response:rc?rcResponse(f,z):null};
  }
  function traceSVG(s,set){
-   const W=250,left=35,mid=77,base=131;let output='';
+   const W=250,left=35,mid=76,base=131;let output='';
    for(let i=0;i<=5;i++)output+=line('M'+(left+i*50)+' 21v110','#305054',1);
    for(let i=0;i<=4;i++)output+=line('M35 '+(21+i*27.5)+'h250','#305054',1);
    let topUnit=l.unit, high=1, low=0, timeUnit='s', span=6,pointsA=[],pointsB=[];
    if(rc||vib){
      span=rc?3/s.f:3/s.z;timeUnit=rc?'ms':'s';topUnit=rc?'V':'mm';high=rc?1:10;low=-high;
      const phase=steady?0:(vib?elapsed*s.z:elapsed*.5);
-     for(let i=0;i<=150;i++){let θ=2*Math.PI*(3*i/150+phase);pointsA.push(mid-48*(vib?Math.cos(θ):Math.sin(θ)));if(rc)pointsB.push(mid-48*s.response.gain*Math.sin(θ+s.response.phase))}
+     for(let i=0;i<=150;i++){let θ=2*Math.PI*(3*i/150+phase);pointsA.push(mid-55*(vib?Math.cos(θ):Math.sin(θ)));if(rc)pointsB.push(mid-55*s.response.gain*Math.sin(θ+s.response.phase))}
    }else{
      high=Math.max(l.calc(l.x.min,s.y),l.calc(set,s.y),s.z)*1.10||1;
-     for(let i=0;i<=150;i++){const t=elapsed-6+6*i/150;if(t<0){pointsA.push(null);continue}const u=steady?set:sweepInput(l.x,set,(1+Math.cos(t*Math.PI/3))/2);pointsA.push(base-105*(open?0:l.calc(u,s.y))/high)}
+     for(let i=0;i<=150;i++){const t=elapsed-6+6*i/150;if(t<0){pointsA.push(null);continue}const u=steady?set:sweepInput(l.x,set,(1+Math.cos(t*Math.PI/3))/2);pointsA.push(base-110*(open?0:l.calc(u,s.y))/high)}
    }
    function curve(points,color){let started=false,d='';points.forEach((py,i)=>{if(py===null)return;d+=(started?'L':'M')+(left+i*W/150).toFixed(1)+' '+py.toFixed(1);started=true});return line(d,color,2.2)}
    return output+curve(pointsA,mint)+curve(pointsB,amber)+label(18,25,fmt(high),ink,8)+label(18,131,fmt(low),ink,8)+label(52,13,topUnit,ink,9)+label(70,154,rc||vib?'0':'t − 6 s',ink,10)+label(252,154,rc||vib?fmt(span)+' '+timeUnit:'t',ink,10);
@@ -87,7 +87,7 @@ export function attachBench(host,l,read,T){
    const ratio=(s.x-l.x.min)/(l.x.max-l.x.min);
    el('kit').innerHTML=canOpen?circuit(rig.scene,open,l.id):equipment(rig.scene,l.id,ratio,elapsed,s.z,s.x,s.y,l);
    el('scope').innerHTML=traceSVG(s,set);
-   el('read').textContent=l.x.symbol+' = '+fmt(s.x)+' '+l.x.unit+'   ·   '+l.y.symbol+' = '+fmt(s.y)+' '+l.y.unit+'   ·   '+(rc?'f꜀ = ':'')+fmt(s.z)+' '+l.unit+(rc?'   ·   CH2 = '+fmt(s.response.gain)+' Vpk   ·   φ = '+fmt(s.response.phase*180/Math.PI)+'°':'');
+   el('read').textContent=l.x.symbol+' = '+fmt(s.x)+' '+l.x.unit+'   ·   '+l.y.symbol+' = '+fmt(s.y)+' '+l.y.unit+'   ·   '+(rc?'f꜀ = ':T(l.output)+' = ')+fmt(s.z)+' '+l.unit+(rc?'   ·   CH2 = '+fmt(s.response.gain)+' Vpk   ·   φ = '+fmt(s.response.phase*180/Math.PI)+'°':'');
    el('pause').textContent=running?tr('أوقف العرض','Pause display'):tr('شغّل العرض','Run display');el('pause').setAttribute('aria-pressed',String(!running));
    el('mode').textContent=(rc||vib)?(steady?tr('حرّك الرسم','Animate phase'):tr('ثبّت الطور','Lock phase')):(steady?tr('ابدأ مسح المدخل','Sweep input'):tr('ثبّت المدخل عند قيمة المنزلق','Hold slider setting'));
    if(canOpen)el('switch').textContent=open?tr('أغلق مفتاح الدائرة','Close circuit switch'):tr('افتح مفتاح الدائرة','Open circuit switch');
