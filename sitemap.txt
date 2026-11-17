@@ -31,6 +31,7 @@ https://yassiralkarawi.github.io/research/propagation-models-lte-advanced.html
 https://yassiralkarawi.github.io/research/atpc-haps-terrestrial-5-7ghz.html
 https://yassiralkarawi.github.io/learning/digital-communications/rates-symbols-supplement.html
 https://yassiralkarawi.github.io/learning/
+https://yassiralkarawi.github.io/learning/communications-studio.html
 https://yassiralkarawi.github.io/learning/digital-communications/signals-information-fundamentals.html
 https://yassiralkarawi.github.io/learning/digital-communications/sampling-reconstruction.html
 https://yassiralkarawi.github.io/learning/digital-communications/quantization-pcm.html
