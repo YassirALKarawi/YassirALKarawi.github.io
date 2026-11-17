@@ -5,3 +5,5 @@
 .mini-flow{margin:24px 0;border-top:1px solid var(--line);padding-top:22px}.mini-flow>p{font-size:.9rem;color:var(--muted)}.flow-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fbfdfc}.flow-scroll svg{display:block;width:100%;min-width:680px;direction:ltr}.flow-scroll [data-node]{cursor:pointer}.flow-scroll rect{fill:white;stroke:#a9bfc3;stroke-width:1.5}.flow-scroll .selected rect{fill:#e8f5f2;stroke:#087d82;stroke-width:2.5}.flow-scroll text{font-family:inherit;font-size:13px;fill:#153e49;unicode-bidi:plaintext}.block-role{padding:14px 16px;background:#f1f7f5;border-radius:8px;min-height:65px}.flow-scroll [data-node]:focus rect{stroke:#b87923;stroke-width:3}
 
 .path-nav{grid-template-columns:repeat(5,minmax(0,1fr))}@media(max-width:650px){.path-nav{display:flex;overflow-x:auto}.path-nav button{flex:0 0 auto}}
+
+.brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:50% 29%;vertical-align:middle}.faculty-name{display:inline-flex;align-items:center;gap:7px}

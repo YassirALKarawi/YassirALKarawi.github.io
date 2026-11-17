@@ -151,4 +151,4 @@ function drawBoard(){const svg=$('#schematic');if(!svg)return;let content=`<defs
 }
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')cancelConnection()});
-setup('rc');$('#demo').click();frame=requestAnimationFrame(animate);window.addEventListener('pagehide',()=>cancelAnimationFrame(frame));
+const entryKit=new URLSearchParams(location.search).get('kit');setup(['rc','power','sample'].includes(entryKit)?entryKit:'rc');$('#demo').click();frame=requestAnimationFrame(animate);window.addEventListener('pagehide',()=>cancelAnimationFrame(frame));

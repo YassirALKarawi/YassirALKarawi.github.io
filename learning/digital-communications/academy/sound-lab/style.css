@@ -10,3 +10,5 @@
 /* Preserve scientific axis direction inside an RTL document. */
 #waveform svg,#waveform text{direction:ltr;unicode-bidi:plaintext}
 @media(max-width:760px){.audio-choice{min-width:0}.audio-buttons .stop{flex-basis:38px;min-height:44px}.scope-head{line-height:1.7}}
+
+.brand .faculty-photo{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:50% 29%;vertical-align:middle}.faculty-name{display:inline-flex;align-items:center;gap:7px}
