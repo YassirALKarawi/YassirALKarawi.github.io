@@ -89,3 +89,22 @@ Verification: `node scripts/test-review-progress.mjs`, MCQ, bilingual, academy
 and final-audit suites. Browser QA covers diagnosis, an incorrect answer, review,
 correction, scheduled date, reload and language switching; the Arabic progress
 view fits a 390 px frame with a 375 px content area and no horizontal overflow.
+
+## Lecture-aligned study paths (aligned1)
+
+The home course map and each lecture now expose the learning objective, prerequisite,
+practical task, expected student output, lecture-specific quiz and a numerical checkpoint.
+`lecture-plan.mjs` maps all 32 topic IDs to section numbers in the current eight-lecture
+edition: protected Lectures 1–2 (17 October), Lectures 3 and 6–8 from the 31 October
+edition, and improved Lectures 4–5 (16 November). This replaces neither the lecture
+files nor their scientific assumptions; example values and general-lab parameters
+are explicitly distinguished. Checkpoints provide practice feedback without claiming
+assessment completion or altering the scored MCQ record.
+
+Sound diagnosis is linked specifically to Lecture 3 (quantization, PCM, overload and
+bit rate), with direct returns to theory and its quiz. Audio waveform tracking remains
+automatic. Topic anchors now scroll to the selected topic after route changes.
+
+Run `node scripts/test-lecture-plan.mjs` for mapping completeness, same-lecture bank
+links, bilingual rendering and independent numerical checkpoint fixtures, including
+Arabic numerals and invalid inputs. Existing course/bilingual/audio suites remain applicable.

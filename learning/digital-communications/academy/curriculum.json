@@ -43,7 +43,7 @@
  },
  {
   "n": 2,
-  "title": "Analog pulse modulation",
+  "title": "Sampling and analog pulse modulation",
   "topics": [
    {
     "id": "pam",
@@ -85,7 +85,7 @@
  },
  {
   "n": 3,
-  "title": "Quantization and PCM",
+  "title": "Pulse code modulation and quantization",
   "topics": [
    {
     "id": "quantizer",
@@ -127,7 +127,7 @@
  },
  {
   "n": 4,
-  "title": "Prediction, delta modulation and multiplexing",
+  "title": "Predictive coding and multiplexing",
   "topics": [
    {
     "id": "dpcm",
@@ -220,7 +220,7 @@
  },
  {
   "n": 6,
-  "title": "M-ary modulation",
+  "title": "QPSK, M-PSK and quadrature amplitude modulation",
   "topics": [
    {
     "id": "qpsk",
@@ -262,7 +262,7 @@
  },
  {
   "n": 7,
-  "title": "Differential PSK, MSK and M-FSK",
+  "title": "Differential PSK, MSK and M-ary FSK",
   "topics": [
    {
     "id": "dpsk",
@@ -295,7 +295,7 @@
  },
  {
   "n": 8,
-  "title": "Receivers, AWGN and performance",
+  "title": "Optimum receivers and error performance",
   "topics": [
    {
     "id": "matched",

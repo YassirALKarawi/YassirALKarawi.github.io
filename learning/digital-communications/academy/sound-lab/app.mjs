@@ -1,5 +1,5 @@
 import {FS,DURATION,CAPACITY,BASELINE,CASES,MODEL_VERSION,PLAYBACK_SCALE,parameters,sourceFor,process,evaluateRepair,sampleAt,parseExperiment,experimentQuery,wavBytes} from './model.mjs';
-import {words} from './strings.mjs?v=autotrack3';
+import {words} from './strings.mjs?v=aligned1';
 import {reportHTML} from './report.mjs';
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -24,8 +24,9 @@ const svgIcon=name=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
 function render(){
   document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title=`${t('title')} | Dr. Yassir AL-Ameen`;
   $('#app').innerHTML=`
-  <header class="masthead"><a class="brand" href="../?view=course&lang=${lang}"><span class="brand-mark">${svgIcon('wave')}</span><span>${t('studio')}<small dir="ltr">DR. YASSIR AL-AMEEN</small></span></a><div class="head-actions"><a class="back" href="../?view=course&lang=${lang}">${t('course')}</a><button data-action="language" class="lang" lang="${lang==='ar'?'en':'ar'}">${t('language')}</button></div></header>
+  <header class="masthead"><a class="brand" href="../?view=course&lang=${lang}"><span class="brand-mark">${svgIcon('wave')}</span><span>${t('studio')}<small dir="ltr">DR. YASSIR AL-AMEEN</small></span></a><div class="head-actions"><a class="back" href="../?view=lecture&lecture=3&lang=${lang}">${t('course')}</a><button data-action="language" class="lang" lang="${lang==='ar'?'en':'ar'}">${t('language')}</button></div></header>
   <main id="main"><section class="intro"><div><p class="eyebrow">${t('eyebrow')}</p><h1>${t('title')}</h1><p class="lede">${t('intro')}</p></div><aside class="mission"><p class="eyebrow">${t('mission')}</p><p>${t('missionText')}</p><div class="targets"><div><b dir="ltr">64 <small>kbit/s</small></b><span>${t('capacity')}</span></div><div><b dir="ltr">≥35 <small>dB</small></b><span>${t('quality')}</span></div><div><b>0</b><span>${t('overload')}</span></div></div></aside></section>
+  <div class="lesson-links"><a href="../?view=lecture&lecture=3&lang=${lang}#topic-quantizer">${t('quantizerLesson')}</a><a href="../?view=lecture&lecture=3&lang=${lang}#topic-pcm">${t('pcmLesson')}</a><a href="../?view=quiz&lecture=3&lang=${lang}">${t('lectureTest')}</a></div><p class="caption">${t('lectureContext')}</p>
   ${state.shared?`<p class="notice">${t('shared')}</p>`:''}
   <nav class="steps" aria-label="${t('studio')}">${['listen','measure','repair','prove'].map((k,i)=>`<a href="#${k}" ${i===(state.tests?.passed?3:state.diagnosed?2:state.measurements.size?1:0)?'aria-current="step"':''}><span>${String(i+1).padStart(2,'0')}</span>${t(k)}</a>`).join('')}</nav>
   <section id="listen" class="observation"><div class="section-top"><div><p class="eyebrow">01 / ${t('listen')}</p><h2>${t('scopeTitle')}</h2></div><span class="case-tag">${t(state.caseId==='normal'?'case1':'case2')} · <b dir="ltr">${CASES[state.caseId].amplitude.toFixed(2)} V</b></span></div>

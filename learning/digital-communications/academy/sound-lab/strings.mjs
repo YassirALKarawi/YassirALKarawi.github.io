@@ -1,6 +1,7 @@
 export const words={
-  studio:['مختبر الصوت','Sound laboratory'],course:['العودة إلى المقرر','Back to course'],language:['English','العربية'],
-  eyebrow:['تجربة 01 · اتصالات رقمية','EXPERIMENT 01 · DIGITAL COMMUNICATIONS'],
+  quantizerLesson:['شرح التكميم','Quantization lesson'],pcmLesson:['شرح سلسلة PCM','PCM signal chain'],lectureTest:['اختبار المحاضرة 3','Lecture 3 quiz'],lectureContext:['تطبيق للمحاضرة الثالثة: التكميم، تجاوز المجال، ترميز PCM ومعدل البتات. ابدأ بشرح المكمّم ثم اختبر أثر تعديل الدقة والكسب على الصوت.','An application of Lecture 3: quantization, overload, PCM encoding and bit rate. Read the quantizer explanation, then test how resolution and gain affect the sound.'],
+  studio:['مختبر الصوت','Sound laboratory'],course:['العودة إلى المحاضرة 3','Back to Lecture 3'],language:['English','العربية'],
+  eyebrow:['المحاضرة 3 · تطبيق التكميم وPCM','LECTURE 3 · QUANTIZATION & PCM APPLICATION'],
   title:['لماذا تشوّه الصوت؟','Why did the sound distort?'],
   intro:['اسمع الفرق. اختر القياس. أصلح السبب. ثم أثبت أن تصميمك يعمل عندما تتغيّر الإشارة.','Hear the difference. Choose a measurement. Repair the cause. Then prove your design works when the signal changes.'],
   mission:['مهمتك','YOUR MISSION'],missionText:['أعد نقاء الإشارة دون تجاوز سعة الوصلة.','Recover the signal without exceeding the link capacity.'],
