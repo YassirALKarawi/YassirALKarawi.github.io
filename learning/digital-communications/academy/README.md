@@ -66,3 +66,26 @@ Six topic pages and their corresponding laboratories include purpose-built visua
 Sampling spectra combine complex coefficients before magnitude, so the zero-phase sine cancels correctly at coincident Nyquist replicas. Spectral weights are normalized by sample rate and use the same 0.8 V source amplitude as the time plots. Constellation axes are equally scaled waveform coefficients in volts, not energy-normalized coordinates. The rectangular-pulse convolution is normalized by T.
 
 Run `node scripts/test-mechanisms.mjs` for independent fixtures and numerical-integration checks of these relationships. All diagrams are authored in code; reference lecture artwork is not copied.
+
+
+## Learning review and progress (review1)
+
+The course home and the new `?view=progress` page show practice evidence by
+lecture. The scored MCQ record is separate from the existing self-reported
+“understood solution” checkboxes. An eight-question course check samples one
+question from each lecture. Incorrect answers enter a review queue; subsequent
+correct answers schedule reviews at 1, 3, 7, 14 and 30 day intervals. Early
+repetition cannot advance the schedule, and a session identifier prevents
+reload/language-switch double counting. The intervals are a transparent study
+rule, not an estimated forgetting model or a claim of demonstrated mastery.
+
+`dc-review-v1` is browser-local, language-independent and validated on read.
+Damaged records are ignored and storage failures are disclosed after submission.
+Existing MCQ sessions and solution-completion keys remain supported. Historical
+scores are not assigned fabricated response times. No accounts, uploads or
+cross-device synchronization are introduced.
+
+Verification: `node scripts/test-review-progress.mjs`, MCQ, bilingual, academy
+and final-audit suites. Browser QA covers diagnosis, an incorrect answer, review,
+correction, scheduled date, reload and language switching; the Arabic progress
+view fits a 390 px frame with a 375 px content area and no horizontal overflow.
