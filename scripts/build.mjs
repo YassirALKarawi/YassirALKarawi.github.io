@@ -1,3 +1,4 @@
+import { teachingDirectory } from '../learning/engineering/directory.mjs';
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { researchContext, contextText, relatedPublications } from "./research-context.mjs";
@@ -713,7 +714,7 @@ function homePage() {
     knowsAbout: researchExpertise
   }, 2);
   const description = "Academic homepage of Dr. Yassir AL-Karawi, Assistant Professor of Communications Engineering at the University of Diyala, researching Open RAN, 5G/6G, quantum communications, AI-native networks, and optical systems.";
-  return `${head({ title: "Yassir AL-Karawi | Cybersecurity, AI & Deep Learning", description: "Yassir AL-Karawi: cybersecurity, artificial intelligence, deep learning, Open RAN and 6G research. Explore published papers, DOIs, abstracts and citations.", extra: `<link rel="me" href="https://orcid.org/0000-0003-2959-3893"><script type="application/ld+json">${personJson}</script>` })}
+  return `${head({ title: "Yassir AL-Karawi | Cybersecurity, AI & Deep Learning", description: "Yassir AL-Karawi: cybersecurity, artificial intelligence, deep learning, Open RAN and 6G research. Explore published papers, DOIs, abstracts and citations.", extra: `<link rel="stylesheet" href="/assets/teaching-directory.css"><link rel="me" href="https://orcid.org/0000-0003-2959-3893"><script type="application/ld+json">${personJson}</script>` })}
 <body>${nav("Home")}
 <main id="main">
   <section class="hero">
@@ -723,7 +724,7 @@ function homePage() {
         <p class="eyebrow"><span></span> Cybersecurity · Artificial Intelligence · 6G Networks</p>
         <h1>Advancing cybersecurity and <em>intelligent networks.</em></h1>
         <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My research connects cybersecurity, artificial intelligence (AI), deep learning and quantum neural networks with Open RAN, 6G communications, digital twins and optical performance monitoring.</p>
-        <div class="hero-actions"><a class="button primary" href="/learning/">Engineering studio <span lang="ar" dir="rtl">بوابة الهندسة</span></a><a class="button secondary" href="/publications.html">Explore publications ${icon("arrow")}</a><a class="button secondary" href="https://scholar.google.com/citations?hl=en&amp;user=Dg_tAlkAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar ${icon("external")}</a></div>
+        <div class="hero-actions"><a class="button primary" href="#teaching">Courses &amp; labs <span lang="ar" dir="rtl">المقررات والمختبرات</span></a><a class="button secondary" href="#research">Research &amp; publications</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
       <aside class="hero-profile" aria-label="Academic profile">
@@ -735,36 +736,15 @@ function homePage() {
   </section>
 
   <section class="section campus-section" id="teaching" aria-labelledby="teaching-title">
-    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Engineering studio</h2></div><p>Study a subject, run its experiments and practise for an engineering interview. The studio is available in Arabic and English. <a href="/learning/communications-studio.html">Original communications course index · <span lang="ar" dir="rtl">فهرس مقررات الاتصالات الأصلي</span></a></p></div>
-    <div class="campus-links"><a href="/5g-lab/"><strong>5G radio planning lab</strong><span>Place towers, run handover experiments and compare results</span></a><a href="/learning/#catalog"><strong>Curricula</strong><span>Choose your discipline and stage</span></a><a href="/learning/digital-communications/academy/?view=course&amp;lang=en#lecture-roadmap"><strong>Digital Communication I</strong><span>Follow the lecture sequence</span></a><a href="/learning/#labs"><strong>Virtual laboratories</strong><span>Open a bench and take a measurement</span></a><a href="/learning/#career"><strong>Tests and interviews</strong><span>Practise for your next assessment</span></a></div></div>
-  </section>
-
-  <section class="section intro-section">
-    <div class="container split-intro">
-      <div><p class="section-label">Research perspective</p><h2>From deep learning to trustworthy network intelligence.</h2></div>
-      <div><p>My research examines how future communication systems can become more energy-aware, secure, interoperable, and trustworthy. The work spans attention-based deep learning for optical monitoring, reinforcement learning for Open RAN cybersecurity, quantum neural-network synchronisation and AI-native 6G architectures.</p><a class="text-link" href="#research">View research themes ${icon("arrow")}</a></div>
-    </div>
+    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Courses &amp; laboratories</h2></div><a class="text-link" href="/learning/?lang=ar" lang="ar" dir="rtl">بوابة الهندسة بالعربية</a></div>
+    ${teachingDirectory('en')}
+    <div class="faculty-more"><a href="/learning/#catalog">All curricula by discipline and stage</a><a href="/learning/#career">Tests and interviews</a></div></div>
   </section>
 
   <section class="section research-section" id="research">
-    <div class="container"><div class="section-heading"><div><p class="section-label">Research themes</p><h2>A connected research programme</h2></div><p>Six technical directions linked by a common focus on measurable performance, security, interoperability, and reproducibility.</p></div>
-      <div class="research-grid">
-        <article class="research-card featured-theme"><span class="theme-index">01</span>${icon("network")}<h3>Open RAN &amp; 6G control</h3><p>Energy-aware optimisation, virtualised RAN architectures, near-real-time control, and efficient resource allocation.</p><div class="signal-line"><i></i><i></i><i></i><i></i><i></i></div></article>
-        <article class="research-card"><span class="theme-index">02</span><h3>Quantum communications</h3><p>Entanglement quality, QKD-assisted security, quantum-aware networking, and thermal-loss channel modelling.</p></article>
-        <article class="research-card"><span class="theme-index">03</span><h3>Artificial intelligence &amp; deep learning</h3><p>Multi-task learning, convolutional neural networks, channel attention, optical monitoring and AI-native digital twins.</p><a class="text-link" href="/topics/artificial-intelligence-deep-learning-networks.html">Explore AI and deep learning ${icon("arrow")}</a></article>
-        <article class="research-card"><span class="theme-index">04</span><h3>Wireless &amp; spectrum systems</h3><p>5G/6G mobile networks, cognitive radio, propagation, OFDM, HAPS coexistence, and spectrum-sharing optimisation.</p></article>
-        <article class="research-card"><span class="theme-index">05</span><h3>Optical networks &amp; signal processing</h3><p>DWDM transport, optical-network monitoring, digital-filter design, FPGA architectures, and communication backhaul.</p></article>
-        <article class="research-card"><span class="theme-index">06</span><h3>Cybersecurity &amp; resilient control</h3><p>Open RAN security, reinforcement learning, threat detection, quantum key distribution and false data injection attacks.</p><a class="text-link" href="/topics/open-ran-cybersecurity.html">Explore cybersecurity ${icon("arrow")}</a></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section discovery-section" id="research-guides"><div class="container"><div class="section-heading"><div><p class="section-label">Find relevant research</p><h2>Explore methods, applications and papers</h2></div><p>Follow a research theme to its original publications, DOI and ready-to-use citations.</p></div>${topicLinks()}<div class="research-languages" lang="ar" dir="rtl"><p>مجالات البحث: <a href="/topics/open-ran-cybersecurity.html">الأمن السيبراني</a>، <a href="/topics/artificial-intelligence-deep-learning-networks.html">الذكاء الاصطناعي والتعلّم العميق وتعلّم الآلة</a>، <a href="/topics/energy-efficient-open-ran.html">شبكات الجيل السادس وشبكات النفاذ الراديوي المفتوحة</a>، <a href="/topics/quantum-radar-and-sensing.html">الاتصالات والاستشعار الكمي</a>.</p></div></div></section>
-
-  <section class="section publication-section">
-    <div class="container"><div class="section-heading"><div><p class="section-label">Selected publications</p><h2>Recent work</h2></div><a class="button secondary dark" href="/publications.html">All ${publications.length} works ${icon("arrow")}</a></div>
-      <div class="featured-publications">${featured.map(pub => publicationCard(pub, true)).join("")}</div>
-    </div>
+    <div class="container" id="research-guides"><div class="section-heading"><div><p class="section-label">Research</p><h2>Research &amp; publications</h2></div></div>
+    <div class="faculty-more"><a href="/topics.html">Research topics and guides</a><a href="/publications.html">All ${publications.length} publications</a></div>
+    <h3>Selected publications</h3><div class="featured-publications">${featured.slice(0,3).map(pub => publicationCard(pub, true)).join("")}</div></div>
   </section>
 
   <section class="section journey-section">

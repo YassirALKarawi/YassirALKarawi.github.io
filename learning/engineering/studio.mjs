@@ -1,3 +1,4 @@
+import {teachingDirectory} from './directory.mjs';
 import {subjects,stages,coveredModels} from './curriculum.mjs';
 import {attachBench} from './bench.mjs?v=scale1';
 import {examForms,testDeck,unitFor,theory} from './questions.mjs';
@@ -73,8 +74,10 @@ function goalCards(){return '<div class="grid">'+[
 ].map(([url,title,body])=>'<a class="card goal-card" href="'+url+'"><h3>'+T(title)+'</h3><p>'+T(body)+'</p><span class="textlink">'+tr('ابدأ','Start')+' '+tr('←','→')+'</span></a>').join('')+'</div>'}
 function sectionTitle(title,url='',label=''){return '<div class="headrow"><h2>'+title+'</h2>'+(url?'<a class="textlink" href="'+url+'">'+label+' '+tr('←','→')+'</a>':'')+'</div>'}
 function home(){
- root.innerHTML='<section class="hero"><div><div class="eyebrow">'+tr('استوديو التعلّم الهندسي','Engineering learning studio')+'</div><h1>'+tr('افهم الفكرة.<br><em>اختبرها بنفسك.</em>','Understand the idea.<br><em>Put it to the test.</em>')+'</h1><p>'+tr('من المحاضرة إلى المختبر ثم إلى المقابلة. اختر تخصصك، غيّر قيم النموذج، واستخدم النتيجة لتفسّر قرارك الهندسي.','From the lecture to the lab and the interview. Choose your discipline, adjust a model, and use the results to explain an engineering decision.')+'</p><div class="actions">'+link('/learning/communications-studio.html',tr('فهرس مقررات الاتصالات الأصلي','Original communications course index'),'primary')+link('#catalog',tr('تصفّح المناهج والمراحل','Explore curricula and stages'),'secondary')+link('#labs',tr('ادخل المختبرات','Open the labs'),'secondary')+'</div></div><div class="scope"><div class="screenhead"><span><i class="scope-ind"></i> SIGNAL MONITOR</span><span>1 V/div</span></div><canvas id="wave" role="img" aria-label="'+tr('إشارة جيبية متحركة متغيرة التردد','Live sine wave with adjustable frequency')+'"></canvas><div class="scopefoot"><label for="freq">'+tr('التردد','Frequency')+' <output id="freq-value">2 Hz</output></label><input id="freq" type="range" min="1" max="6" value="2"><button type="button" id="pause"></button></div></div></section><div class="metrics">'+[[departments.length,'تخصصاً هندسياً|engineering disciplines'],[labs.length,'مختبراً تأسيسياً|foundation labs'],[departments.length,'حالة مقابلة|interview cases']].map(([n,s])=>'<div class="meter"><strong>'+n+'</strong>'+T(s)+'</div>').join('')+'</div><section class="section">'+sectionTitle(tr('ما هدفك اليوم؟','What are you here to do?'))+goalCards()+'</section>'+feature()+'<section class="section">'+sectionTitle(tr('استكشف التخصصات','Explore disciplines'),'#catalog',tr('الدليل الكامل','Full directory'))+'<div class="grid">'+[0,4,5,3,9,14].map(i=>deptCard(departments[i])).join('')+'</div></section>';
- root.insertAdjacentHTML('beforeend','<section class="academic-bridge section"><img src="/assets/yassir-personal.jpg" width="76" height="76" alt=""><div><h2>'+tr('د. ياسر الأمين','Dr. Yassir Al-Ameen')+'</h2><p>'+tr('أستاذ مساعد في هندسة الاتصالات بجامعة ديالى. تعرف على عملي في شبكات الجيل السادس والاتصالات الكمية والضوئية.','Assistant Professor of Communications Engineering at the University of Diyala. Explore my work in 6G, quantum and optical communications.')+'</p><div class="actions">'+link('/',tr('موقعي الأكاديمي','My academic site'))+link('/publications.html',tr('منشوراتي العلمية','Publications'))+link('/topics.html',tr('أدلة البحث','Research guides'))+'</div></div></section>');
+ root.innerHTML='<section class="studio-directory"><h1>'+tr('المقررات والمختبرات','Courses and laboratories')+'</h1>'+teachingDirectory(language)+'</section>'+
+ '<div class="faculty-more">'+link('#catalog',tr('جميع تخصصات الهندسة ومراحلها','All curricula by discipline and stage'))+link('#career',tr('الاختبارات والمقابلات','Tests and interviews'))+link('#progress',tr('تقدّمي','My progress'))+'</div>'+
+ '<details class="faculty-archive"><summary>'+tr('مراقب الإشارة','Signal monitor')+'</summary><div class="scope"><div class="screenhead"><span><i class="scope-ind"></i> SIGNAL MONITOR</span><span>1 V/div</span></div><canvas id="wave" role="img" aria-label="'+tr('إشارة جيبية متحركة متغيرة التردد','Live sine wave with adjustable frequency')+'"></canvas><div class="scopefoot"><label for="freq">'+tr('التردد','Frequency')+' <output id="freq-value">2 Hz</output></label><input id="freq" type="range" min="1" max="6" value="2"><button type="button" id="pause"></button></div></div></details>'+
+ '<details class="faculty-archive"><summary>'+tr('أرشيف المقررات','Course archive')+'</summary>'+link('/learning/communications-studio.html',tr('فهرس مقررات الاتصالات الأصلي','Original communications course index'))+'</details>';
  wave();
 }
 function canvasSetup(canvas){const box=canvas.getBoundingClientRect(),ratio=Math.min(window.devicePixelRatio||1,2),w=Math.max(1,box.width),h=Math.max(1,box.height);
@@ -82,16 +85,17 @@ function canvasSetup(canvas){const box=canvas.getBoundingClientRect(),ratio=Math
  const c=canvas.getContext('2d');c.setTransform(ratio,0,0,ratio,0,0);c.clearRect(0,0,w,h);return {c,w,h}}
 function wave(){
  const canvas=$('#wave'),slider=$('#freq'),button=$('#pause'),media=matchMedia('(prefers-reduced-motion: reduce)');
+ const panel=canvas.closest('details');
  let running=!media.matches,frame=0,phase=0,previous=0;
  const label=()=>{button.textContent=running?tr('إيقاف','Pause'):tr('تشغيل','Play');button.setAttribute('aria-pressed',String(running))};
  const draw=()=>{const {c,w,h}=canvasSetup(canvas),f=Number(slider.value);
  c.lineWidth=1;c.strokeStyle='#295156';c.beginPath();for(let i=0;i<=10;i++){let x=w*i/10;c.moveTo(x,0);c.lineTo(x,h)}for(let i=0;i<=4;i++){let y=h*i/4;c.moveTo(0,y);c.lineTo(w,y)}c.stroke();c.strokeStyle='#bcdfaf';c.lineWidth=2.5;c.beginPath();
  for(let i=0;i<=w;i++){const y=h/2-h/4*Math.sin(i/w*2*Math.PI*f+phase);if(i)c.lineTo(i,y);else c.moveTo(i,y)}c.stroke();
  c.fillStyle='#a4cbc1';c.font='10px monospace';c.fillText('0',3,h-4);c.fillText('1 s',w-22,h-4)};
- const tick=t=>{if(previous)phase=(phase+(t-previous)*Math.PI*2*Number(slider.value)/1000)%(2*Math.PI);previous=t;draw();if(running&&!document.hidden)frame=requestAnimationFrame(tick)};
- const sync=()=>{cancelAnimationFrame(frame);previous=0;label();draw();if(running&&!document.hidden)frame=requestAnimationFrame(tick)};
+ const tick=t=>{if(previous)phase=(phase+(t-previous)*Math.PI*2*Number(slider.value)/1000)%(2*Math.PI);previous=t;draw();if(running&&panel.open&&!document.hidden)frame=requestAnimationFrame(tick)};
+ const sync=()=>{cancelAnimationFrame(frame);previous=0;label();draw();if(running&&panel.open&&!document.hidden)frame=requestAnimationFrame(tick)};
  slider.oninput=()=>{$('#freq-value').textContent=slider.value+' Hz';draw()};button.onclick=()=>{running=!running;sync()};const resize=new ResizeObserver(draw);resize.observe(canvas);
- document.addEventListener('visibilitychange',sync);const motion=()=>{running=!media.matches;sync()};media.addEventListener('change',motion);sync();
+ panel.ontoggle=sync;document.addEventListener('visibilitychange',sync);const motion=()=>{running=!media.matches;sync()};media.addEventListener('change',motion);sync();
  onExit(()=>{cancelAnimationFrame(frame);resize.disconnect();document.removeEventListener('visibilitychange',sync);media.removeEventListener('change',motion)});
 }
 const norm=s=>s.toLowerCase().normalize('NFKD').replace(/[\u064b-\u065f\u0670]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').trim();
