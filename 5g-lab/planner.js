@@ -4,6 +4,11 @@ const $=id=>document.getElementById(id),round=Math.round,clamp=(n,a,b)=>Math.min
 const official=location.hostname.endsWith('github.io');
 let english=new URLSearchParams(location.search).get('lang')==='en'||(official&&!new URLSearchParams(location.search).has('lang'));
 const t=(ar,en)=>english?en:ar;
+function goBack(fallback){
+ if(history.state?.labStep || ((document.referrer || location.protocol==='blob:') && history.length>1)) history.back();
+ else location.assign(fallback);
+}
+$('previous').onclick=()=>goBack(official?'https://yassiralkarawi.github.io/':'./');
 const colors=['#78e4bf','#f8be72','#8bbcff','#e3a8ec'];
 const letter=i=>'ABCD'[i];
 const site=(x,y)=>({x,y,h:25,p:10,az:90,directional:0});
@@ -26,11 +31,26 @@ function heatmap(){
 }
 function sample(){return res?.samples[round(Number($('pos').value)/1000*(res.samples.length-1))]}
 function marker(){const q=sample();$('cursor').textContent=q?round(q.m)+' m · '+q.rx.toFixed(1)+' dBm · '+letter(q.serv):'—';const dot=$('phoneDot');if(dot&&q)dot.setAttribute('transform','translate('+q.x+' '+q.y+')');const v=$('cursorLine');if(v&&q)v.setAttribute('transform','translate('+(48+760*q.m/res.total)+' 0)')}
+// The three lattice legs share a ground anchor with the radio model.
+function towerMarker(q,i){
+ const color=colors[i],active=i===selected;
+ const scale=.8+.38*Math.sqrt(q.h/25);
+ const label=letter(i), left=q.x>950;
+ const bearing=q.directional?'<g transform="rotate('+q.az+')"><path d="M0 -14v-30m-5 7 5-7 5 7" stroke="'+color+'" fill="none" stroke-width="3"/></g>':'';
+ // Flip the illustration toward the map interior at the northern edge, using a leader to preserve the exact coordinate.
+ const inset=Math.max(0,92*scale-q.y);
+ return '<g data-drag="tower" data-index="'+i+'" transform="translate('+q.x+' '+q.y+')"><title>'+t('برج ','Site ')+label+' · '+q.h+' m</title>'+
+ '<ellipse rx="22" ry="9" fill="#132d38" stroke="'+color+'" stroke-width="'+(active?4:2)+'"/>'+bearing+
+ (inset?'<path d="M0 0v'+inset+'" stroke="'+color+'" stroke-dasharray="3 3"/>':'')+
+ '<g transform="translate(0 '+inset+') scale('+scale+')"><rect x="-24" y="-91" width="48" height="99" fill="transparent"/><use href="#steelSite"/></g>'+
+ '<g transform="translate('+(left?-31:31)+' '+(inset-18)+')"><circle r="12" fill="#152a33" stroke="'+color+'" stroke-width="2"/><text text-anchor="middle" y="5">'+label+'</text></g></g>';
+}
+const mastDrawing='<g id="steelSite"><ellipse cx="4" cy="1" rx="20" ry="5" fill="#09202b" opacity=".55"/><path d="M-17 0 -4 -65 4 -65 16 0 1 4Z" fill="#344a59"/><g stroke="#b5c7cd" stroke-width="1.7" fill="none"><path d="M-16 0 -4 -65M16 0 4 -65M1 4 0 -64M-14 -10 1 -27 12 -12 1 2 -14 -10M-11 -25 0 -40 9 -27 1 -12 -11 -25M-8 -39 0 -52 7 -41 0 -27 -8 -39M-6 -50 0 -62 5 -51 0 -39 -6 -50"/></g><path d="M-14 -11 1 -9 13 -12M-10 -26 1 -24 10 -27M-7 -40 0 -38 8 -41" fill="none" stroke="#f2be8d" stroke-width="2"/><path d="M0 -88v26m-14 -9 14 3 14 -4M-13 -66 0 -63 13 -67" fill="none" stroke="#8299a5" stroke-width="2.6"/><g stroke="#334854" stroke-width="1.2"><rect x="-16" y="-80" width="6" height="17" rx="2" fill="#c0ced2" transform="rotate(-7 -13 -73)"/><rect x="-3" y="-79" width="7" height="19" rx="2" fill="#eff3ed"/><rect x="10" y="-81" width="6" height="18" rx="2" fill="#cad9dd" transform="rotate(7 13 -73)"/></g><path d="m3 -49 9 -5" stroke="#c2d0d3" stroke-width="2"/><ellipse cx="11" cy="-54" rx="5" ry="7" transform="rotate(28 11 -54)" fill="#dce6e6" stroke="#667e8e" stroke-width="2"/><circle cy="-88" r="2" fill="#ff936a"/></g>';
 function map(){
  const line=c.path.map(q=>q.x+','+q.y).join(' ');
- $('map').innerHTML='<defs><pattern id="mesh" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" fill="none" stroke="#b1dad4" stroke-opacity=".2" stroke-width="2"/></pattern></defs><image width="1000" height="600" href="'+heat+'"/><rect width="1000" height="600" fill="url(#mesh)"/><path d="M24 566v8h100v-8" fill="none" stroke="#e3efe6" stroke-width="2"/><text x="55" y="556">100 m</text><text x="974" y="26" text-anchor="end">N ↑</text><polyline points="'+line+'" stroke="#10292e" stroke-width="9" fill="none"/><polyline points="'+line+'" stroke="#f3edd4" stroke-width="4" stroke-dasharray="9 5" fill="none"/>'+
+ $('map').innerHTML='<defs>'+mastDrawing+'<pattern id="mesh" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" fill="none" stroke="#b1dad4" stroke-opacity=".2" stroke-width="2"/></pattern></defs><image width="1000" height="600" href="'+heat+'"/><rect width="1000" height="600" fill="url(#mesh)"/><path d="M24 566v8h100v-8" fill="none" stroke="#e3efe6" stroke-width="2"/><text x="55" y="556">100 m</text><text x="974" y="26" text-anchor="end">N ↑</text><polyline points="'+line+'" stroke="#10292e" stroke-width="9" fill="none"/><polyline points="'+line+'" stroke="#f3edd4" stroke-width="4" stroke-dasharray="9 5" fill="none"/>'+
  c.path.map((p,i)=>'<g transform="translate('+p.x+' '+p.y+')" data-drag="path" data-index="'+i+'"><circle r="13" fill="transparent"/><circle r="6" fill="#fff2ca" stroke="#1a3135" stroke-width="2"/></g>').join('')+
- c.towers.map((q,i)=>'<g transform="translate('+q.x+' '+q.y+')" data-drag="tower" data-index="'+i+'"><circle r="21" fill="#13282e" stroke="'+colors[i]+'" stroke-width="'+(i===selected?4:2)+'"/><path d="M-6 10L0 -10 6 10 M-4 4h8" fill="none" stroke="'+colors[i]+'" stroke-width="2.5"/>'+ (q.directional?'<path transform="rotate('+q.az+')" d="M0 -23v-20m-4 6 4-6 4 6" stroke="'+colors[i]+'" fill="none" stroke-width="3"/>':'')+'<text x="24" y="-8">'+letter(i)+'</text></g>').join('')+
+ c.towers.map(towerMarker).join('')+
  (res?'<g id="phoneDot" pointer-events="none"><circle r="12" fill="#ffcb70" stroke="#15262d" stroke-width="4"/><circle r="4" fill="#19272d"/></g>':'')+'<path id="crosshair" visibility="'+(document.activeElement===$('map')?'visible':'hidden')+'" transform="translate('+cross.x+' '+cross.y+')" d="M-10 0h20M0 -10v20" stroke="white" stroke-width="2" pointer-events="none"/>';
  marker();
 }
@@ -73,8 +93,8 @@ function insert(p){
 }
 function position(e){const r=$('map').getBoundingClientRect();return {x:clamp(round((e.clientX-r.left)*1000/r.width),0,1000),y:clamp(round((e.clientY-r.top)*600/r.height),0,600)}}
 const m=$('map');
-m.onpointerdown=e=>{if(e.button!==0)return;const p=position(e),g=e.target.closest('[data-drag]');if(mode!=='move'){insert(p);return}if(!g)return;const i=Number(g.dataset.index),isTower=g.dataset.drag==='tower';if(isTower)selected=i;drag={obj:isTower?c.towers[i]:c.path[i],id:e.pointerId};m.setPointerCapture(e.pointerId);inputs();map()};
-m.onpointermove=e=>{if(drag&&drag.id===e.pointerId){Object.assign(drag.obj,position(e));dirty()}};
+m.onpointerdown=e=>{if(e.button!==0)return;const p=position(e),g=e.target.closest('[data-drag]');if(mode!=='move'){insert(p);return}if(!g)return;const i=Number(g.dataset.index),isTower=g.dataset.drag==='tower';if(isTower)selected=i;drag={obj:isTower?c.towers[i]:c.path[i],id:e.pointerId,dx:(isTower?c.towers[i]:c.path[i]).x-p.x,dy:(isTower?c.towers[i]:c.path[i]).y-p.y};m.setPointerCapture(e.pointerId);inputs();map()};
+m.onpointermove=e=>{if(drag&&drag.id===e.pointerId){const p=position(e);drag.obj.x=clamp(p.x+drag.dx,0,1000);drag.obj.y=clamp(p.y+drag.dy,0,600);dirty()}};
 m.onpointerup=m.onpointercancel=()=>{if(drag){drag=null;save()}};
 m.onkeydown=e=>{if(e.key==='Enter'&&mode!=='move'){insert(cross);return}const d={ArrowLeft:[-10,0],ArrowRight:[10,0],ArrowUp:[0,-10],ArrowDown:[0,10]}[e.key];if(!d)return;e.preventDefault();cross.x=clamp(cross.x+d[0],0,1000);cross.y=clamp(cross.y+d[1],0,600);map()};m.onfocus=m.onblur=()=>map();
 for(const k of ['move','tower','route'])$(k).onclick=()=>{mode=k;inputs()};
