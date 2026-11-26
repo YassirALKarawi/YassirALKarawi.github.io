@@ -736,7 +736,7 @@ function homePage() {
 
   <section class="section campus-section" id="teaching" aria-labelledby="teaching-title">
     <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Engineering studio</h2></div><p>Study a subject, run its experiments and practise for an engineering interview. The studio is available in Arabic and English. <a href="/learning/communications-studio.html">Original communications course index · <span lang="ar" dir="rtl">فهرس مقررات الاتصالات الأصلي</span></a></p></div>
-    <div class="campus-links"><a href="/learning/#catalog"><strong>Curricula</strong><span>Choose your discipline and stage</span></a><a href="/learning/digital-communications/academy/?view=course&amp;lang=en#lecture-roadmap"><strong>Digital Communication I</strong><span>Follow the lecture sequence</span></a><a href="/learning/#labs"><strong>Virtual laboratories</strong><span>Open a bench and take a measurement</span></a><a href="/learning/#career"><strong>Tests and interviews</strong><span>Practise for your next assessment</span></a></div></div>
+    <div class="campus-links"><a href="/5g-lab/"><strong>5G radio planning lab</strong><span>Place towers, run handover experiments and compare results</span></a><a href="/learning/#catalog"><strong>Curricula</strong><span>Choose your discipline and stage</span></a><a href="/learning/digital-communications/academy/?view=course&amp;lang=en#lecture-roadmap"><strong>Digital Communication I</strong><span>Follow the lecture sequence</span></a><a href="/learning/#labs"><strong>Virtual laboratories</strong><span>Open a bench and take a measurement</span></a><a href="/learning/#career"><strong>Tests and interviews</strong><span>Practise for your next assessment</span></a></div></div>
   </section>
 
   <section class="section intro-section">
@@ -1152,7 +1152,7 @@ const learningPaths = [
   ...learningCourse.lessons.map(lesson => `/learning/digital-communications/${lesson.slug}.html`),
   "/learning/digital-communications/question-bank.html"
 ];
-const crawlPaths = ["/", "/publications.html", "/topics.html", ...learningPaths, ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
+const crawlPaths = ["/", "/5g-lab/", "/publications.html", "/topics.html", ...learningPaths, ...topics.map(topicPath), ...publications.map(pub => `/research/${pub.slug}.html`)];
 await output("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${crawlPaths.map(path => `  <url><loc>${siteUrl}${path}</loc><lastmod>${siteUpdated}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 await output("sitemap.txt", crawlPaths.map(path => `${siteUrl}${path}`).join("\n"));
 await output("feed.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><title>Yassir AL-Karawi — Publications</title><id>${siteUrl}/</id><updated>${siteUpdated}T00:00:00Z</updated><link href="${siteUrl}/feed.xml" rel="self"/>${publications.slice(0, 10).map(pub => `<entry><title>${escapeHtml(pub.title)}</title><id>${doiUrl(pub) || `${siteUrl}/research/${pub.slug}.html`}</id><link href="${siteUrl}/research/${pub.slug}.html"/><updated>${pub.date.length >= 10 ? pub.date : `${pub.year}-01-01`}T00:00:00Z</updated><summary>${escapeHtml(pub.summary)}</summary></entry>`).join("")}</feed>`);
