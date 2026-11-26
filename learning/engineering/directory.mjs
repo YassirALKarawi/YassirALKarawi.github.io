@@ -12,7 +12,7 @@ const labs=[
  ['مختبرات الاتصالات الرقمية','Digital communication laboratories',academy+'?view=lab&amp;topic=sampling'],
  ['مختبر تعدد الإرسال والترميز الخطي','Multiplexing and line coding lab',courseApp('yassir-multiplexing-line-coding-lab'),true],
  ['مختبرات هندسة الاتصالات','Telecommunications engineering labs',courseApp('telecom-labs-yassir'),true],
- ['دليل المختبرات لجميع التخصصات','All virtual laboratories','/learning/#labs']
+ ['دليل مختبرات منهج الاتصالات','Communications teaching laboratories','/learning/#labs']
 ];
 export function teachingDirectory(language){
  const ar=language==='ar', label=(a,b)=>ar?a:b;

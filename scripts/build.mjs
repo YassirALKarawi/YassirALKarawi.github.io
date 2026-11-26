@@ -738,7 +738,7 @@ function homePage() {
   <section class="section campus-section" id="teaching" aria-labelledby="teaching-title">
     <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Courses &amp; laboratories</h2></div><a class="text-link" href="/learning/?lang=ar" lang="ar" dir="rtl">بوابة الهندسة بالعربية</a></div>
     ${teachingDirectory('en')}
-    <div class="faculty-more"><a href="/learning/#catalog">All curricula by discipline and stage</a><a href="/learning/#career">Tests and interviews</a></div></div>
+    <div class="faculty-more"><a href="/learning/#catalog">Communications curriculum by stage</a><a href="/learning/#career">Tests and interviews</a></div></div>
   </section>
 
   <section class="section research-section" id="research">

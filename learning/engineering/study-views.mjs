@@ -1,5 +1,5 @@
 import {subjects,sources,stages,coveredModels} from './curriculum.mjs';
-import {labs,departments} from './catalog.mjs?v=curr2';
+import {labs} from './catalog.mjs?v=curr2';
 import {formats,exercise,theory,answerFor,unitFor} from './questions.mjs';
 import {correct,parseAnswer} from './assessment.mjs';
 const lab=id=>labs.find(l=>l.id===id);
@@ -9,12 +9,6 @@ export const formNames={quick:'كوز سريع|Quick quiz',midterm:'اختبار
 const kindNames={direct:'حساب قراءة الجهاز|Calculate a reading',reverse:'استنتاج المدخل من القياس|Infer the input',delta:'التغيّر المطلق الموقّع|Signed difference',percent:'التغيّر النسبي|Relative change',ratio:'مقارنة حالتي تشغيل|Operating-point ratio',diagnosis:'تفسير هندسي|Engineering interpretation'};
 export function stageLabel(i,T){return T(['المرحلة الأولى|Stage one','المرحلة الثانية|Stage two','المرحلة الثالثة|Stage three','المرحلة الرابعة|Stage four'][i])}
 export function subjectLink(d,s){return '#subject/'+d.id+'/'+s}
-export function stagePicker(root,T){
- const html='<section class="curr-entry section"><div><p class="eyebrow">'+T('دليل الدراسة|Study planner')+'</p><h2>'+T('اختر قسمك ومرحلتك|Find your subjects')+'</h2></div><div class="planner-form"><label>'+T('القسم|Discipline')+'<select data-department>'+departments.map(d=>'<option value="'+d.id+'">'+T(d.title)+'</option>').join('')+'</select></label><label>'+T('المرحلة|Stage')+'<select data-year>'+[0,1,2,3].map(i=>'<option value="'+(i+1)+'">'+stageLabel(i,T)+'</option>').join('')+'</select></label><a class="btn primary" data-open href="#department/communications/1">'+T('اعرض المواد|Show subjects')+'</a></div></section>';
- const where=root.querySelector('.metrics');where.insertAdjacentHTML('afterend',html);
- const update=()=>root.querySelector('[data-open]').href='#department/'+root.querySelector('[data-department]').value+'/'+root.querySelector('[data-year]').value;
- root.querySelector('[data-department]').onchange=root.querySelector('[data-year]').onchange=update;
-}
 export function degreeMap(d,year,T){
  const plan=stages(d.id),selected=Number(year)||0;
  const stageNav='<nav class="stage-links" aria-label="'+T('المراحل|Stages')+'">'+[0,1,2,3,4].map(z=>'<a class="btn" '+(selected===z?'aria-current="page"':'')+' href="#department/'+d.id+(z?'/'+z:'')+'">'+(z?stageLabel(z-1,T):T('كل المراحل|All stages'))+'</a>').join('')+'</nav>';
