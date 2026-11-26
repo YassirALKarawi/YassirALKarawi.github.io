@@ -16,18 +16,26 @@ const initial=()=>({towers:[site(190,220),site(810,220)],path:[{x:0,y:300},{x:10
 let c=initial(),selected=0,mode='move',res=null,baseline=null,drag=null,frame=0;
 const key='yassir.tower-planner.v1';
 function valid(o){return o&&Array.isArray(o.towers)&&o.towers.length<=4&&Array.isArray(o.path)&&o.path.length<=16&&[...o.towers,...o.path].every(q=>q&&Number.isFinite(q.x)&&q.x>=0&&q.x<=1000&&Number.isFinite(q.y)&&q.y>=0&&q.y<=600)&&o.towers.every(q=>Number.isFinite(q.h)&&q.h>=2&&q.h<=100&&Number.isFinite(q.p)&&q.p>=-10&&q.p<=40&&Number.isFinite(q.az)&&q.az>=0&&q.az<=359&&[0,1].includes(q.directional))&&[.7,1.8,3.5].includes(o.ghz)&&[2.7,3.3].includes(o.n)&&o.speed>=5&&o.speed<=120&&[0,160,320,640,1280].includes(o.ttt)&&o.margin>=0&&o.margin<=10&&o.threshold>=-140&&o.threshold<=-60}
-try{const v=JSON.parse(localStorage.getItem(key));if(valid(v?.c))c=v.c;if(valid(v?.base)){const r=TowerLab.run(v.base);if(r)baseline={c:v.base,r}}}catch{}
-function save(){try{localStorage.setItem(key,JSON.stringify({c,base:baseline?.c}))}catch{}}
+let savedBase=null;
+try{const v=JSON.parse(localStorage.getItem(key));if(valid(v?.c))c=v.c;if(valid(v?.base))savedBase=v.base}catch{}
+function save(){try{localStorage.setItem(key,JSON.stringify({c,base:baseline?.c??savedBase}))}catch{}}
 const cross={x:500,y:300};
 let heat='';
-function heatmap(){
- const canvas=document.createElement('canvas');canvas.width=100;canvas.height=60;const ctx=canvas.getContext('2d'),img=ctx.createImageData(100,60);
- for(let y=0;y<60;y++)for(let x=0;x<100;x++){
-   const p=Math.max(-156,...c.towers.map(q=>TowerLab.power(q,{x:x*10+5,y:y*10+5},c)));
-   const v=clamp((p-c.threshold+12)/24,0,1),i=(y*100+x)*4;
-   img.data.set([17+13*v,40+76*v,47+55*v,255],i);
- }
+let epoch=0,timer=0,pending;
+function renderHeat(encoded){
+ const values=atob(encoded),canvas=document.createElement('canvas');canvas.width=100;canvas.height=60;
+ const ctx=canvas.getContext('2d'),img=ctx.createImageData(100,60);
+ for(let i=0;i<values.length;i++){const v=values.charCodeAt(i)/255;img.data.set([17+13*v,40+76*v,47+55*v,255],i*4)}
  ctx.putImageData(img,0,0);heat=canvas.toDataURL();
+}
+async function requestResult(full){
+ clearTimeout(timer);pending?.abort();const id=++epoch;pending=new AbortController();
+ try{
+ const data=await radioResult(full?'plan':'heat',c,pending.signal);
+ if(id!==epoch)return;
+ renderHeat(data.heat);if(full){res=data.result;save();$('status').textContent=res?t('اكتملت المحاكاة. حرّك المؤشر لفحص أي موضع.','Simulation complete. Scrub the route to inspect any position.'):t('ضع برجًا وحدّد نقطتين مختلفتين للمسار.','Place a site and two distinct route points.')}
+ inputs();chart();map();
+ }catch(e){if(id===epoch&&e.name!=='AbortError')$('status').textContent=t('تعذّر الاتصال بالخادم. اضغط شغّل التجربة لإعادة المحاولة.','Connection interrupted. Select Run experiment to retry.')}
 }
 function sample(){return res?.samples[round(Number($('pos').value)/1000*(res.samples.length-1))]}
 function marker(){const q=sample();$('cursor').textContent=q?round(q.m)+' m · '+q.rx.toFixed(1)+' dBm · '+letter(q.serv):'—';const dot=$('phoneDot');if(dot&&q)dot.setAttribute('transform','translate('+q.x+' '+q.y+')');const v=$('cursorLine');if(v&&q)v.setAttribute('transform','translate('+(48+760*q.m/res.total)+' 0)')}
@@ -83,8 +91,8 @@ function inputs(){
  $('run').disabled=!c.towers.length||c.path.length<2;$('undo').disabled=!c.path.length;
 }
 function stop(){cancelAnimationFrame(frame);frame=0;$('play').textContent=t('تشغيل الحركة','Play route')}
-function dirty(){stop();res=null;$('pos').value=0;heatmap();inputs();chart();map();$('status').textContent=t('أعد التشغيل بعد ضبط التجربة.','Run the experiment after configuring it.')}
-function execute(){stop();res=TowerLab.run(c);$('pos').value=0;inputs();chart();map();save();$('status').textContent=res?t('اكتملت المحاكاة. حرّك المؤشر لفحص أي موضع.','Simulation complete. Scrub the route to inspect any position.'):t('ضع برجًا وحدّد نقطتين مختلفتين على الأقل للمسار.','Place a site and at least two distinct route points.')}
+function dirty(){stop();res=null;epoch++;pending?.abort();clearTimeout(timer);timer=setTimeout(()=>requestResult(false),180);$('pos').value=0;inputs();chart();map();$('status').textContent=t('أعد التشغيل بعد ضبط التجربة.','Run the experiment after configuring it.')}
+function execute(){stop();$('pos').value=0;res=null;inputs();chart();map();$('status').textContent=t('جارٍ حساب النتائج…','Calculating…');return requestResult(true)}
 function insert(p){
  if(mode==='tower'&&c.towers.length<4){selected=c.towers.push(site(p.x,p.y))-1}
  else if(mode==='route'&&c.path.length<16){c.path.push({...p})}
@@ -105,7 +113,7 @@ for(const k of ['x','y','h','p','az','directional','ghz','n','speed','margin','t
 };
 $('del').onclick=()=>{c.towers.splice(selected,1);dirty();save()};$('undo').onclick=()=>{c.path.pop();dirty();save()};
 $('empty').onclick=()=>{c={...initial(),towers:[],path:[]};mode='tower';dirty();save()};
-$('example').onclick=()=>{c=initial();selected=0;mode='move';heatmap();execute()};
+$('example').onclick=()=>{c=initial();selected=0;mode='move';execute()};
 $('run').onclick=execute;$('base').onclick=()=>{if(!res)return;baseline={c:JSON.parse(JSON.stringify(c)),r:res};save();chart()};
 $('csv').onclick=()=>{if(!res)return;const cols=['distance_m','time_s','east_m','south_m','serving_site','serving_rsrp_dBm',...c.towers.map((_,i)=>letter(i)+'_rsrp_dBm')];
  const rows=res.samples.map(s=>[s.m.toFixed(2),s.time.toFixed(2),s.x.toFixed(1),s.y.toFixed(1),letter(s.serv),s.rx.toFixed(2),...s.powers.map(v=>v.toFixed(2))]);const a=document.createElement('a');const u=URL.createObjectURL(new Blob([[cols,...rows].map(r=>r.join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}));a.href=u;a.download='5G-route-measurements.csv';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};
@@ -114,5 +122,6 @@ $('play').onclick=()=>{if(frame){stop();return}if(!res)return;let v=+$('pos').va
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()});
 function language(){document.title=t('مختبر تخطيط شبكة الجيل الخامس | د. ياسر الأمين','5G Radio Planning Laboratory | Dr Yassir Al-Ameen');document.documentElement.lang=english?'en':'ar';document.documentElement.dir=english?'ltr':'rtl';document.querySelectorAll('[data-en]').forEach(e=>{e.dataset.ar??=e.textContent;e.textContent=english?e.dataset.en:e.dataset.ar});$('lang').textContent=english?'العربية':'English';stop();inputs();chart();map();$('status').textContent=res?t('اكتملت المحاكاة.','Simulation complete.'):t('اضبط التجربة ثم شغّلها.','Configure the experiment and run it.')}
 $('lang').onclick=()=>{english=!english;language();try{const u=new URL(location.href);u.searchParams.set('lang',english?'en':'ar');history.replaceState(null,'',u)}catch{}};
-heatmap();language();execute();
+language();execute();
+if(savedBase){const original=savedBase;radioResult('plan',original).then(d=>{if(d.result&&!baseline){baseline={c:original,r:d.result};chart()}}).catch(()=>{})}
 })();
