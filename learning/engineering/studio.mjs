@@ -1,4 +1,4 @@
-import {directoryURL,teachingDirectory} from './directory.mjs?v=directory2';
+import {directoryURL,teachingDirectory} from './directory.mjs?v=bench-links1';
 import {subjects,stages} from './curriculum.mjs';
 import {attachBench} from './bench.mjs?v=scale1';
 import {examForms,testDeck,unitFor,theory} from './questions.mjs';

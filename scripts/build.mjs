@@ -1,4 +1,4 @@
-import { teachingDirectory } from '../learning/engineering/directory.mjs';
+import { instrumentBench, teachingDirectory } from '../learning/engineering/directory.mjs';
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { researchContext, contextText, relatedPublications } from "./research-context.mjs";
@@ -724,7 +724,7 @@ function homePage() {
         <p class="eyebrow"><span></span> Cybersecurity · Artificial Intelligence · 6G Networks</p>
         <h1>Advancing cybersecurity and <em>intelligent networks.</em></h1>
         <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My research connects cybersecurity, artificial intelligence (AI), deep learning and quantum neural networks with Open RAN, 6G communications, digital twins and optical performance monitoring.</p>
-        <div class="hero-actions"><a class="button primary" href="#teaching">Courses &amp; labs</a><a class="button secondary" href="#research">Research &amp; publications</a></div>
+        <div class="hero-actions"><a class="button primary" href="${instrumentBench('en')}">Open electronics bench</a><a class="button secondary" href="#teaching">Courses &amp; labs</a><a class="button secondary" href="#research">Research &amp; publications</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
       <aside class="hero-profile" aria-label="Academic profile">

@@ -4,13 +4,14 @@ import { resolve } from 'node:path';
 import { courseDepartment, courseLabs } from '../learning/engineering/communications.mjs';
 import { subjects, stages } from '../learning/engineering/curriculum.mjs';
 import { stageLabel } from '../learning/engineering/study-views.mjs';
-import { academy, appURL, directoryURL } from '../learning/engineering/directory.mjs';
+import { academy, appURL, directoryURL, instrumentBench } from '../learning/engineering/directory.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const site = 'https://yassiralkarawi.github.io';
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const anchor = (url, label) => `<a href="${esc(url)}">${esc(label)}</a>`;
 const groups = [
+  ['workbench', 'منضدة الإلكترونيات وراسم الإشارة|Electronics and oscilloscope bench', []],
   ['wireless', 'الاتصالات اللاسلكية والجيل الخامس|Wireless and 5G', []],
   ['digital', 'الاتصالات الرقمية ومعالجة الإشارات|Digital communications and signals', ['pcm','symbol','shannon','adc','rc']],
   ['circuits', 'الدوائر والإلكترونيات والقياسات|Circuits, electronics and measurements', ['ohm','divider','gain','bridge','sensor']],
@@ -36,6 +37,7 @@ async function build(language) {
   const department = l('قسم هندسة الاتصالات','Communications Engineering');
   const titles = {lectures:l('المحاضرات','Lectures'),labs:l('المختبرات','Laboratories')};
   const restricted = l('يتطلب حسابا مصرحا له','Authorised account required');
+  const telecom = page => appURL('telecom-labs-yassir') + '/' + page + '?lang=' + language;
   const subjectURL = id => portal + '#subject/communications/' + id;
   const section = (id,title,items) => ({id,title,items});
   const row = (name,url,description='',related=[],details='', keywords='') => `<li class="directory-row"${keywords?' data-keywords="'+esc(keywords)+'"':''}>
@@ -70,7 +72,17 @@ async function build(language) {
       l('الفهرس السابق للمحاضرات والمحاكاة، باللغة الإنكليزية.','Earlier lecture and simulation index, in English.'))
   ]));
   const coreLabs = {
+    workbench:[
+      row(l('مرشح RC على راسم الإشارة','RC filter on the oscilloscope'),instrumentBench(language)+'&kit=rc',
+        l('غيّر تردد مولد الإشارات وقارن موجتي الدخل والخرج على قناتي راسم الإشارة.','Adjust the function generator and compare the input and output waveforms on the two scope channels.')),
+      row(l('دائرة أخذ العينات والاحتفاظ بها','Sample-and-hold circuit'),instrumentBench(language)+'&kit=sample',
+        l('اضبط تردد ساعة أخذ العينات وراقب جهد المكثف بين نبضتين.','Change the sampling clock and watch the capacitor hold its voltage between pulses.')),
+      row(l('مجهز القدرة في نمطي الجهد الثابت والتيار الثابت','DC power supply in CV and CC modes'),instrumentBench(language)+'&kit=power',
+        l('غيّر مقاومة الحمل أو حد التيار، واقرأ جهد الخرج والتيار عند الانتقال بين النمطين.','Change the load resistance or current limit and read the voltage and current as the supply changes mode.'))
+    ],
     wireless:[
+      row(l('محطة الهوائيات وخطوط النقل','Antenna and transmission-line trainer'),telecom('antenna-trainer.html'),
+        l('صل أجهزة القياس وجرّب الاستقطاب والنمط الإشعاعي ونسبة الموجة الواقفة.','Connect the test equipment to measure polarisation, radiation patterns and standing-wave ratio.')+' '+restricted),
       row(l('تخطيط شبكات الجيل الخامس','5G radio planning lab'),'/5g-lab/?lang='+language,l('ضع الأبراج وارسم مسار الهاتف وقارن نقاط تسليم الاتصال.','Place base stations, draw a route and compare handover locations.')),
       row(l('منضدة الجيل الخامس ومحلل الإشارة','5G workbench and signal analyser'),appURL('diyala-nr-teaching-lab'),l('قياس الإشارة وفحص الاتصال وتجارب توجيه الحزمة.','Inspect signal measurements, mobile connectivity and beam steering.'))
     ],
@@ -79,8 +91,18 @@ async function build(language) {
       row(l('مختبر الصوت والتضمين النبضي المشفر','Audio and pulse-code modulation'),academy+'sound-lab/?lang='+language,l('استمع إلى الإشارة وقس أثر التكميم والتشويه.','Listen to the signal and measure quantisation and distortion.')),
       row(l('تعدد الإرسال والترميز الخطي','Multiplexing and line coding'),appURL('yassir-multiplexing-line-coding-lab'),restricted)
     ],
-    circuits:[row(l('منضدة توصيل الدوائر وأجهزة القياس','Circuit wiring and instruments'),academy+'student-path/circuits.html?lang='+language,l('صل المكونات وافحص الإشارات بالمجسات.','Wire components and inspect signals with instrument probes.'))],
-    shared:[row(l('منصة مختبرات هندسة الاتصالات','Telecommunications engineering lab platform'),appURL('telecom-labs-yassir'),restricted)]
+    circuits:[
+      row(l('منضدة توصيل الدوائر وأجهزة القياس','Circuit wiring and instruments'),instrumentBench(language),l('صل المكونات وافحص الإشارات بالمجسات.','Wire components and inspect signals with instrument probes.')),
+      row(l('لوحة التجارب الحرة والملتيميتر','Breadboard and multimeter'),telecom('index.html'),
+        l('ضع العناصر في ثقوب اللوحة، أوصل الأسلاك وقس جهد العقد وتيار الفروع.','Place components in the breadboard, connect jumper wires and measure node voltage and branch current.')+' '+restricted)
+    ],
+    networks:[
+      row(l('منضدة الألياف الضوئية ومقياس القدرة','Optical fibre and power-meter bench'),telecom('applied.html')+'&station=optical',
+        l('صل الليزر بالليف ومقياس القدرة، ثم قارن القراءة المرجعية بالقدرة المستلمة.','Connect the laser, fibre and optical power meter, then compare the reference and received power.')+' '+restricted),
+      row(l('مختبر توصيل الشبكات واختبار الاتصال','Network cabling and connectivity lab'),telecom('networks.html'),
+        l('صل المنافذ واضبط العناوين واختبر انتقال الحزم بين الأجهزة.','Cable the ports, configure addresses and test packet delivery between devices.')+' '+restricted)
+    ],
+    shared:[row(l('منصة مختبرات هندسة الاتصالات','Telecommunications engineering lab platform'),telecom('catalogue.html'),restricted)]
   };
   const labSections=groups.map(([group,name,ids])=>{
     const items=[...(coreLabs[group]||[])];

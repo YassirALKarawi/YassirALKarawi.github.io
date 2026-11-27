@@ -1,5 +1,6 @@
 export const academy = '/learning/digital-communications/academy/';
 export const appURL = slug => 'https://' + slug + '.yassirameen22.chatgpt.site';
+export const instrumentBench = language => academy + 'student-path/circuits.html?lang=' + language;
 
 export function directoryURL(section, language) {
   return '/learning/' + section + '/' + (language === 'en' ? 'en.html' : '');
@@ -19,6 +20,7 @@ export function teachingDirectory(language) {
   return `<div class="teaching-gates">${panels}</div>
     <nav class="teaching-shortcuts" aria-label="${ar ? 'روابط مباشرة' : 'Direct links'}">
       <span>${ar ? 'دخول مباشر' : 'Direct access'}</span>
+      <a href="${instrumentBench(language)}">${ar ? 'منضدة الإلكترونيات وراسم الإشارة' : 'Electronics and oscilloscope bench'}</a>
       <a href="${academy}?view=course&amp;lang=${language}">${ar ? 'الاتصالات الرقمية الأولى' : 'Digital Communication I'}</a>
       <a href="/5g-lab/?lang=${language}">${ar ? 'مختبر تخطيط شبكات الجيل الخامس' : '5G radio planning lab'}</a>
     </nav>`;
