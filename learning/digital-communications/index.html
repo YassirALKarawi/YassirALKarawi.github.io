@@ -1,1 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Communication I</title><meta http-equiv="refresh" content="0;url=academy/?view=course"><script>const u=new URL('academy/?view=course',location.href);const m=location.hash.match(/^#([1-8])\.(\d{2})$/);if(m){u.searchParams.set('lecture',m[1]);if(u.searchParams.get('view')==='bank')u.searchParams.set('q',m[1]+'.'+m[2]);}location.replace(u.href);</script></head><body><h1>Digital Communication I</h1><p>Lectures, topic laboratories and solved questions are now in one course.</p><a href="academy/?view=course">Open Digital Communication I →</a></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digital Communication I</title>
+<link rel="canonical" href="https://yassiralkarawi.github.io/learning/digital-communications/academy/?view=course"><meta http-equiv="refresh" content="0;url=academy/?view=course">
+<script>
+const u = new URL('academy/?view=course', location.href);
+const lang = new URLSearchParams(location.search).get('lang');
+if (lang === 'ar' || lang === 'en') u.searchParams.set('lang',lang);
+const problem = location.hash.match(/^#([1-8])\.(\d{2})$/);
+if (problem) {
+  u.searchParams.set('lecture',problem[1]);
+  if (u.searchParams.get('view') === 'bank') u.searchParams.set('q',problem[1]+'.'+problem[2]);
+}
+location.replace(u.href);
+</script></head><body><main id="main"><h1>Digital Communication I</h1><p>Lectures, topic laboratories and solved questions are now in one course.</p><a href="academy/?view=course">Open Digital Communication I →</a></main></body></html>

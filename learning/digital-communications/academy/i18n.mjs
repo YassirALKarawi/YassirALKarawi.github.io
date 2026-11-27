@@ -23,7 +23,7 @@ export function t(value){const s=String(value),key=norm(s);if(language!=='ar'||!
 export function localURL(url){const u=new URL(url,location.href);if(u.origin===location.origin&&u.pathname===location.pathname)u.searchParams.set('lang',language);return u.pathname+u.search+u.hash}
 export function startLanguageUI(){
  const portalLink=document.querySelector('footer a[data-course-directory]');
- if(portalLink)portalLink.href='/learning/?lang='+language;
+ if(portalLink)portalLink.href='/learning/lectures/'+(language==='ar'?'':'en.html');
  const group=document.querySelector('.language-switch');
  group?.setAttribute('aria-label',language==='ar'?'اللغة':'Language');
  group?.querySelectorAll('[data-language]').forEach(a=>{const lang=a.dataset.language,u=new URL(location.href);u.searchParams.set('lang',lang);a.href=u.href;a.setAttribute('aria-current',lang===language?'true':'false');a.onclick=e=>{e.preventDefault();if(lang===language)return;try{localStorage.setItem('dc-language',lang);sessionStorage.setItem('dc-language-position',JSON.stringify({path:location.pathname,search:new URL(location.href).searchParams.get('view'),scroll:scrollY}));const quiz=document.querySelector('[data-quiz-screen]');if(quiz)sessionStorage.setItem('dc-language-quiz-screen',quiz.dataset.quizScreen);document.dispatchEvent(new Event('dc-save-language-state'))}catch{}location.assign(a.href)}});

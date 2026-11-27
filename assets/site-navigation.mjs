@@ -112,7 +112,7 @@ function updateDock() {
   const studioBase=portal(new URL(location.href)) ? location.pathname+location.search : studio+'?lang='+lang();
   const studioHome=studioBase+'#home';
   const labels=learning ? [
-    ['home',t('رئيسية البوابة','Studio home'),studioHome], ['lab',t('المختبرات','Labs'),studioBase+'#labs'], ['profile',t('الموقع الأكاديمي','Academic site'),'/']
+    ['home',t('رئيسية البوابة','Studio home'),studioHome], ['lab',t('المختبرات','Labs'),studio+'labs/'+(ar?'':'en.html')], ['profile',t('الموقع الأكاديمي','Academic site'),'/']
   ] : [
     ['home',t('الرئيسية','Site home'),'/'], ['learn',t('بوابة الهندسة','Engineering studio'),studio+'?lang='+lang()+'#home'], ['book',t('المنشورات','Publications'),'/publications.html']
   ];

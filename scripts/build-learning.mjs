@@ -103,17 +103,39 @@ function indexPage() {
   </main><footer class="academy-footer"><span>${authorName} · University of Diyala</span><span>Digital Communications Learning Studio</span></footer><script src="/learning/academy.js?v=2026-10-04" defer></script><script type="module" src="/learning/motion-studio.js?v=2026-09-14-motion4"></script></body></html>`;
 }
 
-function questionBankPage() {
-  const all = course.lessons.flatMap((l,li) => l.quiz.map((q,qi) => ({lesson:l, li, qi, q})));
-  const groups = course.lessons.map((l,li) => `<section class="bank-group"><header><span>${String(li+1).padStart(2,"0")}</span><div><p>Digital Communications ${l.part}</p><h2>${esc(l.title)}</h2></div></header>${l.quiz.map(([q,choices,a,why],qi) => `<fieldset data-answer="${a}" data-explain="${esc(why)}"><legend>${esc(q)}</legend>${choices.map((c,j)=>`<label><input type="radio" name="b${li}-${qi}" value="${j}"><span>${String.fromCharCode(65+j)}</span>${esc(c)}</label>`).join("")}<p class="question-feedback"></p></fieldset>`).join("")}</section>`).join("");
-  return `${head("Digital Communications Question Bank", `${all.length} multiple-choice questions with explanations across the complete course.`, "/learning/digital-communications/question-bank.html", "Quiz")}<body class="academy bank-page"><header class="academy-top"><a class="academy-brand" href="/learning/?lang=en"><span>YA</span><b>Signal Studio<small>${authorName}</small></b></a><div class="course-crumb">Cumulative assessment</div><a href="/learning/?lang=en">Course map</a></header><main id="main"><section class="bank-hero"><p class="eyebrow">Cumulative mastery · ${authorName}</p><h1>Digital Communications<br>Question Bank</h1><p>${all.length} multiple-choice questions with immediate reasoning. Use lesson mode for study or grade all visible questions for a cumulative result.</p><div><span><b>${all.length}</b> MCQs</span><span><b>${course.lessons.length}</b> topics</span><span><b>100%</b> explained</span></div></section><form id="bank-form" class="bank-shell">${groups}<div class="bank-submit"><button class="grade-button" type="submit">Grade complete bank</button><div class="score-card" id="score-card"><span>Cumulative result</span><strong>— / ${all.length}</strong><p>Answers and explanations appear after grading.</p></div></div></form></main><footer class="academy-footer"><span>${authorName} · University of Diyala</span><a href="/learning/?lang=en">Return to course</a></footer><script src="/learning/academy.js?v=2026-10-04" defer></script><script type="module" src="/learning/motion-studio.js?v=2026-09-14-motion4"></script></body></html>`;
+await writeFile(resolve(root, "learning/communications-studio.html"), indexPage());
+const lectureDestinations = {
+  'signals-information-fundamentals':1, 'sampling-reconstruction':1, 'lecture-01-lab':1,
+  'lecture-02-lab':2, 'quantization-pcm':3, 'lecture-03-lab':3,
+  'ask-modulation':5, 'fsk-modulation':5, 'qpsk-mpsk':6, 'qam':6,
+  'psk-dpsk':7, 'optimal-receivers':8, 'ber-link-design':8
+};
+for (const [i, lesson] of course.lessons.entries()) {
+  if (!(lesson.slug in lectureDestinations)) await writeFile(resolve(out, `${lesson.slug}.html`), lessonPage(lesson, i));
+}
+const redirects = [
+  ['index', 'Digital Communication I', 'academy/?view=course'],
+  ['question-bank', 'Solved Question Bank', 'academy/?view=bank&lecture=1'],
+  ...Object.entries(lectureDestinations).map(([slug,n])=>[slug, `Lecture ${n} · Digital Communication I`, `academy/?view=lecture&lecture=${n}`])
+];
+for (const [slug,title,target] of redirects) {
+  const page = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title>
+<link rel="canonical" href="https://yassiralkarawi.github.io/learning/digital-communications/${esc(target)}"><meta http-equiv="refresh" content="0;url=${esc(target)}">
+<script>
+const u = new URL('${target}', location.href);
+const lang = new URLSearchParams(location.search).get('lang');
+if (lang === 'ar' || lang === 'en') u.searchParams.set('lang',lang);
+const problem = location.hash.match(/^#([1-8])\\.(\\d{2})$/);
+if (problem) {
+  u.searchParams.set('lecture',problem[1]);
+  if (u.searchParams.get('view') === 'bank') u.searchParams.set('q',problem[1]+'.'+problem[2]);
+}
+location.replace(u.href);
+</script></head><body><main id="main"><h1>Digital Communication I</h1><p>Lectures, topic laboratories and solved questions are now in one course.</p><a href="${esc(target)}">Open ${title} →</a></main></body></html>\n`;
+  await writeFile(resolve(out,slug+'.html'), page);
 }
 
-await writeFile(resolve(root, "learning/communications-studio.html"), indexPage());
-for (const [i, lesson] of course.lessons.entries()) await writeFile(resolve(out, `${lesson.slug}.html`), lessonPage(lesson, i));
-await writeFile(resolve(out, "question-bank.html"), questionBankPage());
-
-const learningUrls = ["/learning/digital-communications/academy/?view=bank","/learning/digital-communications/rates-symbols-supplement.html", "/learning/", "/learning/communications-studio.html", ...course.lessons.map(l => url(l.slug)), "/learning/digital-communications/question-bank.html"];
+const learningUrls = ["/learning/lectures/", "/learning/lectures/en.html", "/learning/labs/", "/learning/labs/en.html", "/learning/digital-communications/academy/","/learning/digital-communications/rates-symbols-supplement.html", "/learning/", "/learning/communications-studio.html", ...course.lessons.map(l => url(l.slug)), "/learning/digital-communications/question-bank.html"];
 const sitemapPath = resolve(root, "sitemap.xml");
 let sitemap = await readFile(sitemapPath, "utf8");
 const existing = [...sitemap.matchAll(/<loc>https:\/\/yassiralkarawi\.github\.io([^<]*)<\/loc>/g)].map(m => m[1]).filter(path => !path.startsWith("/learning"));

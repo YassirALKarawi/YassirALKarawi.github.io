@@ -25,13 +25,14 @@ if (researchFiles.length !== publications.length) failures.push(`Expected ${publ
 
 const topicFiles = ["topics.html", ...topics.map(topic => topicPath(topic).slice(1))];
 const learningFiles = ["learning/index.html", ...learningCourse.lessons.map(lesson => `learning/digital-communications/${lesson.slug}.html`), "learning/digital-communications/question-bank.html"];
-const htmlFiles = ["index.html", "publications.html", "404.html", ...topicFiles, ...learningFiles, ...researchFiles.map(file => `research/${file}`)];
+const directories = ["learning/lectures/index.html","learning/lectures/en.html","learning/labs/index.html","learning/labs/en.html"];
+const htmlFiles = [...directories, "index.html", "publications.html", "404.html", ...topicFiles, ...learningFiles, ...researchFiles.map(file => `research/${file}`)];
 for (const file of htmlFiles) {
   const html = await readFile(resolve(root, file), "utf8");
   if (!/^<!doctype html>/i.test(html)) failures.push(`${file}: missing doctype`);
   if (!html.includes('<meta name="viewport"')) failures.push(`${file}: missing viewport`);
   if (!html.includes('<link rel="canonical"')) failures.push(`${file}: missing canonical URL`);
-  if (!html.includes('id="main"')) failures.push(`${file}: missing main landmark`);
+  if (!/<main\b[^>]*\bid="(?:main|content)"/.test(html)) failures.push(`${file}: missing main landmark`);
   if (/\bundefined\b/.test(html)) failures.push(`${file}: contains undefined`);
   if (/Hybrid Stable Plasmonic|Fabry.P[eé]rot Interferometer/i.test(html)) failures.push(`${file}: excluded unrelated paper appears`);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -109,7 +110,11 @@ for (const topic of topics) {
 const textSitemap = (await readFile(resolve(root, "sitemap.txt"), "utf8")).trim().split("\n");
 const xmlUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 if (JSON.stringify(textSitemap) !== JSON.stringify(xmlUrls)) failures.push("XML and text sitemaps differ");
-if (new Set(xmlUrls).size !== xmlUrls.length || xmlUrls.length !== publications.length + topics.length + learningFiles.length + 3) failures.push("Unexpected sitemap count or duplicates");
+const extraPaths = ["/5g-lab/", "/learning/communications-studio.html", "/learning/digital-communications/academy/", "/learning/digital-communications/rates-symbols-supplement.html"];
+const expectedPaths = [...extraPaths, ...htmlFiles.filter(file => file !== "404.html").map(file => "/" + (file === "index.html" ? "" : file.replace(/\/index\.html$/, "/")))];
+const expectedUrls = new Set(expectedPaths.map(path => "https://yassiralkarawi.github.io" + path));
+if (new Set(xmlUrls).size !== xmlUrls.length || expectedUrls.size !== xmlUrls.length) failures.push("Unexpected sitemap count or duplicates");
+for (const url of expectedUrls) if (!xmlUrls.includes(url)) failures.push("Sitemap missing " + url);
 for (const file of learningFiles) {
   const path = file === "learning/index.html" ? "/learning/" : `/${file}`;
   if (!sitemap.includes(`${path}</loc>`)) failures.push(`Sitemap missing ${file}`);
