@@ -44,5 +44,20 @@ function runScene(lesson,reduced=false){
 }
 for(const lesson of course.lessons)console.log(`PASS ${runScene(lesson)}: moving geometry, pause, step, replay, slider bounds`);
 runScene(course.lessons[0],true);
-for(const lesson of course.lessons){const html=await readFile(new URL(`../learning/digital-communications/${lesson.slug}.html`,import.meta.url),'utf8');assert.ok(html.includes('motion-studio.js'));assert.ok(html.includes('motion-studio.css'));assert.equal((html.match(/data-transport=/g)||[]).length,2);assert.equal((html.match(/class="flow-node"/g)||[]).length,lesson.blocks.length);}
+for (const lesson of course.lessons) {
+  const page = new URL(`../learning/digital-communications/${lesson.slug}.html`,import.meta.url);
+  const html = await readFile(page,'utf8');
+  const redirect = html.match(/<meta http-equiv="refresh" content="0;url=([^"]+)"/);
+  if (redirect) {
+    const dest = new URL(redirect[1].replaceAll('&amp;','&'),page);
+    assert.equal(dest.pathname, new URL('academy/',page).pathname);
+    assert.equal(dest.searchParams.get('view'),'lecture');
+    assert.match(dest.searchParams.get('lecture'),/^[1-8]$/);
+    assert.ok(html.includes('location.replace(u.href)') && html.includes(`href="${redirect[1]}"`));
+    continue;
+  }
+  assert.ok(html.includes('motion-studio.js') && html.includes('motion-studio.css'));
+  assert.equal((html.match(/data-transport=/g)||[]).length,2);
+  assert.equal((html.match(/class="flow-node"/g)||[]).length,lesson.blocks.length);
+}
 console.log('PASS numerical models, all 112 Hamming single-error cases, reduced-motion startup and 16 generated lesson pages.');

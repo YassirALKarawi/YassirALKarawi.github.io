@@ -1,5 +1,5 @@
-https://yassiralkarawi.github.io/
 https://yassiralkarawi.github.io/5g-lab/
+https://yassiralkarawi.github.io/
 https://yassiralkarawi.github.io/publications.html
 https://yassiralkarawi.github.io/topics.html
 https://yassiralkarawi.github.io/topics/artificial-intelligence-deep-learning-networks.html
@@ -50,5 +50,8 @@ https://yassiralkarawi.github.io/learning/digital-communications/ofdm.html
 https://yassiralkarawi.github.io/learning/digital-communications/synchronization-equalization.html
 https://yassiralkarawi.github.io/learning/digital-communications/integrated-link-design.html
 https://yassiralkarawi.github.io/learning/digital-communications/question-bank.html
-
 https://yassiralkarawi.github.io/learning/digital-communications/academy/
+https://yassiralkarawi.github.io/learning/lectures/
+https://yassiralkarawi.github.io/learning/lectures/en.html
+https://yassiralkarawi.github.io/learning/labs/
+https://yassiralkarawi.github.io/learning/labs/en.html

@@ -1,4 +1,4 @@
-import {teachingDirectory} from './directory.mjs?v=comms';
+import {directoryURL,teachingDirectory} from './directory.mjs?v=directory2';
 import {subjects,stages} from './curriculum.mjs';
 import {attachBench} from './bench.mjs?v=scale1';
 import {examForms,testDeck,unitFor,theory} from './questions.mjs';
@@ -28,19 +28,27 @@ const tr=(ar,en)=>language==='ar'?ar:en;
 const link=(url,label,kind='')=>'<a class="btn '+kind+'" href="'+url+'">'+label+'</a>';
 const resource=(view='course')=>'digital-communications/academy/?view='+view+'&amp;lang='+language+(view==='course'?'#lecture-roadmap':'');
 const linkDept=d=>'#department/'+d.id, linkLab=l=>'#lab/'+l.id;
-let clean=[],labCase,liveFilters={text:'',dept:''},renderedHash,workingTheme;
+let clean=[],labCase,renderedHash,workingTheme;
 function onExit(fn){clean.push(fn)}
 function routeParts(){return location.hash.slice(1).split('/')}
 function iconCode(d){return '<span class="dept-code">'+d.code+'</span>'}
 function applyShell(){
   const html=document.documentElement;html.lang=language;html.dir=tr('rtl','ltr');html.dataset.theme=theme;
+  document.querySelector('.brand .portrait').alt=tr('د. ياسر الأمين','Dr Yassir Al-Ameen');
   $('#brand-title').textContent=tr('بوابة الهندسة','Engineering Studio');$('#skip').textContent=tr('انتقل إلى المحتوى','Skip to content');
   $('#profile').textContent=tr('الموقع الأكاديمي','Academic website');$('#credit').textContent=tr('د. ياسر الأمين · بوابة الهندسة','Dr. Yassir Al-Ameen · Engineering Studio');
   $('#theme').setAttribute('aria-label',tr('تبديل المظهر الفاتح والداكن','Toggle light and dark theme'));$('#theme').setAttribute('aria-pressed',String(theme==='dark'));
-  $('#lang').textContent=tr('EN','عربي');$('#lang').lang=tr('en','ar');$('#lang').setAttribute('aria-label',tr('Switch to English','التبديل إلى العربية'));
-  const [view]=routeParts(),active=({department:'catalog',lab:'labs',subject:'catalog',bank:'career',interview:'career',practice:'career'})[view]||view||'home';
+  $('#lang').textContent=tr('EN','عربي');$('#lang').lang=tr('en','ar');$('#lang').setAttribute('aria-label',tr('Switch to English','Switch to Arabic'));
+  const [view]=routeParts(),active=({catalog:'lectures',department:'lectures',lab:'labs',subject:'lectures',bank:'career',interview:'career',practice:'career'})[view]||view||'home';
   $('#nav').setAttribute('aria-label',tr('التنقل الرئيسي','Main navigation'));
-  $('#nav').innerHTML=[['home','الرئيسية|Home'],['catalog','المنهج حسب المرحلة|Curriculum'],['labs','المختبرات|Labs'],['career','الاختبارات والمقابلات|Career'],['progress','تقدّمي|Progress']].map(([v,name])=>'<a href="#'+v+'" '+(active===v?'aria-current="page"':'')+'>'+T(name)+'</a>').join('');
+  const items = [
+    ['home','#home','الرئيسية|Home'],
+    ['lectures',directoryURL('lectures',language),'المحاضرات|Lectures'],
+    ['labs',directoryURL('labs',language),'المختبرات|Laboratories'],
+    ['career','#career','الاختبارات والمقابلات|Tests and interviews'],
+    ['progress','#progress','تقدمي|My progress']
+  ];
+  $('#nav').innerHTML=items.map(([id,url,label])=>'<a href="'+url+'" '+(active===id?'aria-current="page"':'')+'>'+T(label)+'</a>').join('');
 }
 function head(title,description,parent='#home',parentText=tr('الرئيسية','Home')){
   const [view,id,sub,topic]=routeParts();
@@ -48,27 +56,28 @@ function head(title,description,parent='#home',parentText=tr('الرئيسية',
   let dept,subject;
   if (['subject','bank','practice','interview','department'].includes(view)) {dept=department(id);subject=sub;}
   if (view==='lab' && department(sub)) {dept=department(sub);subject=topic;}
-  if (dept) {
-    crumbs.set('#catalog',tr('منهج الاتصالات','Communications curriculum'));
+  if (view==='lab') {
+    crumbs.set(directoryURL('labs',language),tr('المختبرات','Laboratories'));
+    if(dept && subjects[subject]?.models.includes(id)) crumbs.set(subjectLink(dept,subject),T(subjects[subject].title));
+  } else if (dept) {
+    crumbs.set(directoryURL('lectures',language),tr('المحاضرات','Lectures'));
     if(view!=='department' || sub) crumbs.set(linkDept(dept),T(dept.title));
     const year=stages(dept.id).findIndex(group=>group.includes(subject));
     if(year>=0){
       crumbs.set(linkDept(dept)+'/'+(year+1),stageLabel(year,T));
       if(view!=='subject') crumbs.set(subjectLink(dept,subject),T(subjects[subject].title));
     }
-  } else if(view==='lab') crumbs.set('#labs',tr('دليل المختبرات','Lab directory'));
-  else if(parent!=='#home') crumbs.set(parent,parentText);
+  } else if(parent!=='#home') crumbs.set(parent,parentText);
   const current=view==='department'&&sub?stageLabel(Number(sub)-1,T)||title:title;
   const trail=[...crumbs].map(([href,label])=>'<a href="'+href+'">'+label+'</a>').join('<span aria-hidden="true">/</span>');
   return '<nav class="trail" data-trail aria-label="'+tr('مسار الصفحة','Breadcrumb')+'">'+trail+'<span aria-hidden="true">/</span><span aria-current="page">'+current+'</span></nav><header class="pagehead"><h1>'+title+'</h1><p class="lead">'+description+'</p></header>';
 
 }
-function labCard(l){return '<a class="card" href="'+linkLab(l)+'">'+iconCode(courseDepartment)+'<h3>'+T(l.title)+'</h3><p>'+T(l.concept)+'</p><span class="textlink">'+tr('افتح المختبر','Open lab')+' '+tr('←','→')+'</span></a>'}
 function feature(){return '<section class="feature section"><div class="eyebrow">'+tr('مقرر جامعي · الاتصالات','University course · Communications')+'</div><h2>'+tr('الاتصالات الرقمية الأولى','Digital Communication I')+'</h2><p>'+tr('ثماني محاضرات مرتبة حسب مفردات المقرر، مع تجارب الإشارة وبنك المسائل المحلولة.','Eight lecture units following the course sequence, with signal experiments and worked problems.')+'</p><div class="actions">'+link(resource(),tr('خريطة المحاضرات','Lecture roadmap'),'primary')+link('digital-communications/academy/sound-lab/?lang='+language,tr('مختبر الصوت وPCM','Audio & PCM lab'))+link('communications-studio.html',tr('فهرس مقرري الاتصالات I وII','Digital Communications I & II index'))+'</div></section>'}
 function sectionTitle(title,url='',label=''){return '<div class="headrow"><h2>'+title+'</h2>'+(url?'<a class="textlink" href="'+url+'">'+label+' '+tr('←','→')+'</a>':'')+'</div>'}
 function home(){
- root.innerHTML='<section class="studio-directory"><h1>'+tr('المقررات والمختبرات','Courses and laboratories')+'</h1>'+teachingDirectory(language)+'</section>'+
- '<div class="faculty-more">'+link('#catalog',tr('منهج هندسة الاتصالات حسب المرحلة','Communications curriculum by stage'))+link('#career',tr('الاختبارات والمقابلات','Tests and interviews'))+link('#progress',tr('تقدّمي','My progress'))+'</div>'+
+ root.innerHTML='<section class="studio-directory"><p class="eyebrow">'+tr('كلية الهندسة · جامعة ديالى','College of Engineering · University of Diyala')+'</p><h1>'+tr('قسم هندسة الاتصالات','Communications Engineering')+'</h1>'+teachingDirectory(language)+'</section>'+
+ '<div class="faculty-more">'+link('#catalog',tr('خطة التعلم حسب المرحلة','Study plan by stage'))+link('#career',tr('الاختبارات والمقابلات','Tests and interviews'))+link('#progress',tr('تقدّمي','My progress'))+'</div>'+
  '<details class="faculty-archive"><summary>'+tr('مراقب الإشارة','Signal monitor')+'</summary><div class="scope"><div class="screenhead"><span><i class="scope-ind"></i> SIGNAL MONITOR</span><span>1 V/div</span></div><canvas id="wave" role="img" aria-label="'+tr('إشارة جيبية متحركة متغيرة التردد','Live sine wave with adjustable frequency')+'"></canvas><div class="scopefoot"><label for="freq">'+tr('التردد','Frequency')+' <output id="freq-value">2 Hz</output></label><input id="freq" type="range" min="1" max="6" value="2"><button type="button" id="pause"></button></div></div></details>'+
  '<details class="faculty-archive"><summary>'+tr('أرشيف المقررات','Course archive')+'</summary>'+link('/learning/communications-studio.html',tr('فهرس مقررات الاتصالات الأصلي','Original communications course index'))+'</details>';
  wave();
@@ -91,14 +100,6 @@ function wave(){
  panel.ontoggle=sync;document.addEventListener('visibilitychange',sync);const motion=()=>{running=!media.matches;sync()};media.addEventListener('change',motion);sync();
  onExit(()=>{cancelAnimationFrame(frame);resize.disconnect();document.removeEventListener('visibilitychange',sync);media.removeEventListener('change',motion)});
 }
-const norm=s=>s.toLowerCase().normalize('NFKD').replace(/[\u064b-\u065f\u0670]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').trim();
-function labDirectory(){
- root.innerHTML=head(tr('دليل مختبرات الاتصالات','Communications laboratories'),tr('ابحث بالاسم أو المفهوم أو المعادلة.','Search by name, concept or equation.'))+'<label class="control">'+tr('بحث','Search')+'<input id="query" type="search"></label><p id="matches" role="status"></p><section class="grid" id="cards"></section>';
- const input=$('#query');input.value=liveFilters.text;
- const filter=()=>{const q=norm(input.value);const cards=labs.filter(l=>norm([l.title,l.concept,l.equation].join(' ')).includes(q));$('#matches').textContent=cards.length+' '+tr('نتيجة','results');$('#cards').innerHTML=cards.map(labCard).join('')};
- input.oninput=()=>{liveFilters.text=input.value;rememberDirectory();filter()};filter();
-}
-function rememberDirectory(){history.replaceState({...history.state,studioFilters:{...liveFilters}},'')}
 function departmentPage(d,year){
  root.innerHTML=head(T(d.title),tr('اختر مرحلة لعرض موادها أو ابدأ تدريباً يغطي موضوعات القسم.','Select a stage to see its subjects, or practice across the discipline.'),'#catalog',tr('منهج الاتصالات','Communications curriculum'))+'<div class="actions">'+link('#bank/'+d.id,tr('بنك تمارين القسم','Department exercise bank'),'primary')+link('#practice/'+d.id,tr('نماذج اختبارات القسم','Department test forms'))+link('#interview/'+d.id,tr('مقابلة فنية','Technical interview'))+'</div>'+degreeMap(d,year,T)+(d.id==='communications'?feature():'');
 }
@@ -180,9 +181,9 @@ function skillRecord(){
 }
 function render(scroll=true){
  clean.splice(0).forEach(f=>f());workingTheme=null;const [v,id,sub,topic]=routeParts();applyShell();
- if(v==='labs'||v==='catalog')liveFilters={text:'',dept:'',...history.state?.studioFilters};
+ if(v==='labs'||v==='lectures'){location.replace(directoryURL(v,language));return}
  if(v!=='lab')labCase=null;
- if(v==='catalog')departmentPage(courseDepartment,0);else if(v==='labs')labDirectory();else if(v==='department'&&department(id))departmentPage(department(id),Number(sub)>=1&&Number(sub)<=4?sub:0);
+ if(v==='catalog')departmentPage(courseDepartment,0);else if(v==='department'&&department(id))departmentPage(department(id),Number(sub)>=1&&Number(sub)<=4?sub:0);
  else if(v==='subject'&&department(id)&&stages(id).flat().includes(sub)){root.innerHTML=subjectPage(department(id),sub,T,head,link,resource);const l=model(subjects[sub].models[0]);const preview=document.createElement('section');preview.className='live-bench panel section';root.querySelector('.source-link').closest('section').before(preview);const values=[l.x.initial,l.y.initial];const bench=attachBench(preview,l,()=>values,T);const controls=document.createElement('div');controls.className='bench-inputs';controls.innerHTML=[l.x,l.y].map(p=>'<label class="slider"><span>'+T(p.label)+'<output>'+num(p.initial)+' '+p.unit+'</output></span><input aria-label="'+T(p.label)+'" type="range" min="'+p.min+'" max="'+p.max+'" step="'+p.step+'" value="'+p.initial+'"></label>').join('');preview.querySelector('.instrument').before(controls);controls.querySelectorAll('input').forEach((el,i)=>el.oninput=()=>{values[i]=Number(el.value);controls.querySelectorAll('output')[i].textContent=num(values[i])+' '+[l.x.unit,l.y.unit][i];bench.refresh()});onExit(bench.destroy)}
  else if(v==='bank'&&department(id))bankView(root,department(id),stages(id).flat().includes(sub)?sub:null,topic,T,head,link);
  else if(v==='lab'&&model(id)){const d=department(sub);labPage(model(id),d&&stages(d.id).flat().includes(topic)&&subjects[topic].models.includes(id)?d:null,topic)}else if(v==='career')career();else if(v==='practice')examPage(id,sub);else if(v==='interview')interview(id);else if(v==='progress')skillRecord();else if(!v||v==='home'){home()}else{root.innerHTML=head(tr('المسار غير موجود','Page not found'),tr('انتقل إلى منهج الاتصالات للمتابعة.','Open the communications curriculum to continue.'))+link('#catalog',tr('منهج الاتصالات','Communications curriculum'))}

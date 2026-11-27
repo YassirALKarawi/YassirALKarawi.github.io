@@ -625,7 +625,7 @@ function nav(active = "") {
     ["Research", "/#research"],
     ["Publications", "/publications.html"],
     ["Topics", "/topics.html"],
-    ["Learning", "/learning/"],
+    ["Learning", "/learning/?lang=en"],
     ["Profiles", "/#profiles"]
   ];
   return `<a class="skip-link" href="#main">Skip to content</a>
@@ -714,7 +714,7 @@ function homePage() {
     knowsAbout: researchExpertise
   }, 2);
   const description = "Academic homepage of Dr. Yassir AL-Karawi, Assistant Professor of Communications Engineering at the University of Diyala, researching Open RAN, 5G/6G, quantum communications, AI-native networks, and optical systems.";
-  return `${head({ title: "Yassir AL-Karawi | Cybersecurity, AI & Deep Learning", description: "Yassir AL-Karawi: cybersecurity, artificial intelligence, deep learning, Open RAN and 6G research. Explore published papers, DOIs, abstracts and citations.", extra: `<link rel="stylesheet" href="/assets/teaching-directory.css"><link rel="me" href="https://orcid.org/0000-0003-2959-3893"><script type="application/ld+json">${personJson}</script>` })}
+  return `${head({ title: "Yassir AL-Karawi | Cybersecurity, AI & Deep Learning", description: "Yassir AL-Karawi: cybersecurity, artificial intelligence, deep learning, Open RAN and 6G research. Explore published papers, DOIs, abstracts and citations.", extra: `<link rel="stylesheet" href="/assets/teaching-directory.css?v=directory2"><link rel="me" href="https://orcid.org/0000-0003-2959-3893"><script type="application/ld+json">${personJson}</script>` })}
 <body>${nav("Home")}
 <main id="main">
   <section class="hero">
@@ -724,7 +724,7 @@ function homePage() {
         <p class="eyebrow"><span></span> Cybersecurity · Artificial Intelligence · 6G Networks</p>
         <h1>Advancing cybersecurity and <em>intelligent networks.</em></h1>
         <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My research connects cybersecurity, artificial intelligence (AI), deep learning and quantum neural networks with Open RAN, 6G communications, digital twins and optical performance monitoring.</p>
-        <div class="hero-actions"><a class="button primary" href="#teaching">Courses &amp; labs <span lang="ar" dir="rtl">المقررات والمختبرات</span></a><a class="button secondary" href="#research">Research &amp; publications</a></div>
+        <div class="hero-actions"><a class="button primary" href="#teaching">Courses &amp; labs</a><a class="button secondary" href="#research">Research &amp; publications</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
       <aside class="hero-profile" aria-label="Academic profile">
@@ -736,9 +736,9 @@ function homePage() {
   </section>
 
   <section class="section campus-section" id="teaching" aria-labelledby="teaching-title">
-    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Courses &amp; laboratories</h2></div><a class="text-link" href="/learning/?lang=ar" lang="ar" dir="rtl">بوابة الهندسة بالعربية</a></div>
+    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching · University of Diyala</p><h2 id="teaching-title">Communications Engineering</h2></div><a class="text-link" href="/learning/?lang=ar" hreflang="ar">Arabic learning portal</a></div>
     ${teachingDirectory('en')}
-    <div class="faculty-more"><a href="/learning/#catalog">Communications curriculum by stage</a><a href="/learning/#career">Tests and interviews</a></div></div>
+    </div>
   </section>
 
   <section class="section research-section" id="research">
@@ -1128,7 +1128,8 @@ await output("scholarly-graph.jsonld", scholarlyGraph);
 await output("llms.txt", llms);
 await output("robots.txt", robots);
 const learningPaths = [
-  "/learning/",
+  "/learning/lectures/", "/learning/lectures/en.html", "/learning/labs/", "/learning/labs/en.html",
+  "/learning/", "/learning/communications-studio.html", "/learning/digital-communications/rates-symbols-supplement.html", "/learning/digital-communications/academy/",
   ...learningCourse.lessons.map(lesson => `/learning/digital-communications/${lesson.slug}.html`),
   "/learning/digital-communications/question-bank.html"
 ];
@@ -1141,4 +1142,5 @@ await output("README.md", readme);
 await output("CITATION.cff", citation);
 await output(".nojekyll", "");
 
+await import('./build-teaching-directories.mjs');
 console.log(`Built ${crawlPaths.length} indexable pages plus the 404 page in ${root}`);
