@@ -625,7 +625,7 @@ function nav(active = "") {
     ["Research", "/#research"],
     ["Publications", "/publications.html"],
     ["Topics", "/topics.html"],
-    ["Learning", "/learning/"],
+    ["Learning", "/learning/?lang=en"],
     ["Profiles", "/#profiles"]
   ];
   return `<a class="skip-link" href="#main">Skip to content</a>
@@ -724,7 +724,7 @@ function homePage() {
         <p class="eyebrow"><span></span> Cybersecurity · Artificial Intelligence · 6G Networks</p>
         <h1>Advancing cybersecurity and <em>intelligent networks.</em></h1>
         <p class="hero-lead">I am <strong>Dr. Yassir AL-Karawi</strong>, Assistant Professor at the University of Diyala. My research connects cybersecurity, artificial intelligence (AI), deep learning and quantum neural networks with Open RAN, 6G communications, digital twins and optical performance monitoring.</p>
-        <div class="hero-actions"><a class="button primary" href="#teaching">Courses &amp; labs <span lang="ar" dir="rtl">المقررات والمختبرات</span></a><a class="button secondary" href="#research">Research &amp; publications</a></div>
+        <div class="hero-actions"><a class="button primary" href="#teaching">Courses &amp; labs</a><a class="button secondary" href="#research">Research &amp; publications</a></div>
         <div class="identity-line"><span>ORCID</span><a href="https://orcid.org/0000-0003-2959-3893">0000-0003-2959-3893</a><i></i><span>IEEE member</span></div>
       </div>
       <aside class="hero-profile" aria-label="Academic profile">
@@ -736,9 +736,9 @@ function homePage() {
   </section>
 
   <section class="section campus-section" id="teaching" aria-labelledby="teaching-title">
-    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Courses &amp; laboratories</h2></div><a class="text-link" href="/learning/?lang=ar" lang="ar" dir="rtl">بوابة الهندسة بالعربية</a></div>
+    <div class="container"><div class="section-heading"><div><p class="section-label">Teaching</p><h2 id="teaching-title">Courses &amp; laboratories</h2></div><a class="text-link" href="/learning/?lang=ar" hreflang="ar">Arabic learning portal</a></div>
     ${teachingDirectory('en')}
-    <div class="faculty-more"><a href="/learning/#catalog">Communications curriculum by stage</a><a href="/learning/#career">Tests and interviews</a></div></div>
+    <div class="faculty-more"><a href="/learning/?lang=en#catalog">Communications curriculum by stage</a><a href="/learning/?lang=en#career">Tests and interviews</a></div></div>
   </section>
 
   <section class="section research-section" id="research">

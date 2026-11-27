@@ -114,7 +114,7 @@ function updateDock() {
   const labels=learning ? [
     ['home',t('رئيسية البوابة','Studio home'),studioHome], ['lab',t('المختبرات','Labs'),studioBase+'#labs'], ['profile',t('الموقع الأكاديمي','Academic site'),'/']
   ] : [
-    ['home',t('الرئيسية','Site home'),'/'], ['learn',t('بوابة الهندسة','Engineering studio'),studio+'#home'], ['book',t('المنشورات','Publications'),'/publications.html']
+    ['home',t('الرئيسية','Site home'),'/'], ['learn',t('بوابة الهندسة','Engineering studio'),studio+'?lang='+lang()+'#home'], ['book',t('المنشورات','Publications'),'/publications.html']
   ];
   const previous=previousVisit();
   const parent=parentPage();

@@ -34,10 +34,11 @@ function routeParts(){return location.hash.slice(1).split('/')}
 function iconCode(d){return '<span class="dept-code">'+d.code+'</span>'}
 function applyShell(){
   const html=document.documentElement;html.lang=language;html.dir=tr('rtl','ltr');html.dataset.theme=theme;
+  document.querySelector('.brand .portrait').alt=tr('د. ياسر الأمين','Dr Yassir Al-Ameen');
   $('#brand-title').textContent=tr('بوابة الهندسة','Engineering Studio');$('#skip').textContent=tr('انتقل إلى المحتوى','Skip to content');
   $('#profile').textContent=tr('الموقع الأكاديمي','Academic website');$('#credit').textContent=tr('د. ياسر الأمين · بوابة الهندسة','Dr. Yassir Al-Ameen · Engineering Studio');
   $('#theme').setAttribute('aria-label',tr('تبديل المظهر الفاتح والداكن','Toggle light and dark theme'));$('#theme').setAttribute('aria-pressed',String(theme==='dark'));
-  $('#lang').textContent=tr('EN','عربي');$('#lang').lang=tr('en','ar');$('#lang').setAttribute('aria-label',tr('Switch to English','التبديل إلى العربية'));
+  $('#lang').textContent=tr('EN','عربي');$('#lang').lang=tr('en','ar');$('#lang').setAttribute('aria-label',tr('Switch to English','Switch to Arabic'));
   const [view]=routeParts(),active=({department:'catalog',lab:'labs',subject:'catalog',bank:'career',interview:'career',practice:'career'})[view]||view||'home';
   $('#nav').setAttribute('aria-label',tr('التنقل الرئيسي','Main navigation'));
   $('#nav').innerHTML=[['home','الرئيسية|Home'],['catalog','المنهج حسب المرحلة|Curriculum'],['labs','المختبرات|Labs'],['career','الاختبارات والمقابلات|Career'],['progress','تقدّمي|Progress']].map(([v,name])=>'<a href="#'+v+'" '+(active===v?'aria-current="page"':'')+'>'+T(name)+'</a>').join('');

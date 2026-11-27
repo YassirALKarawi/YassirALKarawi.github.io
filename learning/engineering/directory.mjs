@@ -17,10 +17,13 @@ const labs=[
 export function teachingDirectory(language){
  const ar=language==='ar', label=(a,b)=>ar?a:b;
  function row([a,b,url,restricted],extra=''){
-   const href=url.startsWith(academy)?url+'&amp;lang='+language:url;
-   return '<li><a class="faculty-entry" href="'+href+'">'+label(a,b)+'</a>'+ (restricted?'<small>'+label('دخول مقيّد','Restricted access')+'</small>':'')+extra+'</li>';
+   let href = url;
+   if (url.startsWith(academy)) href = url + '&amp;lang=' + language;
+   if (url === '/5g-lab/') href = url + '?lang=' + language;
+   if (url === '/learning/#labs') href = '/learning/?lang=' + language + '#labs';
+   return '<li><a class="faculty-entry" href="'+href+'">'+label(a,b)+'</a>'+ (restricted?'<small>'+label('يتطلب حسابا مصرحا له','Authorised account required')+'</small>':'')+extra+'</li>';
  }
- const voice='<a class="faculty-alt" href="'+courseApp('digital-communication-yassir')+'">'+label('المحاضرات الصوتية · دخول مقيّد','Narrated edition · restricted access')+'</a>';
+ const voice='<a class="faculty-alt" href="'+courseApp('digital-communication-yassir')+'">'+label('المحاضرات الصوتية · تتطلب حسابا مصرحا له','Narrated edition · authorised account required')+'</a>';
  function group(name,items){return '<section><h3>'+name+'</h3><ul>'+items.join('')+'</ul></section>'}
  return '<div class="faculty-directory">'+group(label('المقررات','Courses'),courses.map((x,i)=>row(x,i===3?voice:'')))+group(label('المختبرات','Laboratories'),labs.map(x=>row(x)))+'</div>';
 }

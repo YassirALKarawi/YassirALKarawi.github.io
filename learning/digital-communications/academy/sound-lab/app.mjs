@@ -22,6 +22,7 @@ const icon=(name)=>({play:'<path d="m9 5 11 7-11 7Z"/>',stop:'<rect x="6" y="6" 
 const svgIcon=name=>`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(name)}</svg>`;
 
 function render(){
+  $('.skip').textContent=lang==='ar'?'تجاوز إلى التجربة':'Skip to experiment';
   document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title=`${t('title')} | Dr. Yassir AL-Ameen`;
   $('#app').innerHTML=`
   <header class="masthead"><a class="brand" href="../?view=course&lang=${lang}"><img class="faculty-photo" src="/assets/yassir-personal.jpg" alt=""><span>${t('studio')}<small dir="ltr">DR. YASSIR AL-AMEEN</small></span></a><div class="head-actions"><a class="back" href="../?view=lecture&lecture=3&lang=${lang}">${t('course')}</a><button data-action="language" class="lang" lang="${lang==='ar'?'en':'ar'}">${t('language')}</button></div></header>
