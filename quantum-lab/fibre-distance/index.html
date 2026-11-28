@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b25">
+<title>Another 40 km of fibre · Dr. Yassir Al-Ameen</title>
+<meta name="description" content="Predict, then test how fibre distance changes detector clicks and quantum bit error rate in a single-photon BB84 simulation.">
+<meta property="og:title" content="What changes when a quantum link grows from 10 to 50 km?">
+<meta property="og:description" content="Send a million single photons over a simulated optical fibre. Predict how many reach Bob's detector.">
+<style>
+:root{color-scheme:dark;--bg:#101b25;--panel:#152530;--hair:#38505c;--ink:#edf6f3;--sub:#b4c9cb;--a:#85e2cd;--b:#ffbe8b;--serif:Georgia,'Times New Roman',serif;--sans:'Inter','Segoe UI',Arial,sans-serif;--mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}main,header,footer{width:min(1130px,91%);margin:auto}header,footer{display:flex;gap:1rem;justify-content:space-between;align-items:center;border-bottom:1px solid var(--hair);padding:1.1rem 0}header b{font-weight:650;letter-spacing:-.025em}a{color:var(--a);text-underline-offset:.22em}header a,footer a{text-decoration:none}header a:hover,footer a:hover{text-decoration:underline}header small,footer{color:var(--sub)}.identity{display:flex;gap:.65rem;align-items:center}.mark{width:26px;height:26px;display:inline-block;flex:none;border-radius:50%;border:2px solid var(--a);background:repeating-linear-gradient(-35deg,transparent 0 3px,var(--a) 3px 4px);transform:rotate(-10deg)}
+.hero{display:grid;grid-template-columns:1.03fr 1fr;gap:4.5%;align-items:center;padding:clamp(2.5rem,5vw,4.4rem) 0 2.6rem}.eyebrow{color:var(--a);text-transform:uppercase;letter-spacing:.14em;font:650 .76rem/1.5 var(--sans);margin:0 0 .85rem}h1,h2,h3,p{margin:0}h1,h2{font-family:var(--serif);font-weight:400;line-height:1.03;letter-spacing:-.04em}h1{font-size:clamp(3.2rem,5.8vw,5.2rem);max-width:12ch}h1 em{font-weight:400;color:var(--a)}.intro{margin:1rem 0 1.3rem;color:var(--sub);max-width:46ch;font-size:1.08rem}.prediction strong{display:block;font-size:.94rem}.row{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}.choices{margin-top:.55rem}.pick,.tune{background:transparent;color:var(--ink);border:1px solid var(--hair);border-radius:1.5rem;padding:.45rem .95rem;min-height:42px;font:600 .93rem var(--sans);cursor:pointer}button:hover{border-color:var(--a)}button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--b);outline-offset:3px}.pick[aria-pressed=true],.tune[aria-pressed=true]{border-color:var(--a);background:#1c413e;color:var(--a)}#feedback{color:var(--b);margin:.55rem 0 0;font-size:.93rem;min-height:1.45em}figure{margin:0}.figure{background:linear-gradient(135deg,#172b38,#132632 65%,#193b41);border:1px solid var(--hair);border-radius:16px;padding:1.25rem 1.25rem .9rem;box-shadow:0 20px 42px -28px #000}.figtop{display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}.figtop strong{font-weight:600}.figtop span,figcaption,.tiny{color:var(--sub);font-size:.88rem}canvas{display:block;width:100%;height:220px}figcaption{display:flex;align-items:center;gap:.55rem}.legend{width:20px;height:3px;background:var(--a)}.experiment{padding:1.85rem 0;border-top:1px solid var(--hair)}h2{font-size:clamp(2.2rem,4.5vw,3.2rem)}.lead{color:var(--sub);margin:.5rem 0 1.2rem}.bench{display:grid;grid-template-columns:1fr 1.42fr;gap:1.5rem;align-items:start}.controls{padding:1.25rem 1.35rem;background:var(--panel);border:1px solid var(--hair);border-radius:14px}.labelline{display:flex;align-items:center;justify-content:space-between;gap:.5rem}.labelline label{font-weight:650}.distance{color:var(--a);font:1.55rem var(--mono)}input[type=range]{width:100%;accent-color:var(--a);margin:1rem 0 .2rem;cursor:pointer}.ticks{display:flex;justify-content:space-between;font: .8rem var(--mono);color:var(--sub);margin-bottom:.8rem}.tune{font-size:.86rem;min-height:36px}.switch{display:flex;align-items:center;gap:.6rem;margin-top:1rem;color:var(--sub)}input[type=checkbox]{accent-color:var(--a);width:1.1rem;height:1.1rem}.panels{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}.measure{border-top:2px solid var(--a);padding:.7rem .25rem}.measure:last-child{border-color:var(--b)}.value{font:400 clamp(2rem,3.4vw,3rem)/1.1 var(--serif);display:block;margin:.35rem 0;color:var(--a);font-variant-numeric:tabular-nums}.measure:last-child .value{color:var(--b)}.desc{font-size:.9rem;color:var(--sub)}.baseline{margin:.75rem 0 .1rem;border-top:1px solid var(--hair);padding:.6rem 0;color:var(--sub);font-size:.94rem}.runline{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}.primary{border:1px solid var(--a);border-radius:6px;background:var(--a);color:#092820;padding:.75rem 1.2rem;font:650 1rem var(--sans);cursor:pointer}.primary:hover{background:#acf1df}.trial{background:#13212c;border-left:3px solid var(--b);padding:.9rem 1.1rem}.trial p{color:var(--sub);font-size:.96rem}.trial strong{color:var(--ink)}details{margin:1.3rem 0 2rem;border-block:1px solid var(--hair);padding:.9rem 0}summary{cursor:pointer;font-weight:600}details p{max-width:86ch;color:var(--sub);margin:.7rem 0}.eq{color:var(--a);font-family:var(--mono);font-size:.93rem}footer{border-top:1px solid var(--hair);border-bottom:none;font-size:.9rem;padding:1.3rem 0 2rem}noscript{color:var(--b)}
+@media(max-width:730px){.hero,.bench{grid-template-columns:1fr}.hero{gap:1rem;padding:2rem 0 1.6rem}.intro{margin:.8rem 0 1rem}h1{max-width:15ch}.figure{padding:1rem}canvas{height:185px}.bench{gap:1.05rem}.experiment{padding:1.4rem 0}.measure{padding-top:.65rem}header{gap:.25rem}header b{font-size:.91rem}header a{font-size:.87rem}.author{font-size:.82rem}.runline{gap:.55rem}footer{align-items:start;flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body>
+<header><div class="identity"><i class="mark" aria-hidden="true"></i><b>Quantum Networks Lab</b></div><a href="/">Dr. Yassir Al-Ameen</a></header>
+<main><section class="hero"><div><p class="eyebrow">Quantum key distribution · Episode 01</p>
+<h1>Another <em>40 km</em> of fibre.</h1><p class="intro">Alice sends one million single photons. Move Bob’s receiver from 10 to 50 km. What fraction of the original detector clicks will he still see?</p>
+<div class="prediction" role="group" aria-label="Predict the fraction of clicks at 50 km compared with 10 km"><strong>Make a prediction</strong><div class="row choices"><button class="pick" data-pick="half" aria-pressed="false">About ½</button><button class="pick" data-pick="sixth" aria-pressed="false">About ⅙</button><button class="pick" data-pick="twentieth" aria-pressed="false">About ¹⁄₂₀</button></div><p id="feedback" aria-live="polite"></p></div></div>
+<figure class="figure"><div class="figtop"><strong>Fibre transmission</strong><span>1550 nm model</span></div><canvas id="plot" role="img" aria-label="Exponential fall in fibre transmission with distance"></canvas><figcaption><i class="legend"></i>Fraction of emitted photons reaching the receiver input</figcaption></figure></section>
+<section class="experiment"><h2>Move the receiver</h2><p class="lead">The source and receiver stay the same. Adjust the fibre length to see the expected readings.</p>
+<div class="bench"><div class="controls"><div class="labelline"><label for="length">Fibre length</label><output class="distance" id="km" for="length">10 km</output></div><input type="range" id="length" min="0" max="100" step="1" value="10"><div class="ticks"><span>0 km</span><span>100 km</span></div>
+<div class="row"><button class="tune" data-km="10" aria-pressed="true">10 km reference</button><button class="tune" data-km="50" aria-pressed="false">50 km link</button></div>
+<label class="switch"><input type="checkbox" id="background" checked> Include background clicks</label></div>
+<div><div class="panels"><div class="measure"><strong>Detector clicks</strong><output id="clicks" class="value">—</output><span class="desc">Expected per million emissions</span></div><div class="measure"><strong>Expected QBER</strong><output id="qber" class="value">—</output><span class="desc">Error fraction among sifted bits</span></div></div><p class="baseline" id="compare"></p></div></div>
+<div class="runline"><button id="run" class="primary">Send 1,000,000 pulses</button><span class="tiny">Draw one random trial at the selected settings.</span></div>
+<div class="trial" aria-live="polite"><strong id="runTitle">Receiver log</strong><p id="log">Run a trial to see the clicks, matched bases and errors in the disclosed sample.</p></div>
+</section>
+<details><summary>Model, assumptions and reference</summary>
+<p>This teaching model uses ideal single-photon BB84 with two independently and equally likely bases. Each pulse has one detection gate. Fibre attenuation is 0.20 dB/km, receiver efficiency is 20%, and intrinsic signal error is 1.5%. The illustrative background probability is 0.0001 per gate when enabled.</p>
+<p class="eq">T = 10<sup>−0.20 L / 10</sup> &nbsp;·&nbsp; s = 0.20 T &nbsp;·&nbsp; b = (1 − s) p<sub>bg</sub></p>
+<p>A signal registers with probability <i>s</i>. A gate without a signal click can register a background click with probability <i>p</i><sub>bg</sub>. The model assigns at most one click per gate, with priority given to signal clicks. Background bits are random.</p>
+<p class="eq">P(click) = s + b &nbsp;·&nbsp; QBER = (0.015 s + 0.5 b) / (s + b)</p>
+<p>The trial retains clicks with matching bases, then independently discloses each retained bit with probability 20%. Sample QBER is the number of disclosed mismatches divided by the number of disclosed bits. Finite samples fluctuate. Secret-key extraction, detector dead time, afterpulsing and connector losses are outside the model.</p>
+<p>Background reading on sifting, attenuation and receiver errors: <a href="https://doi.org/10.1103/RevModPhys.74.145">Gisin et al., Quantum cryptography (2002)</a>.</p></details><noscript>Enable JavaScript to run the simulation.</noscript></main>
+<footer><span>Quantum for Secure &amp; Intelligent Networks</span><a href="/">Dr. Yassir Al-Ameen · Personal site</a></footer>
+<script>
+'use strict';
+const PULSES=1000000;
+const $=id=>document.getElementById(id);
+const number=n=>Math.round(n).toLocaleString('en-US');
+const pct=(fraction,places=2)=>(100*fraction).toFixed(places)+'%';
+function expectation(km,background){
+  const transmission=10**(-0.2*km/10);
+  const signal=0.2*transmission;
+  const noise=(1-signal)*(background?0.0001:0);
+  const click=signal+noise;
+  return {transmission,signal,click,error:(0.015*signal+0.5*noise)/click};
+}
+function trial(km,background,random=Math.random){
+  const {click,error}=expectation(km,background);
+  let detected=0,matched=0,sampled=0,wrong=0;
+  for(let pulse=0;pulse<PULSES;pulse++){
+    if(random()>=click) continue;
+    detected++;
+    if(random()>=0.5) continue;
+    matched++;
+    if(random()>=0.2) continue;
+    sampled++;
+    if(random()<error) wrong++;
+  }
+  return {detected,matched,sampled,wrong};
+}
+const lengthInput=$('length'), backgroundInput=$('background');
+let runs=0;
+function drawPlot(){
+  const canvas=$('plot'),ctx=canvas.getContext('2d');
+  const w=canvas.clientWidth,h=canvas.clientHeight,ratio=Math.min(window.devicePixelRatio||1,3);
+  if(!w||!h) return;
+  canvas.width=w*ratio;canvas.height=h*ratio;ctx.scale(ratio,ratio);
+  const left=48,right=18,top=30,bottom=33,pw=w-left-right,ph=h-top-bottom;
+  const X=v=>left+pw*v/100, Y=v=>top+ph*(1-v);
+  ctx.font='13px Arial';ctx.lineWidth=1;
+  for(const v of [0,.25,.5,.75,1]){
+    ctx.strokeStyle='#38505c';ctx.beginPath();ctx.moveTo(left,Y(v));ctx.lineTo(w-right,Y(v));ctx.stroke();
+    ctx.fillStyle='#bbcdce';ctx.textAlign='right';ctx.fillText(Math.round(100*v)+'%',left-7,Y(v)+4);
+  }
+  for(const v of [0,25,50,75,100]){
+    ctx.fillStyle='#bbcdce';ctx.textAlign='center';ctx.fillText(v===100?'100 km':v,X(v),h-9);
+  }
+  ctx.beginPath();for(let n=0;n<=100;n++){const x=X(n),y=Y(expectation(n,false).transmission);if(n)ctx.lineTo(x,y);else ctx.moveTo(x,y)}
+  ctx.lineWidth=3;ctx.strokeStyle='#85e2cd';ctx.stroke();
+  const km=Number(lengthInput.value),t=expectation(km,false).transmission,x=X(km),y=Y(t);
+  ctx.strokeStyle='#ffbe8b';ctx.lineWidth=1;ctx.setLineDash([3,4]);ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,Y(0));ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#ffbe8b';ctx.beginPath();ctx.arc(x,y,5.5,0,2*Math.PI);ctx.fill();
+  ctx.textAlign=km>65?'right':'left';ctx.font='bold 14px Arial';ctx.fillText(pct(t,1),x+(km>65?-8:8),Math.max(16,y-10));
+  canvas.setAttribute('aria-label','Fibre transmission at '+km+' kilometres is '+pct(t,1)+'. Transmission decreases exponentially with length.');
+}
+function refresh(){
+  const km=Number(lengthInput.value),bg=backgroundInput.checked,v=expectation(km,bg),base=expectation(10,bg);
+  $('km').textContent=km+' km';$('clicks').textContent=number(PULSES*v.click);$('qber').textContent=pct(v.error);
+  $('compare').textContent=km===10?'10 km reference at the current background setting.':pct(v.click/base.click,1)+' of the 10 km click count. At 10 km the expected QBER is '+pct(base.error)+'.';
+  for(const b of document.querySelectorAll('[data-km]'))b.setAttribute('aria-pressed',Number(b.dataset.km)===km);
+  $('runTitle').textContent='Receiver log';$('log').textContent='Run a trial to see the clicks, matched bases and errors in the disclosed sample.';
+  drawPlot();
+}
+for(const b of document.querySelectorAll('[data-km]')) b.onclick=()=>{lengthInput.value=b.dataset.km;refresh()};
+for(const b of document.querySelectorAll('[data-pick]')) b.onclick=()=>{
+  for(const other of document.querySelectorAll('[data-pick]'))other.setAttribute('aria-pressed',other===b);
+  const ratio=expectation(50,backgroundInput.checked).click/expectation(10,backgroundInput.checked).click;
+  $('feedback').textContent=(b.dataset.pick==='sixth'?'Exactly. ':'The closest answer is one sixth. ')+ 'An extra 40 km adds 8 dB of loss. About '+Math.round(100*ratio)+'% of the original clicks remain.';
+  lengthInput.value=50;refresh();
+};
+$('run').onclick=()=>{
+  const km=Number(lengthInput.value),result=trial(km,backgroundInput.checked);
+  $('runTitle').textContent='Trial '+(++runs)+' · '+km+' km · background '+(backgroundInput.checked?'on':'off');
+  $('log').textContent=number(result.detected)+' clicks → '+number(result.matched)+' matching bases → '+number(result.sampled)+' disclosed bits. '+number(result.wrong)+' mismatches. Sample QBER: '+(result.sampled?pct(result.wrong/result.sampled):'undefined (empty sample)')+'.';
+};
+lengthInput.oninput=refresh;backgroundInput.onchange=refresh;window.addEventListener('resize',drawPlot);refresh();
+</script></body></html>
