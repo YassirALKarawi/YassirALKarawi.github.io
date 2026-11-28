@@ -240,7 +240,7 @@ function resetFibre(){
   $('fibreLength').textContent=lengthInput.value+' km';fibreStats();paintFibre();
 }
 function fibreTick(stamp){
-  if(linkRun.last)linkRun.clock+=Math.min(.08,(stamp-linkRun.last)/1000);
+  if(linkRun.last)linkRun.clock+=Math.max(0,(stamp-linkRun.last)/1000);
   linkRun.last=stamp;
   while(linkRun.sent<linkRun.goal && linkRun.clock>=linkRun.next){
     const p=makePulse(Number(lengthInput.value),backgroundInput.checked);
