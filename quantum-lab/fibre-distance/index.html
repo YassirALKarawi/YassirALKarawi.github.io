@@ -2,36 +2,77 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101b25">
-<title>Another 40 km of fibre · Dr. Yassir Al-Ameen</title>
+<title>BB84 Circuit &amp; Fibre Lab · Dr. Yassir Al-Ameen</title>
 <meta name="description" content="Predict, then test how fibre distance changes detector clicks and quantum bit error rate in a single-photon BB84 simulation.">
-<meta property="og:title" content="What changes when a quantum link grows from 10 to 50 km?">
+<meta property="og:title" content="Inside a BB84 circuit and a 50 km optical link">
 <meta property="og:description" content="Send a million single photons over a simulated optical fibre. Predict how many reach Bob's detector.">
 <style>
 :root{color-scheme:dark;--bg:#101b25;--panel:#152530;--hair:#38505c;--ink:#edf6f3;--sub:#b4c9cb;--a:#85e2cd;--b:#ffbe8b;--serif:Georgia,'Times New Roman',serif;--sans:'Inter','Segoe UI',Arial,sans-serif;--mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}main,header,footer{width:min(1130px,91%);margin:auto}header,footer{display:flex;gap:1rem;justify-content:space-between;align-items:center;border-bottom:1px solid var(--hair);padding:1.1rem 0}header b{font-weight:650;letter-spacing:-.025em}a{color:var(--a);text-underline-offset:.22em}header a,footer a{text-decoration:none}header a:hover,footer a:hover{text-decoration:underline}header small,footer{color:var(--sub)}.identity{display:flex;gap:.65rem;align-items:center}.mark{width:26px;height:26px;display:inline-block;flex:none;border-radius:50%;border:2px solid var(--a);background:repeating-linear-gradient(-35deg,transparent 0 3px,var(--a) 3px 4px);transform:rotate(-10deg)}
 .hero{display:grid;grid-template-columns:1.03fr 1fr;gap:4.5%;align-items:center;padding:clamp(2.5rem,5vw,4.4rem) 0 2.6rem}.eyebrow{color:var(--a);text-transform:uppercase;letter-spacing:.14em;font:650 .76rem/1.5 var(--sans);margin:0 0 .85rem}h1,h2,h3,p{margin:0}h1,h2{font-family:var(--serif);font-weight:400;line-height:1.03;letter-spacing:-.04em}h1{font-size:clamp(3.2rem,5.8vw,5.2rem);max-width:12ch}h1 em{font-weight:400;color:var(--a)}.intro{margin:1rem 0 1.3rem;color:var(--sub);max-width:46ch;font-size:1.08rem}.prediction strong{display:block;font-size:.94rem}.row{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}.choices{margin-top:.55rem}.pick,.tune{background:transparent;color:var(--ink);border:1px solid var(--hair);border-radius:1.5rem;padding:.45rem .95rem;min-height:42px;font:600 .93rem var(--sans);cursor:pointer}button:hover{border-color:var(--a)}button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--b);outline-offset:3px}.pick[aria-pressed=true],.tune[aria-pressed=true]{border-color:var(--a);background:#1c413e;color:var(--a)}#feedback{color:var(--b);margin:.55rem 0 0;font-size:.93rem;min-height:1.45em}figure{margin:0}.figure{background:linear-gradient(135deg,#172b38,#132632 65%,#193b41);border:1px solid var(--hair);border-radius:16px;padding:1.25rem 1.25rem .9rem;box-shadow:0 20px 42px -28px #000}.figtop{display:flex;justify-content:space-between;gap:.5rem;align-items:baseline}.figtop strong{font-weight:600}.figtop span,figcaption,.tiny{color:var(--sub);font-size:.88rem}canvas{display:block;width:100%;height:220px}figcaption{display:flex;align-items:center;gap:.55rem}.legend{width:20px;height:3px;background:var(--a)}.experiment{padding:1.85rem 0;border-top:1px solid var(--hair)}h2{font-size:clamp(2.2rem,4.5vw,3.2rem)}.lead{color:var(--sub);margin:.5rem 0 1.2rem}.bench{display:grid;grid-template-columns:1fr 1.42fr;gap:1.5rem;align-items:start}.controls{padding:1.25rem 1.35rem;background:var(--panel);border:1px solid var(--hair);border-radius:14px}.labelline{display:flex;align-items:center;justify-content:space-between;gap:.5rem}.labelline label{font-weight:650}.distance{color:var(--a);font:1.55rem var(--mono)}input[type=range]{width:100%;accent-color:var(--a);margin:1rem 0 .2rem;cursor:pointer}.ticks{display:flex;justify-content:space-between;font: .8rem var(--mono);color:var(--sub);margin-bottom:.8rem}.tune{font-size:.86rem;min-height:36px}.switch{display:flex;align-items:center;gap:.6rem;margin-top:1rem;color:var(--sub)}input[type=checkbox]{accent-color:var(--a);width:1.1rem;height:1.1rem}.panels{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}.measure{border-top:2px solid var(--a);padding:.7rem .25rem}.measure:last-child{border-color:var(--b)}.value{font:400 clamp(2rem,3.4vw,3rem)/1.1 var(--serif);display:block;margin:.35rem 0;color:var(--a);font-variant-numeric:tabular-nums}.measure:last-child .value{color:var(--b)}.desc{font-size:.9rem;color:var(--sub)}.baseline{margin:.75rem 0 .1rem;border-top:1px solid var(--hair);padding:.6rem 0;color:var(--sub);font-size:.94rem}.runline{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}.primary{border:1px solid var(--a);border-radius:6px;background:var(--a);color:#092820;padding:.75rem 1.2rem;font:650 1rem var(--sans);cursor:pointer}.primary:hover{background:#acf1df}.trial{background:#13212c;border-left:3px solid var(--b);padding:.9rem 1.1rem}.trial p{color:var(--sub);font-size:.96rem}.trial strong{color:var(--ink)}details{margin:1.3rem 0 2rem;border-block:1px solid var(--hair);padding:.9rem 0}summary{cursor:pointer;font-weight:600}details p{max-width:86ch;color:var(--sub);margin:.7rem 0}.eq{color:var(--a);font-family:var(--mono);font-size:.93rem}footer{border-top:1px solid var(--hair);border-bottom:none;font-size:.9rem;padding:1.3rem 0 2rem}noscript{color:var(--b)}
 @media(max-width:730px){.hero,.bench{grid-template-columns:1fr}.hero{gap:1rem;padding:2rem 0 1.6rem}.intro{margin:.8rem 0 1rem}h1{max-width:15ch}.figure{padding:1rem}canvas{height:185px}.bench{gap:1.05rem}.experiment{padding:1.4rem 0}.measure{padding-top:.65rem}header{gap:.25rem}header b{font-size:.91rem}header a{font-size:.87rem}.author{font-size:.82rem}.runline{gap:.55rem}footer{align-items:start;flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+.views{display:flex;gap:1.2rem;flex-wrap:wrap;margin:0 0 1.65rem}.views a{color:var(--sub);font-size:.91rem;text-decoration:underline;text-decoration-color:#55717a;text-underline-offset:.3em}
+.c-studio{padding:1.2rem 0 2.6rem}.c-studio h1{max-width:none;font-size:clamp(2.75rem,5.3vw,4.9rem)}.deck{color:var(--sub);max-width:72ch;margin:.7rem 0 1.2rem;font-size:1.04rem}
+.c-settings,.input-bits,.act{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem}.c-settings{margin:1.25rem 0 .9rem}.c-settings label{display:flex;align-items:center;gap:.7rem;font-size:.95rem;color:var(--sub);padding:.3rem .6rem .3rem .8rem;border:1px solid var(--hair);border-radius:8px;background:#152731}.c-settings select{font:600 1rem var(--mono);color:var(--a);border:0;border-radius:4px;background:#203740;padding:.31rem .45rem;cursor:pointer}.c-settings select:focus-visible{outline:2px solid var(--b)}
+.instrument{background:linear-gradient(115deg,#192e38,#12232f 62%,#1b333b);display:grid;grid-template-columns:minmax(0,2.2fr) minmax(210px,.85fr);border:1px solid var(--hair);border-radius:16px;overflow:hidden}.schematic,.geometry,.link-view,.path-views figure{padding:clamp(.9rem,2vw,1.55rem)}
+.geometry{border-left:1px solid var(--hair)}.instrument-head{display:flex;justify-content:space-between;align-items:center;gap:.45rem}.instrument-head strong,.path-views figure strong{font-weight:620}.instrument-head span{font-size:.84rem;color:var(--sub)}.instrument-head output{color:var(--b);font:1.45rem var(--serif)}
+.lanes{display:grid;grid-template-columns:3fr 1fr 2fr;gap:4px;margin:1.45rem 0 .15rem}.lanes span{text-align:center;font-size:.79rem;color:var(--sub);border-bottom:1px solid var(--hair);padding-bottom:.26rem}.gate-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative;padding:1.05rem 0 .3rem}.gate-line{position:absolute;left:8.33%;right:8.33%;top:calc(1.05rem + 25px);height:2px;background:#71919b}.traveller{position:absolute;top:calc(1.05rem - 9px);margin-left:-4px;left:8.33%;width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 12px #ffbe8b;transition:left .52s ease;z-index:2}
+.station{position:relative;border:0;background:transparent;color:var(--ink);padding:0;cursor:pointer;min-width:0}.station b{display:flex;align-items:center;justify-content:center;margin:auto;width:min(50px,84%);height:50px;border:1px solid #64838a;background:#18313a;border-radius:6px;color:var(--a);font:1.65rem var(--serif)}.station sub{font-size:.55em;align-self:flex-end;margin-bottom:9px}.station small{font-size:.8rem;color:var(--sub)}.station[aria-current=step] b{border:2px solid var(--b);color:var(--b);background:#493a31}.trace-note{margin:.85rem 0 1rem;border-left:2px solid var(--b);padding:.35rem 0 .35rem .8rem;min-height:4.1rem}.trace-note b{color:var(--b)}.trace-note p{color:var(--sub);font-size:.94rem}.act .primary,.act .tune{min-height:42px}.sphere{display:block;width:100%;height:148px;overflow:visible}#needle{transition:transform .45s ease}.geometry .tiny{font-size:.82rem;margin-top:.5rem}
+#probBars>div{display:grid;grid-template-columns:35px 1fr 45px;align-items:center;gap:5px;font:.82rem var(--mono);margin:.35rem 0}#probBars i{height:5px;background:#344853;border-radius:6px;overflow:hidden}#probBars u{display:block;height:100%;background:var(--a);transition:width .35s}#probBars b{text-align:right;font-weight:500}#bar1{background:var(--b)!important}
+.hero{border-top:1px solid var(--hair)}.link-view{background:#142731;border:1px solid var(--hair);border-radius:14px;margin:1rem 0}.link-view canvas{height:140px}.link-view .act{margin:.9rem 0 .65rem}.inline-stats{display:block;color:var(--a);font:.91rem/1.5 var(--mono)}.cnot-work{padding:2.1rem 0;border-top:1px solid var(--hair)}.path-views{display:grid;grid-template-columns:1fr 1fr 1.17fr;gap:.75rem;margin:1rem 0}.path-views figure{padding:1rem;background:var(--panel);border:1px solid var(--hair);border-radius:12px}.path-views svg{width:100%;height:auto;display:block;margin-top:.5rem}.path-controls{gap:.65rem}.path-controls .row{margin-left:.5rem}#waypoints .tune{font: .87rem var(--mono);padding:.38rem .65rem}.path-views svg path,.path-views svg circle{transition:stroke .28s,fill .28s}.path-views text{font-family:var(--mono);font-size:12px;fill:#d6e6e4}
+@media(max-width:730px){.views{margin-bottom:1.3rem}.c-studio{padding-bottom:1.6rem}.instrument{grid-template-columns:1fr}.geometry{border-left:0;border-top:1px solid var(--hair);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0 .75rem}.geometry .instrument-head{grid-column:1/3}.geometry .sphere{height:132px;grid-row:2/4}.geometry .tiny{grid-column:2}.c-settings{gap:.35rem}.c-settings label{font-size:.86rem;gap:.3rem;padding:.2rem .4rem}.gate-row .station b{height:44px}.gate-line{top:calc(1.05rem + 22px)}.cnot-work .path-views{grid-template-columns:1fr 1fr}.path-views figure:last-child{grid-column:1/3}.path-views figure:last-child svg{max-width:375px;margin:auto}.path-views figure{padding:.65rem}.path-views figure strong{font-size:.9rem}.path-controls .row{margin-left:0}.link-view canvas{height:125px}.trace-note{min-height:3.5rem}.deck{font-size:1rem}}@media(max-width:380px){.c-settings select{padding:.2rem}.views{gap:.8rem}.c-settings label{flex-direction:column;align-items:flex-start}.path-views{gap:.4rem}.lanes span{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.traveller,#needle,#probBars u,.path-views svg *{transition:none!important}}
 </style></head><body>
 <header><div class="identity"><i class="mark" aria-hidden="true"></i><b>Quantum Networks Lab</b></div><a href="/">Dr. Yassir Al-Ameen</a></header>
-<main><section class="hero"><div><p class="eyebrow">Quantum key distribution · Episode 01</p>
-<h1>Another <em>40 km</em> of fibre.</h1><p class="intro">Alice sends one million single photons. Move Bob’s receiver from 10 to 50 km. What fraction of the original detector clicks will he still see?</p>
+<main><section class="c-studio" id="circuit">
+<nav class="views" aria-label="Experiment views"><a href="#circuit">BB84 circuit</a><a href="#photon-link">Optical link</a><a href="#cnot">CNOT path</a></nav>
+<p class="eyebrow">Quantum key distribution · Episode 01</p><h1>Inside a <em>BB84 circuit.</em></h1>
+<p class="deck">Choose the bit Alice sends and the basis Bob measures in. Follow one detected photon through the ideal circuit, one gate at a time.</p>
+<div class="c-settings"><label>Alice’s bit <select id="aliceBit"><option value="0">0</option><option value="1" selected>1</option></select></label><label>Alice’s basis <select id="aliceBasis"><option value="Z">Z</option><option value="X" selected>X</option></select></label><label>Bob’s basis <select id="bobBasis"><option value="Z">Z</option><option value="X" selected>X</option></select></label></div>
+<div class="instrument"><div class="schematic"><div class="instrument-head"><strong>Quantum circuit</strong><span>Ideal detected round</span></div>
+<div class="lanes"><span>Alice · prepare</span><span>Link</span><span>Bob · measure</span></div>
+<div class="gate-row" id="gates"><div class="gate-line" aria-hidden="true"></div><div class="traveller" id="traveller" aria-hidden="true"></div>
+<button data-stage="0" class="station" aria-label="Inspect initial state"><b>∣0⟩</b><small>Input</small></button>
+<button data-stage="1" class="station" aria-label="Inspect Alice bit gate"><b id="bitOp">X</b><small>Bit</small></button>
+<button data-stage="2" class="station" aria-label="Inspect Alice basis gate"><b id="aliceOp">H</b><small>Basis</small></button>
+<button data-stage="3" class="station" aria-label="Inspect transmission"><b>∿</b><small>Fibre</small></button>
+<button data-stage="4" class="station" aria-label="Inspect Bob basis gate"><b id="bobOp">H</b><small>Basis</small></button>
+<button data-stage="5" class="station" aria-label="Inspect measurement"><b>M<sub>Z</sub></b><small>Read</small></button></div>
+<div class="trace-note" aria-live="polite"><b id="traceTitle"></b><p id="traceNote"></p></div>
+<div class="act"><button id="playTrace" class="primary">Play circuit</button><button id="stepTrace" class="tune">Next gate</button></div>
+</div><div class="geometry"><div class="instrument-head"><strong>Bloch sphere</strong><output id="ket"></output></div>
+<svg class="sphere" viewBox="0 0 240 160" role="img" aria-label="Bloch sphere with X horizontal and Z vertical, showing the ideal logical state after the highlighted operation">
+<defs><radialGradient id="orbShade" cx="35%" cy="30%"><stop stop-color="#214c53"/><stop offset="1" stop-color="#122832"/></radialGradient><marker id="stateArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3.8" markerHeight="3.8" orient="auto-start-reverse"><path d="M0 0 9 5 0 10Z" fill="#ffbf90"/></marker></defs>
+<g transform="translate(120,80)" fill="none" stroke="#59808b"><circle r="57" fill="url(#orbShade)"/><ellipse rx="57" ry="14" stroke-dasharray="3 3"/><ellipse rx="18" ry="57" stroke-dasharray="3 3"/><path d="M-68 0H70M0-64V64M-38 16L37-15" stroke="#8bacae"/><g id="needle"><path d="M0 0V-53" stroke="#ffbf90" stroke-width="3.3" marker-end="url(#stateArrow)"/></g><circle r="3" fill="#d9ece6"/></g>
+<g fill="#c4d9d7" font-size="11" font-family="Arial" text-anchor="middle"><text x="120" y="11">|0⟩ · +Z</text><text x="120" y="157">|1⟩ · −Z</text><text x="207" y="84">|+⟩</text><text x="34" y="84">|−⟩</text></g></svg>
+<div id="probBars"><div><span>P(0)</span><i><u id="bar0"></u></i><b id="prob0"></b></div><div><span>P(1)</span><i><u id="bar1"></u></i><b id="prob1"></b></div></div><p class="tiny">Predicted probabilities for Bob’s readout.</p></div></div></section>
+<section class="hero"><div><p class="eyebrow">Fibre attenuation</p>
+<h2>Another 40 km of fibre.</h2><p class="intro">Alice sends one million single photons. Move Bob’s receiver from 10 to 50 km. What fraction of the original detector clicks will he still see?</p>
 <div class="prediction" role="group" aria-label="Predict the fraction of clicks at 50 km compared with 10 km"><strong>Make a prediction</strong><div class="row choices"><button class="pick" data-pick="half" aria-pressed="false">About ½</button><button class="pick" data-pick="sixth" aria-pressed="false">About ⅙</button><button class="pick" data-pick="twentieth" aria-pressed="false">About ¹⁄₂₀</button></div><p id="feedback" aria-live="polite"></p></div></div>
 <figure class="figure"><div class="figtop"><strong>Fibre transmission</strong><span>1550 nm model</span></div><canvas id="plot" role="img" aria-label="Exponential fall in fibre transmission with distance"></canvas><figcaption><i class="legend"></i>Fraction of emitted photons reaching the receiver input</figcaption></figure></section>
-<section class="experiment"><h2>Move the receiver</h2><p class="lead">The source and receiver stay the same. Adjust the fibre length to see the expected readings.</p>
+<section class="experiment" id="photon-link"><h2>Move the receiver</h2><p class="lead">The source and receiver stay the same. Adjust the fibre length to see the expected readings.</p>
 <div class="bench"><div class="controls"><div class="labelline"><label for="length">Fibre length</label><output class="distance" id="km" for="length">10 km</output></div><input type="range" id="length" min="0" max="100" step="1" value="10"><div class="ticks"><span>0 km</span><span>100 km</span></div>
 <div class="row"><button class="tune" data-km="10" aria-pressed="true">10 km reference</button><button class="tune" data-km="50" aria-pressed="false">50 km link</button></div>
 <label class="switch"><input type="checkbox" id="background" checked> Include background clicks</label></div>
 <div><div class="panels"><div class="measure"><strong>Detector clicks</strong><output id="clicks" class="value">—</output><span class="desc">Expected per million emissions</span></div><div class="measure"><strong>Expected QBER</strong><output id="qber" class="value">—</output><span class="desc">Error fraction among sifted bits</span></div></div><p class="baseline" id="compare"></p></div></div>
+<div class="link-view"><div class="instrument-head"><strong>Alice to Bob · optical link</strong><span id="fibreLength"></span></div>
+<canvas id="fibreMovie" role="img" aria-label="Optical channel showing emitted photons, losses in the fibre and registered clicks"></canvas>
+<p class="tiny">Each moving dot is one emitted photon. A fading dot marks fibre loss. Bob’s detector flashes when a gate registers a click. Motion is slowed for viewing.</p>
+<div class="act"><button id="playFibre" class="primary">Animate 200 photons</button><button id="oneFibre" class="tune">Send one photon</button></div><output id="linkStats" class="inline-stats"></output><p class="tiny" id="linkStatus" aria-live="polite"></p></div>
 <div class="runline"><button id="run" class="primary">Send 1,000,000 pulses</button><span class="tiny">Draw one random trial at the selected settings.</span></div>
 <div class="trial" aria-live="polite"><strong id="runTitle">Receiver log</strong><p id="log">Run a trial to see the clicks, matched bases and errors in the disclosed sample.</p></div>
 </section>
+<section class="cnot-work" id="cnot"><p class="eyebrow">Reversible circuits</p><h2>Turn a path into CNOT gates.</h2><p class="deck">Follow the same three moves on the grid, the cube and the circuit. Flip any input below and see which gates change the target bit.</p>
+<div class="input-bits" role="group" aria-label="Classical basis input bits"><button class="tune" data-bit="0"></button><button class="tune" data-bit="1"></button><button class="tune" data-bit="2"></button><button class="tune" data-bit="3"></button></div>
+<div class="path-views"><figure><strong>Grid path</strong><svg id="gridView" viewBox="0 0 238 156" role="img" aria-label="Grid path from zero zero to two one"></svg></figure><figure><strong>Cube embedding</strong><svg id="cubeView" viewBox="0 0 238 156" role="img" aria-label="Path from 000 through 100 and 101 to 111"></svg></figure><figure><strong>Four-wire CNOT circuit</strong><svg id="cnotView" viewBox="0 0 250 156" role="img" aria-label="CNOT controls x1, x3, x2 acting on target x0"></svg></figure></div>
+<div class="act path-controls"><button class="primary" id="pathPlay">Play path</button><button class="tune" id="pathStep">Next edge</button><div class="row" id="waypoints" role="group" aria-label="Inspect a vertex"></div></div><div class="trace-note" aria-live="polite"><b id="pathFormula"></b><p id="pathExplain"></p></div></section>
 <details><summary>Model, assumptions and reference</summary>
 <p>This teaching model uses ideal single-photon BB84 with two independently and equally likely bases. Each pulse has one detection gate. Fibre attenuation is 0.20 dB/km, receiver efficiency is 20%, and intrinsic signal error is 1.5%. The illustrative background probability is 0.0001 per gate when enabled.</p>
 <p class="eq">T = 10<sup>−0.20 L / 10</sup> &nbsp;·&nbsp; s = 0.20 T &nbsp;·&nbsp; b = (1 − s) p<sub>bg</sub></p>
 <p>A signal registers with probability <i>s</i>. A gate without a signal click can register a background click with probability <i>p</i><sub>bg</sub>. The model assigns at most one click per gate, with priority given to signal clicks. Background bits are random.</p>
 <p class="eq">P(click) = s + b &nbsp;·&nbsp; QBER = (0.015 s + 0.5 b) / (s + b)</p>
 <p>The trial retains clicks with matching bases, then independently discloses each retained bit with probability 20%. Sample QBER is the number of disclosed mismatches divided by the number of disclosed bits. Finite samples fluctuate. Secret-key extraction, detector dead time, afterpulsing and connector losses are outside the model.</p>
-<p>Background reading on sifting, attenuation and receiver errors: <a href="https://doi.org/10.1103/RevModPhys.74.145">Gisin et al., Quantum cryptography (2002)</a>.</p></details><noscript>Enable JavaScript to run the simulation.</noscript></main>
+<p>The Bloch sphere shows the logical qubit immediately after the selected operation. Its vertical and horizontal axes are Z and X. The circuit view assumes an ideal detected signal. The optical link samples fibre loss, receiver efficiency and background independently as specified above. The reversible CNOT path is a separate circuit example.</p><p>Circuit reference: <a href="https://quantum.cloud.ibm.com/learning/en/modules/computer-science/quantum-key-distribution">IBM Quantum Learning, Quantum Key Distribution</a>.</p><p>Background reading on sifting, attenuation and receiver errors: <a href="https://doi.org/10.1103/RevModPhys.74.145">Gisin et al., Quantum cryptography (2002)</a>.</p></details><noscript>Enable JavaScript to run the simulation.</noscript></main>
 <footer><span>Quantum for Secure &amp; Intelligent Networks</span><a href="/">Dr. Yassir Al-Ameen · Personal site</a></footer>
 <script>
 'use strict';
@@ -92,6 +133,7 @@ function refresh(){
   for(const b of document.querySelectorAll('[data-km]'))b.setAttribute('aria-pressed',Number(b.dataset.km)===km);
   $('runTitle').textContent='Receiver log';$('log').textContent='Run a trial to see the clicks, matched bases and errors in the disclosed sample.';
   drawPlot();
+  if(typeof updateFibreSettings==='function')updateFibreSettings();
 }
 for(const b of document.querySelectorAll('[data-km]')) b.onclick=()=>{lengthInput.value=b.dataset.km;refresh()};
 for(const b of document.querySelectorAll('[data-pick]')) b.onclick=()=>{
@@ -105,5 +147,193 @@ $('run').onclick=()=>{
   $('runTitle').textContent='Trial '+(++runs)+' · '+km+' km · background '+(backgroundInput.checked?'on':'off');
   $('log').textContent=number(result.detected)+' clicks → '+number(result.matched)+' matching bases → '+number(result.sampled)+' disclosed bits. '+number(result.wrong)+' mismatches. Sample QBER: '+(result.sampled?pct(result.wrong/result.sampled):'undefined (empty sample)')+'.';
 };
-lengthInput.oninput=refresh;backgroundInput.onchange=refresh;window.addEventListener('resize',drawPlot);refresh();
+lengthInput.oninput=refresh;backgroundInput.onchange=refresh;window.addEventListener('resize',drawPlot);
+function idealCircuit(bit,alice,bob){
+  const flip=bit?[0,1]:[1,0];
+  const h=([a,b])=>[(a+b)*Math.SQRT1_2,(a-b)*Math.SQRT1_2];
+  const prepared=alice==='X'?h(flip):flip;
+  const read=bob==='X'?h(prepared):prepared;
+  const p1=Math.min(1,Math.max(0,Math.round(read[1]**2*1e12)/1e12));
+  return {states:[[1,0],flip,prepared,prepared,read],p1,match:alice===bob};
+}
+function describeState([a,b]){
+  if(Math.abs(b)<1e-9)return {ket:'|0⟩',angle:0};
+  if(Math.abs(a)<1e-9)return {ket:'|1⟩',angle:180};
+  return a*b>0?{ket:'|+⟩',angle:90}:{ket:'|−⟩',angle:-90};
+}
+const steps=[...document.querySelectorAll('[data-stage]')];
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+let stage=0,traceTimer=null,outcome=null;
+function showOperation(){
+  const bit=Number($('aliceBit').value),alice=$('aliceBasis').value,bob=$('bobBasis').value;
+  const model=idealCircuit(bit,alice,bob);
+  if(stage===5 && outcome===null)outcome=Number(Math.random()<model.p1);
+  const point=describeState(stage===5?(outcome?[0,1]:[1,0]):model.states[stage]);
+  const encoded=describeState(model.states[2]).ket;
+  $('bitOp').textContent=bit?'X':'I';$('aliceOp').textContent=alice==='X'?'H':'I';$('bobOp').textContent=bob==='X'?'H':'I';
+  const names=['Input qubit','Alice encodes her bit','Alice chooses her basis','Photon in the ideal channel','Bob chooses his basis','Bob reads the detector'];
+  const notes=['The source starts every round in |0⟩.',bit?'X flips |0⟩ to |1⟩.':'I leaves the qubit in |0⟩.',(alice==='X'?'H prepares ':'The identity gate preserves ')+encoded+'.','The transmitted state is '+encoded+'. This logical trace assumes the photon was detected.',bob==='X'?'H rotates Bob’s X basis into the Z readout basis.':'I leaves the state unchanged for direct Z readout.',(outcome===null?'':'Measured '+outcome+'. ')+(model.match?'Matching bases: retain this round during sifting.':'Different bases: discard this round during sifting.')];
+  $('traceTitle').textContent=names[stage];$('traceNote').textContent=notes[stage];
+  $('ket').textContent=point.ket;$('needle').style.transform='rotate('+point.angle+'deg)';
+  $('prob0').textContent=Math.round((1-model.p1)*100)+'%';$('prob1').textContent=Math.round(model.p1*100)+'%';
+  $('bar0').style.width=$('prob0').textContent;$('bar1').style.width=$('prob1').textContent;
+  steps.forEach((b,i)=>{if(i===stage)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});
+  $('traveller').style.left=((stage+.5)*100/6)+'%';
+  $('stepTrace').textContent=stage===5?'New round':'Next gate';
+  $('playTrace').textContent=traceTimer?'Pause':stage===5?'Replay circuit':'Play circuit';
+}
+function pauseCircuit(){clearInterval(traceTimer);traceTimer=null}
+function playCircuit(){
+  if(traceTimer){pauseCircuit();showOperation();return}
+  if(stage===5){stage=0;outcome=null}
+  traceTimer=setInterval(()=>{stage++;if(stage===5)pauseCircuit();showOperation()},1100);showOperation();
+}
+$('playTrace').onclick=playCircuit;
+$('stepTrace').onclick=()=>{pauseCircuit();stage=(stage+1)%6;if(stage===0)outcome=null;showOperation()};
+steps.forEach((b,i)=>b.onclick=()=>{pauseCircuit();stage=i;showOperation()});
+for(const id of ['aliceBit','aliceBasis','bobBasis'])$(id).onchange=()=>{pauseCircuit();stage=0;outcome=null;showOperation()};
+showOperation();
+if(!motionPreference.matches && (!location.hash || location.hash==='#circuit'))playCircuit();
+const movie=$('fibreMovie');
+const linkRun={items:[],clock:0,next:0,frame:0,last:0,goal:0,sent:0,arrived:0,clicks:0,flash:-100,bgFlash:false,complete:false};
+function makePulse(km,bg,random=Math.random){
+  const maxKm=-10*Math.log10(1-random())/.20;
+  const arrives=maxKm>=km;
+  const signal=arrives&&random()<.20;
+  const noise=!signal&&bg&&random()<.0001;
+  return {fraction:arrives?1:maxKm/km,arrives,signal,noise};
+}
+function fibreStats(){
+  $('linkStats').textContent='Emitted '+linkRun.sent+'  ·  Reached Bob '+linkRun.arrived+'  ·  Clicks '+linkRun.clicks;
+}
+function paintFibre(){
+  const c=movie.getContext('2d'),w=movie.clientWidth,h=movie.clientHeight,dpr=Math.min(window.devicePixelRatio||1,2);
+  if(!w||!h)return;
+  if(movie.width!==Math.round(w*dpr)||movie.height!==Math.round(h*dpr)){movie.width=Math.round(w*dpr);movie.height=Math.round(h*dpr)}
+  c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
+  const l=32,r=w-32,y=h*.53,track=r-l;
+  c.fillStyle='#203f4d';c.beginPath();c.roundRect(l,y-12,track,24,12);c.fill();c.strokeStyle='#496c75';c.stroke();
+  for(const offset of [-5,0,5]){c.beginPath();c.moveTo(l,y+offset);c.lineTo(r,y+offset);c.strokeStyle=offset?'#315560':'#59858a';c.stroke()}
+  c.textAlign='left';c.font='600 14px Arial';c.fillStyle='#d4e5e3';c.fillText('Alice · source',3,20);
+  c.textAlign='right';c.fillText('Bob · detector',w-3,20);
+  for(const p of linkRun.items){
+    const age=(linkRun.clock-p.birth)/1.35;
+    if(age<0||age>p.fraction+.14)continue;
+    const fade=Math.max(0,1-Math.max(0,age-p.fraction)/.14);
+    const x=l+Math.min(p.fraction,age)*track,yp=y+p.lane;
+    c.globalAlpha=fade;
+    c.beginPath();c.moveTo(Math.max(l,x-14),yp);c.lineTo(x,yp);c.strokeStyle='#65aead';c.lineWidth=2;c.stroke();
+    c.beginPath();c.arc(x,yp,3.5,0,Math.PI*2);c.fillStyle='#b5ffec';c.fill();
+    if(age>p.fraction&&!p.arrives){c.strokeStyle='#ffbf90';c.beginPath();c.arc(x,yp,4+(1-fade)*6,0,Math.PI*2);c.stroke()}
+  }
+  c.lineWidth=1;c.globalAlpha=1;
+  const flashing=linkRun.clock-linkRun.flash<.22;
+  for(const [x,fill] of [[l,'#85e2cd'],[r,flashing?(linkRun.bgFlash?'#ffbe8b':'#adffdc'):'#759da4']]){
+    c.beginPath();c.arc(x,y,8,0,2*Math.PI);c.fillStyle=fill;c.fill();c.strokeStyle=fill;c.beginPath();c.arc(x,y,flashing&&x===r?16:12,0,2*Math.PI);c.stroke()
+  }
+  c.textAlign='center';c.fillStyle='#b4c9cb';c.font='13px Arial';c.fillText(Number(lengthInput.value)+' km fibre · 0.20 dB/km',w/2,h-8);
+}
+function resetFibre(){
+  cancelAnimationFrame(linkRun.frame);
+  Object.assign(linkRun,{items:[],clock:0,next:0,frame:0,last:0,goal:0,sent:0,arrived:0,clicks:0,flash:-100,bgFlash:false,complete:false});
+  $('playFibre').textContent='Animate 200 photons';$('oneFibre').disabled=false;$('linkStatus').textContent='';
+  $('fibreLength').textContent=lengthInput.value+' km';fibreStats();paintFibre();
+}
+function fibreTick(stamp){
+  if(linkRun.last)linkRun.clock+=Math.min(.08,(stamp-linkRun.last)/1000);
+  linkRun.last=stamp;
+  while(linkRun.sent<linkRun.goal && linkRun.clock>=linkRun.next){
+    const p=makePulse(Number(lengthInput.value),backgroundInput.checked);
+    linkRun.items.push({...p,birth:linkRun.next,lane:(linkRun.sent%3-1)*5,read:false});
+    linkRun.sent++;linkRun.next+=.048;
+  }
+  for(const p of linkRun.items){if(!p.read && linkRun.clock>=p.birth+1.35){
+    p.read=true;if(p.arrives)linkRun.arrived++;
+    if(p.signal||p.noise){linkRun.clicks++;linkRun.flash=linkRun.clock;linkRun.bgFlash=p.noise}
+  }}
+  linkRun.items=linkRun.items.filter(p=>linkRun.clock-p.birth<1.65);fibreStats();paintFibre();
+  if(linkRun.sent===linkRun.goal && linkRun.items.length===0){
+    linkRun.frame=0;linkRun.complete=true;$('playFibre').textContent='Animate 200 photons';$('oneFibre').disabled=false;
+    $('linkStatus').textContent='Run complete. '+$('linkStats').textContent+'.';return
+  }
+  linkRun.frame=requestAnimationFrame(fibreTick);
+}
+function startFibre(n){
+  if(linkRun.frame){cancelAnimationFrame(linkRun.frame);linkRun.frame=0;linkRun.last=0;$('playFibre').textContent='Resume';$('oneFibre').disabled=true;return}
+  if(!linkRun.goal||linkRun.complete){resetFibre();linkRun.goal=n}
+  $('oneFibre').disabled=true;
+  if(motionPreference.matches){
+    for(let i=0;i<linkRun.goal;i++){const p=makePulse(Number(lengthInput.value),backgroundInput.checked);linkRun.sent++;linkRun.arrived+=Number(p.arrives);linkRun.clicks+=Number(p.signal||p.noise)}
+    linkRun.complete=true;$('oneFibre').disabled=false;fibreStats();$('linkStatus').textContent='Run complete (reduced motion). '+$('linkStats').textContent+'.';return
+  }
+  $('playFibre').textContent='Pause';linkRun.frame=requestAnimationFrame(fibreTick);
+}
+$('playFibre').onclick=()=>startFibre(200);$('oneFibre').onclick=()=>startFibre(1);
+window.addEventListener('resize',paintFibre);resetFibre();
+const ns='http://www.w3.org/2000/svg';
+const controlOrder=[1,3,2],vertices=['000','100','101','111'],bits=[0,1,0,1];
+let pathIndex=0,pathTimer=null,previousVertex=0,walkFrame=0;
+function targetAfter(input,count){return controlOrder.slice(0,count).reduce((v,k)=>v^input[k],input[0])}
+function svgPart(svg,tag,attrs,label){
+  const el=document.createElementNS(ns,tag);
+  for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);
+  if(label!==undefined)el.textContent=label;svg.append(el);return el;
+}
+function segment(svg,a,b,color,width=2,dash=''){
+  return svgPart(svg,'line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:color,'stroke-width':width,'stroke-dasharray':dash,'stroke-linecap':'round'});
+}
+const circle=(s,p,r,fill,stroke='none')=>svgPart(s,'circle',{cx:p[0],cy:p[1],r,fill,stroke,'stroke-width':2});
+const label=(s,p,t,anchor='middle')=>svgPart(s,'text',{x:p[0],y:p[1],'text-anchor':anchor},t);
+const cubeXY=v=>[43+103*Number(v[0])+42*Number(v[1]),128-31*Number(v[1])-65*Number(v[2])];
+function drawWalk(s,points,labels,offsets){
+  points.forEach((p,i)=>{if(i)segment(s,points[i-1],p,i<=pathIndex?'#8be4ce':'#58737d',i===pathIndex?4:2.3)});
+  points.forEach((p,i)=>{circle(s,p,i===pathIndex?6:3.7,i===pathIndex?'#ffbf90':'#91b6bc');
+    label(s,[p[0]+offsets[i][0],p[1]+offsets[i][1]],labels[i])});
+}
+function renderPath(){
+  const grid=$('gridView'),cube=$('cubeView'),wire=$('cnotView');
+  [grid,cube,wire].forEach(n=>n.replaceChildren());
+  const gp=[[33,112],[118,112],[118,49],[203,49]];
+  for(const x of [33,118,203])segment(grid,[x,29],[x,130],'#36505c',1,'4 4');
+  for(const y of [49,112])segment(grid,[15,y],[222,y],'#36505c',1,'4 4');
+  drawWalk(grid,gp,['(0,0)','(1,0)','(1,1)','(2,1)'],[[0,21],[0,21],[0,-12],[0,-12]]);
+  for(let j=0;j<8;j++){const v=j.toString(2).padStart(3,'0'),p=cubeXY(v);
+    for(let k=0;k<3;k++){if(v[k]==='0'){const to=v.slice(0,k)+'1'+v.slice(k+1);segment(cube,p,cubeXY(to),'#49616c',1.3)}}
+  }
+  drawWalk(cube,vertices.map(cubeXY),vertices,[[0,19],[0,19],[0,-10],[0,-11]]);
+  const ys=[132,24,58,92],xs=[75,133,191];
+  for(const [i,y] of ys.entries()){segment(wire,[32,y],[225,y],'#718b93',1.5);label(wire,[21,y+4],'x'+'₀₁₂₃'[i]);label(wire,[238,y+4],i===0?targetAfter(bits,pathIndex):bits[i])}
+  xs.forEach((x,j)=>{const k=controlOrder[j],col=j===pathIndex-1?'#ffbf90':(j<pathIndex?'#86e4ce':'#78929d');
+    segment(wire,[x,ys[k]],[x,ys[0]],col,2);circle(wire,[x,ys[k]],4.5,col);
+    circle(wire,[x,ys[0]],8,'#142731',col);segment(wire,[x-6,ys[0]],[x+6,ys[0]],col,1.6);segment(wire,[x,ys[0]-6],[x,ys[0]+6],col,1.6)});
+  cancelAnimationFrame(walkFrame);
+  if(Math.abs(pathIndex-previousVertex)===1&&!motionPreference.matches){
+    const stops=vertices.map(cubeXY),from=previousVertex,to=pathIndex;
+    const markers=[[grid,gp],[cube,stops]].map(([s,pts])=>[circle(s,pts[from],5,'#fff0cf'),pts[from],pts[to]]);
+    const start=performance.now();
+    function move(now){
+      const t=Math.min(1,(now-start)/600);
+      markers.forEach(([dot,a,b])=>{dot.setAttribute('cx',a[0]+(b[0]-a[0])*t);dot.setAttribute('cy',a[1]+(b[1]-a[1])*t)});
+      if(t<1)walkFrame=requestAnimationFrame(move);
+    }
+    walkFrame=requestAnimationFrame(move);
+  }
+  previousVertex=pathIndex;
+  const indices=controlOrder.slice(0,pathIndex),operands=[0,...indices].map(i=>'x'+'₀₁₂₃'[i]);
+  $('pathFormula').textContent=vertices[pathIndex]+'   ·   '+operands.join(' ⊕ ')+' = '+targetAfter(bits,pathIndex);
+  const last=controlOrder[pathIndex-1];
+  $('pathExplain').textContent=pathIndex?'Control x'+'₀₁₂₃'[last]+' is '+bits[last]+'. '+(bits[last]?'This gate flips the target.':'The target passes this gate unchanged.'):'Start at vertex 000. The bottom wire holds the initial target bit.';
+  for(const b of document.querySelectorAll('[data-bit]')){const k=Number(b.dataset.bit);b.textContent=(k===0?'Target ':'Control ')+'x'+'₀₁₂₃'[k]+' = '+bits[k];b.setAttribute('aria-pressed',bits[k]===1)}
+  for(const b of $('waypoints').children)b.setAttribute('aria-pressed',Number(b.dataset.vertex)===pathIndex);
+  $('pathPlay').textContent=pathTimer?'Pause':pathIndex===3?'Replay path':'Play path';$('pathStep').textContent=pathIndex===3?'Start again':'Next edge';
+}
+function stopPath(){clearInterval(pathTimer);pathTimer=null}
+vertices.forEach((v,i)=>{const b=document.createElement('button');b.className='tune';b.textContent=v;b.dataset.vertex=i;b.onclick=()=>{stopPath();pathIndex=i;renderPath()};$('waypoints').append(b)});
+for(const b of document.querySelectorAll('[data-bit]'))b.onclick=()=>{stopPath();bits[Number(b.dataset.bit)]^=1;renderPath()};
+$('pathStep').onclick=()=>{stopPath();pathIndex=(pathIndex+1)%4;renderPath()};
+$('pathPlay').onclick=()=>{if(pathTimer){stopPath();renderPath();return}if(pathIndex===3)pathIndex=0;pathTimer=setInterval(()=>{pathIndex++;if(pathIndex===3)stopPath();renderPath()},1150);renderPath()};
+renderPath();
+
+function updateFibreSettings(){resetFibre()}
+refresh();
 </script></body></html>
